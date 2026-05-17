@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "tipoEscalao": "Tipo de Conta",
+        "porQueFoco": "Por que e Foco",
+        "porQueAlvo": "Por que e Alvo",
+        "statusProspeccao": "Foco",
+        "industry": "Setor"
+    },
+    "options": {
+        "industry": {
+            "": "",
+            "Financeiro": "Financeiro",
+            "Telecom": "Telecom",
+            "Energia Eletrica": "Energia Elétrica",
+            "Oleo e Gas": "Óleo & Gás",
+            "Data Centers": "Data Centers",
+            "Governo": "Governo",
+            "Origem de Energia": "Origem de Energia",
+            "Saneamento": "Saneamento",
+            "Industria e Logistica": "Indústria & Logística",
+            "Saude": "Saúde",
+            "Varejo e E-commerce": "Varejo & E-commerce",
+            "Logistica e Mobilidade": "Logística & Mobilidade"
+        }
+    },
+    "labels": {
+        "Classificacao": "Classificação"
+    }
+}

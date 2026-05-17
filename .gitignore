@@ -1,0 +1,42 @@
+# Arquivos sensíveis
+.env
+*.env
+.env.*
+!.env.example
+
+# Backups
+backups/
+*.sql
+*.dump
+*.gz
+*.zip
+*.tar
+*.tar.gz
+
+# Logs
+*.log
+logs/
+var/logs/
+www/data/logs/
+
+# Cache / temporários
+cache/
+tmp/
+temp/
+www/data/cache/
+www/data/tmp/
+www/client/custom/cache/
+www/public/client/custom/cache/
+
+# Uploads e anexos do CRM
+www/data/upload/
+www/public/upload/
+
+# Dependências e pacotes temporários
+node_modules/
+vendor/bin/.phpunit/
+composer.phar
+
+# Sistema
+.DS_Store
+Thumbs.db
