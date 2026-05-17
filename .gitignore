@@ -40,3 +40,7 @@ composer.phar
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Permitir versionar o schema do banco
+!schema_banco/
+!schema_banco/*.sql
