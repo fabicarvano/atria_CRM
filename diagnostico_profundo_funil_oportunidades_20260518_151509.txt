@@ -1,0 +1,102 @@
+info
+=== 1. DEFINICAO COMPLETA DA TABELA OPPORTUNITY ===
+Table	Create Table
+opportunity	CREATE TABLE `opportunity` (\n  `id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,\n  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `deleted` tinyint(1) DEFAULT 0,\n  `amount` double DEFAULT NULL,\n  `stage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'Prospecting',\n  `last_stage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `probability` int(11) DEFAULT NULL,\n  `lead_source` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `close_date` date DEFAULT NULL,\n  `description` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `created_at` datetime DEFAULT NULL,\n  `modified_at` datetime DEFAULT NULL,\n  `amount_currency` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `stream_updated_at` datetime DEFAULT NULL,\n  `account_id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `contact_id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `campaign_id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `created_by_id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `modified_by_id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `assigned_user_id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `version_number` bigint(20) DEFAULT NULL,\n  `tipo_oportunidade` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `fabricante` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `tipo_servico_gerenciado` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `tipo_servico_pontual` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `detalhe_oportunidade` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `numero_oportunidade` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `temperatura_oportunidade` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `dor_principal` mediumtext DEFAULT NULL,\n  `impacto_estimado` varchar(255) DEFAULT NULL,\n  `orcamento_identificado` varchar(255) DEFAULT NULL,\n  `criterio_decisao` mediumtext DEFAULT NULL,\n  `processo_decisao` varchar(255) DEFAULT NULL,\n  `prazo_decisao` varchar(255) DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `UNIQ_CREATED_AT_ID` (`created_at`,`id`),\n  UNIQUE KEY `UNIQ_NUMERO_OPORTUNIDADE_UNIQUE` (`numero_oportunidade`),\n  KEY `IDX_STAGE` (`stage`,`deleted`),\n  KEY `IDX_LAST_STAGE` (`last_stage`),\n  KEY `IDX_ASSIGNED_USER` (`assigned_user_id`,`deleted`),\n  KEY `IDX_CREATED_AT` (`created_at`,`deleted`),\n  KEY `IDX_CREATED_AT_STAGE` (`created_at`,`stage`),\n  KEY `IDX_ASSIGNED_USER_STAGE` (`assigned_user_id`,`stage`),\n  KEY `IDX_ACCOUNT_ID` (`account_id`),\n  KEY `IDX_CONTACT_ID` (`contact_id`),\n  KEY `IDX_CAMPAIGN_ID` (`campaign_id`),\n  KEY `IDX_CREATED_BY_ID` (`created_by_id`),\n  KEY `IDX_MODIFIED_BY_ID` (`modified_by_id`),\n  KEY `IDX_ASSIGNED_USER_ID` (`assigned_user_id`),\n  KEY `IDX_NUMERO_OPORTUNIDADE` (`numero_oportunidade`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci
+info
+=== 2. COLUNAS DA OPPORTUNITY RELACIONADAS A DATA, STAGE, STATUS, CLOSED, WON, LOST ===
+COLUMN_NAME	COLUMN_TYPE	IS_NULLABLE	COLUMN_DEFAULT
+stage	varchar(255)	YES	'Prospecting'
+last_stage	varchar(255)	YES	NULL
+probability	int(11)	YES	NULL
+close_date	date	YES	NULL
+created_at	datetime	YES	NULL
+modified_at	datetime	YES	NULL
+stream_updated_at	datetime	YES	NULL
+created_by_id	varchar(17)	YES	NULL
+modified_by_id	varchar(17)	YES	NULL
+info
+=== 3. STATUS ATUAL DAS OPORTUNIDADES ===
+id	name	stage	probability	created_at	modified_at	close_date	dias_criacao_ate_close_date	amount	deleted
+6a0a7de61305acdf5	nome da oportunidade	Prospecting	10	2026-05-18 02:48:06	2026-05-18 04:22:14	2026-05-31	13	1000000	0
+6a0a7e7164f007fcb	oportnidade 1	Qualification	10	2026-05-18 02:50:25	2026-05-18 04:22:14	2026-08-22	96	2000000	0
+6a0a7e8de03820dcc	oportunidade 3	Qualification	20	2026-05-18 02:50:53	2026-05-18 13:32:25	2026-09-26	131	500000	0
+6a0a85a896990c506	oprtundiade 54	Prospecting	10	2026-05-18 03:21:12	2026-05-18 13:33:43	2026-11-21	187	300000	0
+6a0a85c5d141a2c10	oprtundade 200	Qualification	20	2026-05-18 03:21:41	2026-05-18 04:22:14	2026-11-21	187	150000	0
+6a0a9677e7eaf0988	oprtunidade 754643	Desenvolvendo Solução	40	2026-05-18 04:32:55	2026-05-18 13:35:31	2026-05-15	-3	3000000	0
+info
+=== 4. FECHAMENTO NEGATIVO OU SUSPEITO ===
+id	name	stage	created_at	close_date	dias_criacao_ate_close_date	interpretacao
+6a0a7de61305acdf5	nome da oportunidade	Prospecting	2026-05-18 02:48:06	2026-05-31	13	PROVAVEL PREVISAO: oportunidade ainda nao fechada
+6a0a7e7164f007fcb	oportnidade 1	Qualification	2026-05-18 02:50:25	2026-08-22	96	PROVAVEL PREVISAO: oportunidade ainda nao fechada
+6a0a7e8de03820dcc	oportunidade 3	Qualification	2026-05-18 02:50:53	2026-09-26	131	PROVAVEL PREVISAO: oportunidade ainda nao fechada
+6a0a85a896990c506	oprtundiade 54	Prospecting	2026-05-18 03:21:12	2026-11-21	187	PROVAVEL PREVISAO: oportunidade ainda nao fechada
+6a0a85c5d141a2c10	oprtundade 200	Qualification	2026-05-18 03:21:41	2026-11-21	187	PROVAVEL PREVISAO: oportunidade ainda nao fechada
+6a0a9677e7eaf0988	oprtunidade 754643	Desenvolvendo Solução	2026-05-18 04:32:55	2026-05-15	-3	SUSPEITO: close_date antes da criacao
+info
+=== 5. TODAS AS NOTES DE STAGE - CREATE E UPDATE ===
+opportunity_id	oportunidade	type	data_evento	status_field	status_value	value_stage	data
+6a0a7de61305acdf5	nome da oportunidade	Create	2026-05-18 02:48:06	stage	Prospecting	NULL	{"statusValue":"Prospecting","statusField":"stage"}
+6a0a7e7164f007fcb	oportnidade 1	Create	2026-05-18 02:50:25	stage	Qualification	NULL	{"statusValue":"Qualification","statusField":"stage"}
+6a0a7e8de03820dcc	oportunidade 3	Create	2026-05-18 02:50:53	stage	Qualification	NULL	{"statusValue":"Qualification","statusField":"stage"}
+6a0a7e8de03820dcc	oportunidade 3	Update	2026-05-18 13:22:35	NULL	NULL	Desenvolvendo Solução	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Desenvolvendo Solução"}
+6a0a7e8de03820dcc	oportunidade 3	Update	2026-05-18 13:25:44	NULL	NULL	Qualification	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Qualification"}
+6a0a7e8de03820dcc	oportunidade 3	Update	2026-05-18 13:25:47	NULL	NULL	Desenvolvendo Solução	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Desenvolvendo Solução"}
+6a0a7e8de03820dcc	oportunidade 3	Update	2026-05-18 13:25:56	NULL	NULL	Proposal	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Proposal"}
+6a0a7e8de03820dcc	oportunidade 3	Update	2026-05-18 13:28:22	NULL	NULL	Qualification	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Qualification"}
+6a0a85a896990c506	oprtundiade 54	Create	2026-05-18 03:21:12	stage	Negotiation	NULL	{"statusValue":"Negotiation","statusField":"stage"}
+6a0a85a896990c506	oprtundiade 54	Update	2026-05-18 13:28:24	NULL	NULL	Qualification	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Qualification"}
+6a0a85a896990c506	oprtundiade 54	Update	2026-05-18 13:33:43	NULL	NULL	Prospecting	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Prospecting"}
+6a0a85c5d141a2c10	oprtundade 200	Create	2026-05-18 03:21:41	stage	Qualification	NULL	{"statusValue":"Qualification","statusField":"stage"}
+6a0a9677e7eaf0988	oprtunidade 754643	Create	2026-05-18 04:32:55	stage	Prospecting	NULL	{"statusValue":"Prospecting","statusField":"stage"}
+6a0a9677e7eaf0988	oprtunidade 754643	Update	2026-05-18 13:34:39	NULL	NULL	Qualification	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Qualification"}
+6a0a9677e7eaf0988	oprtunidade 754643	Update	2026-05-18 13:35:31	NULL	NULL	Desenvolvendo Solução	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Desenvolvendo Solução"}
+info
+=== 6. LINHA DO TEMPO DE ESTAGIOS NORMALIZADA ===
+opportunity_id	oportunidade	data_evento	stage_detectado	origem
+6a0a7de61305acdf5	nome da oportunidade	2026-05-18 02:48:06	Prospecting	create_statusValue
+6a0a7e7164f007fcb	oportnidade 1	2026-05-18 02:50:25	Qualification	create_statusValue
+6a0a7e8de03820dcc	oportunidade 3	2026-05-18 02:50:53	Qualification	create_statusValue
+6a0a7e8de03820dcc	oportunidade 3	2026-05-18 13:22:35	Desenvolvendo Solução	update_value
+6a0a7e8de03820dcc	oportunidade 3	2026-05-18 13:25:44	Qualification	update_value
+6a0a7e8de03820dcc	oportunidade 3	2026-05-18 13:25:47	Desenvolvendo Solução	update_value
+6a0a7e8de03820dcc	oportunidade 3	2026-05-18 13:25:56	Proposal	update_value
+6a0a7e8de03820dcc	oportunidade 3	2026-05-18 13:28:22	Qualification	update_value
+6a0a85a896990c506	oprtundiade 54	2026-05-18 03:21:12	Negotiation	create_statusValue
+6a0a85a896990c506	oprtundiade 54	2026-05-18 13:28:24	Qualification	update_value
+6a0a85a896990c506	oprtundiade 54	2026-05-18 13:33:43	Prospecting	update_value
+6a0a85c5d141a2c10	oprtundade 200	2026-05-18 03:21:41	Qualification	create_statusValue
+6a0a9677e7eaf0988	oprtunidade 754643	2026-05-18 04:32:55	Prospecting	create_statusValue
+6a0a9677e7eaf0988	oprtunidade 754643	2026-05-18 13:34:39	Qualification	update_value
+6a0a9677e7eaf0988	oprtunidade 754643	2026-05-18 13:35:31	Desenvolvendo Solução	update_value
+info
+=== 7. TEMPO ENTRE MUDANCAS DE ESTAGIO - BASE PARA TEMPO EM CADA ESTAGIO ===
+opportunity_id	oportunidade	estagio	entrou_em	saiu_em	saiu_em_ou_agora	minutos_no_estagio	horas_no_estagio	dias_no_estagio	proximo_estagio
+6a0a7de61305acdf5	nome da oportunidade	Prospecting	2026-05-18 02:48:06	NULL	2026-05-18 15:15:09	747	12.45	0.52	NULL
+6a0a7e7164f007fcb	oportnidade 1	Qualification	2026-05-18 02:50:25	NULL	2026-05-18 15:15:09	744	12.40	0.52	NULL
+6a0a7e8de03820dcc	oportunidade 3	Qualification	2026-05-18 02:50:53	2026-05-18 13:22:35	2026-05-18 13:22:35	631	10.52	0.44	Desenvolvendo Solução
+6a0a7e8de03820dcc	oportunidade 3	Desenvolvendo Solução	2026-05-18 13:22:35	2026-05-18 13:25:44	2026-05-18 13:25:44	3	0.05	0.00	Qualification
+6a0a7e8de03820dcc	oportunidade 3	Qualification	2026-05-18 13:25:44	2026-05-18 13:25:47	2026-05-18 13:25:47	0	0.00	0.00	Desenvolvendo Solução
+6a0a7e8de03820dcc	oportunidade 3	Desenvolvendo Solução	2026-05-18 13:25:47	2026-05-18 13:25:56	2026-05-18 13:25:56	0	0.00	0.00	Proposal
+6a0a7e8de03820dcc	oportunidade 3	Proposal	2026-05-18 13:25:56	2026-05-18 13:28:22	2026-05-18 13:28:22	2	0.03	0.00	Qualification
+6a0a7e8de03820dcc	oportunidade 3	Qualification	2026-05-18 13:28:22	NULL	2026-05-18 15:15:09	106	1.77	0.07	NULL
+6a0a85a896990c506	oprtundiade 54	Negotiation	2026-05-18 03:21:12	2026-05-18 13:28:24	2026-05-18 13:28:24	607	10.12	0.42	Qualification
+6a0a85a896990c506	oprtundiade 54	Qualification	2026-05-18 13:28:24	2026-05-18 13:33:43	2026-05-18 13:33:43	5	0.08	0.00	Prospecting
+6a0a85a896990c506	oprtundiade 54	Prospecting	2026-05-18 13:33:43	NULL	2026-05-18 15:15:09	101	1.68	0.07	NULL
+6a0a85c5d141a2c10	oprtundade 200	Qualification	2026-05-18 03:21:41	NULL	2026-05-18 15:15:09	713	11.88	0.50	NULL
+6a0a9677e7eaf0988	oprtunidade 754643	Prospecting	2026-05-18 04:32:55	2026-05-18 13:34:39	2026-05-18 13:34:39	541	9.02	0.38	Qualification
+6a0a9677e7eaf0988	oprtunidade 754643	Qualification	2026-05-18 13:34:39	2026-05-18 13:35:31	2026-05-18 13:35:31	0	0.00	0.00	Desenvolvendo Solução
+6a0a9677e7eaf0988	oprtunidade 754643	Desenvolvendo Solução	2026-05-18 13:35:31	NULL	2026-05-18 15:15:09	99	1.65	0.07	NULL
+info
+=== 8. RESUMO MEDIO POR ESTAGIO ===
+estagio	total_passagens	media_horas_no_estagio	media_dias_no_estagio	primeira_entrada	ultima_entrada
+Negotiation	1	10.12	0.42	2026-05-18 03:21:12	2026-05-18 03:21:12
+Prospecting	3	7.72	0.32	2026-05-18 02:48:06	2026-05-18 13:33:43
+Qualification	7	5.24	0.22	2026-05-18 02:50:25	2026-05-18 13:34:39
+Desenvolvendo Solução	3	0.57	0.02	2026-05-18 13:22:35	2026-05-18 13:35:31
+Proposal	1	0.03	0.00	2026-05-18 13:25:56	2026-05-18 13:25:56
+info
+=== 9. BUSCANDO EVENTOS DE FECHAMENTO REAL POR STAGE ===
+info
+=== 10. TAXA DE CONVERSAO PELO STAGE ATUAL ===
+total_oportunidades	oportunidades_ganhas	oportunidades_perdidas	taxa_conversao_total_percentual	win_rate_somente_fechadas_percentual
+6	0	0	0.00	NULL

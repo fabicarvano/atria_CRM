@@ -1,0 +1,166 @@
+info
+=== 1. COLUNAS DA TABELA OPPORTUNITY ===
+Field	Type	Null	Key	Default	Extra
+id	varchar(17)	NO	PRI	NULL	
+name	varchar(255)	YES		NULL	
+deleted	tinyint(1)	YES		0	
+amount	double	YES		NULL	
+stage	varchar(255)	YES	MUL	Prospecting	
+last_stage	varchar(255)	YES	MUL	NULL	
+probability	int(11)	YES		NULL	
+lead_source	varchar(255)	YES		NULL	
+close_date	date	YES		NULL	
+description	mediumtext	YES		NULL	
+created_at	datetime	YES	MUL	NULL	
+modified_at	datetime	YES		NULL	
+amount_currency	varchar(3)	YES		NULL	
+stream_updated_at	datetime	YES		NULL	
+account_id	varchar(17)	YES	MUL	NULL	
+contact_id	varchar(17)	YES	MUL	NULL	
+campaign_id	varchar(17)	YES	MUL	NULL	
+created_by_id	varchar(17)	YES	MUL	NULL	
+modified_by_id	varchar(17)	YES	MUL	NULL	
+assigned_user_id	varchar(17)	YES	MUL	NULL	
+version_number	bigint(20)	YES		NULL	
+tipo_oportunidade	varchar(255)	YES		NULL	
+fabricante	varchar(255)	YES		NULL	
+tipo_servico_gerenciado	varchar(255)	YES		NULL	
+tipo_servico_pontual	varchar(255)	YES		NULL	
+detalhe_oportunidade	varchar(255)	YES		NULL	
+numero_oportunidade	varchar(32)	YES	UNI	NULL	
+temperatura_oportunidade	varchar(255)	YES		NULL	
+dor_principal	mediumtext	YES		NULL	
+impacto_estimado	varchar(255)	YES		NULL	
+orcamento_identificado	varchar(255)	YES		NULL	
+criterio_decisao	mediumtext	YES		NULL	
+processo_decisao	varchar(255)	YES		NULL	
+prazo_decisao	varchar(255)	YES		NULL	
+info
+=== 2. AMOSTRA DE OPORTUNIDADES ===
+id	name	stage	created_at	modified_at	close_date	amount	deleted
+6a0a9677e7eaf0988	oprtunidade 754643	Desenvolvendo Solução	2026-05-18 04:32:55	2026-05-18 13:35:31	2026-05-15	3000000	0
+6a0a85c5d141a2c10	oprtundade 200	Qualification	2026-05-18 03:21:41	2026-05-18 04:22:14	2026-11-21	150000	0
+6a0a85a896990c506	oprtundiade 54	Prospecting	2026-05-18 03:21:12	2026-05-18 13:33:43	2026-11-21	300000	0
+6a0a7e8de03820dcc	oportunidade 3	Qualification	2026-05-18 02:50:53	2026-05-18 13:32:25	2026-09-26	500000	0
+6a0a7e7164f007fcb	oportnidade 1	Qualification	2026-05-18 02:50:25	2026-05-18 04:22:14	2026-08-22	2000000	0
+6a0a7de61305acdf5	nome da oportunidade	Prospecting	2026-05-18 02:48:06	2026-05-18 04:22:14	2026-05-31	1000000	0
+info
+=== 3. VALORES EXISTENTES DE STAGE ===
+stage	total
+Qualification	3
+Prospecting	2
+Desenvolvendo Solução	1
+info
+=== 4. VERIFICANDO CAMPOS DE DATA PARA ABERTURA E FECHAMENTO ===
+total_oportunidades	com_data_criacao	com_data_fechamento	primeira_criada	ultima_criada	primeiro_fechamento	ultimo_fechamento
+6	6	6	2026-05-18 02:48:06	2026-05-18 04:32:55	2026-05-15	2026-11-21
+info
+=== 5. TEMPO ENTRE ABERTURA E FECHAMENTO ===
+id	name	stage	created_at	close_date	dias_entre_abertura_e_fechamento
+6a0a9677e7eaf0988	oprtunidade 754643	Desenvolvendo Solução	2026-05-18 04:32:55	2026-05-15	-3
+6a0a85c5d141a2c10	oprtundade 200	Qualification	2026-05-18 03:21:41	2026-11-21	187
+6a0a85a896990c506	oprtundiade 54	Prospecting	2026-05-18 03:21:12	2026-11-21	187
+6a0a7e8de03820dcc	oportunidade 3	Qualification	2026-05-18 02:50:53	2026-09-26	131
+6a0a7e7164f007fcb	oportnidade 1	Qualification	2026-05-18 02:50:25	2026-08-22	96
+6a0a7de61305acdf5	nome da oportunidade	Prospecting	2026-05-18 02:48:06	2026-05-31	13
+info
+=== 6. MEDIA DE TEMPO ENTRE ABERTURA E FECHAMENTO POR STAGE ===
+stage	total	media_dias_fechamento
+Qualification	3	138.00
+Prospecting	2	100.00
+Desenvolvendo Solução	1	-3.00
+info
+=== 7. CONVERSAO SIMPLES POR STAGE ===
+total_oportunidades	oportunidades_ganhas	taxa_conversao_percentual
+6	0	0.00
+info
+=== 8. TABELAS POSSIVEIS DE HISTORICO / STREAM / AUDITORIA ===
+table_name
+action_history_record
+app_log_record
+auth_log_record
+campaign_log_record
+contact_opportunity
+document_opportunity
+lead_capture_log_record
+note
+note_portal
+note_team
+note_user
+opportunity
+scheduled_job_log_record
+stream_subscription
+info
+=== 9. COLUNAS DA TABELA NOTE ===
+Field	Type	Null	Key	Default	Extra
+id	varchar(17)	NO	PRI	NULL	
+deleted	tinyint(1)	YES		0	
+post	mediumtext	YES	MUL	NULL	
+data	mediumtext	YES		NULL	
+type	varchar(24)	YES	MUL	Post	
+target_type	varchar(7)	YES	MUL	NULL	
+number	bigint(20) unsigned	NO	UNI	NULL	auto_increment
+is_global	tinyint(1)	NO		0	
+is_internal	tinyint(1)	NO		0	
+is_pinned	tinyint(1)	NO		0	
+created_at	datetime	YES	MUL	NULL	
+modified_at	datetime	YES		NULL	
+parent_id	varchar(17)	YES	MUL	NULL	
+parent_type	varchar(100)	YES	MUL	NULL	
+related_id	varchar(17)	YES	MUL	NULL	
+related_type	varchar(100)	YES	MUL	NULL	
+created_by_id	varchar(17)	YES	MUL	NULL	
+modified_by_id	varchar(17)	YES	MUL	NULL	
+super_parent_id	varchar(17)	YES	MUL	NULL	
+super_parent_type	varchar(100)	YES	MUL	NULL	
+info
+=== 10. AMOSTRA DE NOTES DE OPORTUNIDADE ===
+id	type	parent_type	parent_id	related_type	related_id	created_at	created_by_id	data
+6a0b15a32572ece60	Update	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 13:35:31	6a07b9805de933235	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Desenvolvendo Solução"}
+6a0b1591718b6744e	Update	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 13:35:13	6a07b9805de933235	{"fields":["processoDecisao"],"attributes":{"was":{"processoDecisao":null},"became":{"processoDecisao":"ComiteTecnico"}}}
+6a0b158e605aa60ce	Update	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 13:35:10	6a07b9805de933235	{"fields":["criterioDecisao"],"attributes":{"was":{"criterioDecisao":null},"became":{"criterioDecisao":["Relacionamento"]}}}
+6a0b158993cb39d44	Update	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 13:35:05	6a07b9805de933235	{"fields":["prazoDecisao"],"attributes":{"was":{"prazoDecisao":null},"became":{"prazoDecisao":"DentroQuarter"}}}
+6a0b15810cac366a3	Update	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 13:34:57	6a07b9805de933235	{"fields":["orcamentoIdentificado"],"attributes":{"was":{"orcamentoIdentificado":null},"became":{"orcamentoIdentificado":"Sim"}}}
+6a0b157d7bb505c85	Update	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 13:34:53	6a07b9805de933235	{"fields":["impactoEstimado"],"attributes":{"was":{"impactoEstimado":null},"became":{"impactoEstimado":"Alto"}}}
+6a0b15798fd1de768	Update	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 13:34:49	6a07b9805de933235	{"fields":["dorPrincipal"],"attributes":{"was":{"dorPrincipal":null},"became":{"dorPrincipal":"trocar siem"}}}
+6a0b156f362479220	Update	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 13:34:39	6a07b9805de933235	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Qualification"}
+6a0b15371595fb860	Update	Opportunity	6a0a85a896990c506	NULL	NULL	2026-05-18 13:33:43	6a07b9805de933235	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Prospecting"}
+6a0b14e90895f13c9	Update	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 13:32:25	6a07b9805de933235	{"fields":["processoDecisao"],"attributes":{"was":{"processoDecisao":null},"became":{"processoDecisao":"DecisaoDireta"}}}
+6a0b14e4bbca14717	Update	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 13:32:20	6a07b9805de933235	{"fields":["criterioDecisao"],"attributes":{"was":{"criterioDecisao":null},"became":{"criterioDecisao":["PrazoImplantacao"]}}}
+6a0b14e1057a35b63	Update	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 13:32:17	6a07b9805de933235	{"fields":["prazoDecisao"],"attributes":{"was":{"prazoDecisao":null},"became":{"prazoDecisao":"ProximoAnoFiscal"}}}
+6a0b14dabae46b4f2	Update	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 13:32:10	6a07b9805de933235	{"fields":["orcamentoIdentificado"],"attributes":{"was":{"orcamentoIdentificado":null},"became":{"orcamentoIdentificado":"Sim"}}}
+6a0b14d698f1e410d	Update	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 13:32:06	6a07b9805de933235	{"fields":["impactoEstimado"],"attributes":{"was":{"impactoEstimado":null},"became":{"impactoEstimado":"Baixo"}}}
+6a0b14ca1d9ef8f20	Update	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 13:31:54	6a07b9805de933235	{"fields":["dorPrincipal"],"attributes":{"was":{"dorPrincipal":null},"became":{"dorPrincipal":"Redução de custo"}}}
+6a0b13f83c3bb8852	Update	Opportunity	6a0a85a896990c506	NULL	NULL	2026-05-18 13:28:24	6a07b9805de933235	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Qualification"}
+6a0b13f675b0d997c	Update	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 13:28:22	6a07b9805de933235	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Qualification"}
+6a0b13649257574df	Update	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 13:25:56	6a07b9805de933235	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Proposal"}
+6a0b135b3dbc08db0	Update	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 13:25:47	6a07b9805de933235	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Desenvolvendo Solução"}
+6a0b1358bde353c73	Update	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 13:25:44	6a07b9805de933235	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Qualification"}
+6a0b129bb0d0db51f	Update	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 13:22:35	6a07b9805de933235	{"fields":[],"attributes":{"was":{},"became":{}},"value":"Desenvolvendo Solução"}
+6a0a9677edb1a44ae	Post	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 04:32:55	6a07b9805de933235	NULL
+6a0a9677ee991c622	Create	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 04:32:55	6a07b9805de933235	{"statusValue":"Prospecting","statusField":"stage"}
+6a0a93f6b029200c9	Post	Opportunity	6a0a7de61305acdf5	NULL	NULL	2026-05-18 04:22:14	NULL	NULL
+6a0a93f6b35a5f4f7	Post	Opportunity	6a0a7e7164f007fcb	NULL	NULL	2026-05-18 04:22:14	NULL	NULL
+6a0a93f6b78a29b89	Post	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 04:22:14	NULL	NULL
+6a0a93f6ba0a39be7	Post	Opportunity	6a0a85a896990c506	NULL	NULL	2026-05-18 04:22:14	NULL	NULL
+6a0a93f6bc288e3e7	Post	Opportunity	6a0a85c5d141a2c10	NULL	NULL	2026-05-18 04:22:14	NULL	NULL
+6a0a85c5d32948da6	Create	Opportunity	6a0a85c5d141a2c10	NULL	NULL	2026-05-18 03:21:41	6a07b9805de933235	{"statusValue":"Qualification","statusField":"stage"}
+6a0a85a8a42b31521	Create	Opportunity	6a0a85a896990c506	NULL	NULL	2026-05-18 03:21:12	6a07b9805de933235	{"statusValue":"Negotiation","statusField":"stage"}
+info
+=== 11. BUSCANDO POSSIVEIS ALTERACOES DE STAGE EM NOTE.DATA ===
+id	type	parent_type	parent_id	related_type	related_id	created_at	data
+6a0a9677ee991c622	Create	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 04:32:55	{"statusValue":"Prospecting","statusField":"stage"}
+6a0a85c5d32948da6	Create	Opportunity	6a0a85c5d141a2c10	NULL	NULL	2026-05-18 03:21:41	{"statusValue":"Qualification","statusField":"stage"}
+6a0a85a8a42b31521	Create	Opportunity	6a0a85a896990c506	NULL	NULL	2026-05-18 03:21:12	{"statusValue":"Negotiation","statusField":"stage"}
+6a0a7e8de24833bfc	Create	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 02:50:53	{"statusValue":"Qualification","statusField":"stage"}
+6a0a7e71666fa7b0f	Create	Opportunity	6a0a7e7164f007fcb	NULL	NULL	2026-05-18 02:50:25	{"statusValue":"Qualification","statusField":"stage"}
+6a0a7de6174316726	Create	Opportunity	6a0a7de61305acdf5	NULL	NULL	2026-05-18 02:48:06	{"statusValue":"Prospecting","statusField":"stage"}
+info
+=== 12. BUSCANDO POSSIVEIS ALTERACOES DE STAGE EM NOTE POR TEXTO ===
+id	type	parent_type	parent_id	related_type	related_id	created_at	data
+6a0a9677ee991c622	Create	Opportunity	6a0a9677e7eaf0988	NULL	NULL	2026-05-18 04:32:55	{"statusValue":"Prospecting","statusField":"stage"}
+6a0a85c5d32948da6	Create	Opportunity	6a0a85c5d141a2c10	NULL	NULL	2026-05-18 03:21:41	{"statusValue":"Qualification","statusField":"stage"}
+6a0a85a8a42b31521	Create	Opportunity	6a0a85a896990c506	NULL	NULL	2026-05-18 03:21:12	{"statusValue":"Negotiation","statusField":"stage"}
+6a0a7e8de24833bfc	Create	Opportunity	6a0a7e8de03820dcc	NULL	NULL	2026-05-18 02:50:53	{"statusValue":"Qualification","statusField":"stage"}
+6a0a7e71666fa7b0f	Create	Opportunity	6a0a7e7164f007fcb	NULL	NULL	2026-05-18 02:50:25	{"statusValue":"Qualification","statusField":"stage"}
+6a0a7de6174316726	Create	Opportunity	6a0a7de61305acdf5	NULL	NULL	2026-05-18 02:48:06	{"statusValue":"Prospecting","statusField":"stage"}

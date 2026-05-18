@@ -23,6 +23,7 @@ class ValidateQualificationBeforeStageAdvance
             'Proposal',
             'Negotiation',
             'Closed Won',
+            'Closed Lost',
         ];
 
         if (!in_array($stage, $stagesThatRequireQualification, true)) {
