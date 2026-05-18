@@ -89,6 +89,252 @@
                 "Closed Won": "success",
                 "Closed Lost": "info"
             }
+        },
+        "dorPrincipal": {
+            "type": "text",
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                },
+                "required": {
+                    "conditionGroup": [
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Desenvolvendo Solução"
+                        }
+                    ]
+                }
+            },
+            "audited": true
+        },
+        "impactoEstimado": {
+            "type": "enum",
+            "options": [
+                "",
+                "Baixo",
+                "Medio",
+                "Alto",
+                "Critico",
+                "NaoIdentificado"
+            ],
+            "default": "",
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                },
+                "required": {
+                    "conditionGroup": [
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Desenvolvendo Solução"
+                        }
+                    ]
+                }
+            },
+            "audited": true
+        },
+        "orcamentoIdentificado": {
+            "type": "enum",
+            "options": [
+                "",
+                "Sim",
+                "Nao",
+                "Parcial",
+                "NaoInformado"
+            ],
+            "default": "",
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                },
+                "required": {
+                    "conditionGroup": [
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Desenvolvendo Solução"
+                        }
+                    ]
+                }
+            },
+            "audited": true
+        },
+        "criterioDecisao": {
+            "type": "multiEnum",
+            "options": [
+                "Preco",
+                "CapacidadeTecnica",
+                "PrazoImplantacao",
+                "Relacionamento",
+                "Seguranca",
+                "Compliance",
+                "IntegracaoAmbienteAtual",
+                "SuporteLocal",
+                "Fabricante",
+                "Outro"
+            ],
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                },
+                "required": {
+                    "conditionGroup": [
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Desenvolvendo Solução"
+                        }
+                    ]
+                }
+            },
+            "audited": true
+        },
+        "processoDecisao": {
+            "type": "enum",
+            "options": [
+                "",
+                "DecisaoDireta",
+                "ComiteTecnico",
+                "ComiteExecutivo",
+                "ComprasProcurement",
+                "LicitacaoEdital",
+                "NaoIdentificado"
+            ],
+            "default": "",
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                },
+                "required": {
+                    "conditionGroup": [
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Desenvolvendo Solução"
+                        }
+                    ]
+                }
+            },
+            "audited": true
+        },
+        "prazoDecisao": {
+            "type": "enum",
+            "options": [
+                "",
+                "Proximos30Dias",
+                "DentroQuarter",
+                "DentroAno",
+                "ProximoAnoFiscal",
+                "SemPrazoDefinido"
+            ],
+            "default": "",
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                },
+                "required": {
+                    "conditionGroup": [
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Desenvolvendo Solução"
+                        }
+                    ]
+                }
+            },
+            "audited": true
         }
     },
     "indexes": {

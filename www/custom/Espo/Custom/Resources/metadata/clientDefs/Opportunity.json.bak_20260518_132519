@@ -27,6 +27,5 @@
             "assignedUser",
             "teams"
         ]
-    },
-    "dynamicHandler": "custom:opportunity-qualification-dynamic-handler"
+    }
 }
