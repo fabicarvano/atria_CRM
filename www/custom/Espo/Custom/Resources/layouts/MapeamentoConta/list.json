@@ -1,0 +1,23 @@
+[
+    {
+        "name": "account"
+    },
+    {
+        "name": "catalogoOferta"
+    },
+    {
+        "name": "categoria"
+    },
+    {
+        "name": "fornecedorAtual"
+    },
+    {
+        "name": "status"
+    },
+    {
+        "name": "concorrenteIdentificado"
+    },
+    {
+        "name": "opportunity"
+    }
+]

@@ -1,0 +1,43 @@
+[
+    {
+        "label": "Heat Map",
+        "rows": [
+            [
+                {
+                    "name": "account"
+                },
+                {
+                    "name": "catalogoOferta"
+                }
+            ],
+            [
+                {
+                    "name": "categoria"
+                },
+                {
+                    "name": "status"
+                }
+            ],
+            [
+                {
+                    "name": "fornecedorAtual"
+                },
+                {
+                    "name": "concorrenteIdentificado"
+                }
+            ],
+            [
+                {
+                    "name": "opportunity"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "observacao"
+                },
+                false
+            ]
+        ]
+    }
+]

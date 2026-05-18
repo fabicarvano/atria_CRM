@@ -1,0 +1,630 @@
+==================================================
+1. VERSÃO DO ESPOCRM
+==================================================
+9.3.6
+
+==================================================
+2. ESTRUTURA PRINCIPAL DO CUSTOM
+==================================================
+custom
+custom/Espo
+custom/Espo/Custom
+custom/Espo/Custom/Controllers
+custom/Espo/Custom/Hooks
+custom/Espo/Custom/Hooks/Account
+custom/Espo/Custom/Hooks/Opportunity
+custom/Espo/Custom/Hooks/RegistroFabricante
+custom/Espo/Custom/Resources
+custom/Espo/Custom/Resources/i18n
+custom/Espo/Custom/Resources/i18n/pt_BR
+custom/Espo/Custom/Resources/layouts
+custom/Espo/Custom/Resources/layouts/Account
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo
+custom/Espo/Custom/Resources/layouts/Opportunity
+custom/Espo/Custom/Resources/layouts/RegistroFabricante
+custom/Espo/Custom/Resources/metadata
+custom/Espo/Custom/Resources/metadata/aclDefs
+custom/Espo/Custom/Resources/metadata/clientDefs
+custom/Espo/Custom/Resources/metadata/entityDefs
+custom/Espo/Custom/Resources/metadata/logicDefs
+custom/Espo/Custom/Resources/metadata/scopes
+custom/Espo/Modules
+custom/Scripts
+
+==================================================
+3. ARQUIVOS CUSTOM RELACIONADOS A ACCOUNT
+==================================================
+custom/Espo/Custom/Hooks/Account/GerarSiglaConta.php
+custom/Espo/Custom/Resources/i18n/pt_BR/Account.json
+custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/searchFilters.json
+custom/Espo/Custom/Resources/layouts/Account/detail.json
+custom/Espo/Custom/Resources/layouts/Account/detailSmall.json
+custom/Espo/Custom/Resources/layouts/Account/edit.json
+custom/Espo/Custom/Resources/layouts/Account/searchFilters.json
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak.20260517_234353
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bkp-detail-v2
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bak.20260517_234353
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo
+
+==================================================
+4. ENTITYDEFS CUSTOM EXISTENTES
+==================================================
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bak.20260517_234353
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo
+custom/Espo/Custom/Resources/metadata/entityDefs/Case.json
+custom/Espo/Custom/Resources/metadata/entityDefs/Contact.json
+custom/Espo/Custom/Resources/metadata/entityDefs/KnowledgeBaseArticle.json
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json.bak
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json.bak_20260518_132123
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json.bak-temperatura-20260518_124304
+custom/Espo/Custom/Resources/metadata/entityDefs/RegistroFabricante.json
+
+==================================================
+5. CLIENTDEFS CUSTOM EXISTENTES
+==================================================
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak.20260517_234353
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bkp-detail-v2
+custom/Espo/Custom/Resources/metadata/clientDefs/Case.json
+custom/Espo/Custom/Resources/metadata/clientDefs/KnowledgeBaseArticle.json
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519
+custom/Espo/Custom/Resources/metadata/clientDefs/RegistroFabricante.json
+
+==================================================
+6. LAYOUTS CUSTOM EXISTENTES
+==================================================
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/searchFilters.json
+custom/Espo/Custom/Resources/layouts/Account/detail.json
+custom/Espo/Custom/Resources/layouts/Account/detailSmall.json
+custom/Espo/Custom/Resources/layouts/Account/edit.json
+custom/Espo/Custom/Resources/layouts/Account/searchFilters.json
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak_20260518_132123
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak-layout-temperatura-20260518_124436
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak-qualificacao-20260518_125215
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak-temperatura-20260518_124304
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json.bak
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json.bak
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json.bak-layout-temperatura-20260518_124436
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json.bak-qualificacao-20260518_125215
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json.bak-temperatura-20260518_124304
+custom/Espo/Custom/Resources/layouts/RegistroFabricante/detail.json
+custom/Espo/Custom/Resources/layouts/RegistroFabricante/edit.json
+custom/Espo/Custom/Resources/layouts/RegistroFabricante/list.json
+
+==================================================
+7. HOOKS CUSTOM EXISTENTES
+==================================================
+custom/Espo/Custom/Hooks/Account/GerarSiglaConta.php
+custom/Espo/Custom/Hooks/Opportunity/GerarNumeroOportunidade.php
+custom/Espo/Custom/Hooks/Opportunity/GerarNumeroOportunidade.php.bak_20260518_170919
+custom/Espo/Custom/Hooks/Opportunity/ValidateQualificationBeforeStageAdvance.php
+custom/Espo/Custom/Hooks/Opportunity/ValidateQualificationBeforeStageAdvance.php.bak_20260518_133123
+custom/Espo/Custom/Hooks/Opportunity/ValidateQualificationBeforeStageAdvance.php.bak_20260518_152627
+custom/Espo/Custom/Hooks/RegistroFabricante/DataCriacaoImutavel.php
+
+==================================================
+8. CONTEÚDO DO ENTITYDEF CUSTOM DE ACCOUNT, SE EXISTIR
+==================================================
+{
+    "fields": {
+        "statusProspeccao": {
+            "type": "bool",
+            "default": false,
+            "labelText": "Foco"
+        },
+        "porQueFoco": {
+            "type": "text",
+            "labelText": "Por que e Foco"
+        },
+        "tipoEscalao": {
+            "type": "enum",
+            "options": [
+                "",
+                "A",
+                "B",
+                "C"
+            ],
+            "labelText": "Tipo de Conta",
+            "default": ""
+        },
+        "industry": {
+            "type": "enum",
+            "options": [
+                "",
+                "Financeiro",
+                "Telecom",
+                "Energia Eletrica",
+                "Oleo e Gas",
+                "Data Centers",
+                "Governo",
+                "Origem de Energia",
+                "Saneamento",
+                "Industria e Logistica",
+                "Saude",
+                "Varejo e E-commerce",
+                "Logistica e Mobilidade"
+            ]
+        },
+        "logoUrl": {
+            "type": "varchar",
+            "maxLength": 2048,
+            "readOnly": true,
+            "layoutDetailDisabled": true,
+            "layoutEditDisabled": true,
+            "layoutListDisabled": true,
+            "importDisabled": true,
+            "exportDisabled": false,
+            "tooltip": false,
+            "view": "custom:views/fields/logo-image-v2"
+        },
+        "siglaConta": {
+            "type": "varchar",
+            "maxLength": 5,
+            "readOnly": true,
+            "customizationDisabled": true,
+            "dynamicLogicDisabled": true,
+            "audited": true,
+            "index": true
+        }
+    },
+    "indexes": {
+        "siglaContaUnique": {
+            "columns": [
+                "siglaConta"
+            ],
+            "unique": true
+        }
+    }
+}
+
+==================================================
+9. CONTEÚDO DO CLIENTDEF CUSTOM DE ACCOUNT, SE EXISTIR
+==================================================
+{
+    "views": {
+        "detail": "custom:views/account/detail"
+    },
+    "searchFilters": {
+        "statusProspeccao": {}
+    }
+}
+==================================================
+10. LAYOUTS CUSTOM DA CONTA, SE EXISTIREM
+==================================================
+custom/Espo/Custom/Resources/layouts/Account/searchFilters.json
+--- custom/Espo/Custom/Resources/layouts/Account/searchFilters.json ---
+[
+    "name",
+    "statusProspeccao",
+    "tipoEscalao",
+    "industry",
+    "linkedinUrl"
+]
+custom/Espo/Custom/Resources/layouts/Account/edit.json
+--- custom/Espo/Custom/Resources/layouts/Account/edit.json ---
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "siglaConta"
+                },
+                false
+            ]
+        ]
+    }
+]
+custom/Espo/Custom/Resources/layouts/Account/detail.json
+--- custom/Espo/Custom/Resources/layouts/Account/detail.json ---
+[
+    {
+        "label": "Visão Geral",
+        "rows": [
+            [
+                {
+                    "name": "logoUrl",
+                    "view": "custom:views/fields/logo-image"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "website"
+                }
+            ],
+            [
+                {
+                    "name": "siglaConta"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "emailAddress"
+                },
+                {
+                    "name": "phoneNumber"
+                }
+            ],
+            [
+                {
+                    "name": "billingAddress"
+                },
+                {
+                    "name": "shippingAddress"
+                }
+            ]
+        ]
+    },
+    {
+        "label": "Detalhes",
+        "rows": [
+            [
+                {
+                    "name": "type"
+                },
+                {
+                    "name": "industry"
+                }
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                false
+            ]
+        ]
+    },
+    {
+        "label": "Classificação",
+        "rows": [
+            [
+                {
+                    "name": "tipoEscalao"
+                },
+                {
+                    "name": "porQueFoco"
+                }
+            ]
+        ]
+    }
+]
+custom/Espo/Custom/Resources/layouts/Account/detailSmall.json
+--- custom/Espo/Custom/Resources/layouts/Account/detailSmall.json ---
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "siglaConta"
+                },
+                false
+            ]
+        ]
+    }
+]
+
+==================================================
+11. HOOKS CUSTOM DE ACCOUNT, SE EXISTIREM
+==================================================
+custom/Espo/Custom/Hooks/Account/GerarSiglaConta.php
+--- custom/Espo/Custom/Hooks/Account/GerarSiglaConta.php ---
+<?php
+
+namespace Espo\Custom\Hooks\Account;
+
+use Espo\ORM\Entity;
+use Espo\ORM\EntityManager;
+
+class GerarSiglaConta
+{
+    public static int $order = 5;
+
+    public function __construct(
+        private EntityManager $entityManager
+    ) {}
+
+    public function beforeSave(Entity $entity, array $options): void
+    {
+        $current = (string) ($entity->get('siglaConta') ?? '');
+
+        if (!$entity->isNew()) {
+            $old = $this->entityManager->getEntityById('Account', $entity->getId());
+
+            if ($old && $old->get('siglaConta')) {
+                $entity->set('siglaConta', $old->get('siglaConta'));
+                return;
+            }
+        }
+
+        if ($current !== '') {
+            $entity->set('siglaConta', strtoupper(substr($current, 0, 5)));
+            return;
+        }
+
+        $name = (string) ($entity->get('name') ?? '');
+
+        $entity->set('siglaConta', $this->generateUniqueSigla($name, $entity->getId()));
+    }
+
+    private function generateUniqueSigla(string $name, ?string $currentId = null): string
+    {
+        $base = $this->makeBaseSigla($name);
+
+        if ($base === '') {
+            $base = 'CTA';
+        }
+
+        $base = substr($base, 0, 5);
+
+        if ($this->isSiglaAvailable($base, $currentId)) {
+            return $base;
+        }
+
+        for ($i = 1; $i <= 99; $i++) {
+            $suffix = str_pad((string) $i, 2, '0', STR_PAD_LEFT);
+            $candidate = substr($base, 0, 3) . $suffix;
+
+            if ($this->isSiglaAvailable($candidate, $currentId)) {
+                return $candidate;
+            }
+        }
+
+        return substr($base, 0, 2) . strtoupper(substr(md5($name . microtime(true)), 0, 3));
+    }
+
+    private function makeBaseSigla(string $name): string
+    {
+        $name = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $name);
+        $name = strtoupper($name ?: '');
+        $name = preg_replace('/[^A-Z0-9 ]/', ' ', $name);
+        $name = preg_replace('/\s+/', ' ', trim($name));
+
+        $ignore = [
+            'SA', 'S', 'A', 'LTDA', 'LTD', 'ME', 'EPP', 'EIRELI', 'SPE',
+            'BRASIL', 'BRAZIL', 'HOLDING', 'PARTICIPACOES', 'PARTICIPACOES'
+        ];
+
+        $words = array_values(array_filter(explode(' ', $name), function ($word) use ($ignore) {
+            return $word !== '' && !in_array($word, $ignore, true);
+        }));
+
+        if (!$words) {
+            return '';
+        }
+
+        $first = $words[0];
+
+        $manual = [
+            'BRADESCO' => 'BRA',
+            'PETROBRAS' => 'PETRO',
+            'TRANSPETRO' => 'TRANS',
+            'GLOBO' => 'GLB'
+        ];
+
+        if (isset($manual[$first])) {
+            return $manual[$first];
+        }
+
+        if (count($words) >= 2) {
+            $sigla = '';
+            foreach ($words as $word) {
+                $sigla .= substr($word, 0, 1);
+                if (strlen($sigla) >= 5) {
+                    break;
+                }
+            }
+
+            return substr($sigla, 0, 5);
+        }
+
+        if (strlen($first) <= 5) {
+            $consonants = preg_replace('/[AEIOU]/', '', $first);
+            if (strlen($consonants) >= 3) {
+                return substr($consonants, 0, 5);
+            }
+
+            return substr($first, 0, 5);
+        }
+
+        return substr($first, 0, 5);
+    }
+
+    private function isSiglaAvailable(string $sigla, ?string $currentId = null): bool
+    {
+        $existing = $this->entityManager
+            ->getRDBRepository('Account')
+            ->where(['siglaConta' => $sigla])
+            ->findOne();
+
+        if (!$existing) {
+            return true;
+        }
+
+        return $currentId && $existing->getId() === $currentId;
+    }
+}
+
+==================================================
+12. BUSCA POR CUSTOMIZAÇÕES JÁ EXISTENTES DE ABAS/PANELS
+==================================================
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-52-            "importDisabled": true,
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-53-            "exportDisabled": false,
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-54-            "tooltip": false,
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2:55:            "view": "custom:views/fields/logo-image"
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-56-        }
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-57-    }
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-58-}
+--
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-48-            "importDisabled": true,
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-49-            "exportDisabled": false,
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-50-            "tooltip": false,
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json:51:            "view": "custom:views/fields/logo-image-v2"
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-52-        },
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-53-        "siglaConta": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-54-            "type": "varchar",
+--
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-52-            "importDisabled": true,
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-53-            "exportDisabled": false,
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-54-            "tooltip": false,
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo:55:            "view": "custom:views/fields/logo-image-v2"
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-56-        }
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-57-    }
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-58-}
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak.20260517_234353-1-{
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak.20260517_234353:2:    "views": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak.20260517_234353:3:        "detail": "custom:views/account/detail"
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak.20260517_234353-4-    },
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak.20260517_234353-5-    "searchFilters": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak.20260517_234353-6-        "statusProspeccao": {}
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/RegistroFabricante.json-1-{
+custom/Espo/Custom/Resources/metadata/clientDefs/RegistroFabricante.json-2-    "controller": "controllers/record",
+custom/Espo/Custom/Resources/metadata/clientDefs/RegistroFabricante.json:3:    "views": {
+custom/Espo/Custom/Resources/metadata/clientDefs/RegistroFabricante.json:4:        "list": "views/record/list",
+custom/Espo/Custom/Resources/metadata/clientDefs/RegistroFabricante.json:5:        "detail": "views/record/detail",
+custom/Espo/Custom/Resources/metadata/clientDefs/RegistroFabricante.json:6:        "edit": "views/record/edit"
+custom/Espo/Custom/Resources/metadata/clientDefs/RegistroFabricante.json-7-    }
+custom/Espo/Custom/Resources/metadata/clientDefs/RegistroFabricante.json-8-}
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-1-{
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312:2:    "recordViews": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312:3:        "kanban": "custom:views/opportunity/record/kanban"
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-4-    },
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-5-    "defaultSidePanelFieldLists": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312:6:        "detail": [
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-7-            "numeroOportunidade",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-8-            "assignedUser",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-9-            "teams",
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-11-            "complexModified",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-12-            "followers"
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-13-        ],
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312:14:        "detailSmall": [
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-15-            "numeroOportunidade",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-16-            "assignedUser",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312-17-            "teams",
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json-1-{
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json:2:    "views": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json:3:        "detail": "custom:views/account/detail"
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json-4-    },
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json-5-    "searchFilters": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json-6-        "statusProspeccao": {}
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bkp-detail-v2-1-{
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bkp-detail-v2:2:    "views": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bkp-detail-v2:3:        "detail": "custom:views/account/detail"
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bkp-detail-v2-4-    },
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bkp-detail-v2-5-    "searchFilters": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bkp-detail-v2-6-        "statusProspeccao": {}
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-1-{
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519:2:    "recordViews": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519:3:        "kanban": "custom:views/opportunity/record/kanban"
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-4-    },
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-5-    "defaultSidePanelFieldLists": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519:6:        "detail": [
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-7-            "numeroOportunidade",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-8-            "assignedUser",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-9-            "teams",
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-11-            "complexModified",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-12-            "followers"
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-13-        ],
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519:14:        "detailSmall": [
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-15-            "numeroOportunidade",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-16-            "assignedUser",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519-17-            "teams",
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-1-{
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:2:    "recordViews": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:3:        "kanban": "custom:views/opportunity/record/kanban"
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-4-    },
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-5-    "defaultSidePanelFieldLists": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:6:        "detail": [
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-7-            "numeroOportunidade",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-8-            "assignedUser",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-9-            "teams",
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-11-            "complexModified",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-12-            "followers"
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-13-        ],
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:14:        "detailSmall": [
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-15-            "numeroOportunidade",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-16-            "assignedUser",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-17-            "teams",
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-30-    },
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-31-    "dynamicHandler": "custom:opportunity-qualification-dynamic-handler",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-32-    "sidePanels": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:33:        "detail": [
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-34-            {
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-35-                "name": "registroFabricante",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-36-                "label": "Registro de Oportunidade no Fabricante",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:37:                "view": "custom:views/opportunity/record/panels/registro-fabricante-v8"
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-38-            }
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-39-        ],
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:40:        "detailSmall": [
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-41-            {
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-42-                "name": "registroFabricante",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-43-                "label": "Registro de Oportunidade no Fabricante",
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:44:                "view": "custom:views/opportunity/record/panels/registro-fabricante-v8"
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-45-            }
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-46-        ]
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-47-    }
+--
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-2-    {
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-3-        "label": "Visão Geral",
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-4-        "rows": [
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json:5:            [{"name": "logoUrl", "view": "custom:views/fields/logo-image"}, false],
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-6-            [{"name": "name"}, {"name": "website"}],
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-7-            [{"name": "emailAddress"}, {"name": "phoneNumber"}],
+custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-8-            [{"name": "billingAddress"}, {"name": "shippingAddress"}]
+--
+custom/Espo/Custom/Resources/layouts/Account/detail.json-5-            [
+custom/Espo/Custom/Resources/layouts/Account/detail.json-6-                {
+custom/Espo/Custom/Resources/layouts/Account/detail.json-7-                    "name": "logoUrl",
+custom/Espo/Custom/Resources/layouts/Account/detail.json:8:                    "view": "custom:views/fields/logo-image"
+custom/Espo/Custom/Resources/layouts/Account/detail.json-9-                },
+custom/Espo/Custom/Resources/layouts/Account/detail.json-10-                false
+custom/Espo/Custom/Resources/layouts/Account/detail.json-11-            ],
+
+==================================================
+DIAGNÓSTICO FINALIZADO
+==================================================

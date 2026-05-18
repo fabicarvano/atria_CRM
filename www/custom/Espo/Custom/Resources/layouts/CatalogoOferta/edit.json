@@ -1,0 +1,23 @@
+[
+    {
+        "label": "Visão Geral",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "categoria"
+                }
+            ],
+            [
+                {
+                    "name": "ativo"
+                },
+                {
+                    "name": "ordem"
+                }
+            ]
+        ]
+    }
+]

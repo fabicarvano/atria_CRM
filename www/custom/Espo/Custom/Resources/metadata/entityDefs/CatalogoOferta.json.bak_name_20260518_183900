@@ -1,0 +1,32 @@
+{
+    "fields": {
+        "categoria": {
+            "type": "enum",
+            "required": true,
+            "options": [
+                "revenda",
+                "servicoGerenciado"
+            ],
+            "audited": true
+        },
+        "ativo": {
+            "type": "bool",
+            "default": true,
+            "audited": true
+        },
+        "ordem": {
+            "type": "int"
+        }
+    },
+    "links": {
+        "mapeamentosConta": {
+            "type": "hasMany",
+            "entity": "MapeamentoConta",
+            "foreign": "catalogoOferta"
+        }
+    },
+    "collection": {
+        "orderBy": "ordem",
+        "order": "asc"
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "scopeNames": {
+        "MapeamentoConta": "Mapeamento da Conta",
+        "MapeamentoContaPlural": "Mapeamentos da Conta"
+    },
+    "fields": {
+        "name": "Nome",
+        "account": "Conta",
+        "catalogoOferta": "Oferta",
+        "categoria": "Categoria",
+        "fornecedorAtual": "Fornecedor Atual",
+        "status": "Status",
+        "concorrenteIdentificado": "Concorrente Identificado",
+        "observacao": "Observação",
+        "opportunity": "Oportunidade Relacionada"
+    },
+    "links": {
+        "account": "Conta",
+        "catalogoOferta": "Oferta",
+        "opportunity": "Oportunidade Relacionada"
+    },
+    "labels": {
+        "Create MapeamentoConta": "Criar Mapeamento da Conta"
+    },
+    "options": {
+        "categoria": {
+            "revenda": "Revenda",
+            "servicoGerenciado": "Serviço Gerenciado"
+        },
+        "status": {
+            "": "",
+            "baseAtual": "Base Atual",
+            "concorrente": "Concorrente",
+            "oportunidadeEmAndamento": "Oportunidade em andamento",
+            "semAderencia": "Sem aderência",
+            "naoSeAplica": "Não se aplica"
+        }
+    }
+}

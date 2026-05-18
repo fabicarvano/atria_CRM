@@ -1,0 +1,25 @@
+{
+    "scopeNames": {
+        "CatalogoOferta": "Catálogo de Oferta",
+        "CatalogoOfertaPlural": "Catálogo de Ofertas"
+    },
+    "fields": {
+        "name": "Oferta",
+        "categoria": "Categoria",
+        "ativo": "Ativo",
+        "ordem": "Ordem",
+        "mapeamentosConta": "Mapeamentos da Conta"
+    },
+    "links": {
+        "mapeamentosConta": "Mapeamentos da Conta"
+    },
+    "labels": {
+        "Create CatalogoOferta": "Criar Oferta"
+    },
+    "options": {
+        "categoria": {
+            "revenda": "Revenda",
+            "servicoGerenciado": "Serviço Gerenciado"
+        }
+    }
+}

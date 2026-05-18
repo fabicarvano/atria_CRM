@@ -5,7 +5,7 @@
     "searchFilters": {
         "statusProspeccao": {}
     },
-    "bottomPanels": {
+    "sidePanels": {
         "detail": [
             {
                 "name": "heatMapConta",
