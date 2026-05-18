@@ -28,5 +28,21 @@
             "teams"
         ]
     },
-    "dynamicHandler": "custom:opportunity-qualification-dynamic-handler"
+    "dynamicHandler": "custom:opportunity-qualification-dynamic-handler",
+    "sidePanels": {
+        "detail": [
+            {
+                "name": "registroFabricante",
+                "label": "Registro de Oportunidade no Fabricante",
+                "view": "custom:views/opportunity/record/panels/registro-fabricante-v8"
+            }
+        ],
+        "detailSmall": [
+            {
+                "name": "registroFabricante",
+                "label": "Registro de Oportunidade no Fabricante",
+                "view": "custom:views/opportunity/record/panels/registro-fabricante-v8"
+            }
+        ]
+    }
 }

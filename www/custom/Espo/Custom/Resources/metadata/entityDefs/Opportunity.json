@@ -344,5 +344,12 @@
             ],
             "unique": true
         }
+    },
+    "links": {
+        "registrosFabricante": {
+            "type": "hasMany",
+            "entity": "RegistroFabricante",
+            "foreign": "opportunity"
+        }
     }
 }

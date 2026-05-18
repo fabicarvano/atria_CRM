@@ -1,0 +1,23 @@
+[
+    {
+        "label": "Registro de Oportunidade no Fabricante",
+        "rows": [
+            [
+                {
+                    "name": "numeroRo"
+                },
+                {
+                    "name": "dataCriacao"
+                }
+            ],
+            [
+                {
+                    "name": "dataVencimento"
+                },
+                {
+                    "name": "opportunity"
+                }
+            ]
+        ]
+    }
+]

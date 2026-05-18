@@ -1,0 +1,9 @@
+{
+    "entity": true,
+    "object": true,
+    "tab": false,
+    "layouts": true,
+    "customizable": true,
+    "acl": true,
+    "module": "Custom"
+}

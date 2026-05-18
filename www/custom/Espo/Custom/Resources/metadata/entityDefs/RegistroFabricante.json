@@ -1,0 +1,39 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 100
+        },
+        "numeroRo": {
+            "type": "varchar",
+            "maxLength": 100,
+            "audited": true
+        },
+        "dataCriacao": {
+            "type": "date",
+            "readOnly": true,
+            "audited": true
+        },
+        "dataVencimento": {
+            "type": "date",
+            "audited": true
+        },
+        "opportunity": {
+            "type": "link",
+            "entity": "Opportunity",
+            "required": true,
+            "audited": true
+        }
+    },
+    "links": {
+        "opportunity": {
+            "type": "belongsTo",
+            "entity": "Opportunity",
+            "foreign": "registrosFabricante"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    }
+}

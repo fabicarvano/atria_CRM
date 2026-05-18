@@ -1,0 +1,14 @@
+{
+    "labels": {
+        "Create RegistroFabricante": "Criar Registro de Oportunidade no Fabricante",
+        "RegistroFabricante": "Registro de Oportunidade no Fabricante",
+        "RegistroFabricantes": "Registros de Oportunidade no Fabricante"
+    },
+    "fields": {
+        "name": "Nome",
+        "numeroRo": "Número do RO",
+        "dataCriacao": "Data de Criação",
+        "dataVencimento": "Data de Vencimento",
+        "opportunity": "Oportunidade"
+    }
+}
