@@ -52,7 +52,7 @@
             "importDisabled": true,
             "exportDisabled": false,
             "tooltip": false,
-            "view": "custom:views/fields/logo-image-v2"
+            "view": "custom:views/fields/logo-image"
         }
     }
 }

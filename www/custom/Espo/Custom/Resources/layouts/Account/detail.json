@@ -1,23 +1,25 @@
 [
     {
-        "label": "Overview",
+        "label": "Visão Geral",
         "rows": [
+            [{"name": "logoUrl", "view": "custom:views/fields/logo-image"}, false],
             [{"name": "name"}, {"name": "website"}],
             [{"name": "emailAddress"}, {"name": "phoneNumber"}],
             [{"name": "billingAddress"}, {"name": "shippingAddress"}]
         ]
     },
     {
-        "label": "Details",
+        "label": "Detalhes",
         "rows": [
             [{"name": "type"}, {"name": "industry"}],
-            [{"name": "description", "fullWidth": true}]
+            [{"name": "description"}, false]
         ]
     },
     {
-        "label": "Classificacao",
+        "label": "Classificação",
         "rows": [
-            [{"name": "tipoEscalao"}, {"name": "porQueFoco", "fullWidth": false}]
+            [{"name": "tipoEscalao"}, {"name": "porQueFoco"}],
+            [{"name": "porQueAlvo"}, false]
         ]
     }
 ]

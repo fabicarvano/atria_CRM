@@ -1,0 +1,7 @@
+{
+  "Account": {
+    "views": {
+      "detail": "custom:modules/linkedin-prospect/views/account/detail"
+    }
+  }
+}

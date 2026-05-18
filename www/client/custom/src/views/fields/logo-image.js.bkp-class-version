@@ -1,0 +1,58 @@
+define(['views/fields/base'], function (Dep) {
+
+    return class extends Dep {
+
+        setup() {
+            super.setup();
+
+            console.log('[LOGO-IMAGE] setup chamado');
+            console.log('[LOGO-IMAGE] atributos do model:', this.model.attributes);
+            console.log('[LOGO-IMAGE] logoUrl no setup:', this.model.get('logoUrl'));
+        }
+
+        afterRender() {
+            super.afterRender();
+
+            const logoUrl = this.model.get('logoUrl') || null;
+            const name = this.model.get('name') || '';
+
+            const initials = name
+                .trim()
+                .split(/\s+/)
+                .slice(0, 2)
+                .map(word => word[0])
+                .join('')
+                .toUpperCase() || '?';
+
+            console.log('[LOGO-IMAGE] afterRender chamado');
+            console.log('[LOGO-IMAGE] logoUrl no afterRender:', logoUrl);
+            console.log('[LOGO-IMAGE] name:', name);
+
+            let html = '';
+
+            if (logoUrl) {
+                html = `
+                    <div class="logo-image-field" style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                        <img 
+                            src="${logoUrl}" 
+                            alt="${name}"
+                            style="width:72px;height:72px;border-radius:10px;object-fit:contain;border:1px solid #ddd;background:#fff;padding:6px;"
+                        >
+                    </div>
+                `;
+            } else {
+                html = `
+                    <div class="logo-image-field" style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                        <div style="width:72px;height:72px;border-radius:10px;background:#f3f4f6;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:22px;color:#555;">
+                            ${initials}
+                        </div>
+                    </div>
+                `;
+            }
+
+            this.$el.html(html);
+
+            console.log('[LOGO-IMAGE] HTML final:', this.$el.html());
+        }
+    };
+});

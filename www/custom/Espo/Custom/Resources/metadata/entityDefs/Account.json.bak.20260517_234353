@@ -11,12 +11,7 @@
         },
         "tipoEscalao": {
             "type": "enum",
-            "options": [
-                "",
-                "A",
-                "B",
-                "C"
-            ],
+            "options": ["", "A", "B", "C"],
             "labelText": "Tipo de Conta",
             "default": ""
         },
@@ -41,18 +36,6 @@
                 "Varejo e E-commerce",
                 "Logistica e Mobilidade"
             ]
-        },
-        "logoUrl": {
-            "type": "varchar",
-            "maxLength": 2048,
-            "readOnly": true,
-            "layoutDetailDisabled": true,
-            "layoutEditDisabled": true,
-            "layoutListDisabled": true,
-            "importDisabled": true,
-            "exportDisabled": false,
-            "tooltip": false,
-            "view": "custom:views/fields/logo-image-v2"
         }
     }
 }

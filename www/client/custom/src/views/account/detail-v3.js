@@ -4,18 +4,7 @@ define(['views/detail'], (Dep) => {
         setup() {
             super.setup();
 
-            
-            // Oculta somente o label visual "logoUrl".
-            // O campo continua existindo no banco como account.logo_url
-            // e na API do EspoCRM como logoUrl.
-            if (!document.getElementById('hide-logo-url-label-style')) {
-                const styleEl = document.createElement('style');
-                styleEl.id = 'hide-logo-url-label-style';
-                styleEl.textContent = 'label[data-name="logoUrl"], .cell[data-name="logoUrl"] > label.control-label { display: none !important; }';
-                document.head.appendChild(styleEl);
-            }
-
-const isFoco = !!this.model.get('statusProspeccao');
+            const isFoco = !!this.model.get('statusProspeccao');
 
             this.addMenuItem('buttons', {
                 name: 'marcarFoco',
@@ -40,14 +29,11 @@ const isFoco = !!this.model.get('statusProspeccao');
 
             this.listenTo(this, 'after:render', () => {
                 this._applyFieldCss();
+                this._waitAndInjectLogo();
             });
         }
 
         _waitAndInjectLogo() {
-            // Oculta apenas o rótulo visual "logoUrl".
-            // O campo técnico continua existindo como account.logo_url no banco
-            // e logoUrl na API do EspoCRM.
-            this.$el.find('label[data-name="logoUrl"]').hide();
             // Se já existe o target, injeta direto
             const target = document.querySelector('.record-grid .left .middle .panel');
             if (target) {

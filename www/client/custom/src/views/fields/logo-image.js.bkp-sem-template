@@ -1,0 +1,11 @@
+define(['views/fields/base'], (Dep) => {
+    return class extends Dep {
+
+        data() {
+            const logoUrl = this.model.get('logoUrl') || null;
+            const name    = this.model.get('name') || '';
+            const initials = name.trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase() || '?';
+            return { logoUrl, initials };
+        }
+    };
+});
