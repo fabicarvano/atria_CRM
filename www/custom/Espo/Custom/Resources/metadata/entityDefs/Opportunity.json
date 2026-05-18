@@ -1,73 +1,102 @@
 {
-  "fields": {
-    "tipoOportunidade": {
-      "type": "enum",
-      "options": [
-        "",
-        "Revenda",
-        "ServicoGerenciado",
-        "ServicoPontual",
-        "ProjetoEspecial"
-      ],
-      "default": ""
+    "fields": {
+        "tipoOportunidade": {
+            "type": "enum",
+            "options": [
+                "",
+                "Revenda",
+                "ServicoGerenciado",
+                "ServicoPontual",
+                "ProjetoEspecial"
+            ],
+            "default": ""
+        },
+        "detalheOportunidade": {
+            "type": "enum",
+            "options": [
+                "",
+                "Cisco",
+                "Fortinet",
+                "SentinelOne",
+                "Cribl",
+                "StellarCyber",
+                "Rapid7",
+                "HPE",
+                "Aruba",
+                "NOC",
+                "SOC",
+                "ServiceIR",
+                "GestaoDeAmbiente",
+                "MSSP",
+                "Monitoramento",
+                "Consultoria",
+                "ServicoDeCabeamento",
+                "ServicoDeImplementacao",
+                "Assessment",
+                "ProjetoDeMigracao",
+                "Treinamento",
+                "Outro"
+            ],
+            "default": ""
+        },
+        "numeroOportunidade": {
+            "type": "varchar",
+            "maxLength": 32,
+            "readOnly": true,
+            "customizationDisabled": true,
+            "dynamicLogicDisabled": true,
+            "audited": true,
+            "index": true
+        },
+        "temperaturaOportunidade": {
+            "type": "enum",
+            "options": [
+                "",
+                "CommitVerbal",
+                "Quente",
+                "Morna",
+                "Fria",
+                "Congelada"
+            ],
+            "default": "",
+            "audited": true
+        },
+        "stage": {
+            "options": [
+                "Prospecting",
+                "Qualification",
+                "Desenvolvendo Solução",
+                "Proposal",
+                "Negotiation",
+                "Closed Won",
+                "Closed Lost"
+            ],
+            "probabilityMap": {
+                "Prospecting": 10,
+                "Qualification": 20,
+                "Desenvolvendo Solução": 40,
+                "Proposal": 50,
+                "Negotiation": 80,
+                "Closed Won": 100,
+                "Closed Lost": 0
+            },
+            "style": {
+                "Prospecting": null,
+                "Qualification": null,
+                "Desenvolvendo Solução": "primary",
+                "Proposal": "primary",
+                "Negotiation": "warning",
+                "Closed Won": "success",
+                "Closed Lost": "info"
+            }
+        }
     },
-    "detalheOportunidade": {
-      "type": "enum",
-      "options": [
-        "",
-        "Cisco",
-        "Fortinet",
-        "SentinelOne",
-        "Cribl",
-        "StellarCyber",
-        "Rapid7",
-        "HPE",
-        "Aruba",
-        "NOC",
-        "SOC",
-        "ServiceIR",
-        "GestaoDeAmbiente",
-        "MSSP",
-        "Monitoramento",
-        "Consultoria",
-        "ServicoDeCabeamento",
-        "ServicoDeImplementacao",
-        "Assessment",
-        "ProjetoDeMigracao",
-        "Treinamento",
-        "Outro"
-      ],
-      "default": ""
-    },
-    "numeroOportunidade": {
-      "type": "varchar",
-      "maxLength": 32,
-      "readOnly": true,
-      "customizationDisabled": true,
-      "dynamicLogicDisabled": true,
-      "audited": true,
-      "index": true
-    },
-    "temperaturaOportunidade": {
-      "type": "enum",
-      "options": [
-        "",
-        "CommitVerbal",
-        "Quente",
-        "Morna",
-        "Fria",
-        "Congelada"
-      ],
-      "default": "",
-      "audited": true
+    "indexes": {
+        "numeroOportunidadeUnique": {
+            "columns": [
+                "numeroOportunidade"
+            ],
+            "unique": true
+        }
     }
-  },
-  "indexes": {
-    "numeroOportunidadeUnique": {
-      "columns": [
-        "numeroOportunidade"
-      ],
-      "unique": true
-    }
-  }
 }
