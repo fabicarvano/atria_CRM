@@ -96,19 +96,19 @@ class GerarNumeroOportunidade
         $accountId = (string) ($entity->get('accountId') ?? '');
 
         if ($accountId === '') {
-            throw new \Espo\Core\Exceptions\BadRequest('Conta é obrigatória para criar a oportunidade e gerar o número automático. Selecione uma Conta antes de salvar.');
+            throw new \RuntimeException('Não foi possível gerar o número da oportunidade: a conta é obrigatória.');
         }
 
         $account = $this->entityManager->getEntityById('Account', $accountId);
 
         if (!$account) {
-            throw new \Espo\Core\Exceptions\BadRequest('A Conta vinculada à oportunidade não foi encontrada. Selecione uma Conta válida antes de salvar.');
+            throw new \RuntimeException('Não foi possível gerar o número da oportunidade: conta não encontrada.');
         }
 
         $sigla = (string) ($account->get('siglaConta') ?? '');
 
         if ($sigla === '') {
-            throw new \Espo\Core\Exceptions\BadRequest('A Conta selecionada não possui Sigla da Conta cadastrada. Preencha a sigla da conta antes de criar a oportunidade.');
+            throw new \RuntimeException('Não foi possível gerar o número da oportunidade: a conta não possui sigla.');
         }
 
         $year = date('Y');
