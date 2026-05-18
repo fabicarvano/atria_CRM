@@ -72,6 +72,7 @@ class SalesPipeline
         [$from, $to] = $range->getRange();
 
         $lostStageList = $this->util->getLostStageList();
+        $excludedStageList = array_merge($lostStageList, [Opportunity::STAGE_CLOSED_WON]);
 
         $options = $this->metadata->get('entityDefs.Opportunity.fields.stage.options', []);
 
@@ -88,7 +89,7 @@ class SalesPipeline
         }
 
         $whereClause = [
-            [$stageField . '!=' => $lostStageList],
+            [$stageField . '!=' => $excludedStageList],
             [$stageField . '!=' => null],
         ];
 
@@ -156,11 +157,11 @@ class SalesPipeline
         $stageList = $this->metadata->get('entityDefs.Opportunity.fields.stage.options', []);
 
         foreach ($stageList as $stage) {
-            if (in_array($stage, $lostStageList)) {
+            if (in_array($stage, $excludedStageList)) {
                 continue;
             }
 
-            if (!in_array($stage, $lostStageList) && !isset($data[$stage])) {
+            if (!in_array($stage, $excludedStageList) && !isset($data[$stage])) {
                 $data[$stage] = 0.0;
             }
 
