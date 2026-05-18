@@ -49,6 +49,23 @@
             "exportDisabled": false,
             "tooltip": false,
             "view": "custom:views/fields/logo-image-v2"
+        },
+        "siglaConta": {
+            "type": "varchar",
+            "maxLength": 5,
+            "readOnly": true,
+            "customizationDisabled": true,
+            "dynamicLogicDisabled": true,
+            "audited": true,
+            "index": true
+        }
+    },
+    "indexes": {
+        "siglaContaUnique": {
+            "columns": [
+                "siglaConta"
+            ],
+            "unique": true
         }
     }
 }

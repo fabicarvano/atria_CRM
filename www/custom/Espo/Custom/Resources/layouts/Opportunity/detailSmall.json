@@ -1,70 +1,34 @@
 [
     {
-        "label": "Overview",
+        "label": "",
         "rows": [
             [
                 {
-                    "name": "name"
+                    "name": "numeroOportunidade"
                 },
-                {
-                    "name": "account"
-                }
-            ],
-            [
-                {
-                    "name": "stage"
-                },
-                {
-                    "name": "amount"
-                }
-            ],
-            [
-                {
-                    "name": "probability"
-                },
-                {
-                    "name": "closeDate"
-                }
-            ],
-            [
-                false,
-                false
-            ],
-            [
-                false,
-                false
-            ],
-            [
-                false,
-                false
-            ],
-            [
-                false,
-                false
-            ],
-            [
-                false,
                 false
             ],
             [
                 {
-                    "name": "tipoOportunidade"
+                    "name": "assignedUser"
                 },
-                {
-                    "name": "detalheOportunidade"
-                }
+                false
             ],
             [
                 {
-                    "name": "contacts"
+                    "name": "teams"
                 },
-                {
-                    "name": "leadSource"
-                }
+                false
             ],
             [
                 {
-                    "name": "description"
+                    "name": "complexCreated"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "complexModified"
                 },
                 false
             ]

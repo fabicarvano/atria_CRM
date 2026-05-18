@@ -4,7 +4,8 @@
         "porQueFoco": "Por que e Foco",
         "statusProspeccao": "Foco",
         "industry": "Setor",
-        "website": "LinkedIn da empresa"
+        "website": "LinkedIn da empresa",
+        "siglaConta": "Sigla da Conta"
     },
     "options": {
         "industry": {

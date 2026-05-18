@@ -1,7 +1,8 @@
 {
     "fields": {
         "tipoOportunidade": "Tipo de Oportunidade",
-        "detalheOportunidade": "Detalhe da Oportunidade"
+        "detalheOportunidade": "Detalhe da Oportunidade",
+        "numeroOportunidade": "Número da Oportunidade"
     },
     "options": {
         "tipoOportunidade": {

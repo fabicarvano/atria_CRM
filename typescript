@@ -7743,4 +7743,1974 @@ Schema atualizado em:
 ======================================
 Verificando alterações no projeto
 ======================================
-Refresh index:  47% (8466/17938)Refresh index:  48% (8611/17938)Refresh index:  49% (8790/17938)Refresh index:  50% (8969/17
+Refresh index:  47% (8466/17938)Refresh index:  48% (8611/17938)Refresh index:  49% (8790/17938)Refresh index:  50% (8969/17938)Refresh index:  51% (9149/17938)Refresh index:  52% (9328/17938)Refresh index:  53% (9508/17938)Refresh index:  54% (9687/17938)Refresh index:  55% (9866/17938)Refresh index:  56% (10046/17938)Refresh index:  57% (10225/17938)Refresh index:  58% (10405/17938)Refresh index:  59% (10584/17938)Refresh index:  60% (10763/17938)Refresh index:  61% (10943/17938)Refresh index:  62% (11122/17938)Refresh index:  63% (11301/17938)Refresh index:  64% (11481/17938)Refresh index:  65% (11660/17938)Refresh index:  66% (11840/17938)Refresh index:  67% (12019/17938)Refresh index:  68% (12198/17938)Refresh index:  69% (12378/17938)Refresh index:  70% (12557/17938)Refresh index:  71% (12736/17938)Refresh index:  72% (12916/17938)Refresh index:  73% (13095/17938)Refresh index:  74% (13275/17938)Refresh index:  75% (13454/17938)Refresh index:  76% (13633/17938)Refresh index:  77% (13813/17938)Refresh index:  78% (13992/17938)Refresh index:  79% (14172/17938)Refresh index:  80% (14351/17938)Refresh index:  81% (14530/17938)Refresh index:  82% (14710/17938)Refresh index:  83% (14889/17938)Refresh index:  84% (15068/17938)Refresh index:  85% (15248/17938)Refresh index:  86% (15427/17938)Refresh index:  87% (15607/17938)Refresh index:  88% (15786/17938)Refresh index:  89% (15965/17938)Refresh index:  90% (16145/17938)Refresh index:  91% (16324/17938)Refresh index:  91% (16384/17938)Refresh index:  92% (16503/17938)Refresh index:  93% (16683/17938)Refresh index:  94% (16862/17938)Refresh index:  95% (17042/17938)Refresh index:  96% (17221/17938)Refresh index:  97% (17400/17938)Refresh index:  98% (17580/17938)Refresh index:  99% (17759/17938)Refresh index: 100% (17938/17938)Refresh index: 100% (17938/17938), done.
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   schema_banco/atria_crm_schema.sql[m
+	[31mmodified:   typescript[m
+	[31mmodified:   www/bin/command[m
+	[31mmodified:   www/data/config.php[m
+	[31mmodified:   www/data/state.php[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mDEPLOY_kanban_total.md[m
+	[31mOpportunity.json[m
+	[31mkanban.js[m
+	[31mlist.js[m
+	[31mwww/client/custom/modules/crm/[m
+	[31mwww/client/custom/src/views/opportunity/[m
+	[31mwww/custom/Espo/Custom/Resources/i18n/pt_BR/Global.json[m
+	[31mwww/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json[m
+	[31mwww/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json.bak[m
+	[31mwww/custom/Espo/Custom/Resources/layouts/Opportunity/[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/clientDefs/Case.json[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/clientDefs/KnowledgeBaseArticle.json[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/entityDefs/Case.json[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/entityDefs/KnowledgeBaseArticle.json[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json.bak[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/logicDefs/[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/scopes/[m
+	[31mwww/div[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+======================================
+Adicionando todos os arquivos alterados
+======================================
+
+======================================
+Criando commit
+======================================
+[main 4bb88df5] Atualiza projeto e schema do banco - 2026-05-18 04:07:48
+ 32 files changed, 3155 insertions(+), 7 deletions(-)
+ create mode 100644 DEPLOY_kanban_total.md
+ create mode 100644 Opportunity.json
+ create mode 100644 kanban.js
+ create mode 100644 list.js
+ mode change 100755 => 100644 www/bin/command
+ create mode 100644 www/client/custom/modules/crm/src/views/opportunity/list.js
+ create mode 100644 www/client/custom/src/views/opportunity/record/kanban.js
+ create mode 100644 www/client/custom/src/views/opportunity/record/kanban.js.bkp_20260518_031021
+ create mode 100644 www/custom/Espo/Custom/Resources/i18n/pt_BR/Global.json
+ create mode 100644 www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json
+ create mode 100644 www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json.bak
+ create mode 100644 www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json
+ create mode 100644 www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak
+ create mode 100644 www/custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json
+ create mode 100644 www/custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json.bak
+ create mode 100644 www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json
+ create mode 100644 www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json.bak
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/clientDefs/Case.json
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/clientDefs/KnowledgeBaseArticle.json
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/entityDefs/Case.json
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/entityDefs/KnowledgeBaseArticle.json
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json.bak
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/scopes/Case.json
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/scopes/KnowledgeBaseArticle.json
+ create mode 100644 www/div
+
+======================================
+Enviando para o GitHub
+======================================
+Enumerating objects: 79, done.
+Counting objects:   1% (1/79)Counting objects:   2% (2/79)Counting objects:   3% (3/79)Counting objects:   5% (4/79)Counting objects:   6% (5/79)Counting objects:   7% (6/79)Counting objects:   8% (7/79)Counting objects:  10% (8/79)Counting objects:  11% (9/79)Counting objects:  12% (10/79)Counting objects:  13% (11/79)Counting objects:  15% (12/79)Counting objects:  16% (13/79)Counting objects:  17% (14/79)Counting objects:  18% (15/79)Counting objects:  20% (16/79)Counting objects:  21% (17/79)Counting objects:  22% (18/79)Counting objects:  24% (19/79)Counting objects:  25% (20/79)Counting objects:  26% (21/79)Counting objects:  27% (22/79)Counting objects:  29% (23/79)Counting objects:  30% (24/79)Counting objects:  31% (25/79)Counting objects:  32% (26/79)Counting objects:  34% (27/79)Counting objects:  35% (28/79)Counting objects:  36% (29/79)Counting objects:  37% (30/79)Counting objects:  39% (31/79)Counting objects:  40% (32/79)Counting objects:  41% (33/79)Counting objects:  43% (34/79)Counting objects:  44% (35/79)Counting objects:  45% (36/79)Counting objects:  46% (37/79)Counting objects:  48% (38/79)Counting objects:  49% (39/79)Counting objects:  50% (40/79)Counting objects:  51% (41/79)Counting objects:  53% (42/79)Counting objects:  54% (43/79)Counting objects:  55% (44/79)Counting objects:  56% (45/79)Counting objects:  58% (46/79)Counting objects:  59% (47/79)Counting objects:  60% (48/79)Counting objects:  62% (49/79)Counting objects:  63% (50/79)Counting objects:  64% (51/79)Counting objects:  65% (52/79)Counting objects:  67% (53/79)Counting objects:  68% (54/79)Counting objects:  69% (55/79)Counting objects:  70% (56/79)Counting objects:  72% (57/79)Counting objects:  73% (58/79)Counting objects:  74% (59/79)Counting objects:  75% (60/79)Counting objects:  77% (61/79)Counting objects:  78% (62/79)Counting objects:  79% (63/79)Counting objects:  81% (64/79)Counting objects:  82% (65/79)Counting objects:  83% (66/79)Counting objects:  84% (67/79)Counting objects:  86% (68/79)Counting objects:  87% (69/79)Counting objects:  88% (70/79)Counting objects:  89% (71/79)Counting objects:  91% (72/79)Counting objects:  92% (73/79)Counting objects:  93% (74/79)Counting objects:  94% (75/79)Counting objects:  96% (76/79)Counting objects:  97% (77/79)Counting objects:  98% (78/79)Counting objects: 100% (79/79)Counting objects: 100% (79/79), done.
+Delta compression using up to 4 threads
+Compressing objects:   2% (1/43)Compressing objects:   4% (2/43)Compressing objects:   6% (3/43)Compressing objects:   9% (4/43)Compressing objects:  11% (5/43)Compressing objects:  13% (6/43)Compressing objects:  16% (7/43)Compressing objects:  18% (8/43)Compressing objects:  20% (9/43)Compressing objects:  23% (10/43)Compressing objects:  25% (11/43)Compressing objects:  27% (12/43)Compressing objects:  30% (13/43)Compressing objects:  32% (14/43)Compressing objects:  34% (15/43)Compressing objects:  37% (16/43)Compressing objects:  39% (17/43)Compressing objects:  41% (18/43)Compressing objects:  44% (19/43)Compressing objects:  46% (20/43)Compressing objects:  48% (21/43)Compressing objects:  51% (22/43)Compressing objects:  53% (23/43)Compressing objects:  55% (24/43)Compressing objects:  58% (25/43)Compressing objects:  60% (26/43)Compressing objects:  62% (27/43)Compressing objects:  65% (28/43)Compressing objects:  67% (29/43)Compressing objects:  69% (30/43)Compressing objects:  72% (31/43)Compressing objects:  74% (32/43)Compressing objects:  76% (33/43)Compressing objects:  79% (34/43)Compressing objects:  81% (35/43)Compressing objects:  83% (36/43)Compressing objects:  86% (37/43)Compressing objects:  88% (38/43)Compressing objects:  90% (39/43)Compressing objects:  93% (40/43)Compressing objects:  95% (41/43)Compressing objects:  97% (42/43)Compressing objects: 100% (43/43)Compressing objects: 100% (43/43), done.
+Writing objects:   1% (1/55)Writing objects:   3% (2/55)Writing objects:   5% (3/55)Writing objects:   7% (4/55)Writing objects:  10% (6/55)Writing objects:  12% (7/55)Writing objects:  14% (8/55)Writing objects:  16% (9/55)Writing objects:  18% (10/55)Writing objects:  20% (11/55)Writing objects:  21% (12/55)Writing objects:  23% (13/55)Writing objects:  25% (14/55)Writing objects:  27% (15/55)Writing objects:  29% (16/55)Writing objects:  30% (17/55)Writing objects:  32% (18/55)Writing objects:  34% (19/55)Writing objects:  36% (20/55)Writing objects:  38% (21/55)Writing objects:  40% (22/55)Writing objects:  41% (23/55)Writing objects:  43% (24/55)Writing objects:  45% (25/55)Writing objects:  47% (26/55)Writing objects:  49% (27/55)Writing objects:  50% (28/55)Writing objects:  52% (29/55)Writing objects:  54% (30/55)Writing objects:  56% (31/55)Writing objects:  58% (32/55)Writing objects:  60% (33/55)Writing objects:  61% (34/55)Writing objects:  63% (35/55)Writing objects:  65% (36/55)Writing objects:  67% (37/55)Writing objects:  69% (38/55)Writing objects:  70% (39/55)Writing objects:  72% (40/55)Writing objects:  74% (41/55)Writing objects:  76% (42/55)Writing objects:  78% (43/55)Writing objects:  80% (44/55)Writing objects:  83% (46/55)Writing objects:  85% (47/55)Writing objects:  87% (48/55)Writing objects:  89% (49/55)Writing objects:  90% (50/55)Writing objects:  92% (51/55)Writing objects:  94% (52/55)Writing objects:  96% (53/55)Writing objects:  98% (54/55)Writing objects: 100% (55/55)Writing objects: 100% (55/55), 27.39 KiB | 967.00 KiB/s, done.
+Total 55 (delta 13), reused 1 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/13)[Kremote: Resolving deltas:   7% (1/13)[Kremote: Resolving deltas:  15% (2/13)[Kremote: Resolving deltas:  23% (3/13)[Kremote: Resolving deltas:  30% (4/13)[Kremote: Resolving deltas:  38% (5/13)[Kremote: Resolving deltas:  46% (6/13)[Kremote: Resolving deltas:  53% (7/13)[Kremote: Resolving deltas:  61% (8/13)[Kremote: Resolving deltas:  69% (9/13)[Kremote: Resolving deltas:  76% (10/13)[Kremote: Resolving deltas:  84% (11/13)[Kremote: Resolving deltas:  92% (12/13)[Kremote: Resolving deltas: 100% (13/13)[Kremote: Resolving deltas: 100% (13/13), completed with 8 local objects.[K
+To github.com:fabicarvano/atria_CRM.git
+   b565bbba..4bb88df5  main -> main
+
+======================================
+Atualização concluída com sucesso
+======================================
+[?2004husvds6043x7:/opt/atria# cd /opt/atria/www
+
+echo "=== 1. Contexto antes da alteração ==="
+grep -n -C 3 "siglaConta\|numeroOportunidade\|tipoOportunidade\|detalheOportunidade" \
+custom/Espo/Custom/Resources/metadata/entityDefs/Account.json \
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json \
+custom/Espo/Custom/Resources/i18n/pt_BR/Account.json \
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json 2>/dev/null || true
+
+echo "=== 2. Backup ==="
+BACKUP_DIR="/opt/atria/backups/numero_oportunidade_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+
+cp -a custom/Espo/Custom/Resources/metadata/entityDefs/Account.json "$BACKUP_DIR/Account.entityDefs.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json "$BACKUP_DIR/Opportunity.entityDefs.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/i18n/pt_BR/Account.json "$BACKUP_DIR/Account.pt_BR.json.bak" 2>/dev/null || true
+cp -a custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json "$BACKUP_DIR/Opportunity.pt_BR.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/layouts/Account "$BACKUP_DIR/layouts_Account.bak" 2>/dev/null || true
+cp -a custom/Espo/Custom/Resources/layouts/Opportunity "$BACKUP_DIR/layouts_Opportunity.bak" 2>/dev/null || true
+cp -a custom/Espo/Custom/Hooks/Account "$BACKUP_DIR/hooks_Account.bak" 2>/dev/null || true
+cp -a custom/Espo/Custom/Hooks/Opportunity "$BACKUP_DIR/hooks_Opportunity.bak" 2>/dev/null || true
+
+echo "Backup salvo em: $BACKUP_DIR"
+
+echo "=== 3. Criando campos, layouts e hooks ==="
+
+python3 <<'PY'
+import json
+from pathlib import Path
+
+BASE = Path("/opt/atria/www")
+
+files = {
+    "account_entity": BASE / "custom/Espo/Custom/Resources/metadata/entityDefs/Account.json",
+    "opp_entity": BASE / "custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json",
+    "account_i18n": BASE / "custom/Espo/Custom/Resources/i18n/pt_BR/Account.json",
+    "opp_i18n": BASE / "custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json",
+}
+
+for p in files.values():
+    p.parent.mkdir(parents=True, exist_ok=True)
+
+def load_json(path, default):
+    if path.exists():
+        with path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    return default
+
+def save_json(path, data):
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=4) + "\n",        encoding="utf-8"    )    print(f"Atualizado: {path}")# Account fieldaccount = load_json(files["account_entity"], {})account.setdefault("fields", {})account.setdefault("indexes", {})account["fields"]["siglaConta"] = {    "type": "varchar",    "maxLength": 5,    "readOnly": True,    "customizationDisabled": True,    "dynamicLogicDisabled": True,    "audited": True,    "index": True}account["indexes"]["siglaContaUnique"] = {    "columns": ["siglaConta"],    "unique": True}save_json(files["account_entity"], account)# Opportunity fieldopp = load_json(files["opp_entity"], {})opp.setdefault("fields", {})opp.setdefault("indexes", {})opp["fields"]["numeroOportunidade"] = {    "type": "varchar",    "maxLength": 32,    "readOnly": True,    "customizationDisabled": True,    "dynamicLogicDisabled": True,    "audited": True,    "index": True}opp["indexes"]["numeroOportunidadeUnique"] = {    "columns": ["numeroOportunidade"],    "unique": True}save_json(files["opp_entity"], opp)# i18n Accountaccount_i18n = load_json(files["account_i18n"], {})account_i18n.setdefault("fields", {})account_i18n["fields"]["siglaConta"] = "Sigla da Conta"save_json(files["account_i18n"], account_i18n)# i18n Opportunityopp_i18n = load_json(files["opp_i18n"], {})opp_i18n.setdefault("fields", {})opp_i18n["fields"]["numeroOportunidade"] = "Número da Oportunidade"save_json(files["opp_i18n"], opp_i18n)# Layout helperdef cell_name(cell):    if isinstance(cell, str):        return cell    if isinstance(cell, dict):        return cell.get("name")    return Nonedef make_cell(name):    return {"name": name}def remove_field(layout, field):    for panel in layout:        for row in panel.get("rows", []):            for i, cell in enumerate(row):                if cell_name(cell) == field:                    row[i] = False    return layoutdef row_has_field(row, field):    return any(cell_name(cell) == field for cell in row if cell)def load_layout(entity, name):    custom_path = BASE / f"custom/Espo/Custom/Resources/layouts/{entity}/{name}.json"    core_path = BASE / f"application/Espo/Resources/layouts/{entity}/{name}.json"    if custom_path.exists():        return load_json(custom_path, [])    if core_path.exists():        return load_json(core_path, [])    return [{"label": "Overview", "rows": [[{"name": "name"}, False]]}]def save_layout(entity, name, layout):    path = BASE / f"custom/Espo/Custom/Resources/layouts/{entity}/{name}.json"    path.parent.mkdir(parents=True, exist_ok=True)    save_json(path, layout)def insert_account_sigla(layout):    layout = remove_field(layout, "siglaConta")    for panel in layout:        rows = panel.get("rows", [])        for idx, row in enumerate(rows):            if row_has_field(row, "name"):                rows.insert(idx + 1, [make_cell("siglaConta"), False])                return layout    layout[0].setdefault("rows", [])    layout[0]["rows"].insert(0, [make_cell("siglaConta"), False])    return layoutdef insert_opp_number(layout):    layout = remove_field(layout, "numeroOportunidade")    for panel in layout:        rows = panel.get("rows", [])        for idx, row in enumerate(rows):            if row_has_field(row, "name"):                rows.insert(idx + 1, [make_cell("numeroOportunidade"), False])                return layout    layout[0].setdefault("rows", [])    layout[0]["rows"].insert(0, [make_cell("numeroOportunidade"), False])    return layoutfor layout_name in ["detail", "detailSmall", "edit"]:    account_layout = load_layout("Account", layout_name)    account_layout = insert_account_sigla(account_layout)    save_layout("Account", layout_name, account_layout)    opp_layout = load_layout("Opportunity", layout_name)    opp_layout = insert_opp_number(opp_layout)    save_layout("Opportunity", layout_name, opp_layout)print("Campos e layouts atualizados.")PYecho "=== 4. Criando Hook da Conta para gerar sigla única ==="mkdir -p custom/Espo/Custom/Hooks/Accountcat > custom/Espo/Custom/Hooks/Account/GerarSiglaConta.php <<'PHP'<?phpnamespace Espo\Custom\Hooks\Account;use Espo\ORM\Entity;use Espo\ORM\EntityManager;class GerarSiglaConta{    public static int $order = 5;    public function __construct(        private EntityManager $entityManager    ) {}    public function beforeSave(Entity $entity, array $options): void    {        $current = (string) ($entity->get('siglaConta') ?? '');        if (!$entity->isNew()) {            $old = $this->entityManager->getEntityById('Account', $entity->getId());            if ($old && $old->get('siglaConta')) {                $entity->set('siglaConta', $old->get('siglaConta'));                return;            }        }        if ($current !== '') {            $entity->set('siglaConta', strtoupper(substr($current, 0, 5)));            return;        }        $name = (string) ($entity->get('name') ?? '');        $entity->set('siglaConta', $this->generateUniqueSigla($name, $entity->getId()));    }    private function generateUniqueSigla(string $name, ?string $currentId = null): string    {        $base = $this->makeBaseSigla($name);        if ($base === '') {            $base = 'CTA';        }        $base = substr($base, 0, 5);        if ($this->isSiglaAvailable($base, $currentId)) {            return $base;        }        for ($i = 1; $i <= 99; $i++) {            $suffix = str_pad((string) $i, 2, '0', STR_PAD_LEFT);            $candidate = substr($base, 0, 3) . $suffix;            if ($this->isSiglaAvailable($candidate, $currentId)) {                return $candidate;            }        }        return substr($base, 0, 2) . strtoupper(substr(md5($name . microtime(true)), 0, 3));    }    private function makeBaseSigla(string $name): string    {        $name = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $name);        $name = strtoupper($name ?: '');        $name = preg_replace('/[^A-Z0-9 ]/', ' ', $name);        $name = preg_replace('/\s+/', ' ', trim($name));        $ignore = [            'SA', 'S', 'A', 'LTDA', 'LTD', 'ME', 'EPP', 'EIRELI', 'SPE',            'BRASIL', 'BRAZIL', 'HOLDING', 'PARTICIPACOES', 'PARTICIPACOES'        ];        $words = array_values(array_filter(explode(' ', $name), function ($word) use ($ignore) {            return $word !== '' && !in_array($word, $ignore, true);        }));        if (!$words) {            return '';        }        $first = $words[0];        $manual = [            'BRADESCO' => 'BRA',            'PETROBRAS' => 'PETRO',            'TRANSPETRO' => 'TRANS',            'GLOBO' => 'GLB'        ];        if (isset($manual[$first])) {            return $manual[$first];        }        if (count($words) >= 2) {            $sigla = '';            foreach ($words as $word) {                $sigla .= substr($word, 0, 1);                if (strlen($sigla) >= 5) {                    break;                }            }            return substr($sigla, 0, 5);        }        if (strlen($first) <= 5) {            $consonants = preg_replace('/[AEIOU]/', '', $first);            if (strlen($consonants) >= 3) {                return substr($consonants, 0, 5);            }            return substr($first, 0, 5);        }        return substr($first, 0, 5);    }    private function isSiglaAvailable(string $sigla, ?string $currentId = null): bool    {        $existing = $this->entityManager            ->getRDBRepository('Account')            ->where(['siglaConta' => $sigla])            ->findOne();        if (!$existing) {            return true;        }        return $currentId && $existing->getId() === $currentId;    }}PHPecho "=== 5. Criando Hook da Oportunidade para gerar número e registrar no Stream ==="mkdir -p custom/Espo/Custom/Hooks/Opportunitycat > custom/Espo/Custom/Hooks/Opportunity/GerarNumeroOportunidade.php <<'PHP'<?phpnamespace Espo\Custom\Hooks\Opportunity;use Espo\ORM\Entity;use Espo\ORM\EntityManager;class GerarNumeroOportunidade{    public static int $order = 6;    private const ALLOWED_STAGES_FOR_SUFFIX_CHANGE = [        'Prospectando',        'Qualificando',        'Prospecting',        'Qualification',        'prospectando',        'qualificando'    ];    public function __construct(        private EntityManager $entityManager    ) {}    public function beforeSave(Entity $entity, array $options): void    {        $oldNumber = (string) ($entity->get('numeroOportunidade') ?? '');        if ($entity->isNew() || $oldNumber === '') {            $entity->set('numeroOportunidade', $this->buildNewNumber($entity));            return;        }        if (!$this->canUpdateSuffix($entity)) {            return;        }        $newSuffix = $this->suffixFromTipo((string) ($entity->get('tipoOportunidade') ?? ''));        if ($newSuffix === '') {            return;        }        $newNumber = preg_replace('/\.[A-Z]{2}$/', '.' . $newSuffix, $oldNumber);        if ($newNumber && $newNumber !== $oldNumber) {            $entity->set('numeroOportunidade', $newNumber);        }    }    public function afterSave(Entity $entity, array $options): void    {        $number = (string) ($entity->get('numeroOportunidade') ?? '');        if ($number === '') {            return;        }        $old = null;        if (!$entity->isNew()) {            $old = $this->entityManager->getEntityById('Opportunity', $entity->getId());        }        $fetchedNumber = null;        if (method_exists($entity, 'getFetched')) {            $fetchedNumber = $entity->getFetched('numeroOportunidade');        }        if (!$fetchedNumber && $old) {            $fetchedNumber = $old->get('numeroOportunidade');        }        if ($entity->isNew() || !$fetchedNumber) {            $this->postToStream(                $entity,                "Sistema gerou o número da oportunidade: {$number}"            );            return;        }        if ($fetchedNumber !== $number) {            $oldSuffix = $this->extractSuffix((string) $fetchedNumber);            $newSuffix = $this->extractSuffix($number);            $this->postToStream(                $entity,                "Sistema atualizou o sufixo do número da oportunidade de {$oldSuffix} para {$newSuffix}, pois o Tipo de Oportunidade foi alterado."            );        }    }    private function buildNewNumber(Entity $entity): string    {        $accountId = (string) ($entity->get('accountId') ?? '');        if ($accountId === '') {            throw new \RuntimeException('Não foi possível gerar o número da oportunidade: a conta é obrigatória.');        }        $account = $this->entityManager->getEntityById('Account', $accountId);        if (!$account) {            throw new \RuntimeException('Não foi possível gerar o número da oportunidade: conta não encontrada.');        }        $sigla = (string) ($account->get('siglaConta') ?? '');        if ($sigla === '') {            throw new \RuntimeException('Não foi possível gerar o número da oportunidade: a conta não possui sigla.');        }        $year = date('Y');        $sequence = $this->nextSequenceForAccount($accountId);        $suffix = $this->suffixFromTipo((string) ($entity->get('tipoOportunidade') ?? ''));        if ($suffix === '') {            $suffix = 'PE';        }        return sprintf('%s-%s-%04d.%s', $sigla, $year, $sequence, $suffix);    }    private function nextSequenceForAccount(string $accountId): int    {        $list = $this->entityManager            ->getRDBRepository('Opportunity')            ->where(['accountId' => $accountId])            ->find();        $max = 0;        foreach ($list as $item) {            $number = (string) ($item->get('numeroOportunidade') ?? '');            if (preg_match('/-(\d{4})\.[A-Z]{2}$/', $number, $m)) {                $max = max($max, (int) $m[1]);            }        }        return $max + 1;    }    private function suffixFromTipo(string $tipo): string    {        return match ($tipo) {            'Revenda' => 'RR',            'ServicoGerenciado' => 'SG',            'ServicoPontual' => 'SP',            'ProjetoEspecial' => 'PE',            default => ''        };    }    private function canUpdateSuffix(Entity $entity): bool    {        $stage = (string) ($entity->get('stage') ?? '');        return in_array($stage, self::ALLOWED_STAGES_FOR_SUFFIX_CHANGE, true);    }    private function extractSuffix(string $number): string    {        if (preg_match('/\.([A-Z]{2})$/', $number, $m)) {            return $m[1];        }        return '';    }    private function postToStream(Entity $entity, string $message): void    {        $note = $this->entityManager->getNewEntity('Note');        $note->set([            'type' => 'Post',            'parentId' => $entity->getId(),            'parentType' => 'Opportunity',            'post' => $message        ]);        $this->entityManager->saveEntity($note, [            'skipHooks' => true        ]);    }}PHPecho "=== 6. Criando script para preencher siglas em contas existentes ==="mkdir -p custom/Scriptscat > custom/Scripts/preencher_siglas_contas.php <<'PHP'<?phprequire_once __DIR__ . '/../../bootstrap.php';use Espo\Core\Application;$app = new Application();$container = $app->getContainer();$entityManager = $container->get('entityManager');function makeBaseSigla(string $name): string{    $name = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $name);    $name = strtoupper($name ?: '');    $name = preg_replace('/[^A-Z0-9 ]/', ' ', $name);    $name = preg_replace('/\s+/', ' ', trim($name));    $ignore = [        'SA', 'S', 'A', 'LTDA', 'LTD', 'ME', 'EPP', 'EIRELI', 'SPE',        'BRASIL', 'BRAZIL', 'HOLDING', 'PARTICIPACOES'    ];    $words = array_values(array_filter(explode(' ', $name), function ($word) use ($ignore) {        return $word !== '' && !in_array($word, $ignore, true);    }));    if (!$words) {        return 'CTA';    }    $first = $words[0];    $manual = [        'BRADESCO' => 'BRA',        'PETROBRAS' => 'PETRO',        'TRANSPETRO' => 'TRANS',        'GLOBO' => 'GLB'    ];    if (isset($manual[$first])) {        return $manual[$first];    }    if (count($words) >= 2) {        $sigla = '';        foreach ($words as $word) {            $sigla .= substr($word, 0, 1);            if (strlen($sigla) >= 5) {                break;            }        }        return substr($sigla, 0, 5);    }    if (strlen($first) <= 5) {        $consonants = preg_replace('/[AEIOU]/', '', $first);        if (strlen($consonants) >= 3) {            return substr($consonants, 0, 5);        }        return substr($first, 0, 5);    }    return substr($first, 0, 5);}function siglaAvailable($entityManager, string $sigla, ?string $currentId = null): bool{    $existing = $entityManager        ->getRDBRepository('Account')        ->where(['siglaConta' => $sigla])        ->findOne();    if (!$existing) {        return true;    }    return $currentId && $existing->getId() === $currentId;}function uniqueSigla($entityManager, string $name, ?string $currentId = null): string{[7m    $base = substr(makeBaseSigla($name), 0, 5);[27m[7m    if (siglaAvailable($entityManager, $base, $currentId)) {[27m[7m        return $base;[27m[7m    }[27m[7m    for ($i = 1; $i <= 99; $i++) {[27m[7m        $candidate = substr($base, 0, 3) . str_pad((string) $i, 2, '0', STR_PAD_LEFT);[27m[7m        if (siglaAvailable($entityManager, $candidate, $currentId)) {[27m[7m            return $candidate;[27m[7m        }[27m[7m    }[27m[7m    return substr($base, 0, 2) . strtoupper(substr(md5($name . microtime(true)), 0, 3));[27m[7m}[27m[7m$accounts = $entityManager[27m[7m    ->getRDBRepository('Account')[27m[7m    ->where([[27m[7m        'siglaConta' => null[27m[7m    ])[27m[7m    ->find();[27m[7m$count = 0;[27m[7mforeach ($accounts as $account) {[27m[7m    $sigla = uniqueSigla($entityManager, (string) $account->get('name'), $account->getId());[27m[7m    $account->set('siglaConta', $sigla);[27m[7m    $entityManager->saveEntity($account, [[27m[7m        'skipHooks' => true[27m[7m    ]);[27m[7m    echo $account->get('name') . " => " . $sigla . PHP_EOL;[27m[7m    $count++;[27m[7m}[27m[7mecho "Total de contas atualizadas: {$count}" . PHP_EOL;[27m[7mPHP[27m[7mecho "=== 7. Rebuild ==="[27m[7mphp rebuild.php[27m[7mecho "=== 8. Limpando cache ==="[27m[7mrm -rf data/cache/*[27m[7mecho "=== 9. Ajustando permissões ==="[27m[7mchown -R www-data:www-data custom data[27m[7mecho "=== Finalizado ==="[27m    $base = substr(makeBaseSigla($name), 0, 5);    if (siglaAvailable($entityManager, $base, $currentId)) {        return $base;    }    for ($i = 1; $i <= 99; $i++) {        $candidate = substr($base, 0, 3) . str_pad((string) $i, 2, '0', STR_PAD_LEFT);        if (siglaAvailable($entityManager, $candidate, $currentId)) {            return $candidate;        }    }    return substr($base, 0, 2) . strtoupper(substr(md5($name . microtime(true)), 0, 3));}$accounts = $entityManager    ->getRDBRepository('Account')    ->where([        'siglaConta' => null    ])    ->find();$count = 0;foreach ($accounts as $account) {    $sigla = uniqueSigla($entityManager, (string) $account->get('name'), $account->getId());    $account->set('siglaConta', $sigla);    $entityManager->saveEntity($account, [        'skipHooks' => true    ]);    echo $account->get('name') . " => " . $sigla . PHP_EOL;    $count++;}echo "Total de contas atualizadas: {$count}" . PHP_EOL;PHPecho "=== 7. Rebuild ==="php rebuild.phpecho "=== 8. Limpando cache ==="rm -rf data/cache/*echo "=== 9. Ajustando permissões ==="chown -R www-data:www-data custom dataecho "=== Finalizado ==="
+[?2004l=== 1. Contexto antes da alteração ===
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-1-{
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-2-    "fields": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:3:        "tipoOportunidade": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-4-            "type": "enum",
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-5-            "options": [
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-6-                "",
+--
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-11-            ],
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-12-            "default": ""
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-13-        },
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:14:        "detalheOportunidade": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-15-            "type": "enum",
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-16-            "options": [
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-17-                "",
+--
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-1-{
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-2-    "fields": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:3:        "tipoOportunidade": "Tipo de Oportunidade",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:4:        "detalheOportunidade": "Detalhe da Oportunidade"
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-5-    },
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-6-    "options": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:7:        "tipoOportunidade": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-8-            "": "",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-9-            "Revenda": "Revenda",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-10-            "ServicoGerenciado": "Serviço Gerenciado",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-11-            "ServicoPontual": "Serviço Pontual",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-12-            "ProjetoEspecial": "Projeto Especial"
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-13-        },
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:14:        "detalheOportunidade": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-15-            "": "",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-16-            "Cisco": "Cisco",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-17-            "Fortinet": "Fortinet",
+=== 2. Backup ===
+Backup salvo em: /opt/atria/backups/numero_oportunidade_20260518_041848
+=== 3. Criando campos, layouts e hooks ===
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detailSmall.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/edit.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json
+Campos e layouts atualizados.
+=== 4. Criando Hook da Conta para gerar sigla única ===
+=== 5. Criando Hook da Oportunidade para gerar número e registrar no Stream ===
+=== 6. Criando script para preencher siglas em contas existentes ===
+=== 7. Rebuild ===
+=== 8. Limpando cache ===
+=== 9. Ajustando permissões ===
+=== Finalizado ===
+[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+[7mphp custom/Scripts/preencher_siglas_contas.php[27m
+[7mphp rebuild.php[27m
+[7mrm -rf data/cache/*[27m
+[7mchown -R www-data:www-data custom data[27m[A[A[A[Acd /opt/atria/www
+php custom/Scripts/preencher_siglas_contas.php
+php rebuild.php
+rm -rf data/cache/*
+chown -R www-data:www-data custom data
+[?2004lteste => TST
+Itaú Unibanco => IU
+Bradesco => BRA
+Banco do Brasil => BD
+Caixa Econômica Federal => CEF
+Vivo (Telefônica Brasil) => VT
+Claro / Embratel => CE
+V.tal / Tecto => VTT
+Scala Data Centers => SDC
+Ascenty => ASCEN
+ODATA => ODATA
+SERPRO => SERPR
+DATAPREV => DATAP
+Receita Federal => RF
+Ministério da Defesa => MDD
+Ministério da Saúde => MDS
+ANATEL => ANATE
+Banco Central do Brasil => BCD
+TCU => TCU
+Santander Brasil => SANTA
+BTG Pactual => BP
+Nubank => NUBAN
+XP Investimentos => XI
+Sicredi / Sicoob => SS
+TIM Brasil => TIM
+Algar Telecom => AT
+Brisanet => BRISA
+Origem Energia => OE
+Sabesp => SABES
+Aegea Saneamento => AS
+Banco Inter => BI
+C6 Bank => CB
+Cielo => CIELO
+Porto Seguro => PS
+Unifique => UNIFI
+Winity / Desktop => WD
+Casa dos Ventos => CDV
+Eneva => ENEVA
+AES Brasil => AES
+Total de contas atualizadas: 39
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+echo "=== 1. Contexto atual dos layouts e campos ==="
+grep -R -n -C 3 "numeroOportunidade\|assignedUser\|Usuário Designado" \
+custom/Espo/Custom/Resources/layouts/Opportunity \
+application/Espo/Resources/layouts/Opportunity \
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json \
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json 2>/dev/null || true
+
+echo "=== 2. Backup ==="
+BACKUP_DIR="/opt/atria/backups/numero_oportunidade_lateral_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+
+cp -a custom/Espo/Custom/Resources/layouts/Opportunity "$BACKUP_DIR/layouts_Opportunity.bak" 2>/dev/null || true
+cp -a custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json "$BACKUP_DIR/Opportunity.logicDefs.json.bak" 2>/dev/null || true 
+cp -a custom/Scripts "$BACKUP_DIR/Scripts.bak" 2>/dev/null || true
+
+echo "Backup salvo em: $BACKUP_DIR"
+
+echo "=== 3. Movendo Número da Oportunidade para o card lateral ==="
+
+python3 <<'PY'
+import json
+from pathlib import Path
+
+BASE = Path("/opt/atria/www")
+
+custom_layout_dir = BASE / "custom/Espo/Custom/Resources/layouts/Opportunity"
+core_layout_dir = BASE / "application/Espo/Resources/layouts/Opportunity"
+logic_file = BASE / "custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json"
+
+custom_layout_dir.mkdir(parents=True, exist_ok=True)
+logic_file.parent.mkdir(parents=True, exist_ok=True)
+
+def load_json(path, default):
+    if path.exists():
+        with path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    return default
+
+def save_json(path, data):
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=4) + "\n",
+        encoding="utf-8"
+    )
+    print(f"Atualizado: {path}")
+
+def cell_name(cell):
+    if isinstance(cell, str):
+        return cell
+    if isinstance(cell, dict):
+        return cell.get("name")
+    return Nonedef make_cell(name):    return {"name": name}def remove_field(layout, field):    if not isinstance(layout, list):        return layout    for panel in layout:        if not isinstance(panel, dict):            continue        for row in panel.get("rows", []):            if not isinstance(row, list):                continue            for i, cell in enumerate(row):                if cell_name(cell) == field:                    row[i] = False    return layoutdef row_has_field(row, field):    return any(cell_name(cell) == field for cell in row if cell)def load_layout(name):    custom_path = custom_layout_dir / f"{name}.json"    core_path = core_layout_dir / f"{name}.json"    if custom_path.exists():        return load_json(custom_path, [])    if core_path.exists():        return load_json(core_path, [])    return []def save_layout(name, layout):    save_json(custom_layout_dir / f"{name}.json", layout)# Remove numeroOportunidade dos layouts principais para não aparecer no card Visão Geralfor layout_name in ["detail", "edit"]:    layout = load_layout(layout_name)    layout = remove_field(layout, "numeroOportunidade")    save_layout(layout_name, layout)# Ajusta detailSmall, que normalmente é o card lateral com Usuário Designado, Times, Criado, Modificadodetail_small = load_layout("detailSmall")if not detail_small:    detail_small = [        {            "label": "Overview",            "rows": [                [{"name": "assignedUser"}, False],                [{"name": "teams"}, False],                [{"name": "createdAt"}, False],                [{"name": "modifiedAt"}, False]            ]        }    ]detail_small = remove_field(detail_small, "numeroOportunidade")inserted = Falsefor panel in detail_small:    rows = panel.get("rows", [])    for idx, row in enumerate(rows):        if row_has_field(row, "assignedUser"):            rows.insert(idx, [make_cell("numeroOportunidade"), False])            inserted = True            break    if inserted:        breakif not inserted:    if detail_small:        detail_small[0].setdefault("rows", [])        detail_small[0]["rows"].insert(0, [make_cell("numeroOportunidade"), False])save_layout("detailSmall", detail_small)# Garante que o campo só apareça quando estiver preenchidologic = load_json(logic_file, {})logic.setdefault("fields", {})existing_logic = logic["fields"].get("numeroOportunidade", {})existing_logic["visible"] = {    "conditionGroup": [        {            "type": "notEquals",            "attribute": "numeroOportunidade",            "value": ""        }    ]}logic["fields"]["numeroOportunidade"] = existing_logicsave_json(logic_file, logic)print("Layout lateral ajustado com sucesso.")PYecho "=== 4. Criando script para gerar números das oportunidades existentes ==="mkdir -p custom/Scriptscat > custom/Scripts/preencher_numeros_oportunidades.php <<'PHP'<?phprequire_once __DIR__ . '/../../bootstrap.php';use Espo\Core\Application;$app = new Application();$container = $app->getContainer();$entityManager = $container->get('entityManager');function suffixFromTipo(?string $tipo): string{    return match ((string) $tipo) {        'Revenda' => 'RR',        'ServicoGerenciado' => 'SG',        'ServicoPontual' => 'SP',        'ProjetoEspecial' => 'PE',        default => 'PE'    };}function postToStream($entityManager, $opportunity, string $message): void{    $note = $entityManager->getNewEntity('Note');    $note->set([        'type' => 'Post',        'parentId' => $opportunity->getId(),        'parentType' => 'Opportunity',        'post' => $message    ]);    $entityManager->saveEntity($note, [        'skipHooks' => true    ]);}$opportunities = $entityManager    ->getRDBRepository('Opportunity')    ->where([        'numeroOportunidade' => null    ])    ->order('createdAt', 'ASC')    ->find();$sequenciaisPorConta = [];$count = 0;$ignored = 0;foreach ($opportunities as $opportunity) {    $accountId = $opportunity->get('accountId');    if (!$accountId) {        echo "IGNORADA sem conta: " . $opportunity->get('name') . PHP_EOL;        $ignored++;        continue;    }    $account = $entityManager->getEntityById('Account', $accountId);    if (!$account) {        echo "IGNORADA conta não encontrada: " . $opportunity->get('name') . PHP_EOL;        $ignored++;        continue;    }    $sigla = $account->get('siglaConta');    if (!$sigla) {        echo "IGNORADA conta sem sigla: " . $opportunity->get('name') . " / Conta: " . $account->get('name') . PHP_EOL;        $ignored++;        continue;    }    if (!isset($sequenciaisPorConta[$accountId])) {        $existing = $entityManager            ->getRDBRepository('Opportunity')            ->where([                'accountId' => $accountId            ])            ->find();        $max = 0;        foreach ($existing as $item) {            $number = (string) ($item->get('numeroOportunidade') ?? '');            if (preg_match('/-(\d{4})\.[A-Z]{2}$/', $number, $m)) {                $max = max($max, (int) $m[1]);            }        }[7m        $sequenciaisPorConta[$accountId] = $max;[27m[7m    }[27m[7m    $sequenciaisPorConta[$accountId]++;[27m[7m    $createdAt = (string) ($opportunity->get('createdAt') ?? '');[27m[7m    $year = $createdAt ? substr($createdAt, 0, 4) : date('Y');[27m[7m    if (!preg_match('/^\d{4}$/', $year)) {[27m[7m        $year = date('Y');[27m[7m    }[27m[7m    $suffix = suffixFromTipo($opportunity->get('tipoOportunidade'));[27m[7m    $numero = sprintf([27m[7m        '%s-%s-%04d.%s',[27m[7m        $sigla,[27m[7m        $year,[27m[7m        $sequenciaisPorConta[$accountId],[27m[7m        $suffix[27m[7m    );[27m[7m    $opportunity->set('numeroOportunidade', $numero);[27m[7m    $entityManager->saveEntity($opportunity, [[27m[7m        'skipHooks' => true[27m[7m    ]);[27m[7m    postToStream([27m[7m        $entityManager,[27m[7m        $opportunity,[27m[7m        "Sistema gerou o número da oportunidade: {$numero}"[27m[7m    );[27m[7m    echo $opportunity->get('name') . " => " . $numero . PHP_EOL;[27m[7m    $count++;[27m[7m}[27m[7mecho "Total de oportunidades atualizadas: {$count}" . PHP_EOL;[27m[7mecho "Total de oportunidades ignoradas: {$ignored}" . PHP_EOL;[27m[7mPHP[27m[7mecho "=== 5. Rebuild ==="[27m[7mphp rebuild.php[27m[7mecho "=== 6. Limpando cache ==="[27m[7mrm -rf data/cache/*[27m[7mecho "=== 7. Ajustando permissões ==="[27m[7mchown -R www-data:www-data custom data[27m[7mecho "=== Finalizado ==="[27m        $sequenciaisPorConta[$accountId] = $max;    }    $sequenciaisPorConta[$accountId]++;    $createdAt = (string) ($opportunity->get('createdAt') ?? '');    $year = $createdAt ? substr($createdAt, 0, 4) : date('Y');    if (!preg_match('/^\d{4}$/', $year)) {        $year = date('Y');    }    $suffix = suffixFromTipo($opportunity->get('tipoOportunidade'));    $numero = sprintf(        '%s-%s-%04d.%s',        $sigla,        $year,        $sequenciaisPorConta[$accountId],        $suffix    );    $opportunity->set('numeroOportunidade', $numero);    $entityManager->saveEntity($opportunity, [        'skipHooks' => true    ]);    postToStream(        $entityManager,        $opportunity,        "Sistema gerou o número da oportunidade: {$numero}"    );    echo $opportunity->get('name') . " => " . $numero . PHP_EOL;    $count++;}echo "Total de oportunidades atualizadas: {$count}" . PHP_EOL;echo "Total de oportunidades ignoradas: {$ignored}" . PHP_EOL;PHPecho "=== 5. Rebuild ==="php rebuild.phpecho "=== 6. Limpando cache ==="rm -rf data/cache/*echo "=== 7. Ajustando permissões ==="chown -R www-data:www-data custom dataecho "=== Finalizado ==="
+[?2004l=== 1. Contexto atual dos layouts e campos ===
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json-12-            ],
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json-13-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json-14-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json:15:                    "name": "numeroOportunidade"
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json-16-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json-17-                false
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json-18-            ],
+--
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json-12-            ],
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json-13-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json-14-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json:15:                    "name": "numeroOportunidade"
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json-16-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json-17-                false
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json-18-            ],
+--
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-12-            ],
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-13-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-14-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json:15:                    "name": "numeroOportunidade"
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-16-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-17-                false
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-18-            ],
+--
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-39-            ],
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-40-            "default": ""
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-41-        },
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:42:        "numeroOportunidade": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-43-            "type": "varchar",
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-44-            "maxLength": 32,
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-45-            "readOnly": true,
+--
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-50-        }
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-51-    },
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-52-    "indexes": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:53:        "numeroOportunidadeUnique": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-54-            "columns": [
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:55:                "numeroOportunidade"
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-56-            ],
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-57-            "unique": true
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-58-        }
+=== 2. Backup ===
+Backup salvo em: /opt/atria/backups/numero_oportunidade_lateral_20260518_042209
+=== 3. Movendo Número da Oportunidade para o card lateral ===
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json
+Layout lateral ajustado com sucesso.
+=== 4. Criando script para gerar números das oportunidades existentes ===
+=== 5. Rebuild ===
+=== 6. Limpando cache ===
+=== 7. Ajustando permissões ===
+=== Finalizado ===
+[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mecho "=== Garantindo siglas nas contas existentes ==="[27m
+[7mphp custom/Scripts/preencher_siglas_contas.php[27m
+
+[7mecho "=== Gerando números das oportunidades existentes ==="[27m
+[7mphp custom/Scripts/preencher_numeros_oportunidades.php[27m
+
+[7mecho "=== Rebuild e cache ==="[27m
+[7mphp rebuild.php[27m
+[7mrm -rf data/cache/*[27m
+[7mchown -R www-data:www-data custom data[27m[A[A[A[A[A[A[A[A[A[A[Acd /opt/atria/www
+
+echo "=== Garantindo siglas nas contas existentes ==="
+php custom/Scripts/preencher_siglas_contas.php
+
+echo "=== Gerando números das oportunidades existentes ==="
+php custom/Scripts/preencher_numeros_oportunidades.php
+
+echo "=== Rebuild e cache ==="
+php rebuild.php
+rm -rf data/cache/*
+chown -R www-data:www-data custom data
+[?2004l=== Garantindo siglas nas contas existentes ===
+Total de contas atualizadas: 0
+=== Gerando números das oportunidades existentes ===
+nome da oportunidade => BRA-2026-0001.RR
+oportnidade 1 => UNIFI-2026-0001.PE
+oportunidade 3 => BI-2026-0001.PE
+oprtundiade 54 => CIELO-2026-0001.PE
+oprtundade 200 => WD-2026-0001.PE
+Total de oportunidades atualizadas: 5
+Total de oportunidades ignoradas: 0
+=== Rebuild e cache ===
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+echo "=== 1. Contexto atual dos layouts da Opportunity ==="
+find custom/Espo/Custom/Resources/layouts/Opportunity application/Espo/Resources/layouts/Opportunity -type f 2>/dev/null | sort 
+
+echo
+echo "=== 2. Procurando numeroOportunidade nos layouts ==="
+grep -R -n -C 3 "numeroOportunidade\|assignedUser\|teams\|createdAt\|modifiedAt" \
+custom/Espo/Custom/Resources/layouts/Opportunity \
+application/Espo/Resources/layouts/Opportunity 2>/dev/null || true
+
+echo
+echo "=== 3. Backup ==="
+BACKUP_DIR="/opt/atria/backups/fix_numero_oportunidade_visivel_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+
+cp -a custom/Espo/Custom/Resources/layouts/Opportunity "$BACKUP_DIR/layouts_Opportunity.bak" 2>/dev/null || true
+cp -a custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json "$BACKUP_DIR/Opportunity.logicDefs.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json "$BACKUP_DIR/Opportunity.entityDefs.json.bak" 2>/dev/null || true 
+
+echo "Backup salvo em: $BACKUP_DIR"
+
+echo
+echo "=== 4. Corrigindo layout lateral ==="
+
+python3 <<'PY'
+import json
+from pathlib import Path
+
+BASE = Path("/opt/atria/www")
+
+custom_layout_dir = BASE / "custom/Espo/Custom/Resources/layouts/Opportunity"
+core_layout_dir = BASE / "application/Espo/Resources/layouts/Opportunity"
+logic_file = BASE / "custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json"
+entity_file = BASE / "custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json"
+
+custom_layout_dir.mkdir(parents=True, exist_ok=True)
+
+def load_json(path, default):
+    if path.exists():
+        with path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    return default
+
+def save_json(path, data):
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=4) + "\n",
+        encoding="utf-8"
+    )
+    print(f"Atualizado: {path}")def cell_name(cell):    if isinstance(cell, str):        return cell    if isinstance(cell, dict):        return cell.get("name")    return Nonedef make_cell(name):    return {"name": name}def remove_field(layout, field):    if not isinstance(layout, list):        return layout    for panel in layout:        if not isinstance(panel, dict):            continue        for row in panel.get("rows", []):            if not isinstance(row, list):                continue            for i, cell in enumerate(row):                if cell_name(cell) == field:                    row[i] = False    return layoutdef row_has_field(row, field):    return any(cell_name(cell) == field for cell in row if cell)def load_layout(name):    custom_path = custom_layout_dir / f"{name}.json"    core_path = core_layout_dir / f"{name}.json"    if custom_path.exists():        return load_json(custom_path, [])    if core_path.exists():        return load_json(core_path, [])    return []def save_layout(name, layout):    save_json(custom_layout_dir / f"{name}.json", layout)# 1. Remove da Visão Geral e da ediçãofor layout_name in ["detail", "edit"]:    layout = load_layout(layout_name)    if layout:        layout = remove_field(layout, "numeroOportunidade")        save_layout(layout_name, layout)# 2. Reconstrói o detailSmall com o número no topo do card lateraldetail_small = load_layout("detailSmall")if not detail_small:    detail_small = [        {            "label": "",            "rows": [                [{"name": "assignedUser"}, False],                [{"name": "teams"}, False],                [{"name": "createdAt"}, False],                [{"name": "modifiedAt"}, False]            ]        }    ]detail_small = remove_field(detail_small, "numeroOportunidade")inserted = Falsefor panel in detail_small:    if not isinstance(panel, dict):        continue    rows = panel.setdefault("rows", [])    for idx, row in enumerate(rows):        if row_has_field(row, "assignedUser"):            rows.insert(idx, [{"name": "numeroOportunidade"}, False])[7m            inserted = True[27m[7m            break[27m[7m    if inserted:[27m[7m        break[27m[7mif not inserted:[27m[7m    detail_small[0].setdefault("rows", [])[27m[7m    detail_small[0]["rows"].insert(0, [{"name": "numeroOportunidade"}, False])[27m[7msave_layout("detailSmall", detail_small)[27m[7m# 3. Remove regra de visibilidade do numeroOportunidade para não bloquear renderização[27m[7mlogic = load_json(logic_file, {})[27m[7mlogic.setdefault("fields", {})[27m[7mif "numeroOportunidade" in logic["fields"]:[27m[7m    logic["fields"].pop("numeroOportunidade", None)[27m[7m    save_json(logic_file, logic)[27m[7melse:[27m[7m    print("Sem regra de visibilidade para numeroOportunidade.")[27m[7m# 4. Garante campo readOnly no entityDefs[27m[7mentity = load_json(entity_file, {})[27m[7mentity.setdefault("fields", {})[27m[7mentity["fields"].setdefault("numeroOportunidade", {})[27m[7mentity["fields"]["numeroOportunidade"]["type"] = "varchar"[27m[7mentity["fields"]["numeroOportunidade"]["maxLength"] = 32[27m[7mentity["fields"]["numeroOportunidade"]["readOnly"] = True[27m[7mentity["fields"]["numeroOportunidade"]["audited"] = True[27m[7mentity["fields"]["numeroOportunidade"]["index"] = True[27m[7msave_json(entity_file, entity)[27m[7mprint("Correção concluída.")[27m[7mPY[27m[7mecho[27m[7mecho "=== 5. Conferindo resultado no detailSmall ==="[27m[7mcat custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json[27m[7mecho[27m[7mecho "=== 6. Rebuild e cache ==="[27m[7mphp rebuild.php[27m[7mrm -rf data/cache/*[27m[7mecho[27m[7mecho "=== 7. Permissões ==="[27m[7mchown -R www-data:www-data custom data[27m[7mecho[27m[7mecho "=== Finalizado ==="[27m            inserted = True            break    if inserted:        breakif not inserted:    detail_small[0].setdefault("rows", [])    detail_small[0]["rows"].insert(0, [{"name": "numeroOportunidade"}, False])save_layout("detailSmall", detail_small)# 3. Remove regra de visibilidade do numeroOportunidade para não bloquear renderizaçãologic = load_json(logic_file, {})logic.setdefault("fields", {})if "numeroOportunidade" in logic["fields"]:    logic["fields"].pop("numeroOportunidade", None)    save_json(logic_file, logic)else:    print("Sem regra de visibilidade para numeroOportunidade.")# 4. Garante campo readOnly no entityDefsentity = load_json(entity_file, {})entity.setdefault("fields", {})entity["fields"].setdefault("numeroOportunidade", {})entity["fields"]["numeroOportunidade"]["type"] = "varchar"entity["fields"]["numeroOportunidade"]["maxLength"] = 32entity["fields"]["numeroOportunidade"]["readOnly"] = Trueentity["fields"]["numeroOportunidade"]["audited"] = Trueentity["fields"]["numeroOportunidade"]["index"] = Truesave_json(entity_file, entity)print("Correção concluída.")PYechoecho "=== 5. Conferindo resultado no detailSmall ==="cat custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.jsonechoecho "=== 6. Rebuild e cache ==="php rebuild.phprm -rf data/cache/*echoecho "=== 7. Permissões ==="chown -R www-data:www-data custom dataechoecho "=== Finalizado ==="
+[?2004l=== 1. Contexto atual dos layouts da Opportunity ===
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json.bak
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json.bak
+
+=== 2. Procurando numeroOportunidade nos layouts ===
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-4-        "rows": [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-5-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-6-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json:7:                    "name": "numeroOportunidade"
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-8-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-9-                false
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-10-            ],
+
+=== 3. Backup ===
+Backup salvo em: /opt/atria/backups/fix_numero_oportunidade_visivel_20260518_042329
+
+=== 4. Corrigindo layout lateral ===
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json
+Correção concluída.
+
+=== 5. Conferindo resultado no detailSmall ===
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "numeroOportunidade"
+                },
+                false
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "account"
+                }
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                {
+                    "name": "stage"
+                },
+                {
+                    "name": "amount"
+                }
+            ],
+            [
+                {
+                    "name": "probability"
+                },
+                {
+                    "name": "closeDate"
+                }
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                {
+                    "name": "tipoOportunidade"
+                },
+                {
+                    "name": "detalheOportunidade"
+                }
+            ],
+            [
+                {
+                    "name": "contacts"
+                },
+                {
+                    "name": "leadSource"
+                }
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                false
+            ]
+        ]
+    }
+]
+
+=== 6. Rebuild e cache ===
+
+=== 7. Permissões ===
+
+=== Finalizado ===
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+echo "=== 1. Procurando assignedUser e numeroOportunidade em todos os layouts de Opportunity ==="
+grep -R -n -C 2 "assignedUser\|numeroOportunidade\|complexCreated\|complexModified" \
+application/Espo/Resources/layouts/Opportunity \
+custom/Espo/Custom/Resources/layouts/Opportunity 2>/dev/null || true
+
+echo
+echo "=== 2. Backup ==="
+BACKUP_DIR="/opt/atria/backups/fix_numero_oportunidade_side_all_layouts_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+
+cp -a custom/Espo/Custom/Resources/layouts/Opportunity "$BACKUP_DIR/layouts_Opportunity_custom.bak" 2>/dev/null || true 
+
+echo "Backup salvo em: $BACKUP_DIR"
+
+echo
+echo "=== 3. Inserindo numeroOportunidade antes de assignedUser no layout lateral ativo ==="
+
+python3 <<'PY'
+import json
+from pathlib import Path
+
+BASE = Path("/opt/atria/www")
+
+app_dir = BASE / "application/Espo/Resources/layouts/Opportunity"
+custom_dir = BASE / "custom/Espo/Custom/Resources/layouts/Opportunity"
+custom_dir.mkdir(parents=True, exist_ok=True)
+
+def load_json(path):
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+def save_json(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=4) + "\n",
+        encoding="utf-8"
+    )
+    print(f"Atualizado: {path}")
+
+def cell_name(cell):
+    if isinstance(cell, str):
+        return cell
+    if isinstance(cell, dict):
+        return cell.get("name")
+    return None
+
+def make_cell(name):
+    return {"name": name}
+
+def remove_field(layout, field):
+    changed = False    if not isinstance(layout, list):        return layout, changed    for panel in layout:        if not isinstance(panel, dict):            continue        for row in panel.get("rows", []):            if not isinstance(row, list):                continue            for i, cell in enumerate(row):                if cell_name(cell) == field:                    row[i] = False                    changed = True    return layout, changeddef insert_before_assigned_user(layout):    inserted = False    if not isinstance(layout, list):        return layout, inserted    layout, _ = remove_field(layout, "numeroOportunidade")    for panel in layout:        if not isinstance(panel, dict):            continue        rows = panel.get("rows", [])        for row_index, row in enumerate(rows):            if not isinstance(row, list):                continue            for cell in row:                if cell_name(cell) == "assignedUser":                    rows.insert(row_index, [make_cell("numeroOportunidade"), False])                    inserted = True                    return layout, inserted    return layout, inserted# Prioridade: arquivos custom primeiro, depois application.candidate_files = []for directory in [custom_dir, app_dir]:    if directory.exists():        for path in sorted(directory.glob("*.json")):            try:                content = path.read_text(encoding="utf-8")            except Exception:                continue            if "assignedUser" in content:                candidate_files.append(path)updated = []for source_path in candidate_files:    try:        layout = load_json(source_path)    except Exception as e:        print(f"Ignorado, erro ao ler JSON: {source_path} - {e}")        continue    new_layout, inserted = insert_before_assigned_user(layout)    if inserted:        target_path = custom_dir / source_path.name        save_json(target_path, new_layout)        updated.append(str(target_path))if not updated:    print("Nenhum layout com assignedUser foi atualizado. Criando detailSmall padrão.")    layout = [        {            "label": "",            "rows": [                [{"name": "numeroOportunidade"}, False],                [{"name": "assignedUser"}, False],                [{"name": "teams"}, False],                [{"name": "complexCreated"}, False],                [{"name": "complexModified"}, False]            ]        }    ]    save_json(custom_dir / "detailSmall.json", layout)else:    print("Layouts atualizados:")    for item in updated:        print(" - " + item)PYechoecho "=== 4. Removendo numeroOportunidade da Visão Geral, se ainda estiver lá ==="python3 <<'PY'import jsonfrom pathlib import PathBASE = Path("/opt/atria/www")custom_dir = BASE / "custom/Espo/Custom/Resources/layouts/Opportunity"app_dir = BASE / "application/Espo/Resources/layouts/Opportunity"def load_json(path, default):    if path.exists():        with path.open("r", encoding="utf-8") as f:            return json.load(f)    return defaultdef save_json(path, data):    path.parent.mkdir(parents=True, exist_ok=True)    path.write_text(        json.dumps(data, ensure_ascii=False, indent=4) + "\n",        encoding="utf-8"    )    print(f"Atualizado: {path}")def cell_name(cell):    if isinstance(cell, str):        return cell    if isinstance(cell, dict):        return cell.get("name")    return None[7mdef remove_field(layout, field):[27m[7m    changed = False[27m[7m    if not isinstance(layout, list):[27m[7m        return layout, changed[27m[7m    for panel in layout:[27m[7m        if not isinstance(panel, dict):[27m[7m            continue[27m[7m        for row in panel.get("rows", []):[27m[7m            if not isinstance(row, list):[27m[7m                continue[27m[7m            for i, cell in enumerate(row):[27m[7m                if cell_name(cell) == field:[27m[7m                    row[i] = False[27m[7m                    changed = True[27m[7m    return layout, changed[27m[7mfor name in ["detail.json", "edit.json"]:[27m[7m    source = custom_dir / name[27m[7m    if not source.exists():[27m[7m        source = app_dir / name[27m[7m    layout = load_json(source, None)[27m[7m    if layout is None:[27m[7m        continue[27m[7m    layout, changed = remove_field(layout, "numeroOportunidade")[27m[7m    if changed:[27m[7m        save_json(custom_dir / name, layout)[27m[7mPY[27m[7mecho[27m[7mecho "=== 5. Conferindo resultado final ==="[27m[7mgrep -R -n -C 2 "numeroOportunidade\|assignedUser\|complexCreated\|complexModified" \[27m[7mcustom/Espo/Custom/Resources/layouts/Opportunity 2>/dev/null || true[27m[7mecho[27m[7mecho "=== 6. Rebuild e cache ==="[27m[7mphp rebuild.php[27m[7mrm -rf data/cache/*[27m[7mecho[27m[7mecho "=== 7. Permissões ==="[27m[7mchown -R www-data:www-data custom data[27m[7mecho[27m[7mecho "=== Finalizado ==="[27mdef remove_field(layout, field):    changed = False    if not isinstance(layout, list):        return layout, changed    for panel in layout:        if not isinstance(panel, dict):            continue        for row in panel.get("rows", []):            if not isinstance(row, list):                continue            for i, cell in enumerate(row):                if cell_name(cell) == field:                    row[i] = False                    changed = True    return layout, changedfor name in ["detail.json", "edit.json"]:    source = custom_dir / name    if not source.exists():        source = app_dir / name    layout = load_json(source, None)    if layout is None:        continue    layout, changed = remove_field(layout, "numeroOportunidade")    if changed:        save_json(custom_dir / name, layout)PYechoecho "=== 5. Conferindo resultado final ==="grep -R -n -C 2 "numeroOportunidade\|assignedUser\|complexCreated\|complexModified" \custom/Espo/Custom/Resources/layouts/Opportunity 2>/dev/null || trueechoecho "=== 6. Rebuild e cache ==="php rebuild.phprm -rf data/cache/*echoecho "=== 7. Permissões ==="chown -R www-data:www-data custom dataechoecho "=== Finalizado ==="
+[?2004l=== 1. Procurando assignedUser e numeroOportunidade em todos os layouts de Opportunity ===
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-5-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-6-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json:7:                    "name": "numeroOportunidade"
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-8-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-9-                false
+
+=== 2. Backup ===
+Backup salvo em: /opt/atria/backups/fix_numero_oportunidade_side_all_layouts_20260518_043000
+
+=== 3. Inserindo numeroOportunidade antes de assignedUser no layout lateral ativo ===
+Nenhum layout com assignedUser foi atualizado. Criando detailSmall padrão.
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json
+
+=== 4. Removendo numeroOportunidade da Visão Geral, se ainda estiver lá ===
+
+=== 5. Conferindo resultado final ===
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-5-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-6-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json:7:                    "name": "numeroOportunidade"
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-8-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-9-                false
+--
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-11-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-12-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json:13:                    "name": "assignedUser"
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-14-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-15-                false
+--
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-23-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-24-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json:25:                    "name": "complexCreated"
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-26-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-27-                false
+--
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-29-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-30-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json:31:                    "name": "complexModified"
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-32-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-33-                false
+
+=== 6. Rebuild e cache ===
+
+=== 7. Permissões ===
+
+=== Finalizado ===
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+echo "======================================"
+echo "1. Confirmar se o campo existe no metadata"
+echo "======================================"
+grep -R -n -C 3 "numeroOportunidade" \
+custom/Espo/Custom/Resources/metadata \
+application/Espo/Resources/metadata 2>/dev/null || true
+
+echo
+echo "======================================"
+echo "2. Confirmar se o campo existe nos layouts custom"
+echo "======================================"
+grep -R -n -C 5 "numeroOportunidade\|assignedUser\|complexCreated\|complexModified" \
+custom/Espo/Custom/Resources/layouts/Opportunity 2>/dev/null || true
+
+[7mecho[27m
+[7mecho "======================================"[27m
+[7mecho "3. Confirmar se existe layout lateral original na aplicação"[27m
+[7mecho "======================================"[27m
+[7mgrep -R -n -C 5 "assignedUser\|complexCreated\|complexModified\|followers" \[27m
+[7mapplication/Espo/Resources/layouts/Opportunity 2>/dev/null || true[27m
+
+[7mecho[27m
+[7mecho "======================================"[27m
+[7mecho "4. Listar todos os arquivos de layout da Opportunity"[27m
+[7mecho "======================================"[27m
+[7mfind application/Espo/Resources/layouts/Opportunity custom/Espo/Custom/Resources/layouts/Opportunity -type f 2>/dev/nu[27m[7ml[27m[7ml | sort [27m
+
+[7mecho[27m
+[7mecho "======================================"[27m
+[7mecho "5. Procurar onde o painel lateral é configurado"[27m
+[7mecho "======================================"[27m
+[7mgrep -R -n -C 5 "sidePanels\|side\|detailSmall\|record\|panels" \[27m
+[7mapplication/Espo/Resources/metadata/clientDefs/Opportunity.json \[27m
+[7mcustom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json \[27m
+[7mapplication/Espo/Resources/metadata/clientDefs \[27m
+[7mcustom/Espo/Custom/Resources/metadata/clientDefs 2>/dev/null || true[27m
+
+[7mecho[27m
+[7mecho "======================================"[27m
+[7mecho "6. Verificar se existe clientDefs custom da Opportunity"[27m
+[7mecho "======================================"[27m
+[7mcat custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json 2>/dev/null || echo "Não existe clientDefs custo[27m[7mm[27m[7m para Opportunity." [27m
+
+[7mecho[27m
+[7mecho "======================================"[27m
+[7mecho "7. Verificar clientDefs original da Opportunity"[27m
+[7mecho "======================================"[27m
+[7mcat application/Espo/Resources/metadata/clientDefs/Opportunity.json 2>/dev/null || echo "Não encontrado."[27m
+
+[7mecho[27m[7mecho "======================================"[27m[7mecho "8. Verificar cache gerado com numeroOportunidade"[27m[7mecho "======================================"[27m[7mgrep -R -n -C 3 "numeroOportunidade" data/cache 2>/dev/null | head -80 || true[27m[7mecho[27m[7mecho "======================================"[27m[7mecho "9. Verificar se o valor está salvo no banco via API interna/metadata"[27m[7mecho "======================================"[27m[7mgrep -R -n -C 3 "BRA-2026-0001.RR" data/cache custom data 2>/dev/null | head -80 || true[27m[7mecho[27m[7mecho "======================================"[27m[7mecho "DIAGNÓSTICO FINALIZADO"[27m[7mecho "======================================"[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Aecho
+echo "======================================"
+echo "3. Confirmar se existe layout lateral original na aplicação"
+echo "======================================"
+grep -R -n -C 5 "assignedUser\|complexCreated\|complexModified\|followers" \
+application/Espo/Resources/layouts/Opportunity 2>/dev/null || true
+
+echo
+echo "======================================"
+echo "4. Listar todos os arquivos de layout da Opportunity"
+echo "======================================"
+find application/Espo/Resources/layouts/Opportunity custom/Espo/Custom/Resources/layouts/Opportunity -type f 2>/dev/null | sort
+
+echo
+echo "======================================"
+echo "5. Procurar onde o painel lateral é configurado"
+echo "======================================"
+grep -R -n -C 5 "sidePanels\|side\|detailSmall\|record\|panels" \
+application/Espo/Resources/metadata/clientDefs/Opportunity.json \
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json \
+application/Espo/Resources/metadata/clientDefs \
+custom/Espo/Custom/Resources/metadata/clientDefs 2>/dev/null || true
+
+echo
+echo "======================================"
+echo "6. Verificar se existe clientDefs custom da Opportunity"
+echo "======================================"
+cat custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json 2>/dev/null || echo "Não existe clientDefs custom para Opportunity."
+
+echo
+echo "======================================"
+echo "7. Verificar clientDefs original da Opportunity"
+echo "======================================"
+cat application/Espo/Resources/metadata/clientDefs/Opportunity.json 2>/dev/null || echo "Não encontrado."
+
+echoecho "======================================"echo "8. Verificar cache gerado com numeroOportunidade"echo "======================================"grep -R -n -C 3 "numeroOportunidade" data/cache 2>/dev/null | head -80 || trueechoecho "======================================"echo "9. Verificar se o valor está salvo no banco via API interna/metadata"echo "======================================"grep -R -n -C 3 "BRA-2026-0001.RR" data/cache custom data 2>/dev/null | head -80 || trueechoecho "======================================"echo "DIAGNÓSTICO FINALIZADO"echo "======================================"
+[?2004l======================================
+1. Confirmar se o campo existe no metadata
+======================================
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-39-            ],
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-40-            "default": ""
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-41-        },
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:42:        "numeroOportunidade": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-43-            "type": "varchar",
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-44-            "maxLength": 32,
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-45-            "readOnly": true,
+--
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-50-        }
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-51-    },
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-52-    "indexes": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:53:        "numeroOportunidadeUnique": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-54-            "columns": [
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:55:                "numeroOportunidade"
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-56-            ],
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-57-            "unique": true
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-58-        }
+
+======================================
+2. Confirmar se o campo existe nos layouts custom
+======================================
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-2-    {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-3-        "label": "",
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-4-        "rows": [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-5-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-6-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json:7:                    "name": "numeroOportunidade"
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-8-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-9-                false
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-10-            ],
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-11-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-12-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json:13:                    "name": "assignedUser"
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-14-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-15-                false
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-16-            ],
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-17-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-18-                {
+--
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-20-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-21-                false
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-22-            ],
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-23-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-24-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json:25:                    "name": "complexCreated"
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-26-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-27-                false
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-28-            ],
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-29-            [
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-30-                {
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json:31:                    "name": "complexModified"
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-32-                },
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-33-                false
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-34-            ]
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-35-        ]
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json-36-    }
+
+======================================
+3. Confirmar se existe layout lateral original na aplicação
+======================================
+
+======================================
+4. Listar todos os arquivos de layout da Opportunity
+======================================
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json
+custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json
+custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json.bak
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json
+custom/Espo/Custom/Resources/layouts/Opportunity/edit.json.bak
+
+======================================
+5. Procurar onde o painel lateral é configurado
+======================================
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-1-{
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:2:    "recordViews": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:3:        "kanban": "custom:views/opportunity/record/kanban"
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-4-    }
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-5-}
+--
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json-1-{
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json-3-    "views": {
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json-4-        "detail": "views/dashboard-template/detail"
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json-5-    },
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json:6:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json:7:        "list": "views/dashboard-template/record/list"
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json-8-    },
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json-9-    "menu": {
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json-10-        "detail": {
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json-11-            "buttons": [
+application/Espo/Resources/metadata/clientDefs/DashboardTemplate.json-12-                {
+--
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-1-{
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json:2:    "recordViews":{
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json:3:        "detail":"views/inbound-email/record/detail",
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json:4:        "edit":"views/inbound-email/record/edit",
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json:5:        "list":"views/inbound-email/record/list"
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-6-    },
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-7-    "inlineEditDisabled": true,
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-8-    "searchPanelDisabled": true,
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-9-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-10-        "filters": {
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-11-            "select": false,
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json:12:            "rowActionsView": "views/record/row-actions/relationship-edit-and-remove",
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-13-            "unlinkDisabled": true
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-14-        },
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-15-        "emails": {
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-16-            "select": false,
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-17-            "create": false,
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json:18:            "rowActionsView": "views/record/row-actions/remove-only",
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-19-            "unlinkDisabled": true
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-20-        }
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-21-    },
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-22-    "defaultSidePanelFieldLists": {
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-23-        "detail": [
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-24-        ],
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json:25:        "detailSmall": [
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-26-        ],
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-27-        "edit": [
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-28-        ],
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-29-        "editSmall": [
+application/Espo/Resources/metadata/clientDefs/InboundEmail.json-30-        ]
+--
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-1-{
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-3-    "forceListViewSettings": true,
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-4-    "views": {
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-5-        "list": "views/email-template/list"
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-6-    },
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json:7:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json:8:        "edit": "views/email-template/record/edit",
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json:9:        "detail": "views/email-template/record/detail",
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json:10:        "editQuick": "views/email-template/record/edit-quick"
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-11-    },
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-12-    "modalViews": {
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json:13:        "select": "views/modals/select-records-with-categories"
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-14-    },
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json:15:    "sidePanels": {
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-16-        "detail": [
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-17-            {
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-18-                "name": "information",
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-19-                "label":"Info",
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json:20:                "view":"views/email-template/record/panels/information"
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-21-            }
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-22-        ],
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-23-        "edit": [
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-24-            {
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-25-                "name": "information",
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-26-                "label":"Info",
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json:27:                "view":"views/email-template/record/panels/information"
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-28-            }
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-29-        ]
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-30-    },
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-31-    "boolFilterList": ["onlyMy"],
+application/Espo/Resources/metadata/clientDefs/EmailTemplate.json-32-    "filterList": [
+--
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json-1-{
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json-3-    "views": {
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json-4-        "list": "views/email-folder/list"
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json-5-    },
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json:6:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json:7:        "list": "views/email-folder/record/list",
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json:8:        "editQuick": "views/email-folder/record/edit-small"
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json-9-    },
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json-10-    "menu": {
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json-11-        "list": {
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json-12-            "buttons": [
+application/Espo/Resources/metadata/clientDefs/EmailFolder.json-13-                {
+--
+application/Espo/Resources/metadata/clientDefs/AuthenticationProvider.json-1-{
+application/Espo/Resources/metadata/clientDefs/AuthenticationProvider.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/AuthenticationProvider.json:3:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/AuthenticationProvider.json:4:        "detail": "views/authentication-provider/record/detail",
+application/Espo/Resources/metadata/clientDefs/AuthenticationProvider.json:5:        "edit": "views/authentication-provider/record/edit"
+application/Espo/Resources/metadata/clientDefs/AuthenticationProvider.json-6-    },
+application/Espo/Resources/metadata/clientDefs/AuthenticationProvider.json-7-    "searchPanelDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AuthenticationProvider.json-8-    "inlineEditDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AuthenticationProvider.json-9-    "duplicateDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AuthenticationProvider.json-10-    "massUpdateDisabled": true,
+--
+application/Espo/Resources/metadata/clientDefs/User.json-4-    "acl": "acl/user",
+application/Espo/Resources/metadata/clientDefs/User.json-5-    "views": {
+application/Espo/Resources/metadata/clientDefs/User.json-6-        "detail": "views/user/detail",
+application/Espo/Resources/metadata/clientDefs/User.json-7-        "list": "views/user/list"
+application/Espo/Resources/metadata/clientDefs/User.json-8-    },
+application/Espo/Resources/metadata/clientDefs/User.json:9:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/User.json:10:        "detail": "views/user/record/detail",
+application/Espo/Resources/metadata/clientDefs/User.json:11:        "detailSmall": "views/user/record/detail-quick",
+application/Espo/Resources/metadata/clientDefs/User.json:12:        "edit": "views/user/record/edit",
+application/Espo/Resources/metadata/clientDefs/User.json:13:        "editSmall": "views/user/record/edit-quick",
+application/Espo/Resources/metadata/clientDefs/User.json:14:        "list": "views/user/record/list"
+application/Espo/Resources/metadata/clientDefs/User.json-15-    },
+application/Espo/Resources/metadata/clientDefs/User.json-16-    "modalViews": {
+application/Espo/Resources/metadata/clientDefs/User.json-17-        "selectFollowers": "views/user/modals/select-followers",
+application/Espo/Resources/metadata/clientDefs/User.json-18-        "detail": "views/user/modals/detail",
+application/Espo/Resources/metadata/clientDefs/User.json-19-        "massUpdate": "views/user/modals/mass-update"
+--
+application/Espo/Resources/metadata/clientDefs/User.json-27-    },
+application/Espo/Resources/metadata/clientDefs/User.json-28-    "defaultSidePanel": {
+application/Espo/Resources/metadata/clientDefs/User.json-29-        "detail": {
+application/Espo/Resources/metadata/clientDefs/User.json-30-            "name": "default",
+application/Espo/Resources/metadata/clientDefs/User.json-31-            "label": false,
+application/Espo/Resources/metadata/clientDefs/User.json:32:            "view": "views/user/record/panels/default-side",
+application/Espo/Resources/metadata/clientDefs/User.json-33-            "isForm": true
+application/Espo/Resources/metadata/clientDefs/User.json-34-        },
+application/Espo/Resources/metadata/clientDefs/User.json:35:        "detailSmall": {
+application/Espo/Resources/metadata/clientDefs/User.json-36-            "name": "default",
+application/Espo/Resources/metadata/clientDefs/User.json-37-            "label": false,
+application/Espo/Resources/metadata/clientDefs/User.json:38:            "view": "views/user/record/panels/default-side",
+application/Espo/Resources/metadata/clientDefs/User.json-39-            "isForm": true
+application/Espo/Resources/metadata/clientDefs/User.json-40-        },
+application/Espo/Resources/metadata/clientDefs/User.json-41-        "edit": {
+application/Espo/Resources/metadata/clientDefs/User.json-42-            "name": "default",
+application/Espo/Resources/metadata/clientDefs/User.json-43-            "label": false,
+application/Espo/Resources/metadata/clientDefs/User.json:44:            "view": "views/user/record/panels/default-side",
+application/Espo/Resources/metadata/clientDefs/User.json-45-            "isForm": true
+application/Espo/Resources/metadata/clientDefs/User.json-46-        },
+application/Espo/Resources/metadata/clientDefs/User.json-47-        "editSmall": {
+application/Espo/Resources/metadata/clientDefs/User.json-48-            "name": "default",
+application/Espo/Resources/metadata/clientDefs/User.json-49-            "label": false,
+application/Espo/Resources/metadata/clientDefs/User.json:50:            "view": "views/user/record/panels/default-side",
+application/Espo/Resources/metadata/clientDefs/User.json-51-            "isForm": true
+application/Espo/Resources/metadata/clientDefs/User.json-52-        }
+application/Espo/Resources/metadata/clientDefs/User.json-53-    },
+application/Espo/Resources/metadata/clientDefs/User.json-54-    "defaultSidePanelFieldLists": {
+application/Espo/Resources/metadata/clientDefs/User.json-55-        "detail": [
+application/Espo/Resources/metadata/clientDefs/User.json-56-            "avatar",
+application/Espo/Resources/metadata/clientDefs/User.json-57-            "createdAt",
+application/Espo/Resources/metadata/clientDefs/User.json-58-            "lastAccess",
+application/Espo/Resources/metadata/clientDefs/User.json-59-            "auth2FA"
+application/Espo/Resources/metadata/clientDefs/User.json-60-        ],
+application/Espo/Resources/metadata/clientDefs/User.json:61:        "detailSmall": [
+application/Espo/Resources/metadata/clientDefs/User.json-62-            "avatar",
+application/Espo/Resources/metadata/clientDefs/User.json-63-            "lastAccess"
+application/Espo/Resources/metadata/clientDefs/User.json-64-        ],
+application/Espo/Resources/metadata/clientDefs/User.json-65-        "edit": [
+application/Espo/Resources/metadata/clientDefs/User.json-66-            "avatar"
+application/Espo/Resources/metadata/clientDefs/User.json-67-        ],
+application/Espo/Resources/metadata/clientDefs/User.json-68-        "editSmall": [
+application/Espo/Resources/metadata/clientDefs/User.json-69-            "avatar"
+application/Espo/Resources/metadata/clientDefs/User.json-70-        ]
+application/Espo/Resources/metadata/clientDefs/User.json-71-    },
+application/Espo/Resources/metadata/clientDefs/User.json:72:    "sidePanels": {
+application/Espo/Resources/metadata/clientDefs/User.json-73-        "detail": [
+application/Espo/Resources/metadata/clientDefs/User.json-74-            {
+application/Espo/Resources/metadata/clientDefs/User.json-75-                "name": "activities",
+application/Espo/Resources/metadata/clientDefs/User.json-76-                "reference": "activities"
+application/Espo/Resources/metadata/clientDefs/User.json-77-            },
+--
+application/Espo/Resources/metadata/clientDefs/User.json-80-                "reference": "history"
+application/Espo/Resources/metadata/clientDefs/User.json-81-            },
+application/Espo/Resources/metadata/clientDefs/User.json-82-            {
+application/Espo/Resources/metadata/clientDefs/User.json-83-                "name": "tasks",
+application/Espo/Resources/metadata/clientDefs/User.json-84-                "reference": "tasks",
+application/Espo/Resources/metadata/clientDefs/User.json:85:                "view": "crm:views/user/record/panels/tasks"
+application/Espo/Resources/metadata/clientDefs/User.json-86-            }
+application/Espo/Resources/metadata/clientDefs/User.json-87-        ],
+application/Espo/Resources/metadata/clientDefs/User.json:88:        "detailSmall": [
+application/Espo/Resources/metadata/clientDefs/User.json-89-            {
+application/Espo/Resources/metadata/clientDefs/User.json-90-                "name": "activities",
+application/Espo/Resources/metadata/clientDefs/User.json-91-                "reference": "activities"
+application/Espo/Resources/metadata/clientDefs/User.json-92-            },
+application/Espo/Resources/metadata/clientDefs/User.json-93-            {
+--
+application/Espo/Resources/metadata/clientDefs/User.json-95-                "reference": "history"
+application/Espo/Resources/metadata/clientDefs/User.json-96-            },
+application/Espo/Resources/metadata/clientDefs/User.json-97-            {
+application/Espo/Resources/metadata/clientDefs/User.json-98-                "name": "tasks",
+application/Espo/Resources/metadata/clientDefs/User.json-99-                "reference": "tasks",
+application/Espo/Resources/metadata/clientDefs/User.json:100:                "view": "crm:views/user/record/panels/tasks"
+application/Espo/Resources/metadata/clientDefs/User.json-101-            }
+application/Espo/Resources/metadata/clientDefs/User.json-102-        ]
+application/Espo/Resources/metadata/clientDefs/User.json-103-    },
+application/Espo/Resources/metadata/clientDefs/User.json-104-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/User.json-105-        "targetLists": {
+application/Espo/Resources/metadata/clientDefs/User.json-106-            "create": false,
+application/Espo/Resources/metadata/clientDefs/User.json:107:            "rowActionsView": "crm:views/record/row-actions/relationship-target",
+application/Espo/Resources/metadata/clientDefs/User.json-108-            "layout": "listForTarget",
+application/Espo/Resources/metadata/clientDefs/User.json:109:            "view": "crm:views/record/panels/target-lists"
+application/Espo/Resources/metadata/clientDefs/User.json-110-        },
+application/Espo/Resources/metadata/clientDefs/User.json-111-        "contact": {
+application/Espo/Resources/metadata/clientDefs/User.json-112-            "selectHandler": "handlers/user/select-contact"
+application/Espo/Resources/metadata/clientDefs/User.json-113-        }
+application/Espo/Resources/metadata/clientDefs/User.json-114-    },
+--
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-1-{
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-3-    "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-4-    "editDisabled": true,
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-5-    "removeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-6-    "nameAttribute": "code",
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-7-    "defaultFilterData": {
+--
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-9-    },
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-10-    "filterList": [
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-11-        "active"
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-12-    ],
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-13-    "views": {
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json:14:        "list": "views/currency-record/list"
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-15-    },
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-16-    "viewSetupHandlers": {
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json:17:        "record/detail": [
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json:18:            "handlers/currency-record/record-detail"
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-19-        ]
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-20-    },
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-21-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-22-        "rates": {
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-23-            "layout": "listForRecord",
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-24-            "createAttributeMap": {
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json:25:                "code": "recordName"
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-26-            },
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json:27:            "view": "views/currency-record/record/panels/rates",
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-28-            "unlinkDisabled": true
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-29-        }
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-30-    },
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-31-    "menu": {
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-32-        "list": {
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-33-            "buttons": [
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-34-                {
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-35-                    "name": "settings",
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-36-                    "labelTranslation": "Global.scopeNames.Settings",
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-37-                    "link": "#Admin/currency",
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json:38:                    "handler": "handlers/currency-record/menu-action-settings",
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-39-                    "checkVisibilityFunction": "isVisible"
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-40-                }
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-41-            ]
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-42-        }
+application/Espo/Resources/metadata/clientDefs/CurrencyRecord.json-43-    }
+--
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-1-{
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-3-    "searchPanelDisabled": true,
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json:4:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json:5:        "detail": "views/lead-capture/record/detail",
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json:6:        "list": "views/lead-capture/record/list"
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-7-    },
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json:8:    "sidePanels": {
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-9-        "detail": [
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-10-            {
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-11-                "name": "request",
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-12-                "label": "Request",
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-13-                "isForm": true,
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json:14:                "view": "views/lead-capture/record/panels/request",
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-15-                "notRefreshable": true
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-16-            },
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-17-            {
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-18-                "name": "form",
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-19-                "label": "Web Form",
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-20-                "isForm": true,
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json:21:                "view": "views/lead-capture/record/panels/form",
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-22-                "notRefreshable": true
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-23-            }
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-24-        ]
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-25-    },
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-26-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-27-        "logRecords": {
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json:28:            "rowActionsView": "views/record/row-actions/view-and-remove",
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-29-            "layout": "listForLeadCapture",
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-30-            "select": false,
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-31-            "create": false
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-32-        }
+application/Espo/Resources/metadata/clientDefs/LeadCapture.json-33-    }
+--
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-1-{
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json:3:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json:4:        "list": "views/admin/auth-log-record/record/list",
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json:5:        "detail": "views/admin/auth-log-record/record/detail",
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json:6:        "detailSmall": "views/admin/auth-log-record/record/detail-small"
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-7-    },
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-8-    "modalViews": {
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json:9:        "detail": "views/admin/auth-log-record/modals/detail"
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-10-    },
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-11-    "filterList": [
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-12-        "accepted",
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-13-        "denied"
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-14-    ],
+--
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-16-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-17-        "actionHistoryRecords": {
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-18-            "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-19-            "selectDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-20-            "unlinkDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json:21:            "rowActionsView": "views/record/row-actions/relationship-view-only"
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-22-        }
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-23-    }
+application/Espo/Resources/metadata/clientDefs/AuthLogRecord.json-24-}
+--
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json-1-{
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json-3-    "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json-4-    "editDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json-5-    "mergeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json:6:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json:7:        "list": "views/admin/app-log-record/record/list"
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json-8-    },
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json-9-    "filterList": [
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json-10-        {
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json-11-            "name": "errors"
+application/Espo/Resources/metadata/clientDefs/AppLogRecord.json-12-        }
+--
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json-1-{
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json:3:    "sidePanels": {
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json-4-        "detail": [
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json-5-            {
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json-6-                "name": "connection",
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json-7-                "label": "Connection",
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json:8:                "view": "views/o-auth-account/records/panels/connection",
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json-9-                "notRefreshable": true
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json-10-            }
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json-11-        ]
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json-12-    }
+application/Espo/Resources/metadata/clientDefs/OAuthAccount.json-13-}
+--
+application/Espo/Resources/metadata/clientDefs/OAuthProvider.json-1-{
+application/Espo/Resources/metadata/clientDefs/OAuthProvider.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/OAuthProvider.json-3-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/OAuthProvider.json-4-        "accounts": {
+application/Espo/Resources/metadata/clientDefs/OAuthProvider.json-5-            "layout": "listForProvider",
+application/Espo/Resources/metadata/clientDefs/OAuthProvider.json-6-            "selectDisabled": true,
+application/Espo/Resources/metadata/clientDefs/OAuthProvider.json-7-            "unlinkDisabled": true
+--
+application/Espo/Resources/metadata/clientDefs/WebhookEventQueueItem.json-1-{
+application/Espo/Resources/metadata/clientDefs/WebhookEventQueueItem.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/WebhookEventQueueItem.json-3-    "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WebhookEventQueueItem.json-4-    "editDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WebhookEventQueueItem.json-5-    "mergeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WebhookEventQueueItem.json-6-    "exportDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WebhookEventQueueItem.json-7-    "textFilterDisabled": true,
+--
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-2-    "controller": "controllers/api-user",
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-3-    "views": {
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-4-        "detail": "views/user/detail",
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-5-        "list": "views/api-user/list"
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-6-    },
+application/Espo/Resources/metadata/clientDefs/ApiUser.json:7:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/ApiUser.json:8:        "list": "views/user/record/list",
+application/Espo/Resources/metadata/clientDefs/ApiUser.json:9:        "detail": "views/user/record/detail",
+application/Espo/Resources/metadata/clientDefs/ApiUser.json:10:        "edit":"views/user/record/edit",
+application/Espo/Resources/metadata/clientDefs/ApiUser.json:11:        "detailSmall":"views/user/record/detail-quick",
+application/Espo/Resources/metadata/clientDefs/ApiUser.json:12:        "editSmall":"views/user/record/edit-quick"
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-13-    },
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-14-    "defaultSidePanelFieldLists": {
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-15-        "detail": [
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-16-            "avatar",
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-17-            "createdAt",
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-18-            "lastAccess"
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-19-        ],
+application/Espo/Resources/metadata/clientDefs/ApiUser.json:20:        "detailSmall": [
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-21-            "avatar",
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-22-            "createdAt"
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-23-        ],
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-24-        "edit": [
+application/Espo/Resources/metadata/clientDefs/ApiUser.json-25-            "avatar"
+--
+application/Espo/Resources/metadata/clientDefs/PortalRole.json-1-{
+application/Espo/Resources/metadata/clientDefs/PortalRole.json:2:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/PortalRole.json:3:        "detail":"views/portal-role/record/detail",
+application/Espo/Resources/metadata/clientDefs/PortalRole.json:4:        "edit":"views/portal-role/record/edit",
+application/Espo/Resources/metadata/clientDefs/PortalRole.json:5:        "editQuick":"views/portal-role/record/edit",
+application/Espo/Resources/metadata/clientDefs/PortalRole.json:6:        "list":"views/portal-role/record/list"
+application/Espo/Resources/metadata/clientDefs/PortalRole.json-7-    },
+application/Espo/Resources/metadata/clientDefs/PortalRole.json-8-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/PortalRole.json-9-        "users": {
+application/Espo/Resources/metadata/clientDefs/PortalRole.json-10-            "create":false,
+application/Espo/Resources/metadata/clientDefs/PortalRole.json:11:            "rowActionsView": "views/record/row-actions/relationship-unlink-only"
+application/Espo/Resources/metadata/clientDefs/PortalRole.json-12-        }
+application/Espo/Resources/metadata/clientDefs/PortalRole.json-13-    },
+application/Espo/Resources/metadata/clientDefs/PortalRole.json-14-    "views": {
+application/Espo/Resources/metadata/clientDefs/PortalRole.json-15-        "list": "views/portal-role/list"
+application/Espo/Resources/metadata/clientDefs/PortalRole.json-16-    }
+--
+application/Espo/Resources/metadata/clientDefs/AddressCountry.json-1-{
+application/Espo/Resources/metadata/clientDefs/AddressCountry.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/AddressCountry.json-3-    "duplicateDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AddressCountry.json-4-    "mergeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AddressCountry.json-5-    "menu": {
+application/Espo/Resources/metadata/clientDefs/AddressCountry.json-6-        "list": {
+application/Espo/Resources/metadata/clientDefs/AddressCountry.json-7-            "dropdown": [
+--
+application/Espo/Resources/metadata/clientDefs/Webhook.json-1-{
+application/Espo/Resources/metadata/clientDefs/Webhook.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/Webhook.json-3-    "inlineEditDisabled": true,
+application/Espo/Resources/metadata/clientDefs/Webhook.json:4:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/Webhook.json:5:        "list": "views/webhook/record/list"
+application/Espo/Resources/metadata/clientDefs/Webhook.json-6-    },
+application/Espo/Resources/metadata/clientDefs/Webhook.json-7-    "menu": {
+application/Espo/Resources/metadata/clientDefs/Webhook.json-8-        "list": {
+application/Espo/Resources/metadata/clientDefs/Webhook.json-9-            "dropdown": [
+application/Espo/Resources/metadata/clientDefs/Webhook.json-10-                {
+--
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-1-{
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-3-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-4-        "log": {
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-5-            "readOnly": true,
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json:6:            "view": "views/scheduled-job/record/panels/log",
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-7-            "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-8-            "selectDisabled": true,
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-9-            "viewDisabled": true,
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-10-            "unlinkDisabled": true
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-11-        }
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-12-    },
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json:13:    "recordViews":{
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json:14:        "list": "views/scheduled-job/record/list",
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json:15:        "detail": "views/scheduled-job/record/detail"
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-16-    },
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-17-    "views": {
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-18-        "list": "views/scheduled-job/list"
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-19-    },
+application/Espo/Resources/metadata/clientDefs/ScheduledJob.json-20-    "jobWithTargetList": [
+--
+application/Espo/Resources/metadata/clientDefs/EmailAddress.json-1-{
+application/Espo/Resources/metadata/clientDefs/EmailAddress.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/EmailAddress.json-3-    "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/EmailAddress.json-4-    "editDisabled": true,
+application/Espo/Resources/metadata/clientDefs/EmailAddress.json-5-    "exportDisabled": true,
+application/Espo/Resources/metadata/clientDefs/EmailAddress.json-6-    "mergeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/EmailAddress.json-7-    "filterList": [
+--
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json-2-    "controller": "controllers/email-filter",
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json-3-    "dynamicHandler": "handlers/email-filter",
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json-4-    "modalViews": {
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json-5-        "edit": "views/email-filter/modals/edit"
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json-6-    },
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json:7:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json:8:        "list": "views/email-filter/record/list"
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json-9-    },
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json-10-    "inlineEditDisabled": true,
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json-11-    "searchPanelDisabled": false,
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json-12-    "menu": {
+application/Espo/Resources/metadata/clientDefs/EmailFilter.json-13-        "list": {
+--
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-1-{
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json:3:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json:4:        "list":"views/email-account/record/list",
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json:5:        "detail": "views/email-account/record/detail",
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json:6:        "edit": "views/email-account/record/edit"
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-7-    },
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-8-    "views": {
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-9-    	"list": "views/email-account/list"
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-10-    },
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-11-    "inlineEditDisabled": true,
+--
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-15-        }
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-16-    ],
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-17-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-18-        "filters": {
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-19-            "select": false,
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json:20:            "rowActionsView": "views/record/row-actions/relationship-edit-and-remove",
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-21-            "unlinkDisabled": true
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-22-        },
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-23-        "emails": {
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-24-            "select": false,
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-25-            "create": false,
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json:26:            "rowActionsView": "views/record/row-actions/remove-only",
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-27-            "unlinkDisabled": true
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-28-        }
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-29-    }
+application/Espo/Resources/metadata/clientDefs/EmailAccount.json-30-}
+--
+application/Espo/Resources/metadata/clientDefs/Email.json-3-    "acl":"acl/email",
+application/Espo/Resources/metadata/clientDefs/Email.json-4-    "views":{
+application/Espo/Resources/metadata/clientDefs/Email.json-5-        "list":"views/email/list",
+application/Espo/Resources/metadata/clientDefs/Email.json-6-        "detail":"views/email/detail"
+application/Espo/Resources/metadata/clientDefs/Email.json-7-    },
+application/Espo/Resources/metadata/clientDefs/Email.json:8:    "recordViews":{
+application/Espo/Resources/metadata/clientDefs/Email.json:9:        "list":"views/email/record/list",
+application/Espo/Resources/metadata/clientDefs/Email.json:10:        "detail":"views/email/record/detail",
+application/Espo/Resources/metadata/clientDefs/Email.json:11:        "edit":"views/email/record/edit",
+application/Espo/Resources/metadata/clientDefs/Email.json:12:        "editQuick":"views/email/record/edit-quick",
+application/Espo/Resources/metadata/clientDefs/Email.json:13:        "detailQuick":"views/email/record/detail-quick",
+application/Espo/Resources/metadata/clientDefs/Email.json:14:        "compose":"views/email/record/compose",
+application/Espo/Resources/metadata/clientDefs/Email.json:15:        "listRelated":"views/email/record/list-related"
+application/Espo/Resources/metadata/clientDefs/Email.json-16-    },
+application/Espo/Resources/metadata/clientDefs/Email.json-17-    "modalViews":{
+application/Espo/Resources/metadata/clientDefs/Email.json-18-        "detail":"views/email/modals/detail",
+application/Espo/Resources/metadata/clientDefs/Email.json-19-        "compose":"views/modals/compose-email"
+application/Espo/Resources/metadata/clientDefs/Email.json-20-    },
+application/Espo/Resources/metadata/clientDefs/Email.json-21-    "quickCreateModalType":"compose",
+application/Espo/Resources/metadata/clientDefs/Email.json:22:    "defaultSidePanelView": "views/email/record/panels/default-side",
+application/Espo/Resources/metadata/clientDefs/Email.json:23:    "sidePanels": {
+application/Espo/Resources/metadata/clientDefs/Email.json-24-        "detail": [
+application/Espo/Resources/metadata/clientDefs/Email.json-25-            {
+application/Espo/Resources/metadata/clientDefs/Email.json-26-                "name": "event",
+application/Espo/Resources/metadata/clientDefs/Email.json-27-                "label": "Event",
+application/Espo/Resources/metadata/clientDefs/Email.json:28:                "view": "views/email/record/panels/event",
+application/Espo/Resources/metadata/clientDefs/Email.json-29-                "isForm": true,
+application/Espo/Resources/metadata/clientDefs/Email.json-30-                "hidden": true
+application/Espo/Resources/metadata/clientDefs/Email.json-31-            }
+application/Espo/Resources/metadata/clientDefs/Email.json-32-        ]
+application/Espo/Resources/metadata/clientDefs/Email.json-33-    },
+--
+application/Espo/Resources/metadata/clientDefs/LastViewed.json-1-{
+application/Espo/Resources/metadata/clientDefs/LastViewed.json-2-    "controller": "controllers/last-viewed",
+application/Espo/Resources/metadata/clientDefs/LastViewed.json-3-    "views": {
+application/Espo/Resources/metadata/clientDefs/LastViewed.json-4-        "list": "views/last-viewed/list"
+application/Espo/Resources/metadata/clientDefs/LastViewed.json-5-    },
+application/Espo/Resources/metadata/clientDefs/LastViewed.json:6:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/LastViewed.json:7:        "list": "views/last-viewed/record/list"
+application/Espo/Resources/metadata/clientDefs/LastViewed.json-8-    }
+application/Espo/Resources/metadata/clientDefs/LastViewed.json-9-}
+--
+application/Espo/Resources/metadata/clientDefs/WorkingTimeRange.json-1-{
+application/Espo/Resources/metadata/clientDefs/WorkingTimeRange.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/WorkingTimeRange.json-3-    "viewSetupHandlers": {
+application/Espo/Resources/metadata/clientDefs/WorkingTimeRange.json:4:        "record/edit": ["handlers/working-time-range"]
+application/Espo/Resources/metadata/clientDefs/WorkingTimeRange.json-5-    },
+application/Espo/Resources/metadata/clientDefs/WorkingTimeRange.json-6-    "mergeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WorkingTimeRange.json-7-    "massUpdateDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WorkingTimeRange.json-8-    "menu": {
+application/Espo/Resources/metadata/clientDefs/WorkingTimeRange.json-9-        "list": {
+--
+application/Espo/Resources/metadata/clientDefs/LeadCaptureLogRecord.json-1-{
+application/Espo/Resources/metadata/clientDefs/LeadCaptureLogRecord.json-2-    "modalViews": {
+application/Espo/Resources/metadata/clientDefs/LeadCaptureLogRecord.json:3:        "detail": "views/lead-capture-log-record/modals/detail"
+application/Espo/Resources/metadata/clientDefs/LeadCaptureLogRecord.json-4-    }
+application/Espo/Resources/metadata/clientDefs/LeadCaptureLogRecord.json-5-}
+--
+application/Espo/Resources/metadata/clientDefs/ScheduledJobLogRecord.json-1-{
+application/Espo/Resources/metadata/clientDefs/ScheduledJobLogRecord.json:2:  "controller": "controllers/record"
+application/Espo/Resources/metadata/clientDefs/ScheduledJobLogRecord.json-3-}
+--
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-2-    "controller": "controllers/portal-user",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-3-    "views": {
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-4-        "detail": "views/user/detail",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-5-        "list": "views/portal-user/list"
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-6-    },
+application/Espo/Resources/metadata/clientDefs/PortalUser.json:7:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/PortalUser.json:8:        "list": "views/user/record/list",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json:9:        "detail": "views/user/record/detail",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json:10:        "edit":"views/user/record/edit",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json:11:        "detailSmall":"views/user/record/detail-quick",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json:12:        "editSmall":"views/user/record/edit-quick"
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-13-    },
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-14-    "defaultSidePanelFieldLists": {
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-15-        "detail": [
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-16-            "avatar",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-17-            "createdAt",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-18-            "lastAccess"
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-19-        ],
+application/Espo/Resources/metadata/clientDefs/PortalUser.json:20:        "detailSmall": [
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-21-            "avatar",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-22-            "createdAt"
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-23-        ],
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-24-        "edit": [
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-25-            "avatar"
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-26-        ],
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-27-        "editSmall": [
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-28-            "avatar"
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-29-        ]
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-30-    },
+application/Espo/Resources/metadata/clientDefs/PortalUser.json:31:    "sidePanels": {
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-32-        "detail": [
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-33-            {
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-34-                "name": "activities",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-35-                "reference": "activities"
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-36-            },
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-37-            {
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-38-                "name": "history",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-39-                "reference": "history"
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-40-            }
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-41-        ],
+application/Espo/Resources/metadata/clientDefs/PortalUser.json:42:        "detailSmall": [
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-43-            {
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-44-                "name": "activities",
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-45-                "reference": "activities"
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-46-            },
+application/Espo/Resources/metadata/clientDefs/PortalUser.json-47-            {
+--
+application/Espo/Resources/metadata/clientDefs/Preferences.json-1-{
+application/Espo/Resources/metadata/clientDefs/Preferences.json:2:   "recordViews":{
+application/Espo/Resources/metadata/clientDefs/Preferences.json:3:      "edit": "views/preferences/record/edit"
+application/Espo/Resources/metadata/clientDefs/Preferences.json-4-   },
+application/Espo/Resources/metadata/clientDefs/Preferences.json-5-   "views":{
+application/Espo/Resources/metadata/clientDefs/Preferences.json-6-      "edit": "views/preferences/edit"
+application/Espo/Resources/metadata/clientDefs/Preferences.json-7-   },
+application/Espo/Resources/metadata/clientDefs/Preferences.json-8-   "acl": "acl/preferences",
+--
+application/Espo/Resources/metadata/clientDefs/AppSecret.json-1-{
+application/Espo/Resources/metadata/clientDefs/AppSecret.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/AppSecret.json-3-    "mergeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AppSecret.json-4-    "exportDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AppSecret.json-5-    "massUpdateDisabled": true
+application/Espo/Resources/metadata/clientDefs/AppSecret.json-6-}
+--
+application/Espo/Resources/metadata/clientDefs/Job.json-1-{
+application/Espo/Resources/metadata/clientDefs/Job.json-2-    "modalViews": {
+application/Espo/Resources/metadata/clientDefs/Job.json-3-        "detail": "views/admin/job/modals/detail"
+application/Espo/Resources/metadata/clientDefs/Job.json-4-    },
+application/Espo/Resources/metadata/clientDefs/Job.json:5:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/Job.json:6:        "list": "views/admin/job/record/list",
+application/Espo/Resources/metadata/clientDefs/Job.json:7:        "detailQuick": "views/admin/job/record/detail-small"
+application/Espo/Resources/metadata/clientDefs/Job.json-8-    }
+application/Espo/Resources/metadata/clientDefs/Job.json-9-}
+--
+application/Espo/Resources/metadata/clientDefs/Attachment.json-1-{
+application/Espo/Resources/metadata/clientDefs/Attachment.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/Attachment.json-3-    "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/Attachment.json:4:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/Attachment.json:5:        "list": "views/attachment/record/list",
+application/Espo/Resources/metadata/clientDefs/Attachment.json:6:        "detail": "views/attachment/record/detail"
+application/Espo/Resources/metadata/clientDefs/Attachment.json-7-    },
+application/Espo/Resources/metadata/clientDefs/Attachment.json-8-    "modalViews": {
+application/Espo/Resources/metadata/clientDefs/Attachment.json-9-        "detail": "views/attachment/modals/detail"
+application/Espo/Resources/metadata/clientDefs/Attachment.json-10-    },
+application/Espo/Resources/metadata/clientDefs/Attachment.json-11-    "filterList": [
+--
+application/Espo/Resources/metadata/clientDefs/Global.json-3-        {
+application/Espo/Resources/metadata/clientDefs/Global.json-4-            "name": "viewAuditLog",
+application/Espo/Resources/metadata/clientDefs/Global.json-5-            "label": "View Audit Log",
+application/Espo/Resources/metadata/clientDefs/Global.json-6-            "actionFunction": "show",
+application/Espo/Resources/metadata/clientDefs/Global.json-7-            "checkVisibilityFunction": "isAvailable",
+application/Espo/Resources/metadata/clientDefs/Global.json:8:            "handler": "handlers/record/view-audit-log",
+application/Espo/Resources/metadata/clientDefs/Global.json-9-            "groupIndex": 4
+application/Espo/Resources/metadata/clientDefs/Global.json-10-        },
+application/Espo/Resources/metadata/clientDefs/Global.json-11-        {
+application/Espo/Resources/metadata/clientDefs/Global.json-12-            "name": "viewUserAccess",
+application/Espo/Resources/metadata/clientDefs/Global.json-13-            "label": "View User Access",
+application/Espo/Resources/metadata/clientDefs/Global.json-14-            "actionFunction": "show",
+application/Espo/Resources/metadata/clientDefs/Global.json-15-            "checkVisibilityFunction": "isAvailable",
+application/Espo/Resources/metadata/clientDefs/Global.json:16:            "handler": "handlers/record/view-user-access",
+application/Espo/Resources/metadata/clientDefs/Global.json-17-            "groupIndex": 4
+application/Espo/Resources/metadata/clientDefs/Global.json-18-        }
+application/Espo/Resources/metadata/clientDefs/Global.json-19-    ]
+application/Espo/Resources/metadata/clientDefs/Global.json-20-}
+--
+application/Espo/Resources/metadata/clientDefs/CurrencyRecordRate.json-1-{
+application/Espo/Resources/metadata/clientDefs/CurrencyRecordRate.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/CurrencyRecordRate.json:3:    "modelDefaultsPreparator": "handlers/currency-record-rate/default-preparator",
+application/Espo/Resources/metadata/clientDefs/CurrencyRecordRate.json:4:    "acl": "acl/currency-record-rate",
+application/Espo/Resources/metadata/clientDefs/CurrencyRecordRate.json-5-    "textFilterDisabled": true
+application/Espo/Resources/metadata/clientDefs/CurrencyRecordRate.json-6-}
+--
+application/Espo/Resources/metadata/clientDefs/PhoneNumber.json-1-{
+application/Espo/Resources/metadata/clientDefs/PhoneNumber.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/PhoneNumber.json-3-    "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/PhoneNumber.json-4-    "editDisabled": true,
+application/Espo/Resources/metadata/clientDefs/PhoneNumber.json-5-    "exportDisabled": true,
+application/Espo/Resources/metadata/clientDefs/PhoneNumber.json-6-    "mergeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/PhoneNumber.json-7-    "filterList": [
+--
+application/Espo/Resources/metadata/clientDefs/ActionHistoryRecord.json-1-{
+application/Espo/Resources/metadata/clientDefs/ActionHistoryRecord.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/ActionHistoryRecord.json-3-    "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/ActionHistoryRecord.json:4:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/ActionHistoryRecord.json:5:        "list": "views/action-history-record/record/list"
+application/Espo/Resources/metadata/clientDefs/ActionHistoryRecord.json-6-    },
+application/Espo/Resources/metadata/clientDefs/ActionHistoryRecord.json-7-    "modalViews": {
+application/Espo/Resources/metadata/clientDefs/ActionHistoryRecord.json:8:        "detail": "views/action-history-record/modals/detail"
+application/Espo/Resources/metadata/clientDefs/ActionHistoryRecord.json-9-    }
+application/Espo/Resources/metadata/clientDefs/ActionHistoryRecord.json-10-}
+--
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-1-{
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-2-    "controller": "controllers/layout-set",
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json:3:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json:4:        "list": "views/layout-set/record/list"
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-5-    },
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-6-    "searchPanelDisabled": true,
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-7-    "duplicateDisabled": true,
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-8-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-9-        "teams": {
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-10-            "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-11-            "viewDisabled": true,
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json:12:            "rowActionsView": "views/record/row-actions/relationship-unlink-only"
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-13-        }
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-14-    }
+application/Espo/Resources/metadata/clientDefs/LayoutSet.json-15-}
+--
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-1-{
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-3-    "views": {
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-4-        "list": "views/group-email-folder/list"
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-5-    },
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json:6:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json:7:        "list": "views/group-email-folder/record/list",
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json:8:        "editQuick": "views/email-folder/record/edit-small"
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-9-    },
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-10-    "searchPanelDisabled": true,
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-11-    "massUpdateDisabled": true,
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-12-    "mergeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-13-    "massRemoveDisabled": true,
+--
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-26-    },
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-27-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-28-        "emails": {
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-29-            "select": false,
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-30-            "create": false,
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json:31:            "rowActionsView": "views/record/row-actions/remove-only",
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-32-            "unlinkDisabled": true
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-33-        }
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-34-    }
+application/Espo/Resources/metadata/clientDefs/GroupEmailFolder.json-35-}
+--
+application/Espo/Resources/metadata/clientDefs/WorkingTimeCalendar.json-1-{
+application/Espo/Resources/metadata/clientDefs/WorkingTimeCalendar.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/WorkingTimeCalendar.json-3-    "searchPanelDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WorkingTimeCalendar.json-4-    "massUpdateDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WorkingTimeCalendar.json-5-    "mergeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WorkingTimeCalendar.json-6-    "massRemoveDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WorkingTimeCalendar.json-7-    "iconClass": "fas fa-calendar-week",
+--
+application/Espo/Resources/metadata/clientDefs/Template.json-1-{
+application/Espo/Resources/metadata/clientDefs/Template.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/Template.json:3:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/Template.json:4:        "detail": "views/template/record/detail",
+application/Espo/Resources/metadata/clientDefs/Template.json:5:        "edit": "views/template/record/edit"
+application/Espo/Resources/metadata/clientDefs/Template.json-6-    },
+application/Espo/Resources/metadata/clientDefs/Template.json-7-    "mergeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/Template.json-8-    "filterList": [
+application/Espo/Resources/metadata/clientDefs/Template.json-9-        "active"
+application/Espo/Resources/metadata/clientDefs/Template.json-10-    ],
+--
+application/Espo/Resources/metadata/clientDefs/ImportError.json-1-{
+application/Espo/Resources/metadata/clientDefs/ImportError.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/ImportError.json-3-    "acl": "acl/foreign",
+application/Espo/Resources/metadata/clientDefs/ImportError.json-4-    "searchPanelDisabled": true,
+application/Espo/Resources/metadata/clientDefs/ImportError.json-5-    "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/ImportError.json-6-    "editDisabled": true
+application/Espo/Resources/metadata/clientDefs/ImportError.json-7-}
+--
+application/Espo/Resources/metadata/clientDefs/Note.json-1-{
+application/Espo/Resources/metadata/clientDefs/Note.json-2-    "controller": "controllers/note",
+application/Espo/Resources/metadata/clientDefs/Note.json-3-    "collection": "collections/note",
+application/Espo/Resources/metadata/clientDefs/Note.json:4:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/Note.json:5:        "edit": "views/note/record/edit",
+application/Espo/Resources/metadata/clientDefs/Note.json:6:        "editQuick": "views/note/record/edit",
+application/Espo/Resources/metadata/clientDefs/Note.json:7:        "listRelated": "views/stream/record/list"
+application/Espo/Resources/metadata/clientDefs/Note.json-8-    },
+application/Espo/Resources/metadata/clientDefs/Note.json-9-    "modalViews": {
+application/Espo/Resources/metadata/clientDefs/Note.json-10-        "edit": "views/note/modals/edit"
+application/Espo/Resources/metadata/clientDefs/Note.json-11-    },
+application/Espo/Resources/metadata/clientDefs/Note.json-12-    "itemViews": {
+application/Espo/Resources/metadata/clientDefs/Note.json-13-        "Post": "views/stream/notes/post"
+application/Espo/Resources/metadata/clientDefs/Note.json-14-    },
+application/Espo/Resources/metadata/clientDefs/Note.json-15-    "viewSetupHandlers": {
+application/Espo/Resources/metadata/clientDefs/Note.json:16:        "record/detail": ["handlers/note/record-detail-setup"]
+application/Espo/Resources/metadata/clientDefs/Note.json-17-    }
+application/Espo/Resources/metadata/clientDefs/Note.json-18-}
+--
+application/Espo/Resources/metadata/clientDefs/Portal.json-1-{
+application/Espo/Resources/metadata/clientDefs/Portal.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/Portal.json:3:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/Portal.json:4:        "list":"views/portal/record/list"
+application/Espo/Resources/metadata/clientDefs/Portal.json-5-    },
+application/Espo/Resources/metadata/clientDefs/Portal.json-6-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/Portal.json-7-        "users": {
+application/Espo/Resources/metadata/clientDefs/Portal.json-8-            "create": false,
+application/Espo/Resources/metadata/clientDefs/Portal.json:9:            "rowActionsView": "views/record/row-actions/relationship-unlink-only",
+application/Espo/Resources/metadata/clientDefs/Portal.json-10-            "layout": "listSmall",
+application/Espo/Resources/metadata/clientDefs/Portal.json-11-            "selectPrimaryFilterName": "activePortal"
+application/Espo/Resources/metadata/clientDefs/Portal.json-12-        },
+application/Espo/Resources/metadata/clientDefs/Portal.json-13-        "authenticationProvider": {
+application/Espo/Resources/metadata/clientDefs/Portal.json-14-            "createDisabled": true
+--
+application/Espo/Resources/metadata/clientDefs/WebhookQueueItem.json-1-{
+application/Espo/Resources/metadata/clientDefs/WebhookQueueItem.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/WebhookQueueItem.json-3-    "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WebhookQueueItem.json-4-    "editDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WebhookQueueItem.json-5-    "mergeDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WebhookQueueItem.json-6-    "exportDisabled": true,
+application/Espo/Resources/metadata/clientDefs/WebhookQueueItem.json-7-    "textFilterDisabled": true,
+--
+application/Espo/Resources/metadata/clientDefs/Role.json-1-{
+application/Espo/Resources/metadata/clientDefs/Role.json:2:    "recordViews":{
+application/Espo/Resources/metadata/clientDefs/Role.json:3:        "detail":"views/role/record/detail",
+application/Espo/Resources/metadata/clientDefs/Role.json:4:        "edit":"views/role/record/edit",
+application/Espo/Resources/metadata/clientDefs/Role.json:5:        "editQuick":"views/role/record/edit",
+application/Espo/Resources/metadata/clientDefs/Role.json:6:        "list":"views/role/record/list"
+application/Espo/Resources/metadata/clientDefs/Role.json-7-    },
+application/Espo/Resources/metadata/clientDefs/Role.json-8-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/Role.json-9-        "users":{
+application/Espo/Resources/metadata/clientDefs/Role.json-10-            "create":false,
+application/Espo/Resources/metadata/clientDefs/Role.json:11:            "rowActionsView": "views/record/row-actions/relationship-unlink-only"
+application/Espo/Resources/metadata/clientDefs/Role.json-12-        },
+application/Espo/Resources/metadata/clientDefs/Role.json-13-        "teams":{
+application/Espo/Resources/metadata/clientDefs/Role.json-14-            "create":false,
+application/Espo/Resources/metadata/clientDefs/Role.json:15:            "rowActionsView": "views/record/row-actions/relationship-unlink-only"
+application/Espo/Resources/metadata/clientDefs/Role.json-16-        }
+application/Espo/Resources/metadata/clientDefs/Role.json-17-    },
+application/Espo/Resources/metadata/clientDefs/Role.json-18-    "views": {
+application/Espo/Resources/metadata/clientDefs/Role.json-19-        "list": "views/role/list"
+application/Espo/Resources/metadata/clientDefs/Role.json-20-    }
+--
+application/Espo/Resources/metadata/clientDefs/Import.json-1-{
+application/Espo/Resources/metadata/clientDefs/Import.json-2-    "controller": "controllers/import",
+application/Espo/Resources/metadata/clientDefs/Import.json-3-    "acl": "acl/import",
+application/Espo/Resources/metadata/clientDefs/Import.json:4:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/Import.json:5:        "list": "views/import/record/list",
+application/Espo/Resources/metadata/clientDefs/Import.json:6:        "detail": "views/import/record/detail"
+application/Espo/Resources/metadata/clientDefs/Import.json-7-    },
+application/Espo/Resources/metadata/clientDefs/Import.json-8-    "views": {
+application/Espo/Resources/metadata/clientDefs/Import.json-9-    	"list": "views/import/list",
+application/Espo/Resources/metadata/clientDefs/Import.json-10-    	"detail": "views/import/detail"
+application/Espo/Resources/metadata/clientDefs/Import.json-11-    },
+application/Espo/Resources/metadata/clientDefs/Import.json-12-    "bottomPanels": {
+application/Espo/Resources/metadata/clientDefs/Import.json-13-    	"detail": [
+application/Espo/Resources/metadata/clientDefs/Import.json-14-	    	{
+application/Espo/Resources/metadata/clientDefs/Import.json-15-	    		"name": "imported",
+application/Espo/Resources/metadata/clientDefs/Import.json-16-	    		"label": "Imported",
+application/Espo/Resources/metadata/clientDefs/Import.json:17:	    		"view": "views/import/record/panels/imported",
+application/Espo/Resources/metadata/clientDefs/Import.json-18-                "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/Import.json-19-                "selectDisabled": true,
+application/Espo/Resources/metadata/clientDefs/Import.json-20-                "unlinkDisabled": true
+application/Espo/Resources/metadata/clientDefs/Import.json-21-	    	},
+application/Espo/Resources/metadata/clientDefs/Import.json-22-	    	{
+application/Espo/Resources/metadata/clientDefs/Import.json-23-	    		"name": "duplicates",
+application/Espo/Resources/metadata/clientDefs/Import.json-24-	    		"label": "Duplicates",
+application/Espo/Resources/metadata/clientDefs/Import.json:25:	    		"view": "views/import/record/panels/duplicates",
+application/Espo/Resources/metadata/clientDefs/Import.json:26:                "rowActionsView": "views/import/record/row-actions/duplicates",
+application/Espo/Resources/metadata/clientDefs/Import.json-27-                "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/Import.json-28-                "selectDisabled": true,
+application/Espo/Resources/metadata/clientDefs/Import.json-29-                "unlinkDisabled": true
+application/Espo/Resources/metadata/clientDefs/Import.json-30-	    	},
+application/Espo/Resources/metadata/clientDefs/Import.json-31-	    	{
+application/Espo/Resources/metadata/clientDefs/Import.json-32-	    		"name": "updated",
+application/Espo/Resources/metadata/clientDefs/Import.json-33-	    		"label": "Updated",
+application/Espo/Resources/metadata/clientDefs/Import.json:34:	    		"view": "views/import/record/panels/updated",
+application/Espo/Resources/metadata/clientDefs/Import.json-35-                "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/Import.json-36-                "selectDisabled": true,
+application/Espo/Resources/metadata/clientDefs/Import.json-37-                "unlinkDisabled": true
+application/Espo/Resources/metadata/clientDefs/Import.json-38-	    	}
+application/Espo/Resources/metadata/clientDefs/Import.json-39-	    ]
+--
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-1-{
+application/Espo/Resources/metadata/clientDefs/AuthToken.json:2:    "controller": "controllers/record",
+application/Espo/Resources/metadata/clientDefs/AuthToken.json:3:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/AuthToken.json:4:        "list": "views/admin/auth-token/record/list",
+application/Espo/Resources/metadata/clientDefs/AuthToken.json:5:        "detail": "views/admin/auth-token/record/detail",
+application/Espo/Resources/metadata/clientDefs/AuthToken.json:6:        "detailSmall": "views/admin/auth-token/record/detail-small"
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-7-    },
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-8-    "modalViews": {
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-9-        "detail": "views/admin/auth-token/modals/detail"
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-10-    },
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-11-    "filterList": [
+--
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-16-    "relationshipPanels": {
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-17-        "actionHistoryRecords": {
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-18-            "createDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-19-            "selectDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-20-            "unlinkDisabled": true,
+application/Espo/Resources/metadata/clientDefs/AuthToken.json:21:            "rowActionsView": "views/record/row-actions/relationship-view-only"
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-22-        }
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-23-    }
+application/Espo/Resources/metadata/clientDefs/AuthToken.json-24-}
+--
+application/Espo/Resources/metadata/clientDefs/Team.json-23-            "selectMandatoryAttributeList": [
+application/Espo/Resources/metadata/clientDefs/Team.json-24-                "teamRole"
+application/Espo/Resources/metadata/clientDefs/Team.json-25-            ]
+application/Espo/Resources/metadata/clientDefs/Team.json-26-        }
+application/Espo/Resources/metadata/clientDefs/Team.json-27-    },
+application/Espo/Resources/metadata/clientDefs/Team.json:28:    "recordViews": {
+application/Espo/Resources/metadata/clientDefs/Team.json:29:        "detail": "views/team/record/detail",
+application/Espo/Resources/metadata/clientDefs/Team.json:30:        "edit": "views/team/record/edit",
+application/Espo/Resources/metadata/clientDefs/Team.json:31:        "list": "views/team/record/list"
+application/Espo/Resources/metadata/clientDefs/Team.json-32-    },
+application/Espo/Resources/metadata/clientDefs/Team.json-33-    "modalViews": {
+application/Espo/Resources/metadata/clientDefs/Team.json-34-        "detail": "views/team/modals/detail"
+application/Espo/Resources/metadata/clientDefs/Team.json-35-    },
+application/Espo/Resources/metadata/clientDefs/Team.json-36-    "boolFilterList": ["onlyMy"],
+--
+application/Espo/Resources/metadata/clientDefs/EmailTemplateCategory.json-1-{
+application/Espo/Resources/metadata/clientDefs/EmailTemplateCategory.json:2:    "controller": "controllers/record-tree",
+application/Espo/Resources/metadata/clientDefs/EmailTemplateCategory.json-3-    "collection": "collections/tree",
+application/Espo/Resources/metadata/clientDefs/EmailTemplateCategory.json-4-    "menu": {
+application/Espo/Resources/metadata/clientDefs/EmailTemplateCategory.json-5-        "listTree": {
+application/Espo/Resources/metadata/clientDefs/EmailTemplateCategory.json-6-            "buttons": [
+application/Espo/Resources/metadata/clientDefs/EmailTemplateCategory.json-7-                {
+--
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-1-{
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:2:    "recordViews": {
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json:3:        "kanban": "custom:views/opportunity/record/kanban"
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-4-    }
+custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json-5-}
+
+======================================
+6. Verificar se existe clientDefs custom da Opportunity
+======================================
+{
+    "recordViews": {
+        "kanban": "custom:views/opportunity/record/kanban"
+    }
+}
+
+======================================
+7. Verificar clientDefs original da Opportunity
+======================================
+Não encontrado.
+
+======================================
+8. Verificar cache gerado com numeroOportunidade
+======================================
+data/cache/application/languages/pt_BR.php-5367-      'lastStage' => 'Último Estágio',
+data/cache/application/languages/pt_BR.php-5368-      'tipoOportunidade' => 'Tipo de Oportunidade',
+data/cache/application/languages/pt_BR.php-5369-      'detalheOportunidade' => 'Detalhe da Oportunidade',
+data/cache/application/languages/pt_BR.php:5370:      'numeroOportunidade' => 'Número da Oportunidade'
+data/cache/application/languages/pt_BR.php-5371-    ],
+data/cache/application/languages/pt_BR.php-5372-    'links' => [
+data/cache/application/languages/pt_BR.php-5373-      'contacts' => 'Contatos',
+--
+data/cache/application/entityAcl.php-2689-        4 => 'modifiedAt',
+data/cache/application/entityAcl.php-2690-        5 => 'createdBy',
+data/cache/application/entityAcl.php-2691-        6 => 'modifiedBy',
+data/cache/application/entityAcl.php:2692:        7 => 'numeroOportunidade',
+data/cache/application/entityAcl.php-2693-        8 => 'streamUpdatedAt'
+data/cache/application/entityAcl.php-2694-      ],
+data/cache/application/entityAcl.php-2695-      'nonAdminReadOnly' => []
+--
+data/cache/application/entityAcl.php-2709-        7 => 'createdByName',
+data/cache/application/entityAcl.php-2710-        8 => 'modifiedById',
+data/cache/application/entityAcl.php-2711-        9 => 'modifiedByName',
+data/cache/application/entityAcl.php:2712:        10 => 'numeroOportunidade',
+data/cache/application/entityAcl.php-2713-        11 => 'streamUpdatedAt'
+data/cache/application/entityAcl.php-2714-      ],
+data/cache/application/entityAcl.php-2715-      'nonAdminReadOnly' => []
+--
+data/cache/application/objMetadata.php-25059-          ],
+data/cache/application/objMetadata.php-25060-          'default' => ''
+data/cache/application/objMetadata.php-25061-        ],
+data/cache/application/objMetadata.php:25062:        'numeroOportunidade' => (object) [
+data/cache/application/objMetadata.php-25063-          'type' => 'varchar',
+data/cache/application/objMetadata.php-25064-          'maxLength' => 32,
+data/cache/application/objMetadata.php-25065-          'readOnly' => true,
+--
+data/cache/application/objMetadata.php-25230-            1 => 'stage'
+data/cache/application/objMetadata.php-25231-          ]
+data/cache/application/objMetadata.php-25232-        ],
+data/cache/application/objMetadata.php:25233:        'numeroOportunidadeUnique' => (object) [
+data/cache/application/objMetadata.php-25234-          'columns' => [
+data/cache/application/objMetadata.php:25235:            0 => 'numeroOportunidade'
+data/cache/application/objMetadata.php-25236-          ],
+data/cache/application/objMetadata.php-25237-          'unique' => true
+data/cache/application/objMetadata.php-25238-        ]
+--
+data/cache/application/metadata.php-25059-          ],
+data/cache/application/metadata.php-25060-          'default' => ''
+data/cache/application/metadata.php-25061-        ],
+data/cache/application/metadata.php:25062:        'numeroOportunidade' => [
+data/cache/application/metadata.php-25063-          'type' => 'varchar',
+data/cache/application/metadata.php-25064-          'maxLength' => 32,
+data/cache/application/metadata.php-25065-          'readOnly' => true,
+--
+data/cache/application/metadata.php-25230-            1 => 'stage'
+data/cache/application/metadata.php-25231-          ]
+data/cache/application/metadata.php-25232-        ],
+data/cache/application/metadata.php:25233:        'numeroOportunidadeUnique' => [
+data/cache/application/metadata.php-25234-          'columns' => [
+data/cache/application/metadata.php:25235:            0 => 'numeroOportunidade'
+data/cache/application/metadata.php-25236-          ],
+data/cache/application/metadata.php-25237-          'unique' => true
+data/cache/application/metadata.php-25238-        ]
+--
+data/cache/application/ormMetadata.php-28651-        'fieldType' => 'varchar',
+data/cache/application/ormMetadata.php-28652-        'len' => 255
+data/cache/application/ormMetadata.php-28653-      ],
+data/cache/application/ormMetadata.php:28654:      'numeroOportunidade' => [
+data/cache/application/ormMetadata.php-28655-        'type' => 'varchar',
+data/cache/application/ormMetadata.php-28656-        'len' => 32,
+data/cache/application/ormMetadata.php-28657-        'index' => true,
+--
+data/cache/application/ormMetadata.php-29443-        ],
+data/cache/application/ormMetadata.php-29444-        'key' => 'IDX_ASSIGNED_USER_STAGE'
+data/cache/application/ormMetadata.php-29445-      ],
+data/cache/application/ormMetadata.php:29446:      'numeroOportunidadeUnique' => [
+data/cache/application/ormMetadata.php-29447-        'columns' => [
+data/cache/application/ormMetadata.php:29448:          0 => 'numeroOportunidade'
+data/cache/application/ormMetadata.php-29449-        ],
+data/cache/application/ormMetadata.php-29450-        'unique' => true,
+data/cache/application/ormMetadata.php-29451-        'key' => 'UNIQ_NUMERO_OPORTUNIDADE_UNIQUE'
+data/cache/application/ormMetadata.php-29452-      ],
+data/cache/application/ormMetadata.php:29453:      'numeroOportunidade' => [
+data/cache/application/ormMetadata.php-29454-        'type' => 'index',
+
+======================================
+9. Verificar se o valor está salvo no banco via API interna/metadata
+======================================
+
+======================================
+DIAGNÓSTICO FINALIZADO
+======================================
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+echo "=== 1. Contexto atual do clientDefs da Opportunity ==="
+cat custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json 2>/dev/null || true
+
+echo
+echo "=== 2. Backup ==="
+BACKUP_DIR="/opt/atria/backups/fix_clientdefs_sidepanel_oportunidade_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+
+cp -a custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json "$BACKUP_DIR/Opportunity.clientDefs.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json "$BACKUP_DIR/Opportunity.detailSmall.json.bak" 2>/dev/null || true 
+
+echo "Backup salvo em: $BACKUP_DIR"
+
+echo
+echo "=== 3. Ajustando defaultSidePanelFieldLists da Opportunity ==="
+
+python3 <<'PY'
+import json
+from pathlib import Path
+
+path = Path("/opt/atria/www/custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json")
+path.parent.mkdir(parents=True, exist_ok=True)
+
+def load_json(path):
+    if path.exists():
+        with path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+def save_json(path, data):
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=4) + "\n",
+        encoding="utf-8"
+    )
+    print(f"Atualizado: {path}")
+
+[7mdata = load_json(path)[27m
+
+[7m# preserva o kanban customizado existente[27m
+[7mdata.setdefault("recordViews", {})[27m
+[7mdata["recordViews"]["kanban"] = "custom:views/opportunity/record/kanban"[27m
+
+[7m# aqui está o ponto principal:[27m
+[7m# o painel lateral padrão usa essa lista de campos[27m
+[7mdata["defaultSidePanelFieldLists"] = {[27m
+[7m    "detail": [[27m
+[7m        "numeroOportunidade",[27m
+[7m        "assignedUser",[27m
+[7m        "teams",[27m
+[7m        "complexCreated",[27m[7m        "complexModified",[27m[7m        "followers"[27m[7m    ],[27m[7m    "detailSmall": [[27m[7m        "numeroOportunidade",[27m[7m        "assignedUser",[27m[7m        "teams",[27m[7m        "complexCreated",[27m[7m        "complexModified",[27m[7m        "followers"[27m[7m    ],[27m[7m    "edit": [[27m[7m        "assignedUser",[27m[7m        "teams"[27m[7m    ],[27m[7m    "editSmall": [[27m[7m        "assignedUser",[27m[7m        "teams"[27m[7m    ][27m[7m}[27m[7msave_json(path, data)[27m[7mPY[27m[7mecho[27m[7mecho "=== 4. Conferindo clientDefs final ==="[27m[7mcat custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json[27m[7mecho[27m[7mecho "=== 5. Rebuild e limpeza forte de cache ==="[27m[7mphp rebuild.php[27m[7mrm -rf data/cache/*[27m[7mecho[27m[7mecho "=== 6. Ajustando permissões ==="[27m[7mchown -R www-data:www-data custom data[27m[7mecho[27m[7mecho "=== Finalizado ==="[27m[A[A[A[A[A[A[A[A[A[A[A[A[Adata = load_json(path)
+
+# preserva o kanban customizado existente
+data.setdefault("recordViews", {})
+data["recordViews"]["kanban"] = "custom:views/opportunity/record/kanban"
+
+# aqui está o ponto principal:
+# o painel lateral padrão usa essa lista de campos
+data["defaultSidePanelFieldLists"] = {
+    "detail": [
+        "numeroOportunidade",
+        "assignedUser",
+        "teams",
+        "complexCreated",        "complexModified",        "followers"    ],    "detailSmall": [        "numeroOportunidade",        "assignedUser",        "teams",        "complexCreated",        "complexModified",        "followers"    ],    "edit": [        "assignedUser",        "teams"    ],    "editSmall": [        "assignedUser",        "teams"    ]}save_json(path, data)PYechoecho "=== 4. Conferindo clientDefs final ==="cat custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.jsonechoecho "=== 5. Rebuild e limpeza forte de cache ==="php rebuild.phprm -rf data/cache/*echoecho "=== 6. Ajustando permissões ==="chown -R www-data:www-data custom dataechoecho "=== Finalizado ==="
+[?2004l=== 1. Contexto atual do clientDefs da Opportunity ===
+{
+    "recordViews": {
+        "kanban": "custom:views/opportunity/record/kanban"
+    }
+}
+
+=== 2. Backup ===
+Backup salvo em: /opt/atria/backups/fix_clientdefs_sidepanel_oportunidade_20260518_043215
+
+=== 3. Ajustando defaultSidePanelFieldLists da Opportunity ===
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json
+
+=== 4. Conferindo clientDefs final ===
+{
+    "recordViews": {
+        "kanban": "custom:views/opportunity/record/kanban"
+    },
+    "defaultSidePanelFieldLists": {
+        "detail": [
+            "numeroOportunidade",
+            "assignedUser",
+            "teams",
+            "complexCreated",
+            "complexModified",
+            "followers"
+        ],
+        "detailSmall": [
+            "numeroOportunidade",
+            "assignedUser",
+            "teams",
+            "complexCreated",
+            "complexModified",
+            "followers"
+        ],
+        "edit": [
+            "assignedUser",
+            "teams"
+        ],
+        "editSmall": [
+            "assignedUser",
+            "teams"
+        ]
+    }
+}
+
+=== 5. Rebuild e limpeza forte de cache ===
+
+=== 6. Ajustando permissões ===
+
+=== Finalizado ===
+[?2004husvds6043x7:/opt/atria/www# cd .
+[?2004l[?2004husvds6043x7:/opt/atria/www# cd ..
+[?2004l[?2004husvds6043x7:/opt/atria# .;[K/atualiza_projeto_git.sh 
+[?2004l======================================
+Atualizando schema do banco atria_crm
+======================================
+Schema atualizado em:
+/opt/atria/schema_banco/atria_crm_schema.sql
+
+======================================
+Verificando alterações no projeto
+======================================
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   schema_banco/atria_crm_schema.sql[m
+	[31mmodified:   typescript[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json[m
+	[

@@ -54,15 +54,18 @@ CREATE TABLE `account` (
   `por_que_foco` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tipo_escalao` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `logo_url` varchar(2048) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sigla_conta` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_CREATED_AT_ID` (`created_at`,`id`),
+  UNIQUE KEY `UNIQ_SIGLA_CONTA_UNIQUE` (`sigla_conta`),
   KEY `IDX_CREATED_AT` (`created_at`,`deleted`),
   KEY `IDX_NAME` (`name`,`deleted`),
   KEY `IDX_ASSIGNED_USER` (`assigned_user_id`,`deleted`),
   KEY `IDX_CAMPAIGN_ID` (`campaign_id`),
   KEY `IDX_CREATED_BY_ID` (`created_by_id`),
   KEY `IDX_MODIFIED_BY_ID` (`modified_by_id`),
-  KEY `IDX_ASSIGNED_USER_ID` (`assigned_user_id`)
+  KEY `IDX_ASSIGNED_USER_ID` (`assigned_user_id`),
+  KEY `IDX_SIGLA_CONTA` (`sigla_conta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -215,7 +218,7 @@ CREATE TABLE `action_history_record` (
   KEY `IDX_USER_ID` (`user_id`),
   KEY `IDX_AUTH_TOKEN_ID` (`auth_token_id`),
   KEY `IDX_AUTH_LOG_RECORD_ID` (`auth_log_record_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=237 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=248 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2447,7 +2450,7 @@ CREATE TABLE `note` (
   KEY `IDX_MODIFIED_BY_ID` (`modified_by_id`),
   KEY `IDX_SUPER_PARENT` (`super_parent_id`,`super_parent_type`),
   FULLTEXT KEY `IDX_SYSTEM_FULL_TEXT_SEARCH` (`post`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2638,8 +2641,10 @@ CREATE TABLE `opportunity` (
   `tipo_servico_gerenciado` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tipo_servico_pontual` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `detalhe_oportunidade` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `numero_oportunidade` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_CREATED_AT_ID` (`created_at`,`id`),
+  UNIQUE KEY `UNIQ_NUMERO_OPORTUNIDADE_UNIQUE` (`numero_oportunidade`),
   KEY `IDX_STAGE` (`stage`,`deleted`),
   KEY `IDX_LAST_STAGE` (`last_stage`),
   KEY `IDX_ASSIGNED_USER` (`assigned_user_id`,`deleted`),
@@ -2651,7 +2656,8 @@ CREATE TABLE `opportunity` (
   KEY `IDX_CAMPAIGN_ID` (`campaign_id`),
   KEY `IDX_CREATED_BY_ID` (`created_by_id`),
   KEY `IDX_MODIFIED_BY_ID` (`modified_by_id`),
-  KEY `IDX_ASSIGNED_USER_ID` (`assigned_user_id`)
+  KEY `IDX_ASSIGNED_USER_ID` (`assigned_user_id`),
+  KEY `IDX_NUMERO_OPORTUNIDADE` (`numero_oportunidade`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -3698,4 +3704,4 @@ CREATE TABLE `working_time_range` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-18  4:07:45
+-- Dump completed on 2026-05-18  4:33:22
