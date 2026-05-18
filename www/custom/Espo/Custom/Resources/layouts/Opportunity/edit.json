@@ -60,11 +60,9 @@
       ],
       [
         {
-          "name": "contacts"
-        },
-        {
           "name": "leadSource"
-        }
+        },
+        false
       ],
       [
         {
@@ -73,6 +71,17 @@
         {
           "name": "temperaturaOportunidade"
         }
+      ]
+    ]
+  },
+  {
+    "label": "Qualificação",
+    "rows": [
+      [
+        {
+          "name": "contacts"
+        },
+        false
       ]
     ]
   }

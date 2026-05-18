@@ -1,0 +1,16 @@
+{
+  "options": {
+    "opportunityRole": {
+      "": "",
+      "Decision Maker": "Tomador de Decisão",
+      "Technical Decision Maker": "Decisor Técnico",
+      "Economic Decision Maker": "Decisor Econômico",
+      "Evaluator": "Avaliador",
+      "Influencer": "Influenciador",
+      "Sponsor": "Sponsor",
+      "Key User": "Usuário-chave",
+      "Procurement": "Compras",
+      "Legal": "Jurídico"
+    }
+  }
+}

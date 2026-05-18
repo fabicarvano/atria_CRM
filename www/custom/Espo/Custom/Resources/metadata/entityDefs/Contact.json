@@ -1,0 +1,26 @@
+{
+  "fields": {
+    "opportunityRole": {
+      "type": "enum",
+      "notStorable": true,
+      "orderDisabled": true,
+      "options": [
+        "",
+        "Decision Maker",
+        "Technical Decision Maker",
+        "Economic Decision Maker",
+        "Evaluator",
+        "Influencer",
+        "Sponsor",
+        "Key User",
+        "Procurement",
+        "Legal"
+      ],
+      "layoutMassUpdateDisabled": true,
+      "layoutListDisabled": true,
+      "layoutDetailDisabled": true,
+      "customizationRequiredDisabled": true,
+      "customizationIsSortedDisabled": true
+    }
+  }
+}
