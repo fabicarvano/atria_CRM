@@ -9713,4 +9713,44 @@ Changes not staged for commit:
 	[31mmodified:   schema_banco/atria_crm_schema.sql[m
 	[31mmodified:   typescript[m
 	[31mmodified:   www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json[m
-	[
+	[31mmodified:   www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/layouts/Account/detail.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json[m
+	[31mmodified:   www/data/config.php[m
+	[31mmodified:   www/data/state.php[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mwww/custom/Espo/Custom/Hooks/[m
+	[31mwww/custom/Espo/Custom/Resources/layouts/Account/detailSmall.json[m
+	[31mwww/custom/Espo/Custom/Resources/layouts/Account/edit.json[m
+	[31mwww/custom/Scripts/[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+======================================
+Adicionando todos os arquivos alterados
+======================================
+
+======================================
+Criando commit
+======================================
+[main 1d68da16] Atualiza projeto e schema do banco - 2026-05-18 04:33:23
+ 19 files changed, 2696 insertions(+), 59 deletions(-)
+ create mode 100644 www/custom/Espo/Custom/Hooks/Account/GerarSiglaConta.php
+ create mode 100644 www/custom/Espo/Custom/Hooks/Opportunity/GerarNumeroOportunidade.php
+ create mode 100644 www/custom/Espo/Custom/Resources/layouts/Account/detailSmall.json
+ create mode 100644 www/custom/Espo/Custom/Resources/layouts/Account/edit.json
+ create mode 100644 www/custom/Scripts/preencher_numeros_oportunidades.php
+ create mode 100644 www/custom/Scripts/preencher_siglas_contas.php
+
+======================================
+Enviando para o GitHub
+======================================
+Enumerating objects: 63, done.
+Counting objects:   1% (1/63)Counting objects:   3% (2/63)Counting objects:   4% (3/63)Counting objects:   6% (4/63)Counting objects:   7% (5/63)Counting objects:   9% (6/63)Counting objects:  11% (7/63)Counting objects:  12% (8/63)Counting objects:  14% (9/63)Counting objects:  15% (10/63)Counting objects:  17% (11/63)Counting objects:  19% (12/63)Counting objects:  20% (13/63)Counting objects:  22% (14/63)Counting objects:  23% (15/63)Counting objects:  25% (16/63)Counting objects:  26% (17/63)Counting objects:  28% (18/63)Counting objects:  30% (19/63)Counting objects:  31% (20/63)Counting objects:  33% (21/63)Counting objects:  34% (22/63)Counting objects:  36% (23/63)Counting objects:  38% (24/63)Counting objects:  39% (25/63)Counting objects:  41% (26/63)Counting objects:  42% (27/63)Counting objects:  44% (28/63)Counting objects:  46% (29/63)Counting objects:  47% (30/63)Counting objects:  49% (31/63)Counting objects:  50% (32/63)Counting objects:  52% (33/63)Counting objects:  53% (34/63)Counting objects:  55% (35/63)Counting objects:  57% (36/63)Counting objects:  58% (37/63)Counting objects:  60% (38/63)Counting objects:  61% (39/63)Counting objects:  63% (40/63)Counting objects:  65% (41/63)Counting objects:  66% (42/63)Counting objects:  68% (43/63)Counting objects:  69% (44/63)Counting objects:  71% (45/63)Counting objects:  73% (46/63)Counting objects:  74% (47/63)Counting objects:  76% (48/63)Counting objects:  77% (49/63)Counting objects:  79% (50/63)Counting objects:  80% (51/63)Counting objects:  82% (52/63)Counting objects:  84% (53/63)Counting objects:  85% (54/63)Counting objects:  87% (55/63)Counting objects:  88% (56/63)Counting objects:  90% (57/63)Counting objects:  92% (58/63)Counting objects:  93% (59/63)Counting objects:  95% (60/63)Counting objects:  96% (61/63)Counting objects:  98% (62/63)Counting objects: 100% (63/63)Counting objects: 100% (63/63), 

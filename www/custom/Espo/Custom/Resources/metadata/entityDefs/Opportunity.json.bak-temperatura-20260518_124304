@@ -1,0 +1,60 @@
+{
+    "fields": {
+        "tipoOportunidade": {
+            "type": "enum",
+            "options": [
+                "",
+                "Revenda",
+                "ServicoGerenciado",
+                "ServicoPontual",
+                "ProjetoEspecial"
+            ],
+            "default": ""
+        },
+        "detalheOportunidade": {
+            "type": "enum",
+            "options": [
+                "",
+                "Cisco",
+                "Fortinet",
+                "SentinelOne",
+                "Cribl",
+                "StellarCyber",
+                "Rapid7",
+                "HPE",
+                "Aruba",
+                "NOC",
+                "SOC",
+                "ServiceIR",
+                "GestaoDeAmbiente",
+                "MSSP",
+                "Monitoramento",
+                "Consultoria",
+                "ServicoDeCabeamento",
+                "ServicoDeImplementacao",
+                "Assessment",
+                "ProjetoDeMigracao",
+                "Treinamento",
+                "Outro"
+            ],
+            "default": ""
+        },
+        "numeroOportunidade": {
+            "type": "varchar",
+            "maxLength": 32,
+            "readOnly": true,
+            "customizationDisabled": true,
+            "dynamicLogicDisabled": true,
+            "audited": true,
+            "index": true
+        }
+    },
+    "indexes": {
+        "numeroOportunidadeUnique": {
+            "columns": [
+                "numeroOportunidade"
+            ],
+            "unique": true
+        }
+    }
+}

@@ -131,7 +131,7 @@ CREATE TABLE `account_contact` (
   UNIQUE KEY `UNIQ_ACCOUNT_ID_CONTACT_ID` (`account_id`,`contact_id`),
   KEY `IDX_ACCOUNT_ID` (`account_id`),
   KEY `IDX_CONTACT_ID` (`contact_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +218,7 @@ CREATE TABLE `action_history_record` (
   KEY `IDX_USER_ID` (`user_id`),
   KEY `IDX_AUTH_TOKEN_ID` (`auth_token_id`),
   KEY `IDX_AUTH_LOG_RECORD_ID` (`auth_log_record_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=248 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2450,7 +2450,7 @@ CREATE TABLE `note` (
   KEY `IDX_MODIFIED_BY_ID` (`modified_by_id`),
   KEY `IDX_SUPER_PARENT` (`super_parent_id`,`super_parent_type`),
   FULLTEXT KEY `IDX_SYSTEM_FULL_TEXT_SEARCH` (`post`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2642,6 +2642,7 @@ CREATE TABLE `opportunity` (
   `tipo_servico_pontual` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `detalhe_oportunidade` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `numero_oportunidade` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `temperatura_oportunidade` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_CREATED_AT_ID` (`created_at`,`id`),
   UNIQUE KEY `UNIQ_NUMERO_OPORTUNIDADE_UNIQUE` (`numero_oportunidade`),
@@ -3704,4 +3705,4 @@ CREATE TABLE `working_time_range` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-18  4:33:22
+-- Dump completed on 2026-05-18 12:49:45
