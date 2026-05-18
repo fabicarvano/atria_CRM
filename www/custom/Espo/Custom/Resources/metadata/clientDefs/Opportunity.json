@@ -1,6 +1,7 @@
 {
     "recordViews": {
-        "kanban": "custom:views/opportunity/record/kanban"
+        "kanban": "custom:views/opportunity/record/kanban",
+        "detail": "custom:views/opportunity/record/detail-timeline"
     },
     "defaultSidePanelFieldLists": {
         "detail": [
