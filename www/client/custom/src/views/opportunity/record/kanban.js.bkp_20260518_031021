@@ -1,0 +1,85 @@
+define(['crm:views/opportunity/record/kanban'], (Dep) => {
+
+    return class extends Dep {
+
+        afterRender() {
+            super.afterRender();
+
+            console.log('[Atria] Kanban custom de Opportunity carregado.');
+
+            this._injectColumnTotals();
+        }
+
+        _injectColumnTotals() {
+            if (!this.groupDataList || !this.groupDataList.length) {
+                console.warn('[Atria] groupDataList não encontrado no Kanban.');
+                return;
+            }
+
+            if (!document.getElementById('kanban-total-style')) {
+                const style = document.createElement('style');
+                style.id = 'kanban-total-style';
+                style.textContent = `
+                    .kanban-column-total {
+                        display: block;
+                        font-size: 11px;
+                        font-weight: 700;
+                        opacity: 0.95;
+                        margin-top: 4px;
+                        white-space: nowrap;
+                        color: #555;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            this.groupDataList.forEach(group => {
+                let total = 0;
+                let currency = 'BRL';
+
+                if (group.collection && group.collection.models) {
+                    group.collection.models.forEach(model => {
+                        total += parseFloat(model.get('amount')) || 0;
+                        currency = model.get('amountCurrency') || currency;
+                    });
+                }
+
+                const formatted = total.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: currency,
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                });
+
+                const groupName = group.name;
+
+                const $th = this.$el.find(
+                    'th[data-name="' + CSS.escape(groupName) + '"], th.group-header[data-name="' + CSS.escape(groupName) + '"]'
+                );
+
+                if (!$th.length) {
+                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);
+                    return;
+                }
+
+                $th.find('.kanban-column-total').remove();
+
+                const $target = $th.find('.kanban-group-label').first().length
+                    ? $th.find('.kanban-group-label').first()
+                    : $th.find('> div').first();
+
+                if ($target.length) {
+                    $target.after(
+                        $('<span class="kanban-column-total"></span>').text(formatted)
+                    );
+                } else {
+                    $th.append(
+                        $('<span class="kanban-column-total"></span>').text(formatted)
+                    );
+                }
+            });
+        }
+
+    };
+
+});

@@ -1,0 +1,83 @@
+{
+    "fields": {
+        "detalheOportunidade": {
+            "visible": {
+                "conditionGroup": [
+                    {
+                        "type": "notEquals",
+                        "attribute": "tipoOportunidade",
+                        "value": ""
+                    },
+                    {
+                        "type": "notEquals",
+                        "attribute": "tipoOportunidade",
+                        "value": "ProjetoEspecial"
+                    }
+                ]
+            }
+        }
+    },
+    "options": {
+        "detalheOportunidade": [
+            {
+                "optionList": [
+                    "",
+                    "Cisco",
+                    "Fortinet",
+                    "SentinelOne",
+                    "Cribl",
+                    "StellarCyber",
+                    "Rapid7",
+                    "HPE",
+                    "Aruba",
+                    "Outro"
+                ],
+                "conditionGroup": [
+                    {
+                        "type": "equals",
+                        "attribute": "tipoOportunidade",
+                        "value": "Revenda"
+                    }
+                ]
+            },
+            {
+                "optionList": [
+                    "",
+                    "NOC",
+                    "SOC",
+                    "ServiceIR",
+                    "GestaoDeAmbiente",
+                    "MSSP",
+                    "Monitoramento",
+                    "Outro"
+                ],
+                "conditionGroup": [
+                    {
+                        "type": "equals",
+                        "attribute": "tipoOportunidade",
+                        "value": "ServicoGerenciado"
+                    }
+                ]
+            },
+            {
+                "optionList": [
+                    "",
+                    "Consultoria",
+                    "ServicoDeCabeamento",
+                    "ServicoDeImplementacao",
+                    "Assessment",
+                    "ProjetoDeMigracao",
+                    "Treinamento",
+                    "Outro"
+                ],
+                "conditionGroup": [
+                    {
+                        "type": "equals",
+                        "attribute": "tipoOportunidade",
+                        "value": "ServicoPontual"
+                    }
+                ]
+            }
+        ]
+    }
+}

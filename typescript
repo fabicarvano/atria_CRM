@@ -5774,4 +5774,1973 @@ Changes not staged for commit:
 	[31mmodified:   www/client/custom/src/views/account/detail.js[m
 	[31mmodified:   www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json[m
 	[31mmodified:   www/custom/Espo/Custom/Resources/layouts/Account/detail.json[m
-	[31mmodified:   www/custom/Espo/Custom/Resources/metadata/entityDefs/
+	[31mmodified:   www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json[m
+	[31mmodified:   www/data/config.php[m
+	[31mmodified:   www/data/state.php[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mwww/client/custom/src/views/account/detail.js.bkp-remove-porQueAlvo[m
+	[31mwww/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo[m
+	[31mwww/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+======================================
+Adicionando todos os arquivos alterados
+======================================
+
+======================================
+Criando commit
+======================================
+[main b565bbba] Atualiza projeto e schema do banco - 2026-05-18 02:34:47
+ 14 files changed, 1336 insertions(+), 587 deletions(-)
+ delete mode 100755 deploy_alvo_foco.sh
+ create mode 100644 www/client/custom/src/views/account/detail.js.bkp-remove-porQueAlvo
+ create mode 100644 www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo
+ create mode 100644 www/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json
+ create mode 100644 www/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/searchFilters.json
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo
+
+======================================
+Enviando para o GitHub
+======================================
+Enumerating objects: 55, done.
+Counting objects:   1% (1/55)Counting objects:   3% (2/55)Counting objects:   5% (3/55)Counting objects:   7% (4/55)Counting objects:   9% (5/55)Counting objects:  10% (6/55)Counting objects:  12% (7/55)Counting objects:  14% (8/55)Counting objects:  16% (9/55)Counting objects:  18% (10/55)Counting objects:  20% (11/55)Counting objects:  21% (12/55)Counting objects:  23% (13/55)Counting objects:  25% (14/55)Counting objects:  27% (15/55)Counting objects:  29% (16/55)Counting objects:  30% (17/55)Counting objects:  32% (18/55)Counting objects:  34% (19/55)Counting objects:  36% (20/55)Counting objects:  38% (21/55)Counting objects:  40% (22/55)Counting objects:  41% (23/55)Counting objects:  43% (24/55)Counting objects:  45% (25/55)Counting objects:  47% (26/55)Counting objects:  49% (27/55)Counting objects:  50% (28/55)Counting objects:  52% (29/55)Counting objects:  54% (30/55)Counting objects:  56% (31/55)Counting objects:  58% (32/55)Counting objects:  60% (33/55)Counting objects:  61% (34/55)Counting objects:  63% (35/55)Counting objects:  65% (36/55)Counting objects:  67% (37/55)Counting objects:  69% (38/55)Counting objects:  70% (39/55)Counting objects:  72% (40/55)Counting objects:  74% (41/55)Counting objects:  76% (42/55)Counting objects:  78% (43/55)Counting objects:  80% (44/55)Counting objects:  81% (45/55)Counting objects:  83% (46/55)Counting objects:  85% (47/55)Counting objects:  87% (48/55)Counting objects:  89% (49/55)Counting objects:  90% (50/55)Counting objects:  92% (51/55)Counting objects:  94% (52/55)Counting objects:  96% (53/55)Counting objects:  98% (54/55)Counting objects: 100% (55/55)Counting objects: 100% (55/55), done.
+Delta compression using up to 4 threads
+Compressing objects:   4% (1/24)Compressing objects:   8% (2/24)Compressing objects:  12% (3/24)Compressing objects:  16% (4/24)Compressing objects:  20% (5/24)Compressing objects:  25% (6/24)Compressing objects:  29% (7/24)Compressing objects:  33% (8/24)Compressing objects:  37% (9/24)Compressing objects:  41% (10/24)Compressing objects:  45% (11/24)Compressing objects:  50% (12/24)Compressing objects:  54% (13/24)Compressing objects:  58% (14/24)Compressing objects:  62% (15/24)Compressing objects:  66% (16/24)Compressing objects:  70% (17/24)Compressing objects:  75% (18/24)Compressing objects:  79% (19/24)Compressing objects:  83% (20/24)Compressing objects:  87% (21/24)Compressing objects:  91% (22/24)Compressing objects:  95% (23/24)Compressing objects: 100% (24/24)Compressing objects: 100% (24/24), done.
+Writing objects:   3% (1/28)Writing objects:   7% (2/28)Writing objects:  10% (3/28)Writing objects:  14% (4/28)Writing objects:  17% (5/28)Writing objects:  21% (6/28)Writing objects:  25% (7/28)Writing objects:  28% (8/28)Writing objects:  32% (9/28)Writing objects:  35% (10/28)Writing objects:  39% (11/28)Writing objects:  42% (12/28)Writing objects:  46% (13/28)Writing objects:  50% (14/28)Writing objects:  53% (15/28)Writing objects:  57% (16/28)Writing objects:  60% (17/28)Writing objects:  64% (18/28)Writing objects:  67% (19/28)Writing objects:  71% (20/28)Writing objects:  75% (21/28)Writing objects:  78% (22/28)Writing objects:  82% (23/28)Writing objects:  85% (24/28)Writing objects:  89% (25/28)Writing objects:  92% (26/28)Writing objects:  96% (27/28)Writing objects: 100% (28/28)Writing objects: 100% (28/28), 10.32 KiB | 459.00 KiB/s, done.
+Total 28 (delta 13), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/13)[Kremote: Resolving deltas:   7% (1/13)[Kremote: Resolving deltas:  15% (2/13)[Kremote: Resolving deltas:  23% (3/13)[Kremote: Resolving deltas:  30% (4/13)[Kremote: Resolving deltas:  38% (5/13)[Kremote: Resolving deltas:  46% (6/13)[Kremote: Resolving deltas:  53% (7/13)[Kremote: Resolving deltas:  61% (8/13)[Kremote: Resolving deltas:  69% (9/13)[Kremote: Resolving deltas:  76% (10/13)[Kremote: Resolving deltas:  84% (11/13)[Kremote: Resolving deltas:  92% (12/13)[Kremote: Resolving deltas: 100% (13/13)[Kremote: Resolving deltas: 100% (13/13), completed with 13 local objects.[K
+To github.com:fabicarvano/atria_CRM.git
+   c0f721fe..b565bbba  main -> main
+
+======================================
+Atualização concluída com sucesso
+======================================
+[?2004husvds6043x7:/opt/atria# [7mcd /opt/atria/www[27m
+
+[7mecho "=== LOGS DO ESPOCRM ==="[27m
+[7mls -lh data/logs/[27m
+
+[7mecho "=== ÚLTIMAS 100 LINHAS DO LOG MAIS RECENTE ==="[27m
+[7mtail -n 100 "$(ls -t data/logs/*.log | head -n 1)"[27m[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /opt/atria/www
+
+echo "=== LOGS DO ESPOCRM ==="
+ls -lh data/logs/
+
+echo "=== ÚLTIMAS 100 LINHAS DO LOG MAIS RECENTE ==="
+tail -n 100 "$(ls -t data/logs/*.log | head -n 1)"
+[?2004l=== LOGS DO ESPOCRM ===
+total 12K
+-rw-r--r-- 1 root     root     2.1K May 16 02:56 deploy_alvo_foco_20260516_025601.log
+-rw-r--r-- 1 www-data www-data 1.8K May 16 02:32 espo-2026-05-16.log
+-rw-r--r-- 1 www-data www-data  861 May 18 02:39 espo-2026-05-18.log
+=== ÚLTIMAS 100 LINHAS DO LOG MAIS RECENTE ===
+[2026-05-18 00:47:31] WARNING: E_WARNING: mkdir(): File exists
+[2026-05-18 02:29:08] CRITICAL: (42S22) SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account.por_que_alvo' in 'SELECT' :: GET /Account/6a07eb5a24072161f :: /opt/atria/www/application/Espo/ORM/Executor/DefaultSqlExecutor.php(77)
+[2026-05-18 02:29:27] CRITICAL: (42S22) SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account.por_que_alvo' in 'SELECT' :: GET /Account/6a07eb5a24072161f :: /opt/atria/www/application/Espo/ORM/Executor/DefaultSqlExecutor.php(77)
+[2026-05-18 02:39:25] WARNING: E_WARNING: mkdir(): Permission denied
+[2026-05-18 02:39:25] CRITICAL: (0) Permission denied: unable to create a folder on the server custom/Espo/Custom/Resources/metadata/scopes :: POST /EntityManager/action/updateEntity :: /opt/atria/www/application/Espo/Core/Utils/File/Manager.php(654)
+[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mchown -R www-data:www-data data custom client/custom[27m
+[7mfind data custom client/custom -type d -exec chmod 775 {} \;[27m
+[7mfind data custom client/custom -type f -exec chmod 664 {} \;[27m[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /opt/atria/www
+
+chown -R www-data:www-data data custom client/custom
+find data custom client/custom -type d -exec chmod 775 {} \;
+find data custom client/custom -type f -exec chmod 664 {} \;
+[?2004l[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mphp command.php clear-cache[27m
+[7mphp command.php rebuild[27m[A[A[A[C[C[C[C[Ccd /opt/atria/www
+
+php command.php clear-cache
+php command.php rebuild
+[?2004lCache has been cleared.
+Rebuild has been done.
+[?2004husvds6043x7:/opt/atria/www# cd ..
+[?2004l[?2004husvds6043x7:/opt/atria# [7m# 1. Criar o diretório[27m
+[7mmkdir -p /opt/espocrm/www/client/custom/modules/crm/src/views/opportunity/[27m
+
+[7m# 2. Copiar o arquivo list.js para:[27m
+[7m#    /opt/espocrm/www/client/custom/modules/crm/src/views/opportunity/list.js[27m
+
+[7m# 3. Limpar cache[27m
+[7mphp /opt/espocrm/www/command.php clear-cache[27m[A[A[A[A[A[A[A# 1. Criar o diretório
+mkdir -p /opt/espocrm/www/client/custom/modules/crm/src/views/opportunity/
+
+# 2. Copiar o arquivo list.js para:
+#    /opt/espocrm/www/client/custom/modules/crm/src/views/opportunity/list.js
+
+# 3. Limpar cache
+php /opt/espocrm/www/command.php clear-cache
+[?2004lCould not open input file: /opt/espocrm/www/command.php
+[?2004husvds6043x7:/opt/atria# ls
+[?2004l[0m[01;32matualiza_projeto_git.sh[0m     DEPLOY_kanban_total.md      [01;34mschema_banco[0m               [01;34mwww[0m
+[01;34mbackups[0m                     entityDefs_Account_v2.json  typescript
+clientDefs_Account_v2.json  list.js                     verificacao_pos_deploy.md
+[?2004husvds6043x7:/opt/atria# [7m# 1. Criar o diretório[27m
+[7mmkdir -p /opt/atria/www/client/custom/modules/crm/src/views/opportunity/[27m
+
+[7m# 2. Copiar o list.js que está em /opt/atria/ para lá[27m
+[7mcp /opt/atria/list.js /opt/atria/www/client/custom/modules/crm/src/views/opportunity/list.js[27m
+
+[7m# 3. Limpar cache[27m
+[7mphp /opt/atria/www/command.php clear-cache[27m[A[A[A[A[A[A[A# 1. Criar o diretório
+mkdir -p /opt/atria/www/client/custom/modules/crm/src/views/opportunity/
+
+# 2. Copiar o list.js que está em /opt/atria/ para lá
+cp /opt/atria/list.js /opt/atria/www/client/custom/modules/crm/src/views/opportunity/list.js
+
+# 3. Limpar cache
+php /opt/atria/www/command.php clear-cache
+[?2004lCache has been cleared.
+[?2004husvds6043x7:/opt/atria# [7m# 1. Criar diretório para o JS[27m
+[7mmkdir -p /opt/atria/www/client/custom/src/views/opportunity/record/[27m
+
+[7m# 2. Copiar o kanban.js (que está em /opt/atria/)[27m
+[7mcp /opt/atria/kanban.js /opt/atria/www/client/custom/src/views/opportunity/record/kanban.js[27m
+
+[7m# 3. Criar diretório para o clientDefs custom[27m
+[7mmkdir -p /opt/atria/www/custom/Espo/Custom/Resources/metadata/clientDefs/[27m
+
+[7m# 4. Criar o Opportunity.json (cole o conteúdo do arquivo gerado)[27m
+[7mcat > /opt/atria/www/custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json << 'EOF'[27m
+[7m{[27m
+[7m    "recordViews": {[27m
+[7m        "kanban": "custom:views/opportunity/record/kanban"[27m
+[7m    }[27m
+[7m}[27m
+[7mEOF[27m
+
+[7m# 5. Limpar cache[27m
+[7mphp /opt/atria/www/command.php clear-cache[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A# 1. Criar diretório para o JS
+mkdir -p /opt/atria/www/client/custom/src/views/opportunity/record/
+
+# 2. Copiar o kanban.js (que está em /opt/atria/)
+cp /opt/atria/kanban.js /opt/atria/www/client/custom/src/views/opportunity/record/kanban.js
+
+# 3. Criar diretório para o clientDefs custom
+mkdir -p /opt/atria/www/custom/Espo/Custom/Resources/metadata/clientDefs/
+
+# 4. Criar o Opportunity.json (cole o conteúdo do arquivo gerado)
+cat > /opt/atria/www/custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json << 'EOF'
+{
+    "recordViews": {
+        "kanban": "custom:views/opportunity/record/kanban"
+    }
+}
+EOF
+
+# 5. Limpar cache
+php /opt/atria/www/command.php clear-cache
+[?2004lCache has been cleared.
+[?2004husvds6043x7:/opt/atria# [7m# Verificar se o JS está no lugar certo[27m
+[7mcat /opt/atria/www/client/custom/src/views/opportunity/record/kanban.js | head -5[27m
+
+[7m# Verificar se o clientDefs existe[27m
+[7mcat /opt/atria/www/custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json[27m
+
+[7m# Ver o cache — se existir arquivo de cache do clientDefs Opportunity[27m
+[7mfind /opt/atria/www/data/cache -name "*.php" | xargs grep -l "opportunity.*kanban\|kanban.*opportunity" 2>/dev/null | [27m[7mh[27m[7mead -5 [27m
+
+[7m# Ver se o custom: prefix está sendo resolvido[27m
+[7mgrep -r "custom:" /opt/atria/www/data/cache/ 2>/dev/null | head -5[27m[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C# Verificar se o JS está no lugar certo
+cat /opt/atria/www/client/custom/src/views/opportunity/record/kanban.js | head -5
+
+# Verificar se o clientDefs existe
+cat /opt/atria/www/custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json
+
+# Ver o cache — se existir arquivo de cache do clientDefs Opportunity
+find /opt/atria/www/data/cache -name "*.php" | xargs grep -l "opportunity.*kanban\|kanban.*opportunity" 2>/dev/null | head -5
+
+# Ver se o custom: prefix está sendo resolvido
+grep -r "custom:" /opt/atria/www/data/cache/ 2>/dev/null | head -5
+[?2004l/**
+ * EscopoCRM — Kanban Oportunidades com soma de valores por coluna
+ *
+ * Caminho no servidor:
+ *   /opt/atria/www/client/custom/src/views/opportunity/record/kanban.js
+{
+    "recordViews": {
+        "kanban": "custom:views/opportunity/record/kanban"
+    }
+}
+/opt/atria/www/data/cache/application/objMetadata.php
+/opt/atria/www/data/cache/application/metadata.php
+/opt/atria/www/data/cache/application/objMetadata.php:        'detail' => 'custom:views/account/detail'
+/opt/atria/www/data/cache/application/objMetadata.php:        'kanban' => 'custom:views/opportunity/record/kanban'
+/opt/atria/www/data/cache/application/objMetadata.php:          'view' => 'custom:views/fields/logo-image-v2'
+/opt/atria/www/data/cache/application/metadata.php:        'detail' => 'custom:views/account/detail'
+/opt/atria/www/data/cache/application/metadata.php:        'kanban' => 'custom:views/opportunity/record/kanban'
+[?2004husvds6043x7:/opt/atria# [7m# Ver como o loader resolve o prefix custom:[27m
+[7mgrep -r "custom" /opt/atria/www/client/cfg/ 2>/dev/null[27m
+[7mcat /opt/atria/www/client/cfg/paths.json 2>/dev/null[27m
+[7mcat /opt/atria/www/client/cfg/lib.json 2>/dev/null[27m
+
+[7m# Ver onde o account/detail.js está (para comparar o path exato)[27m
+[7mfind /opt/atria/www/client/custom -name "detail.js" | grep account[27m[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C# Ver como o loader resolve o prefix custom:
+grep -r "custom" /opt/atria/www/client/cfg/ 2>/dev/null
+cat /opt/atria/www/client/cfg/paths.json 2>/dev/null
+cat /opt/atria/www/client/cfg/lib.json 2>/dev/null
+
+# Ver onde o account/detail.js está (para comparar o path exato)
+find /opt/atria/www/client/custom -name "detail.js" | grep account
+[?2004l/opt/atria/www/client/custom/src/views/account/detail.js
+[?2004husvds6043x7:/opt/atria# [7mhead -10 /opt/atria/www/client/custom/src/views/account/detail.js[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chead -10 /opt/atria/www/client/custom/src/views/account/detail.js
+[?2004ldefine(['views/detail'], (Dep) => {
+    return class extends Dep {
+
+        setup() {
+            super.setup();
+
+            
+            // Oculta somente o label visual "logoUrl".
+            // O campo continua existindo no banco como account.logo_url
+            // e na API do EspoCRM como logoUrl.
+[?2004husvds6043x7:/opt/atria# cat > /opt/atria/www/client/custom/src/views/opportunity/record/kanban.js << 'EOF'
+define(['crm:views/opportunity/record/kanban'], (Dep) => {
+
+    return class extends Dep {
+
+        afterRender() {
+[7m            super.afterRender();[27m
+[7m            this._injectColumnTotals();[27m
+[7m        }[27m
+
+[7m        _injectColumnTotals() {[27m
+[7m            if (!this.groupDataList || !this.groupDataList.length) return;[27m
+
+[7m            if (!document.getElementById('kanban-total-style')) {[27m
+[7m                const style = document.createElement('style');[27m
+[7m                style.id = 'kanban-total-style';[27m
+[7m                style.textContent = `[27m
+[7m                    .kanban-column-total {[27m
+[7m                        display: block;[27m
+[7m                        font-size: 11px;[27m
+[7m                        font-weight: 700;[27m
+[7m                        opacity: 0.95;[27m
+[7m                        margin-top: 2px;[27m
+[7m                        white-space: nowrap;[27m
+[7m                    }[27m
+[7m                `;[27m
+[7m                document.head.appendChild(style);[27m
+[7m            }[27m
+
+[7m            this.groupDataList.forEach(group => {[27m
+[7m                let total    = 0;[27m
+[7m                let currency = 'BRL';[27m
+
+[7m                if (group.collection && group.collection.models) {[27m
+[7m                    group.collection.models.forEach(model => {[27m
+[7m                        total    += parseFloat(model.get('amount')) || 0;[27m
+[7m                        currency  = model.get('amountCurrency') || currency;[27m
+[7m                    });[27m
+[7m                }[27m
+
+[7m                const formatted = total.toLocaleString('pt-BR', {[27m
+[7m                    style:                 'currency',[27m
+[7m                    currency:              currency,[27m
+[7m                    minimumFractionDigits: 2,[27m
+[7m                    maximumFractionDigits: 2,[27m
+[7m                });[27m
+
+[7m                const $th = this.$el.find(`th.group-header[data-name="${CSS.escape(group.name)}"]`);[27m
+[7m                $th.find('.kanban-column-total').remove();[27m
+[7m                $th.find('> div').first().append([27m
+[7m                    $(`<span class="kanban-column-total"></span>`).text(formatted)[27m
+[7m                );[27m
+[7m            });[27m
+[7m        }[27m[7m    };[27m[7m});[27m[7mEOF[27m[7mphp /opt/atria/www/command.php clear-cache[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A            super.afterRender();
+            this._injectColumnTotals();
+        }
+
+        _injectColumnTotals() {
+            if (!this.groupDataList || !this.groupDataList.length) return;
+
+            if (!document.getElementById('kanban-total-style')) {
+                const style = document.createElement('style');
+                style.id = 'kanban-total-style';
+                style.textContent = `
+                    .kanban-column-total {
+                        display: block;
+                        font-size: 11px;
+                        font-weight: 700;
+                        opacity: 0.95;
+                        margin-top: 2px;
+                        white-space: nowrap;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            this.groupDataList.forEach(group => {
+                let total    = 0;
+                let currency = 'BRL';
+
+                if (group.collection && group.collection.models) {
+                    group.collection.models.forEach(model => {
+                        total    += parseFloat(model.get('amount')) || 0;
+                        currency  = model.get('amountCurrency') || currency;
+                    });
+                }
+
+                const formatted = total.toLocaleString('pt-BR', {
+                    style:                 'currency',
+                    currency:              currency,
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                });
+
+                const $th = this.$el.find(`th.group-header[data-name="${CSS.escape(group.name)}"]`);
+                $th.find('.kanban-column-total').remove();
+                $th.find('> div').first().append(
+                    $(`<span class="kanban-column-total"></span>`).text(formatted)
+                );
+            });
+        }    };});EOFphp /opt/atria/www/command.php clear-cache
+[?2004lCache has been cleared.
+[?2004husvds6043x7:/opt/atria# [7mcd /opt/atria/www[27m
+
+[7mgrep -n -C 4 '"recordViews"' application/Espo/Modules/Crm/Resources/metadata/clientDefs/Opportunity.json[27m[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /opt/atria/www
+
+grep -n -C 4 '"recordViews"' application/Espo/Modules/Crm/Resources/metadata/clientDefs/Opportunity.json
+[?2004l3-    "modelDefaultsPreparator": "crm:handlers/opportunity/defaults-preparator",
+4-   "views":{
+5-      "detail":"crm:views/opportunity/detail"
+6-   },
+7:   "recordViews":{
+8-      "edit":"crm:views/opportunity/record/edit",
+9-      "editSmall":"crm:views/opportunity/record/edit-small",
+10-      "list":"crm:views/opportunity/record/list",
+11-      "kanban": "crm:views/opportunity/record/kanban"
+[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mmkdir -p custom/Espo/Custom/Resources/metadata/clientDefs[27m
+
+[7mcat > custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json <<'EOF'[27m
+[7m{[27m
+[7m    "recordViews": {[27m
+[7m        "kanban": "custom:views/opportunity/record/kanban"[27m
+[7m    }[27m
+[7m}[27m
+[7mEOF[27m[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /opt/atria/www
+
+mkdir -p custom/Espo/Custom/Resources/metadata/clientDefs
+
+cat > custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json <<'EOF'
+{
+    "recordViews": {
+        "kanban": "custom:views/opportunity/record/kanban"
+    }
+}
+EOF
+[?2004l[?2004husvds6043x7:/opt/atria/www# [7mcat custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json
+[?2004l{
+    "recordViews": {
+        "kanban": "custom:views/opportunity/record/kanban"
+    }
+}
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+mkdir -p client/custom/src/views/opportunity/record
+
+cat > client/custom/src/views/opportunity/record/kanban.js <<'EOF'
+define('custom:views/opportunity/record/kanban', ['crm:views/opportunity/record/kanban'], function (Dep) {
+
+    return Dep.extend({
+
+        afterRender: function () {
+            Dep.prototype.afterRender.call(this);
+
+            console.log('[Atria] Kanban custom de Opportunity carregado.');
+
+            this._injectAmountTotals();
+        },
+
+        _injectAmountTotals: function () {
+[7m            if (!this.groupDataList || !Array.isArray(this.groupDataList)) {[27m
+[7m                console.warn('[Atria] groupDataList não encontrado no Kanban.');[27m
+[7m                return;[27m
+[7m            }[27m
+
+[7m            this.groupDataList.forEach(function (groupItem) {[27m
+[7m                var total = 0;[27m
+
+[7m                if (groupItem.collection && groupItem.collection.models) {[27m
+[7m                    groupItem.collection.models.forEach(function (model) {[27m
+[7m                        var amount = model.get('amount');[27m
+
+[7m                        if (amount === null || amount === undefined || amount === '') {[27m
+[7m                            amount = 0;[27m
+[7m                        }[27m
+
+[7m                        amount = Number(amount);[27m
+
+[7m                        if (!isNaN(amount)) {[27m
+[7m                            total += amount;[27m
+[7m                        }[27m
+[7m                    });[27m
+[7m                }[27m
+
+[7m                var groupName = groupItem.name;[27m
+[7m                var selector = '.kanban-head th[data-name="' + CSS.escape(groupName) + '"]';[27m
+[7m                var th = this.$el.find(selector);[27m
+
+[7m                if (!th.length) {[27m
+[7m                    return;[27m
+[7m                }[27m
+
+[7m                th.find('.kanban-column-total').remove();[27m
+
+[7m                var formatted = this.getNumberUtil()[27m
+[7m                    ? this.getNumberUtil().formatFloat(total, 2)[27m[7m                    : total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });[27m[7m                var html = ''[27m[7m                    + '<span class="kanban-column-total" '[27m[7m                    + 'style="display:block;font-size:11px;font-weight:600;margin-top:4px;color:#555;">'[27m[7m                    + 'R$ ' + formatted[27m[7m                    + '</span>';[27m[7m                th.find('.kanban-group-label').after(html);[27m[7m            }, this);[27m[7m        }[27m[7m    });[27m[7m});[27m[7mEOF[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A            if (!this.groupDataList || !Array.isArray(this.groupDataList)) {
+                console.warn('[Atria] groupDataList não encontrado no Kanban.');
+                return;
+            }
+
+            this.groupDataList.forEach(function (groupItem) {
+                var total = 0;
+
+                if (groupItem.collection && groupItem.collection.models) {
+                    groupItem.collection.models.forEach(function (model) {
+                        var amount = model.get('amount');
+
+                        if (amount === null || amount === undefined || amount === '') {
+                            amount = 0;
+                        }
+
+                        amount = Number(amount);
+
+                        if (!isNaN(amount)) {
+                            total += amount;
+                        }
+                    });
+                }
+
+                var groupName = groupItem.name;
+                var selector = '.kanban-head th[data-name="' + CSS.escape(groupName) + '"]';
+                var th = this.$el.find(selector);
+
+                if (!th.length) {
+                    return;
+                }
+
+                th.find('.kanban-column-total').remove();
+
+                var formatted = this.getNumberUtil()
+                    ? this.getNumberUtil().formatFloat(total, 2)                    : total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });                var html = ''                    + '<span class="kanban-column-total" '                    + 'style="display:block;font-size:11px;font-weight:600;margin-top:4px;color:#555;">'                    + 'R$ ' + formatted                    + '</span>';                th.find('.kanban-group-label').after(html);            }, this);        }    });});EOF
+[?2004l[?2004husvds6043x7:/opt/atria/www# ^C[?2004l[?2004h[?2004l
+[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mphp rebuild.php[27m
+[7mphp clear_cache.php[27m[A[A[A[C[C[C[C[C[C[C[C[Ccd /opt/atria/www
+
+php rebuild.php
+php clear_cache.php
+[?2004l[?2004husvds6043x7:/opt/atria/www# [7mchown -R www-data:www-data /opt/atria/www[27m
+[7mfind /opt/atria/www -type d -exec chmod 755 {} \;[27m
+[7mfind /opt/atria/www -type f -exec chmod 644 {} \;[27m[A[Achown -R www-data:www-data /opt/atria/www
+find /opt/atria/www -type d -exec chmod 755 {} \;
+find /opt/atria/www -type f -exec chmod 644 {} \;
+[?2004l^C
+[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7msed -n '1,220p' client/custom/src/views/opportunity/record/kanban.js[27m[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /opt/atria/www
+
+sed -n '1,220p' client/custom/src/views/opportunity/record/kanban.js
+[?2004ldefine('custom:views/opportunity/record/kanban', ['crm:views/opportunity/record/kanban'], function (Dep) {
+
+    return Dep.extend({
+
+        afterRender: function () {
+            Dep.prototype.afterRender.call(this);
+
+            console.log('[Atria] Kanban custom de Opportunity carregado.');
+
+            this._injectAmountTotals();
+        },
+
+        _injectAmountTotals: function () {
+            if (!this.groupDataList || !Array.isArray(this.groupDataList)) {
+                console.warn('[Atria] groupDataList não encontrado no Kanban.');
+                return;
+            }
+
+            this.groupDataList.forEach(function (groupItem) {
+                var total = 0;
+
+                if (groupItem.collection && groupItem.collection.models) {
+                    groupItem.collection.models.forEach(function (model) {
+                        var amount = model.get('amount');
+
+                        if (amount === null || amount === undefined || amount === '') {
+                            amount = 0;
+                        }
+
+                        amount = Number(amount);
+
+                        if (!isNaN(amount)) {
+                            total += amount;
+                        }
+                    });
+                }
+
+                var groupName = groupItem.name;
+                var selector = '.kanban-head th[data-name="' + CSS.escape(groupName) + '"]';
+                var th = this.$el.find(selector);
+
+                if (!th.length) {
+                    return;
+                }
+
+                th.find('.kanban-column-total').remove();
+
+                var formatted = this.getNumberUtil()
+                    ? this.getNumberUtil().formatFloat(total, 2)
+                    : total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+                var html = ''
+                    + '<span class="kanban-column-total" '
+                    + 'style="display:block;font-size:11px;font-weight:600;margin-top:4px;color:#555;">'
+                    + 'R$ ' + formatted
+                    + '</span>';
+
+                th.find('.kanban-group-label').after(html);
+
+            }, this);
+        }
+
+    });
+
+});
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+cat > client/custom/src/views/opportunity/record/kanban.js <<'EOF'
+define(['crm:views/opportunity/record/kanban'], (Dep) => {
+
+    return class extends Dep {
+
+        afterRender() {
+            super.afterRender();
+
+            console.log('[Atria] Kanban custom de Opportunity carregado.');
+
+            this._injectColumnTotals();
+        }
+
+        _injectColumnTotals() {
+            if (!this.groupDataList || !this.groupDataList.length) {
+                console.warn('[Atria] groupDataList não encontrado no Kanban.');
+                return;
+            }
+
+            if (!document.getElementById('kanban-total-style')) {
+                const style = document.createElement('style');
+                style.id = 'kanban-total-style';
+                style.textContent = `
+                    .kanban-column-total {
+                        display: block;
+                        font-size: 11px;
+                        font-weight: 700;
+                        opacity: 0.95;
+                        margin-top: 4px;
+                        white-space: nowrap;
+                        color: #555;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+[7m            this.groupDataList.forEach(group => {[27m
+[7m                let total = 0;[27m
+[7m                let currency = 'BRL';[27m
+
+[7m                if (group.collection && group.collection.models) {[27m
+[7m                    group.collection.models.forEach(model => {[27m
+[7m                        total += parseFloat(model.get('amount')) || 0;[27m
+[7m                        currency = model.get('amountCurrency') || currency;[27m
+[7m                    });[27m
+[7m                }[27m
+
+[7m                const formatted = total.toLocaleString('pt-BR', {[27m
+[7m                    style: 'currency',[27m
+[7m                    currency: currency,[27m
+[7m                    minimumFractionDigits: 2,[27m
+[7m                    maximumFractionDigits: 2,[27m[7m                });[27m[7m                const groupName = group.name;[27m[7m                const $th = this.$el.find([27m[7m                    'th[data-name="' + CSS.escape(groupName) + '"], th.group-header[data-name="' + CSS.escape(groupNam[27m[7me) + '"]'[27m[7m                );[27m[7m                if (!$th.length) {[27m[7m                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);[27m[7m                    return;[27m[7m                }[27m[7m                $th.find('.kanban-column-total').remove();[27m[7m                const $target = $th.find('.kanban-group-label').first().length[27m[7m                    ? $th.find('.kanban-group-label').first()[27m[7m                    : $th.find('> div').first();[27m[7m                if ($target.length) {[27m[7m                    $target.after([27m[7m                        $('<span class="kanban-column-total"></span>').text(formatted)[27m[7m                    );[27m[7m                } else {[27m[7m                    $th.append([27m[7m                        $('<span class="kanban-column-total"></span>').text(formatted)[27m[7m                    );[27m[7m                }[27m[7m            });[27m[7m        }[27m[7m    };[27m[7m});[27m[7mEOF[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A            this.groupDataList.forEach(group => {
+                let total = 0;
+                let currency = 'BRL';
+
+                if (group.collection && group.collection.models) {
+                    group.collection.models.forEach(model => {
+                        total += parseFloat(model.get('amount')) || 0;
+                        currency = model.get('amountCurrency') || currency;
+                    });
+                }
+
+                const formatted = total.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: currency,
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,                });                const groupName = group.name;                const $th = this.$el.find(                    'th[data-name="' + CSS.escape(groupName) + '"], th.group-header[data-name="' + CSS.escape(groupName) + '"]'                );                if (!$th.length) {                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);                    return;                }                $th.find('.kanban-column-total').remove();                const $target = $th.find('.kanban-group-label').first().length                    ? $th.find('.kanban-group-label').first()                    : $th.find('> div').first();                if ($target.length) {                    $target.after(                        $('<span class="kanban-column-total"></span>').text(formatted)                    );                } else {                    $th.append(                        $('<span class="kanban-column-total"></span>').text(formatted)                    );                }            });        }    };});EOF
+[?2004l[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+cat > client/custom/src/views/opportunity/record/kanban.js <<'EOF'
+define(['crm:views/opportunity/record/kanban'], (Dep) => {
+
+    return class extends Dep {
+
+        afterRender() {
+            super.afterRender();
+
+            console.log('[Atria] Kanban custom de Opportunity carregado.');
+
+            this._injectColumnTotals();
+        }
+
+        _injectColumnTotals() {
+            if (!this.groupDataList || !this.groupDataList.length) {
+                console.warn('[Atria] groupDataList não encontrado no Kanban.');
+                return;
+            }
+
+            if (!document.getElementById('kanban-total-style')) {
+                const style = document.createElement('style');
+                style.id = 'kanban-total-style';
+                style.textContent = `
+                    .kanban-column-total {
+                        display: block;
+                        font-size: 11px;
+                        font-weight: 700;
+                        opacity: 0.95;
+                        margin-top: 4px;
+                        white-space: nowrap;
+                        color: #555;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+[7m            this.groupDataList.forEach(group => {[27m
+[7m                let total = 0;[27m
+[7m                let currency = 'BRL';[27m
+
+[7m                if (group.collection && group.collection.models) {[27m
+[7m                    group.collection.models.forEach(model => {[27m
+[7m                        total += parseFloat(model.get('amount')) || 0;[27m
+[7m                        currency = model.get('amountCurrency') || currency;[27m
+[7m                    });[27m
+[7m                }[27m
+
+[7m                const formatted = total.toLocaleString('pt-BR', {[27m
+[7m                    style: 'currency',[27m
+[7m                    currency: currency,[27m
+[7m                    minimumFractionDigits: 2,[27m
+[7m                    maximumFractionDigits: 2,[27m[7m                });[27m[7m                const groupName = group.name;[27m[7m                const $th = this.$el.find([27m[7m                    'th[data-name="' + CSS.escape(groupName) + '"], th.group-header[data-name="' + CSS.escape(groupNam[27m[7me) + '"]'[27m[7m                );[27m[7m                if (!$th.length) {[27m[7m                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);[27m[7m                    return;[27m[7m                }[27m[7m                $th.find('.kanban-column-total').remove();[27m[7m                const $target = $th.find('.kanban-group-label').first().length[27m[7m                    ? $th.find('.kanban-group-label').first()[27m[7m                    : $th.find('> div').first();[27m[7m                if ($target.length) {[27m[7m                    $target.after([27m[7m                        $('<span class="kanban-column-total"></span>').text(formatted)[27m[7m                    );[27m[7m                } else {[27m[7m                    $th.append([27m[7m                        $('<span class="kanban-column-total"></span>').text(formatted)[27m[7m                    );[27m[7m                }[27m[7m            });[27m[7m        }[27m[7m    };[27m[7m});[27m[7mEOF[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A            this.groupDataList.forEach(group => {
+                let total = 0;
+                let currency = 'BRL';
+
+                if (group.collection && group.collection.models) {
+                    group.collection.models.forEach(model => {
+                        total += parseFloat(model.get('amount')) || 0;
+                        currency = model.get('amountCurrency') || currency;
+                    });
+                }
+
+                const formatted = total.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: currency,
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,                });                const groupName = group.name;                const $th = this.$el.find(                    'th[data-name="' + CSS.escape(groupName) + '"], th.group-header[data-name="' + CSS.escape(groupName) + '"]'                );                if (!$th.length) {                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);                    return;                }                $th.find('.kanban-column-total').remove();                const $target = $th.find('.kanban-group-label').first().length                    ? $th.find('.kanban-group-label').first()                    : $th.find('> div').first();                if ($target.length) {                    $target.after(                        $('<span class="kanban-column-total"></span>').text(formatted)                    );                } else {                    $th.append(                        $('<span class="kanban-column-total"></span>').text(formatted)                    );                }            });        }    };});EOF
+[?2004l[?2004husvds6043x7:/opt/atria/www# [7msed -n '1,220p' client/custom/src/views/opportunity/record/kanban.js[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csed -n '1,220p' client/custom/src/views/opportunity/record/kanban.js
+[?2004ldefine(['crm:views/opportunity/record/kanban'], (Dep) => {
+
+    return class extends Dep {
+
+        afterRender() {
+            super.afterRender();
+
+            console.log('[Atria] Kanban custom de Opportunity carregado.');
+
+            this._injectColumnTotals();
+        }
+
+        _injectColumnTotals() {
+            if (!this.groupDataList || !this.groupDataList.length) {
+                console.warn('[Atria] groupDataList não encontrado no Kanban.');
+                return;
+            }
+
+            if (!document.getElementById('kanban-total-style')) {
+                const style = document.createElement('style');
+                style.id = 'kanban-total-style';
+                style.textContent = `
+                    .kanban-column-total {
+                        display: block;
+                        font-size: 11px;
+                        font-weight: 700;
+                        opacity: 0.95;
+                        margin-top: 4px;
+                        white-space: nowrap;
+                        color: #555;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            this.groupDataList.forEach(group => {
+                let total = 0;
+                let currency = 'BRL';
+
+                if (group.collection && group.collection.models) {
+                    group.collection.models.forEach(model => {
+                        total += parseFloat(model.get('amount')) || 0;
+                        currency = model.get('amountCurrency') || currency;
+                    });
+                }
+
+                const formatted = total.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: currency,
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                });
+
+                const groupName = group.name;
+
+                const $th = this.$el.find(
+                    'th[data-name="' + CSS.escape(groupName) + '"], th.group-header[data-name="' + CSS.escape(groupName) + '"]'
+                );
+
+                if (!$th.length) {
+                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);
+                    return;
+                }
+
+                $th.find('.kanban-column-total').remove();
+
+                const $target = $th.find('.kanban-group-label').first().length
+                    ? $th.find('.kanban-group-label').first()
+                    : $th.find('> div').first();
+
+                if ($target.length) {
+                    $target.after(
+                        $('<span class="kanban-column-total"></span>').text(formatted)
+                    );
+                } else {
+                    $th.append(
+                        $('<span class="kanban-column-total"></span>').text(formatted)
+                    );
+                }
+            });
+        }
+
+    };
+
+});
+[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mphp command.php clear-cache[27m
+[7mphp rebuild.php[27m[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /opt/atria/www
+
+php command.php clear-cache
+php rebuild.php
+[?2004lCache has been cleared.
+[?2004husvds6043x7:/opt/atria/www# [7mphp command.php rebuild[27mphp command.php rebuild
+[?2004lRebuild has been done.
+[?2004husvds6043x7:/opt/atria/www# [7mchown -R www-data:www-data /opt/atria/www/client/custom /opt/atria/www/custom /opt/atria/w[27m[7mw[27m[7mw/data [27m
+[7msystemctl restart php8.3-fpm[27m
+[7msystemctl reload nginx[27m[A[A[A[C[C[C[C[C[Cchown -R www-data:www-data /opt/atria/www/client/custom /opt/atria/www/custom /opt/atria/www/data
+systemctl restart php8.3-fpm
+systemctl reload nginx
+[?2004l[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mgrep -n -C 5 "kanban-column-total" client/custom/src/views/opportunity/record/kanban.js[27m[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /opt/atria/www
+
+grep -n -C 5 "kanban-column-total" client/custom/src/views/opportunity/record/kanban.js
+[?2004l18-
+19-            if (!document.getElementById('kanban-total-style')) {
+20-                const style = document.createElement('style');
+21-                style.id = 'kanban-total-style';
+22-                style.textContent = `
+23:                    .kanban-column-total {
+24-                        display: block;
+25-                        font-size: 11px;
+26-                        font-weight: 700;
+27-                        opacity: 0.95;
+28-                        margin-top: 4px;
+--
+60-                if (!$th.length) {
+61-                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);
+62-                    return;
+63-                }
+64-
+65:                $th.find('.kanban-column-total').remove();
+66-
+67-                const $target = $th.find('.kanban-group-label').first().length
+68-                    ? $th.find('.kanban-group-label').first()
+69-                    : $th.find('> div').first();
+70-
+71-                if ($target.length) {
+72-                    $target.after(
+73:                        $('<span class="kanban-column-total"></span>').text(formatted)
+74-                    );
+75-                } else {
+76-                    $th.append(
+77:                        $('<span class="kanban-column-total"></span>').text(formatted)
+78-                    );
+79-                }
+80-            });
+81-        }
+82-
+[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mcp client/custom/src/views/opportunity/record/kanban.js \[27m
+[7mclient/custom/src/views/opportunity/record/kanban.js.bkp_$(date +%Y%m%d_%H%M%S)[27m[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /opt/atria/www
+
+cp client/custom/src/views/opportunity/record/kanban.js \
+client/custom/src/views/opportunity/record/kanban.js.bkp_$(date +%Y%m%d_%H%M%S)
+[?2004l[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+cat > client/custom/src/views/opportunity/record/kanban.js <<'EOF'
+define(['crm:views/opportunity/record/kanban'], (Dep) => {
+
+    return class extends Dep {
+
+        afterRender() {
+            super.afterRender();
+
+            console.log('[Atria] Kanban custom de Opportunity carregado.');
+
+            this._injectColumnTotals();
+        }
+
+        _injectColumnTotals() {
+            if (!this.groupDataList || !this.groupDataList.length) {
+                console.warn('[Atria] groupDataList não encontrado no Kanban.');
+                return;
+            }
+
+            if (!document.getElementById('kanban-total-style')) {
+                const style = document.createElement('style');
+                style.id = 'kanban-total-style';
+                style.textContent = `
+                    .kanban-head th.group-header > div {
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: space-between !important;
+                        gap: 8px !important;
+                        width: 100% !important;
+                    }
+
+                    .kanban-head .kanban-group-label {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .kanban-column-total {
+                        display: inline-block !important;
+                        font-size: 11px !important;
+                        font-weight: 700 !important;
+                        color: #ffffff !important;
+                        opacity: 1 !important;
+                        margin-left: auto !important;
+                        white-space: nowrap !important;
+                        line-height: 1 !important;
+                    }
+
+                    .kanban-head .create-button {
+                        margin-left: 4px !important;
+                    }
+                `;[7m                document.head.appendChild(style);[27m[7m            }[27m[7m            this.groupDataList.forEach(group => {[27m[7m                let total = 0;[27m[7m                let currency = 'BRL';[27m[7m                if (group.collection && group.collection.models) {[27m[7m                    group.collection.models.forEach(model => {[27m[7m                        total += parseFloat(model.get('amount')) || 0;[27m[7m                        currency = model.get('amountCurrency') || currency;[27m[7m                    });[27m[7m                }[27m[7m                const formatted = total.toLocaleString('pt-BR', {[27m[7m                    style: 'currency',[27m[7m                    currency: currency,[27m[7m                    minimumFractionDigits: 2,[27m[7m                    maximumFractionDigits: 2,[27m[7m                });[27m[7m                const groupName = group.name;[27m[7m                const $th = this.$el.find([27m[7m                    'th.group-header[data-name="' + CSS.escape(groupName) + '"], th[data-name="' + CSS.escape(groupNam[27m[7me) + '"]'[27m[7m                );[27m[7m                if (!$th.length) {[27m[7m                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);[27m[7m                    return;[27m[7m                }[27m[7m                $th.find('.kanban-column-total').remove();[27m[7m                const $headerDiv = $th.find('> div').first();[27m[7m                if ($headerDiv.length) {[27m[7m                    $headerDiv.append([27m[7m                        $('<span class="kanban-column-total"></span>').text(formatted)[27m[7m                    );[27m[7m                } else {[27m[7m                    $th.append([27m[7m                        $('<span class="kanban-column-total"></span>').text(formatted)[27m[7m                    );[27m[7m                }[27m[7m            });[27m[7m        }[27m[7m    };[27m[7m});[27m[7mEOF[27m                document.head.appendChild(style);            }            this.groupDataList.forEach(group => {                let total = 0;                let currency = 'BRL';                if (group.collection && group.collection.models) {                    group.collection.models.forEach(model => {                        total += parseFloat(model.get('amount')) || 0;                        currency = model.get('amountCurrency') || currency;                    });                }                const formatted = total.toLocaleString('pt-BR', {                    style: 'currency',                    currency: currency,                    minimumFractionDigits: 2,                    maximumFractionDigits: 2,                });                const groupName = group.name;                const $th = this.$el.find(                    'th.group-header[data-name="' + CSS.escape(groupName) + '"], th[data-name="' + CSS.escape(groupName) + '"]'                );                if (!$th.length) {                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);                    return;                }                $th.find('.kanban-column-total').remove();                const $headerDiv = $th.find('> div').first();                if ($headerDiv.length) {                    $headerDiv.append(                        $('<span class="kanban-column-total"></span>').text(formatted)                    );                } else {                    $th.append(                        $('<span class="kanban-column-total"></span>').text(formatted)                    );                }            });        }    };});EOF
+[?2004l[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mphp command.php clear-cache[27m
+[7mphp command.php rebuild[27m[A[A[A[C[C[C[C[Ccd /opt/atria/www
+
+php command.php clear-cache
+php command.php rebuild
+[?2004l]Cache has been cleared.
+Rebuild has been done.
+[?2004husvds6043x7:/opt/atria/www# ][7mchown -R www-data:www-data /opt/atria/www/client/custom /opt/atria/www/custom /opt/atria/[27m[7mw[27m[7mww/data [27m
+[7msystemctl restart php8.3-fpm[27m
+[7msystemctl reload nginx[27m[A[A[A[C[C[C[C[C[C[Cchown -R www-data:www-data /opt/atria/www/client/custom /opt/atria/www/custom /opt/atria/www/data
+systemctl restart php8.3-fpm
+systemctl reload nginx
+[?2004lbash: ]chown: command not found
+[?2004husvds6043x7:/opt/atria/www# [7mchown -R www-data:www-data /opt/atria/www/client/custom /opt/atria/www/custom /opt/atria/w[27m[7mw[27m[7mw/data [27m
+[7msystemctl restart php8.3-fpm[27m
+[7msystemctl reload nginx[27m[A[A[A[C[C[C[C[C[Cchown -R www-data:www-data /opt/atria/www/client/custom /opt/atria/www/custom /opt/atria/www/data
+systemctl restart php8.3-fpm
+systemctl reload nginx
+[?2004l[?2004husvds6043x7:/opt/atria/www# [7mstyle.textContent = `[27m
+[7m    .kanban-head th.group-header > div {[27m
+[7m        display: grid !important;[27m
+[7m        grid-template-columns: 1fr auto !important;[27m
+[7m        grid-template-areas:[27m
+[7m            "label action"[27m
+[7m            "empty total" !important;[27m
+[7m        row-gap: 3px !important;[27m
+[7m        column-gap: 6px !important;[27m
+[7m        width: 100% !important;[27m
+[7m        align-items: center !important;[27m
+[7m    }[27m
+
+[7m    .kanban-head .kanban-group-label {[27m
+[7m        grid-area: label !important;[27m
+[7m        overflow: hidden !important;[27m
+[7m        text-overflow: ellipsis !important;[27m
+[7m        white-space: nowrap !important;[27m
+[7m        display: block !important;[27m
+[7m    }[27m
+
+[7m    .kanban-head .create-button {[27m
+[7m        grid-area: action !important;[27m
+[7m        justify-self: end !important;[27m
+[7m        margin: 0 !important;[27m
+[7m    }[27m
+
+[7m    .kanban-column-total {[27m
+[7m        grid-area: total !important;[27m
+[7m        justify-self: end !important;[27m
+[7m        display: block !important;[27m
+[7m        font-size: 11px !important;[27m
+[7m        font-weight: 700 !important;[27m
+[7m        color: #ffffff !important;[27m
+[7m        opacity: 1 !important;[27m
+[7m        white-space: nowrap !important;[27m
+[7m        line-height: 1.1 !important;[27m
+[7m        margin: 0 !important;[27m
+[7m    }[27m
+[7m`;[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstyle.textContent = `
+    .kanban-head th.group-header > div {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important;
+        grid-template-areas:
+            "label action"
+            "empty total" !important;
+        row-gap: 3px !important;
+        column-gap: 6px !important;
+        width: 100% !important;
+        align-items: center !important;
+    }
+
+    .kanban-head .kanban-group-label {
+        grid-area: label !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        display: block !important;
+    }
+
+    .kanban-head .create-button {
+        grid-area: action !important;
+        justify-self: end !important;
+        margin: 0 !important;
+    }
+
+    .kanban-column-total {
+        grid-area: total !important;
+        justify-self: end !important;
+        display: block !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        opacity: 1 !important;
+        white-space: nowrap !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+    }
+`;
+[?2004lbash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: .kanban-head: command not found
+bash: grid-template-areas:: command not found
+bash: label action: command not found
+bash: command substitution: line 5: syntax error near unexpected token `}'
+bash: command substitution: line 5: `    }'
+bash: style.textContent: command not found
+[?2004husvds6043x7:/opt/atria/www# [7mstyle.textContent = `[27m
+[7m    .kanban-head th.group-header > div {[27m
+[7m        display: grid !important;[27m
+[7m        grid-template-columns: 1fr auto !important;[27m
+[7m        grid-template-areas:[27m
+[7m            "label action"[27m
+[7m            "empty total" !important;[27m
+[7m        row-gap: 3px !important;[27m
+[7m        column-gap: 6px !important;[27m
+[7m        width: 100% !important;[27m
+[7m        align-items: center !important;[27m
+[7m    }[27m
+
+[7m    .kanban-head .kanban-group-label {[27m
+[7m        grid-area: label !important;[27m
+[7m        overflow: hidden !important;[27m
+[7m        text-overflow: ellipsis !important;[27m
+[7m        white-space: nowrap !important;[27m
+[7m        display: block !important;[27m
+[7m    }[27m
+
+[7m    .kanban-head .create-button {[27m
+[7m        grid-area: action !important;[27m
+[7m        justify-self: end !important;[27m
+[7m        margin: 0 !important;[27m
+[7m    }[27m
+
+[7m    .kanban-column-total {[27m
+[7m        grid-area: total !important;[27m
+[7m        justify-self: end !important;[27m
+[7m        display: block !important;[27m
+[7m        font-size: 11px !important;[27m
+[7m        font-weight: 700 !important;[27m
+[7m        color: #ffffff !important;[27m
+[7m        opacity: 1 !important;[27m
+[7m        white-space: nowrap !important;[27m
+[7m        line-height: 1.1 !important;[27m
+[7m        margin: 0 !important;[27m
+[7m    }[27m
+[7m`;[27m^C[?2004l[?2004h[?2004l
+[?2004husvds6043x7:/opt/atria/www# [7mstyle.textContent = `[27m
+[7m    .kanban-head th.group-header > div {[27m
+[7m        display: grid !important;[27m
+[7m        grid-template-columns: 1fr auto !important;[27m
+[7m        grid-template-areas:[27m
+[7m            "label action"[27m
+[7m            "empty total" !important;[27m
+[7m        row-gap: 3px !important;[27m
+[7m        column-gap: 6px !important;[27m
+[7m        width: 100% !important;[27m
+[7m        align-items: center !important;[27m
+[7m    }[27m
+
+[7m    .kanban-head .kanban-group-label {[27m
+[7m        grid-area: label !important;[27m
+[7m        overflow: hidden !important;[27m
+[7m        text-overflow: ellipsis !important;[27m
+[7m        white-space: nowrap !important;[27m
+[7m        display: block !important;[27m
+[7m    }[27m
+
+[7m    .kanban-head .create-button {[27m
+[7m        grid-area: action !important;[27m
+[7m        justify-self: end !important;[27m
+[7m        margin: 0 !important;[27m
+[7m    }[27m
+
+[7m    .kanban-column-total {[27m
+[7m        grid-area: total !important;[27m
+[7m        justify-self: end !important;[27m
+[7m        display: block !important;[27m
+[7m        font-size: 11px !important;[27m
+[7m        font-weight: 700 !important;[27m
+[7m        color: #ffffff !important;[27m
+[7m        opacity: 1 !important;[27m
+[7m        white-space: nowrap !important;[27m
+[7m        line-height: 1.1 !important;[27m
+[7m        margin: 0 !important;[27m
+[7m    }[27m
+[7m`;[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstyle.textContent = `
+    .kanban-head th.group-header > div {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important;
+        grid-template-areas:
+            "label action"
+            "empty total" !important;
+        row-gap: 3px !important;
+        column-gap: 6px !important;
+        width: 100% !important;
+        align-items: center !important;
+    }
+
+    .kanban-head .kanban-group-label {
+        grid-area: label !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        display: block !important;
+    }
+
+    .kanban-head .create-button {
+        grid-area: action !important;
+        justify-self: end !important;
+        margin: 0 !important;
+    }
+
+    .kanban-column-total {
+        grid-area: total !important;
+        justify-self: end !important;
+        display: block !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        opacity: 1 !important;
+        white-space: nowrap !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+    }
+`;
+[?2004lbash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: !important: event not found
+bash: .kanban-head: command not found
+bash: grid-template-areas:: command not found
+bash: label action: command not found
+bash: command substitution: line 5: syntax error near unexpected token `}'
+bash: command substitution: line 5: `    }'
+bash: style.textContent: command not found
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+cat > client/custom/src/views/opportunity/record/kanban.js <<'EOF'
+define(['crm:views/opportunity/record/kanban'], (Dep) => {
+
+    return class extends Dep {
+
+        afterRender() {
+            super.afterRender();
+
+            console.log('[Atria] Kanban custom de Opportunity carregado.');
+
+            this._injectColumnTotals();
+        }
+
+        _injectColumnTotals() {
+            if (!this.groupDataList || !this.groupDataList.length) {
+                console.warn('[Atria] groupDataList não encontrado no Kanban.');
+                return;
+            }
+
+            if (!document.getElementById('kanban-total-style')) {
+                const style = document.createElement('style');
+                style.id = 'kanban-total-style';
+                style.textContent = `
+                    .kanban-head th.group-header > div {
+                        display: grid;
+                        grid-template-columns: 1fr auto;
+                        grid-template-areas:
+                            "label action"
+                            "empty total";
+                        row-gap: 3px;
+                        column-gap: 6px;
+                        width: 100%;
+                        align-items: center;
+                    }
+
+                    .kanban-head .kanban-group-label {
+                        grid-area: label;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        display: block;
+                    }
+
+                    .kanban-head .create-button {
+                        grid-area: action;
+                        justify-self: end;
+                        margin: 0;
+                    }
+
+                    .kanban-column-total {
+                        grid-area: total;
+                        justify-self: end;                        display: block;                        font-size: 11px;                        font-weight: 700;                        color: #ffffff;                        opacity: 1;                        white-space: nowrap;                        line-height: 1.1;                        margin: 0;                    }                `;[7m                document.head.appendChild(style);[27m[7m            }[27m[7m            this.groupDataList.forEach(group => {[27m[7m                let total = 0;[27m[7m                let currency = 'BRL';[27m[7m                if (group.collection && group.collection.models) {[27m[7m                    group.collection.models.forEach(model => {[27m[7m                        total += parseFloat(model.get('amount')) || 0;[27m[7m                        currency = model.get('amountCurrency') || currency;[27m[7m                    });[27m[7m                }[27m[7m                const formatted = total.toLocaleString('pt-BR', {[27m[7m                    style: 'currency',[27m[7m                    currency: currency,[27m[7m                    minimumFractionDigits: 2,[27m[7m                    maximumFractionDigits: 2,[27m[7m                });[27m[7m                const groupName = group.name;[27m[7m                const $th = this.$el.find([27m[7m                    'th.group-header[data-name="' + CSS.escape(groupName) + '"], th[data-name="' + CSS.escape(groupNam[27m[7me) + '"]'[27m[7m                );[27m[7m                if (!$th.length) {[27m[7m                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);[27m[7m                    return;[27m[7m                }[27m[7m                $th.find('.kanban-column-total').remove();[27m[7m                const $headerDiv = $th.find('> div').first();[27m[7m                if ($headerDiv.length) {[27m[7m                    $headerDiv.append([27m[7m                        $('<span class="kanban-column-total"></span>').text(formatted)[27m[7m                    );[27m[7m                } else {[27m[7m                    $th.append([27m[7m                        $('<span class="kanban-column-total"></span>').text(formatted)[27m[7m                    );[27m[7m                }[27m[7m            });[27m[7m        }[27m[7m    };[27m[7m});[27m[7mEOF[27m                document.head.appendChild(style);            }            this.groupDataList.forEach(group => {                let total = 0;                let currency = 'BRL';                if (group.collection && group.collection.models) {                    group.collection.models.forEach(model => {                        total += parseFloat(model.get('amount')) || 0;                        currency = model.get('amountCurrency') || currency;                    });                }                const formatted = total.toLocaleString('pt-BR', {                    style: 'currency',                    currency: currency,                    minimumFractionDigits: 2,                    maximumFractionDigits: 2,                });                const groupName = group.name;                const $th = this.$el.find(                    'th.group-header[data-name="' + CSS.escape(groupName) + '"], th[data-name="' + CSS.escape(groupName) + '"]'                );                if (!$th.length) {                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);                    return;                }                $th.find('.kanban-column-total').remove();                const $headerDiv = $th.find('> div').first();                if ($headerDiv.length) {                    $headerDiv.append(                        $('<span class="kanban-column-total"></span>').text(formatted)                    );                } else {                    $th.append(                        $('<span class="kanban-column-total"></span>').text(formatted)                    );                }            });        }    };});EOF
+[?2004l[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mphp command.php clear-cache[27m
+[7mphp command.php rebuild[27m
+
+[7msystemctl restart php8.3-fpm[27m
+[7msystemctl reload nginx[27m[A[A[A[A[A[A[C[C[C[C[C[Ccd /opt/atria/www
+
+php command.php clear-cache
+php command.php rebuild
+
+systemctl restart php8.3-fpm
+systemctl reload nginx
+[?2004lCache has been cleared.
+Rebuild has been done.
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+cat > client/custom/src/views/opportunity/record/kanban.js <<'EOF'
+define(['crm:views/opportunity/record/kanban'], (Dep) => {
+
+    return class extends Dep {
+
+        afterRender() {
+            super.afterRender();
+
+            console.log('[Atria] Kanban custom de Opportunity carregado.');
+
+            this._injectColumnTotals();
+        }
+
+        _injectColumnTotals() {
+            if (!this.groupDataList || !this.groupDataList.length) {
+                console.warn('[Atria] groupDataList não encontrado no Kanban.');
+                return;
+            }
+
+            if (!document.getElementById('kanban-total-style')) {
+                const style = document.createElement('style');
+                style.id = 'kanban-total-style';
+                style.textContent = `
+                    .kanban-head th.group-header {
+                        height: 38px;
+                        padding: 5px 8px 6px 8px;
+                        vertical-align: middle;
+                    }
+
+                    .kanban-head th.group-header > div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 100%;
+                        min-height: 28px;
+                    }
+
+                    .kanban-head .kanban-group-label {
+                        display: block;
+                        width: 100%;
+                        font-size: 13px;
+                        font-weight: 700;
+                        line-height: 14px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .kanban-column-total {
+                        display: block;
+                        width: 100%;
+                        margin-top: 4px;                        font-size: 10.5px;                        font-weight: 700;                        line-height: 12px;                        text-align: right;                        color: rgba(255,255,255,0.96);                        white-space: nowrap;                    }                    .kanban-head .create-button {                        display: none;                    }                `;[7m                document.head.appendChild(style);[27m[7m            }[27m[7m            this.groupDataList.forEach(group => {[27m[7m                let total = 0;[27m[7m                let currency = 'BRL';[27m[7m                if (group.collection && group.collection.models) {[27m[7m                    group.collection.models.forEach(model => {[27m[7m                        total += parseFloat(model.get('amount')) || 0;[27m[7m                        currency = model.get('amountCurrency') || currency;[27m[7m                    });[27m[7m                }[27m[7m                const formatted = total.toLocaleString('pt-BR', {[27m[7m                    style: 'currency',[27m[7m                    currency: currency,[27m[7m                    minimumFractionDigits: 2,[27m[7m                    maximumFractionDigits: 2,[27m[7m                });[27m[7m                const groupName = group.name;[27m[7m                const $th = this.$el.find([27m[7m                    'th.group-header[data-name="' + CSS.escape(groupName) + '"], th[data-name="' + CSS.escape(groupNam[27m[7me) + '"]'[27m[7m                );[27m[7m                if (!$th.length) {[27m[7m                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);[27m[7m                    return;[27m[7m                }[27m[7m                $th.find('.kanban-column-total').remove();[27m[7m                const $headerDiv = $th.find('> div').first();[27m[7m                if ($headerDiv.length) {[27m[7m                    $headerDiv.append([27m[7m                        $('<span class="kanban-column-total"></span>').text(formatted)[27m[7m                    );[27m[7m                } else {[27m[7m                    $th.append([27m[7m                        $('<span class="kanban-column-total"></span>').text(formatted)[27m[7m                    );[27m[7m                }[27m[7m            });[27m[7m        }[27m[7m    };[27m[7m});[27m[7mEOF[27m                document.head.appendChild(style);            }            this.groupDataList.forEach(group => {                let total = 0;                let currency = 'BRL';                if (group.collection && group.collection.models) {                    group.collection.models.forEach(model => {                        total += parseFloat(model.get('amount')) || 0;                        currency = model.get('amountCurrency') || currency;                    });                }                const formatted = total.toLocaleString('pt-BR', {                    style: 'currency',                    currency: currency,                    minimumFractionDigits: 2,                    maximumFractionDigits: 2,                });                const groupName = group.name;                const $th = this.$el.find(                    'th.group-header[data-name="' + CSS.escape(groupName) + '"], th[data-name="' + CSS.escape(groupName) + '"]'                );                if (!$th.length) {                    console.warn('[Atria] Cabeçalho não encontrado para grupo:', groupName);                    return;                }                $th.find('.kanban-column-total').remove();                const $headerDiv = $th.find('> div').first();                if ($headerDiv.length) {                    $headerDiv.append(                        $('<span class="kanban-column-total"></span>').text(formatted)                    );                } else {                    $th.append(                        $('<span class="kanban-column-total"></span>').text(formatted)                    );                }            });        }    };});EOF
+[?2004l[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mphp command.php clear-cache[27m
+[7mphp command.php rebuild[27m
+
+[7msystemctl restart php8.3-fpm[27m
+[7msystemctl reload nginx[27m[A[A[A[A[A[A[C[C[C[C[C[Ccd /opt/atria/www
+
+php command.php clear-cache
+php command.php rebuild
+
+systemctl restart php8.3-fpm
+systemctl reload nginx
+[?2004lCache has been cleared.
+Rebuild has been done.
+[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mpython3 - <<'PY'[27m
+[7mfrom pathlib import Path[27m
+
+[7mpath = Path("client/custom/src/views/opportunity/record/kanban.js")[27m
+[7mtext = path.read_text()[27m
+
+[7mold = """                    .kanban-column-total {[27m
+[7m                        display: block;[27m
+[7m                        width: 100%;[27m
+[7m                        margin-top: 4px;[27m
+[7m                        font-size: 10.5px;[27m
+[7m                        font-weight: 700;[27m
+[7m                        line-height: 12px;[27m
+[7m                        text-align: right;[27m
+[7m                        color: rgba(255,255,255,0.96);[27m
+[7m                        white-space: nowrap;[27m
+[7m                    }[27m
+[7m"""[27m
+
+[7mnew = """                    .kanban-column-total {[27m
+[7m                        display: block;[27m
+[7m                        width: calc(100% - 10px);[27m
+[7m                        margin-top: 4px;[27m
+[7m                        margin-right: 10px;[27m
+[7m                        font-size: 10.5px;[27m
+[7m                        font-weight: 700;[27m
+[7m                        line-height: 12px;[27m
+[7m                        text-align: right;[27m
+[7m                        color: rgba(255,255,255,0.96);[27m
+[7m                        white-space: nowrap;[27m
+[7m                    }[27m
+[7m"""[27m
+
+[7mif old not in text:[27m
+[7m    raise SystemExit("Trecho original não encontrado. Rode grep para validar o CSS atual.")[27m
+
+[7mpath.write_text(text.replace(old, new))[27m
+[7mprint("Arquivo atualizado com margem direita de 10px no valor do Kanban.")[27m
+[7mPY[27m
+
+[7mphp command.php clear-cache[27m
+[7mphp command.php rebuild[27m
+
+[7msystemctl restart php8.3-fpm[27m
+[7msystemctl reload nginx[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[Ccd /opt/atria/www
+
+python3 - <<'PY'
+from pathlib import Path
+
+path = Path("client/custom/src/views/opportunity/record/kanban.js")
+text = path.read_text()
+
+old = """                    .kanban-column-total {
+                        display: block;
+                        width: 100%;
+                        margin-top: 4px;
+                        font-size: 10.5px;
+                        font-weight: 700;
+                        line-height: 12px;
+                        text-align: right;
+                        color: rgba(255,255,255,0.96);
+                        white-space: nowrap;
+                    }
+"""
+
+new = """                    .kanban-column-total {
+                        display: block;
+                        width: calc(100% - 10px);
+                        margin-top: 4px;
+                        margin-right: 10px;
+                        font-size: 10.5px;
+                        font-weight: 700;
+                        line-height: 12px;
+                        text-align: right;
+                        color: rgba(255,255,255,0.96);
+                        white-space: nowrap;
+                    }
+"""
+
+if old not in text:
+    raise SystemExit("Trecho original não encontrado. Rode grep para validar o CSS atual.")
+
+path.write_text(text.replace(old, new))
+print("Arquivo atualizado com margem direita de 10px no valor do Kanban.")
+PY
+
+php command.php clear-cache
+php command.php rebuild
+
+systemctl restart php8.3-fpm
+systemctl reload nginx
+[?2004lArquivo atualizado com margem direita de 10px no valor do Kanban.
+
+Cache has been cleared.
+Rebuild has been done.
+[?2004husvds6043x7:/opt/atria/www# 
+[?2004l[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+echo "=== Verificando layouts existentes de Opportunity ==="
+find custom application -path "*layouts/Opportunity*" -type f 2>/dev/null | sort
+
+echo "=== Criando/atualizando campo e posicionando acima de Contatos ==="
+
+python3 <<'PY'
+import json
+import shutil
+from pathlib import Path
+
+BASE = Path("/opt/atria/www")
+
+# Arquivos do campo
+entity_file = BASE / "custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json"
+i18n_file = BASE / "custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json"
+
+# Layouts que vamos ajustar
+layout_names = ["detail", "detailSmall", "edit"]
+
+custom_layout_dir = BASE / "custom/Espo/Custom/Resources/layouts/Opportunity"
+core_layout_dir = BASE / "application/Espo/Resources/layouts/Opportunity"
+
+custom_layout_dir.mkdir(parents=True, exist_ok=True)
+entity_file.parent.mkdir(parents=True, exist_ok=True)
+i18n_file.parent.mkdir(parents=True, exist_ok=True)
+
+def load_json(path, default):
+    if path.exists():
+        with path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    return default
+
+def save_json(path, data):
+    if path.exists():
+        backup = path.with_suffix(path.suffix + ".bak")
+        shutil.copy2(path, backup)
+        print(f"Backup criado: {backup}")
+
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=4) + "\n",
+        encoding="utf-8"
+    )
+    print(f"Atualizado: {path}")
+
+# 1. Cria/atualiza campo na entidade Opportunity
+entity = load_json(entity_file, {})
+entity.setdefault("fields", {})
+
+entity["fields"]["tipoOportunidade"] = {
+    "type": "enum",
+    "options": [
+        "",        "Revenda",        "ServicoGerenciado",        "Consultoria",        "ProjetoEspecial"    ],    "default": ""}save_json(entity_file, entity)# 2. Tradução pt_BRi18n = load_json(i18n_file, {})i18n.setdefault("fields", {})i18n["fields"]["tipoOportunidade"] = "Tipo de Oportunidade"i18n.setdefault("options", {})i18n["options"]["tipoOportunidade"] = {    "": "",    "Revenda": "Revenda",    "ServicoGerenciado": "Serviço Gerenciado",    "Consultoria": "Consultoria",    "ProjetoEspecial": "Projeto Especial"}save_json(i18n_file, i18n)# 3. Funções para manipular layoutdef cell_name(cell):    if isinstance(cell, str):        return cell    if isinstance(cell, dict):        return cell.get("name")    return Nonedef make_cell(name):    return {"name": name}def row_has_field(row, field):    return any(cell_name(cell) == field for cell in row if cell)def layout_has_field(layout, field):    for panel in layout:        for row in panel.get("rows", []):            if row_has_field(row, field):                return True    return Falsedef remove_field(layout, field):    for panel in layout:        for row in panel.get("rows", []):            for i, cell in enumerate(row):                if cell_name(cell) == field:                    row[i] = False    return layoutdef insert_before_contacts_left(layout):    # Remove o campo se já existir para evitar duplicidade    layout = remove_field(layout, "tipoOportunidade")    for panel in layout:        rows = panel.get("rows", [])[7m        for idx, row in enumerate(rows):[27m[7m            if row_has_field(row, "contacts"):[27m[7m                # Cria uma nova linha acima de Contatos, ocupando o lado esquerdo[27m[7m                new_row = [make_cell("tipoOportunidade"), False][27m[7m                rows.insert(idx, new_row)[27m[7m                return layout[27m[7m    # Fallback: se não encontrar contatos, adiciona no primeiro painel[27m[7m    if layout:[27m[7m        layout[0].setdefault("rows", [])[27m[7m        layout[0]["rows"].append([make_cell("tipoOportunidade"), False])[27m[7m    return layout[27m[7mdef load_layout(name):[27m[7m    custom_path = custom_layout_dir / f"{name}.json"[27m[7m    core_path = core_layout_dir / f"{name}.json"[27m[7m    if custom_path.exists():[27m[7m        return load_json(custom_path, [])[27m[7m    if core_path.exists():[27m[7m        return load_json(core_path, [])[27m[7m    return [[27m[7m        {[27m[7m            "label": "Overview",[27m[7m            "rows": [[27m[7m                [{"name": "name"}, {"name": "account"}],[27m[7m                [{"name": "stage"}, {"name": "amount"}],[27m[7m                [{"name": "probability"}, {"name": "closeDate"}],[27m[7m                [{"name": "tipoOportunidade"}, False],[27m[7m                [{"name": "contacts"}, {"name": "leadSource"}],[27m[7m                [{"name": "description"}, False][27m[7m            ][27m[7m        }[27m[7m    ][27m[7m# 4. Atualiza layouts[27m[7mfor layout_name in layout_names:[27m[7m    layout = load_layout(layout_name)[27m[7m    layout = insert_before_contacts_left(layout)[27m[7m    save_json(custom_layout_dir / f"{layout_name}.json", layout)[27m[7mprint("Campo e layout atualizados com sucesso.")[27m[7mPY[27m[7mecho "=== Rebuild do EspoCRM ==="[27m[7mphp rebuild.php[27m[7mecho "=== Limpando cache ==="[27m[7mrm -rf data/cache/*[27m[7mecho "=== Finalizado ==="[27m        for idx, row in enumerate(rows):            if row_has_field(row, "contacts"):                # Cria uma nova linha acima de Contatos, ocupando o lado esquerdo                new_row = [make_cell("tipoOportunidade"), False]                rows.insert(idx, new_row)                return layout    # Fallback: se não encontrar contatos, adiciona no primeiro painel    if layout:        layout[0].setdefault("rows", [])        layout[0]["rows"].append([make_cell("tipoOportunidade"), False])    return layoutdef load_layout(name):    custom_path = custom_layout_dir / f"{name}.json"    core_path = core_layout_dir / f"{name}.json"    if custom_path.exists():        return load_json(custom_path, [])    if core_path.exists():        return load_json(core_path, [])    return [        {            "label": "Overview",            "rows": [                [{"name": "name"}, {"name": "account"}],                [{"name": "stage"}, {"name": "amount"}],                [{"name": "probability"}, {"name": "closeDate"}],                [{"name": "tipoOportunidade"}, False],                [{"name": "contacts"}, {"name": "leadSource"}],                [{"name": "description"}, False]            ]        }    ]# 4. Atualiza layoutsfor layout_name in layout_names:    layout = load_layout(layout_name)    layout = insert_before_contacts_left(layout)    save_json(custom_layout_dir / f"{layout_name}.json", layout)print("Campo e layout atualizados com sucesso.")PYecho "=== Rebuild do EspoCRM ==="php rebuild.phpecho "=== Limpando cache ==="rm -rf data/cache/*echo "=== Finalizado ==="
+[?2004l=== Verificando layouts existentes de Opportunity ===
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/detailConvert.json
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/detail.json
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/detailSmall.json
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/filters.json
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/kanban.json
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/listForAccount.json
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/listForContact.json
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/list.json
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/listSmall.json
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/massUpdate.json
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/relationships.json
+application/Espo/Modules/Crm/Resources/layouts/Opportunity/sidePanelsDetailSmall.json
+=== Criando/atualizando campo e posicionando acima de Contatos ===
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json
+Campo e layout atualizados com sucesso.
+=== Rebuild do EspoCRM ===
+=== Limpando cache ===
+=== Finalizado ===
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+echo "=== Backup dos arquivos atuais ==="
+mkdir -p /opt/atria/backups/custom_oportunidade_$(date +%Y%m%d_%H%M%S)
+BACKUP_DIR="/opt/atria/backups/custom_oportunidade_$(date +%Y%m%d_%H%M%S)"
+
+cp -a custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json "$BACKUP_DIR/Opportunity.entityDefs.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json "$BACKUP_DIR/Opportunity.pt_BR.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/layouts/Opportunity "$BACKUP_DIR/layouts_Opportunity.bak" 2>/dev/null || true
+
+echo "Backup salvo em: $BACKUP_DIR"
+
+echo "=== Criando campos condicionais da Oportunidade ==="
+
+python3 <<'PY'
+import json
+import shutil
+from pathlib import Path
+
+BASE = Path("/opt/atria/www")
+
+entity_file = BASE / "custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json"
+i18n_file = BASE / "custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json"
+
+layout_dir = BASE / "custom/Espo/Custom/Resources/layouts/Opportunity"
+core_layout_dir = BASE / "application/Espo/Resources/layouts/Opportunity"
+
+entity_file.parent.mkdir(parents=True, exist_ok=True)
+i18n_file.parent.mkdir(parents=True, exist_ok=True)
+layout_dir.mkdir(parents=True, exist_ok=True)
+
+def load_json(path, default):
+    if path.exists():
+        with path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    return default
+
+def save_json(path, data):
+    if path.exists():
+        shutil.copy2(path, path.with_suffix(path.suffix + ".bak"))
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=4) + "\n",
+        encoding="utf-8"
+    )
+    print(f"Atualizado: {path}")
+
+entity = load_json(entity_file, {})
+entity.setdefault("fields", {})
+
+# Campo principal
+entity["fields"]["tipoOportunidade"] = {
+    "type": "enum",    "options": [        "",        "Revenda",        "ServicoGerenciado",        "ServicoPontual",        "ProjetoEspecial"    ],    "default": ""}# Campo exibido quando Tipo de Oportunidade = Revendaentity["fields"]["fabricante"] = {    "type": "enum",    "options": [        "",        "Cisco",        "Fortinet",        "SentinelOne",        "Cribl",        "StellarCyber",        "Rapid7",        "HPE",        "Aruba",        "Outro"    ],    "default": ""}# Campo exibido quando Tipo de Oportunidade = Serviço Gerenciadoentity["fields"]["tipoServicoGerenciado"] = {    "type": "enum",    "options": [        "",        "NOC",        "SOC",        "ServiceIR",        "GestaoDeAmbiente",        "MSSP",        "Monitoramento",        "Outro"    ],    "default": ""}# Campo exibido quando Tipo de Oportunidade = Serviço Pontualentity["fields"]["tipoServicoPontual"] = {    "type": "enum",    "options": [        "",        "Consultoria",        "ServicoDeCabeamento",        "ServicoDeImplementacao",        "Assessment",        "ProjetoDeMigracao",        "Treinamento",        "Outro"    ],    "default": ""}# Lógica condicional de visibilidadeentity.setdefault("dynamicLogic", {})entity["dynamicLogic"].setdefault("fields", {})entity["dynamicLogic"]["fields"]["fabricante"] = {    "visible": {        "conditionGroup": [            {                "type": "equals",                "attribute": "tipoOportunidade",                "value": "Revenda"            }        ]    }}entity["dynamicLogic"]["fields"]["tipoServicoGerenciado"] = {    "visible": {        "conditionGroup": [            {                "type": "equals",                "attribute": "tipoOportunidade",                "value": "ServicoGerenciado"            }        ]    }}entity["dynamicLogic"]["fields"]["tipoServicoPontual"] = {    "visible": {        "conditionGroup": [            {                "type": "equals",                "attribute": "tipoOportunidade",                "value": "ServicoPontual"            }        ]    }}save_json(entity_file, entity)# Tradução pt_BRi18n = load_json(i18n_file, {})i18n.setdefault("fields", {})i18n["fields"]["tipoOportunidade"] = "Tipo de Oportunidade"i18n["fields"]["fabricante"] = "Fabricante"i18n["fields"]["tipoServicoGerenciado"] = "Tipo de Serviço Gerenciado"i18n["fields"]["tipoServicoPontual"] = "Tipo de Serviço Pontual"i18n.setdefault("options", {})i18n["options"]["tipoOportunidade"] = {    "": "",    "Revenda": "Revenda",    "ServicoGerenciado": "Serviço Gerenciado",    "ServicoPontual": "Serviço Pontual",    "ProjetoEspecial": "Projeto Especial"}i18n["options"]["fabricante"] = {    "": "",    "Cisco": "Cisco",    "Fortinet": "Fortinet",    "SentinelOne": "SentinelOne",    "Cribl": "Cribl",    "StellarCyber": "Stellar Cyber",    "Rapid7": "Rapid7",    "HPE": "HPE",    "Aruba": "Aruba",    "Outro": "Outro"}i18n["options"]["tipoServicoGerenciado"] = {    "": "",    "NOC": "NOC",    "SOC": "SOC",    "ServiceIR": "Service IR",    "GestaoDeAmbiente": "Gestão de Ambiente",    "MSSP": "MSSP",    "Monitoramento": "Monitoramento",    "Outro": "Outro"}i18n["options"]["tipoServicoPontual"] = {    "": "",    "Consultoria": "Consultoria",    "ServicoDeCabeamento": "Serviço de Cabeamento",    "ServicoDeImplementacao": "Serviço de Implementação",    "Assessment": "Assessment",    "ProjetoDeMigracao": "Projeto de Migração",    "Treinamento": "Treinamento",    "Outro": "Outro"}save_json(i18n_file, i18n)# Ajuste do layoutdef cell_name(cell):    if isinstance(cell, str):        return cell    if isinstance(cell, dict):        return cell.get("name")    return Nonedef make_cell(name):    return {"name": name}def remove_fields_from_layout(layout, fields):    for panel in layout:        for row in panel.get("rows", []):            for i, cell in enumerate(row):                if cell_name(cell) in fields:                    row[i] = False    return layoutdef row_has_field(row, field):    return any(cell_name(cell) == field for cell in row if cell)def load_layout(name):    custom_path = layout_dir / f"{name}.json"    core_path = core_layout_dir / f"{name}.json"    if custom_path.exists():        return load_json(custom_path, [])    if core_path.exists():        return load_json(core_path, [])    return [        {            "label": "Overview",            "rows": [                [{"name": "name"}, {"name": "account"}],                [{"name": "stage"}, {"name": "amount"}],                [{"name": "probability"}, {"name": "closeDate"}],                [{"name": "contacts"}, {"name": "leadSource"}],                [{"name": "description"}, False]            ]        }    ]def insert_conditional_fields(layout):    fields_to_manage = {        "tipoOportunidade",        "fabricante",        "tipoServicoGerenciado",        "tipoServicoPontual"    }    layout = remove_fields_from_layout(layout, fields_to_manage)    for panel in layout:[7m        rows = panel.get("rows", [])[27m[7m        for idx, row in enumerate(rows):[27m[7m            if row_has_field(row, "contacts"):[27m[7m                rows.insert(idx, [[27m[7m                    make_cell("tipoOportunidade"),[27m[7m                    make_cell("fabricante")[27m[7m                ])[27m[7m                rows.insert(idx + 1, [[27m[7m                    False,[27m[7m                    make_cell("tipoServicoGerenciado")[27m[7m                ])[27m[7m                rows.insert(idx + 2, [[27m[7m                    False,[27m[7m                    make_cell("tipoServicoPontual")[27m[7m                ])[27m[7m                return layout[27m[7m    if layout:[27m[7m        layout[0].setdefault("rows", [])[27m[7m        layout[0]["rows"].append([[27m[7m            make_cell("tipoOportunidade"),[27m[7m            make_cell("fabricante")[27m[7m        ])[27m[7m        layout[0]["rows"].append([[27m[7m            False,[27m[7m            make_cell("tipoServicoGerenciado")[27m[7m        ])[27m[7m        layout[0]["rows"].append([[27m[7m            False,[27m[7m            make_cell("tipoServicoPontual")[27m[7m        ])[27m[7m    return layout[27m[7mfor layout_name in ["detail", "detailSmall", "edit"]:[27m[7m    layout = load_layout(layout_name)[27m[7m    layout = insert_conditional_fields(layout)[27m[7m    save_json(layout_dir / f"{layout_name}.json", layout)[27m[7mprint("Campos condicionais configurados com sucesso.")[27m[7mPY[27m[7mecho "=== Rebuild do EspoCRM ==="[27m[7mphp rebuild.php[27m[7mecho "=== Limpando cache ==="[27m[7mrm -rf data/cache/*[27m[7mecho "=== Ajustando permissões ==="[27m[7mchown -R www-data:www-data custom data[27m[7mecho "=== Finalizado ==="[27m        rows = panel.get("rows", [])        for idx, row in enumerate(rows):            if row_has_field(row, "contacts"):                rows.insert(idx, [                    make_cell("tipoOportunidade"),                    make_cell("fabricante")                ])                rows.insert(idx + 1, [                    False,                    make_cell("tipoServicoGerenciado")                ])                rows.insert(idx + 2, [                    False,                    make_cell("tipoServicoPontual")                ])                return layout    if layout:        layout[0].setdefault("rows", [])        layout[0]["rows"].append([            make_cell("tipoOportunidade"),            make_cell("fabricante")        ])        layout[0]["rows"].append([            False,            make_cell("tipoServicoGerenciado")        ])        layout[0]["rows"].append([            False,            make_cell("tipoServicoPontual")        ])    return layoutfor layout_name in ["detail", "detailSmall", "edit"]:    layout = load_layout(layout_name)    layout = insert_conditional_fields(layout)    save_json(layout_dir / f"{layout_name}.json", layout)print("Campos condicionais configurados com sucesso.")PYecho "=== Rebuild do EspoCRM ==="php rebuild.phpecho "=== Limpando cache ==="rm -rf data/cache/*echo "=== Ajustando permissões ==="chown -R www-data:www-data custom dataecho "=== Finalizado ==="
+[?2004l=== Backup dos arquivos atuais ===
+Backup salvo em: /opt/atria/backups/custom_oportunidade_20260518_035924
+=== Criando campos condicionais da Oportunidade ===
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json
+Campos condicionais configurados com sucesso.
+=== Rebuild do EspoCRM ===
+=== Limpando cache ===
+=== Ajustando permissões ===
+=== Finalizado ===
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+echo "=== Contexto atual dos campos em Opportunity ==="
+grep -n -C 3 "tipoOportunidade\|fabricante\|tipoServicoGerenciado\|tipoServicoPontual\|dynamicLogic" \
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json || true
+
+echo "=== Criando backup ==="
+BACKUP_DIR="/opt/atria/backups/fix_logicdefs_oportunidade_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+
+cp -a custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json "$BACKUP_DIR/Opportunity.entityDefs.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json "$BACKUP_DIR/Opportunity.logicDefs.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json "$BACKUP_DIR/Opportunity.pt_BR.json.bak" 2>/dev/null || true 
+
+echo "Backup salvo em: $BACKUP_DIR"
+
+echo "=== Ajustando campos e lógica condicional ==="
+
+python3 <<'PY'
+import json
+from pathlib import Path
+
+BASE = Path("/opt/atria/www")
+
+entity_file = BASE / "custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json"
+logic_file = BASE / "custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json"
+i18n_file = BASE / "custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json"
+
+entity_file.parent.mkdir(parents=True, exist_ok=True)
+logic_file.parent.mkdir(parents=True, exist_ok=True)
+i18n_file.parent.mkdir(parents=True, exist_ok=True)
+
+def load_json(path, default):
+    if path.exists():
+        with path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    return default
+
+def save_json(path, data):
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=4) + "\n",
+        encoding="utf-8"
+    )
+    print(f"Atualizado: {path}")
+
+entity = load_json(entity_file, {})
+entity.setdefault("fields", {})
+
+# Remove lógica antiga colocada no local incorreto
+entity.pop("dynamicLogic", None)entity["fields"]["tipoOportunidade"] = {    "type": "enum",    "options": [        "",        "Revenda",        "ServicoGerenciado",        "ServicoPontual",        "ProjetoEspecial"    ],    "default": ""}entity["fields"]["fabricante"] = {    "type": "enum",    "options": [        "",        "Cisco",        "Fortinet",        "SentinelOne",        "Cribl",        "StellarCyber",        "Rapid7",        "HPE",        "Aruba",        "Outro"    ],    "default": ""}entity["fields"]["tipoServicoGerenciado"] = {    "type": "enum",    "options": [        "",        "NOC",        "SOC",        "ServiceIR",        "GestaoDeAmbiente",        "MSSP",        "Monitoramento",        "Outro"    ],    "default": ""}entity["fields"]["tipoServicoPontual"] = {    "type": "enum",    "options": [        "",        "Consultoria",        "ServicoDeCabeamento",        "ServicoDeImplementacao",        "Assessment",        "ProjetoDeMigracao",        "Treinamento",        "Outro"    ],    "default": ""}save_json(entity_file, entity)logic = load_json(logic_file, {})logic.setdefault("fields", {})logic["fields"]["fabricante"] = {    "visible": {        "conditionGroup": [            {                "type": "equals",                "attribute": "tipoOportunidade",                "value": "Revenda"            }        ]    }}logic["fields"]["tipoServicoGerenciado"] = {    "visible": {        "conditionGroup": [            {                "type": "equals",                "attribute": "tipoOportunidade",                "value": "ServicoGerenciado"            }        ]    }}logic["fields"]["tipoServicoPontual"] = {    "visible": {        "conditionGroup": [            {                "type": "equals",                "attribute": "tipoOportunidade",                "value": "ServicoPontual"            }        ]    }}save_json(logic_file, logic)i18n = load_json(i18n_file, {})i18n.setdefault("fields", {})i18n.setdefault("options", {})i18n["fields"]["tipoOportunidade"] = "Tipo de Oportunidade"i18n["fields"]["fabricante"] = "Fabricante"i18n["fields"]["tipoServicoGerenciado"] = "Tipo de Serviço Gerenciado"i18n["fields"]["tipoServicoPontual"] = "Tipo de Serviço Pontual"i18n["options"]["tipoOportunidade"] = {    "": "",    "Revenda": "Revenda",    "ServicoGerenciado": "Serviço Gerenciado",    "ServicoPontual": "Serviço Pontual",    "ProjetoEspecial": "Projeto Especial"}[7mi18n["options"]["fabricante"] = {[27m[7m    "": "",[27m[7m    "Cisco": "Cisco",[27m[7m    "Fortinet": "Fortinet",[27m[7m    "SentinelOne": "SentinelOne",[27m[7m    "Cribl": "Cribl",[27m[7m    "StellarCyber": "Stellar Cyber",[27m[7m    "Rapid7": "Rapid7",[27m[7m    "HPE": "HPE",[27m[7m    "Aruba": "Aruba",[27m[7m    "Outro": "Outro"[27m[7m}[27m[7mi18n["options"]["tipoServicoGerenciado"] = {[27m[7m    "": "",[27m[7m    "NOC": "NOC",[27m[7m    "SOC": "SOC",[27m[7m    "ServiceIR": "Service IR",[27m[7m    "GestaoDeAmbiente": "Gestão de Ambiente",[27m[7m    "MSSP": "MSSP",[27m[7m    "Monitoramento": "Monitoramento",[27m[7m    "Outro": "Outro"[27m[7m}[27m[7mi18n["options"]["tipoServicoPontual"] = {[27m[7m    "": "",[27m[7m    "Consultoria": "Consultoria",[27m[7m    "ServicoDeCabeamento": "Serviço de Cabeamento",[27m[7m    "ServicoDeImplementacao": "Serviço de Implementação",[27m[7m    "Assessment": "Assessment",[27m[7m    "ProjetoDeMigracao": "Projeto de Migração",[27m[7m    "Treinamento": "Treinamento",[27m[7m    "Outro": "Outro"[27m[7m}[27m[7msave_json(i18n_file, i18n)[27m[7mprint("Correção concluída.")[27m[7mPY[27m[7mecho "=== Conferindo logicDefs criado ==="[27m[7mcat custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json[27m[7mecho "=== Rebuild ==="[27m[7mphp rebuild.php[27m[7mecho "=== Limpando cache ==="[27m[7mrm -rf data/cache/*[27m[7mecho "=== Ajustando permissões ==="[27m[7mchown -R www-data:www-data custom data[27m[7mecho "=== Finalizado ==="[27mi18n["options"]["fabricante"] = {    "": "",    "Cisco": "Cisco",    "Fortinet": "Fortinet",    "SentinelOne": "SentinelOne",    "Cribl": "Cribl",    "StellarCyber": "Stellar Cyber",    "Rapid7": "Rapid7",    "HPE": "HPE",    "Aruba": "Aruba",    "Outro": "Outro"}i18n["options"]["tipoServicoGerenciado"] = {    "": "",    "NOC": "NOC",    "SOC": "SOC",    "ServiceIR": "Service IR",    "GestaoDeAmbiente": "Gestão de Ambiente",    "MSSP": "MSSP",    "Monitoramento": "Monitoramento",    "Outro": "Outro"}i18n["options"]["tipoServicoPontual"] = {    "": "",    "Consultoria": "Consultoria",    "ServicoDeCabeamento": "Serviço de Cabeamento",    "ServicoDeImplementacao": "Serviço de Implementação",    "Assessment": "Assessment",    "ProjetoDeMigracao": "Projeto de Migração",    "Treinamento": "Treinamento",    "Outro": "Outro"}save_json(i18n_file, i18n)print("Correção concluída.")PYecho "=== Conferindo logicDefs criado ==="cat custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.jsonecho "=== Rebuild ==="php rebuild.phpecho "=== Limpando cache ==="rm -rf data/cache/*echo "=== Ajustando permissões ==="chown -R www-data:www-data custom dataecho "=== Finalizado ==="
+[?2004l=== Contexto atual dos campos em Opportunity ===
+1-{
+2-    "fields": {
+3:        "tipoOportunidade": {
+4-            "type": "enum",
+5-            "options": [
+6-                "",
+--
+11-            ],
+12-            "default": ""
+13-        },
+14:        "fabricante": {
+15-            "type": "enum",
+16-            "options": [
+17-                "",
+--
+27-            ],
+28-            "default": ""
+29-        },
+30:        "tipoServicoGerenciado": {
+31-            "type": "enum",
+32-            "options": [
+33-                "",
+--
+41-            ],
+42-            "default": ""
+43-        },
+44:        "tipoServicoPontual": {
+45-            "type": "enum",
+46-            "options": [
+47-                "",
+--
+56-            "default": ""
+57-        }
+58-    },
+59:    "dynamicLogic": {
+60-        "fields": {
+61:            "fabricante": {
+62-                "visible": {
+63-                    "conditionGroup": [
+64-                        {
+65-                            "type": "equals",
+66:                            "attribute": "tipoOportunidade",
+67-                            "value": "Revenda"
+68-                        }
+69-                    ]
+70-                }
+71-            },
+72:            "tipoServicoGerenciado": {
+73-                "visible": {
+74-                    "conditionGroup": [
+75-                        {
+76-                            "type": "equals",
+77:                            "attribute": "tipoOportunidade",
+78-                            "value": "ServicoGerenciado"
+79-                        }
+80-                    ]
+81-                }
+82-            },
+83:            "tipoServicoPontual": {
+84-                "visible": {
+85-                    "conditionGroup": [
+86-                        {
+87-                            "type": "equals",
+88:                            "attribute": "tipoOportunidade",
+89-                            "value": "ServicoPontual"
+90-                        }
+91-                    ]
+=== Criando backup ===
+Backup salvo em: /opt/atria/backups/fix_logicdefs_oportunidade_20260518_040036
+=== Ajustando campos e lógica condicional ===
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json
+Correção concluída.
+=== Conferindo logicDefs criado ===
+{
+    "fields": {
+        "fabricante": {
+            "visible": {
+                "conditionGroup": [
+                    {
+                        "type": "equals",
+                        "attribute": "tipoOportunidade",
+                        "value": "Revenda"
+                    }
+                ]
+            }
+        },
+        "tipoServicoGerenciado": {
+            "visible": {
+                "conditionGroup": [
+                    {
+                        "type": "equals",
+                        "attribute": "tipoOportunidade",
+                        "value": "ServicoGerenciado"
+                    }
+                ]
+            }
+        },
+        "tipoServicoPontual": {
+            "visible": {
+                "conditionGroup": [
+                    {
+                        "type": "equals",
+                        "attribute": "tipoOportunidade",
+                        "value": "ServicoPontual"
+                    }
+                ]
+            }
+        }
+    }
+}
+=== Rebuild ===
+=== Limpando cache ===
+=== Ajustando permissões ===
+=== Finalizado ===
+[?2004husvds6043x7:/opt/atria/www# cd /opt/atria/www
+
+echo "=== 1. Contexto atual antes da alteração ==="
+grep -n -C 3 "tipoOportunidade\|fabricante\|tipoServicoGerenciado\|tipoServicoPontual\|detalheOportunidade" \
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json \
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json \
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json 2>/dev/null || true
+
+echo "=== 2. Backup completo da customização atual ==="
+BACKUP_DIR="/opt/atria/backups/oportunidade_modelo_detalhe_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+
+cp -a custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json "$BACKUP_DIR/Opportunity.entityDefs.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json "$BACKUP_DIR/Opportunity.logicDefs.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json "$BACKUP_DIR/Opportunity.pt_BR.json.bak" 2>/dev/null || true 
+cp -a custom/Espo/Custom/Resources/layouts/Opportunity "$BACKUP_DIR/layouts_Opportunity.bak" 2>/dev/null || true
+
+echo "Backup salvo em: $BACKUP_DIR"
+
+echo "=== 3. Substituindo modelo antigo pelo novo modelo limpo ==="
+
+python3 <<'PY'
+import json
+from pathlib import Path
+
+BASE = Path("/opt/atria/www")
+
+entity_file = BASE / "custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json"
+logic_file = BASE / "custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json"
+i18n_file = BASE / "custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json"
+
+layout_dir = BASE / "custom/Espo/Custom/Resources/layouts/Opportunity"
+core_layout_dir = BASE / "application/Espo/Resources/layouts/Opportunity"
+
+entity_file.parent.mkdir(parents=True, exist_ok=True)
+logic_file.parent.mkdir(parents=True, exist_ok=True)
+i18n_file.parent.mkdir(parents=True, exist_ok=True)
+layout_dir.mkdir(parents=True, exist_ok=True)
+
+def load_json(path, default):
+    if path.exists():
+        with path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    return default
+
+def save_json(path, data):
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=4) + "\n",
+        encoding="utf-8"
+    )
+    print(f"Atualizado: {path}")def cell_name(cell):    if isinstance(cell, str):        return cell    if isinstance(cell, dict):        return cell.get("name")    return Nonedef make_cell(name):    return {"name": name}def remove_fields_from_layout(layout, fields):    for panel in layout:        for row in panel.get("rows", []):            for i, cell in enumerate(row):                if cell_name(cell) in fields:                    row[i] = False    return layoutdef row_has_field(row, field):    return any(cell_name(cell) == field for cell in row if cell)def load_layout(name):    custom_path = layout_dir / f"{name}.json"    core_path = core_layout_dir / f"{name}.json"    if custom_path.exists():        return load_json(custom_path, [])    if core_path.exists():        return load_json(core_path, [])    return [        {            "label": "Overview",            "rows": [                [{"name": "name"}, {"name": "account"}],                [{"name": "stage"}, {"name": "amount"}],                [{"name": "probability"}, {"name": "closeDate"}],                [{"name": "contacts"}, {"name": "leadSource"}],                [{"name": "description"}, False]            ]        }    ]def insert_new_fields(layout):    old_fields = {        "tipoOportunidade",        "fabricante",        "tipoServicoGerenciado",        "tipoServicoPontual",        "detalheOportunidade"    }    layout = remove_fields_from_layout(layout, old_fields)    for panel in layout:        rows = panel.get("rows", [])        for idx, row in enumerate(rows):            if row_has_field(row, "contacts"):                rows.insert(idx, [                    make_cell("tipoOportunidade"),                    make_cell("detalheOportunidade")                ])                return layout    if layout:        layout[0].setdefault("rows", [])        layout[0]["rows"].append([            make_cell("tipoOportunidade"),            make_cell("detalheOportunidade")        ])    return layout# 1. EntityDefs: remove campos antigos e cria o modelo novo.entity = load_json(entity_file, {})entity.setdefault("fields", {})for old_field in [    "fabricante",    "tipoServicoGerenciado",    "tipoServicoPontual"]:    entity["fields"].pop(old_field, None)entity.pop("dynamicLogic", None)entity["fields"]["tipoOportunidade"] = {    "type": "enum",    "options": [        "",        "Revenda",        "ServicoGerenciado",        "ServicoPontual",        "ProjetoEspecial"    ],    "default": ""}entity["fields"]["detalheOportunidade"] = {    "type": "enum",    "options": [        "",        "Cisco",        "Fortinet",        "SentinelOne",        "Cribl",        "StellarCyber",        "Rapid7",        "HPE",        "Aruba",        "NOC",        "SOC",        "ServiceIR",        "GestaoDeAmbiente",        "MSSP",        "Monitoramento",        "Consultoria",        "ServicoDeCabeamento",        "ServicoDeImplementacao",        "Assessment",        "ProjetoDeMigracao",        "Treinamento",        "Outro"    ],    "default": ""}save_json(entity_file, entity)# 2. LogicDefs: remove lógica antiga e cria lógica nova.logic = load_json(logic_file, {})logic.setdefault("fields", {})logic.setdefault("options", {})for old_field in [    "fabricante",    "tipoServicoGerenciado",    "tipoServicoPontual"]:    logic["fields"].pop(old_field, None)logic["fields"]["detalheOportunidade"] = {    "visible": {        "conditionGroup": [            {                "type": "notEquals",                "attribute": "tipoOportunidade",                "value": ""            },            {                "type": "notEquals",                "attribute": "tipoOportunidade",                "value": "ProjetoEspecial"            }        ]    }}logic["options"]["detalheOportunidade"] = [    {        "optionList": [            "",            "Cisco",            "Fortinet",            "SentinelOne",            "Cribl",            "StellarCyber",            "Rapid7",            "HPE",            "Aruba",            "Outro"        ],        "conditionGroup": [            {                "type": "equals",                "attribute": "tipoOportunidade",                "value": "Revenda"            }        ]    },    {        "optionList": [            "",            "NOC",            "SOC",            "ServiceIR",            "GestaoDeAmbiente",            "MSSP",            "Monitoramento",            "Outro"        ],        "conditionGroup": [            {                "type": "equals",                "attribute": "tipoOportunidade",                "value": "ServicoGerenciado"            }        ]    },    {        "optionList": [            "",            "Consultoria",            "ServicoDeCabeamento",            "ServicoDeImplementacao",            "Assessment",            "ProjetoDeMigracao",            "Treinamento",            "Outro"        ],        "conditionGroup": [            {                "type": "equals",                "attribute": "tipoOportunidade",                "value": "ServicoPontual"            }        ]    }]save_json(logic_file, logic)# 3. Tradução pt_BR: remove labels antigos e cria labels novos.i18n = load_json(i18n_file, {})i18n.setdefault("fields", {})i18n.setdefault("options", {})for old_field in [    "fabricante",    "tipoServicoGerenciado",    "tipoServicoPontual"]:    i18n["fields"].pop(old_field, None)    i18n["options"].pop(old_field, None)i18n["fields"]["tipoOportunidade"] = "Tipo de Oportunidade"i18n["fields"]["detalheOportunidade"] = "Detalhe da Oportunidade"i18n["options"]["tipoOportunidade"] = {    "": "",    "Revenda": "Revenda",    "ServicoGerenciado": "Serviço Gerenciado",    "ServicoPontual": "Serviço Pontual",    "ProjetoEspecial": "Projeto Especial"}[7mi18n["options"]["detalheOportunidade"] = {[27m[7m    "": "",[27m[7m    "Cisco": "Cisco",[27m[7m    "Fortinet": "Fortinet",[27m[7m    "SentinelOne": "SentinelOne",[27m[7m    "Cribl": "Cribl",[27m[7m    "StellarCyber": "Stellar Cyber",[27m[7m    "Rapid7": "Rapid7",[27m[7m    "HPE": "HPE",[27m[7m    "Aruba": "Aruba",[27m[7m    "NOC": "NOC",[27m[7m    "SOC": "SOC",[27m[7m    "ServiceIR": "Service IR",[27m[7m    "GestaoDeAmbiente": "Gestão de Ambiente",[27m[7m    "MSSP": "MSSP",[27m[7m    "Monitoramento": "Monitoramento",[27m[7m    "Consultoria": "Consultoria",[27m[7m    "ServicoDeCabeamento": "Serviço de Cabeamento",[27m[7m    "ServicoDeImplementacao": "Serviço de Implementação",[27m[7m    "Assessment": "Assessment",[27m[7m    "ProjetoDeMigracao": "Projeto de Migração",[27m[7m    "Treinamento": "Treinamento",[27m[7m    "Outro": "Outro"[27m[7m}[27m[7msave_json(i18n_file, i18n)[27m[7m# 4. Layouts: remove campos antigos e coloca somente os 2 campos na mesma linha.[27m[7mfor layout_name in ["detail", "detailSmall", "edit"]:[27m[7m    layout = load_layout(layout_name)[27m[7m    layout = insert_new_fields(layout)[27m[7m    save_json(layout_dir / f"{layout_name}.json", layout)[27m[7mprint("Modelo antigo removido e novo modelo aplicado com sucesso.")[27m[7mPY[27m[7mecho "=== 4. Conferindo resultado dos arquivos ==="[27m[7mgrep -n -C 3 "tipoOportunidade\|detalheOportunidade\|fabricante\|tipoServicoGerenciado\|tipoServicoPontual" \[27m[7mcustom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json \[27m[7mcustom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json \[27m[7mcustom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json 2>/dev/null || true[27m[7mecho "=== 5. Rebuild do EspoCRM ==="[27m[7mphp rebuild.php[27m[7mecho "=== 6. Limpando cache ==="[27m[7mrm -rf data/cache/*[27m[7mecho "=== 7. Ajustando permissões ==="[27m[7mchown -R www-data:www-data custom data[27m[7mecho "=== Finalizado ==="[27mi18n["options"]["detalheOportunidade"] = {    "": "",    "Cisco": "Cisco",    "Fortinet": "Fortinet",    "SentinelOne": "SentinelOne",    "Cribl": "Cribl",    "StellarCyber": "Stellar Cyber",    "Rapid7": "Rapid7",    "HPE": "HPE",    "Aruba": "Aruba",    "NOC": "NOC",    "SOC": "SOC",    "ServiceIR": "Service IR",    "GestaoDeAmbiente": "Gestão de Ambiente",    "MSSP": "MSSP",    "Monitoramento": "Monitoramento",    "Consultoria": "Consultoria",    "ServicoDeCabeamento": "Serviço de Cabeamento",    "ServicoDeImplementacao": "Serviço de Implementação",    "Assessment": "Assessment",    "ProjetoDeMigracao": "Projeto de Migração",    "Treinamento": "Treinamento",    "Outro": "Outro"}save_json(i18n_file, i18n)# 4. Layouts: remove campos antigos e coloca somente os 2 campos na mesma linha.for layout_name in ["detail", "detailSmall", "edit"]:    layout = load_layout(layout_name)    layout = insert_new_fields(layout)    save_json(layout_dir / f"{layout_name}.json", layout)print("Modelo antigo removido e novo modelo aplicado com sucesso.")PYecho "=== 4. Conferindo resultado dos arquivos ==="grep -n -C 3 "tipoOportunidade\|detalheOportunidade\|fabricante\|tipoServicoGerenciado\|tipoServicoPontual" \custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json \custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json \custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json 2>/dev/null || trueecho "=== 5. Rebuild do EspoCRM ==="php rebuild.phpecho "=== 6. Limpando cache ==="rm -rf data/cache/*echo "=== 7. Ajustando permissões ==="chown -R www-data:www-data custom dataecho "=== Finalizado ==="
+[?2004l=== 1. Contexto atual antes da alteração ===
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-1-{
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-2-    "fields": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:3:        "tipoOportunidade": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-4-            "type": "enum",
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-5-            "options": [
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-6-                "",
+--
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-11-            ],
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-12-            "default": ""
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-13-        },
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:14:        "fabricante": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-15-            "type": "enum",
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-16-            "options": [
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-17-                "",
+--
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-27-            ],
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-28-            "default": ""
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-29-        },
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:30:        "tipoServicoGerenciado": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-31-            "type": "enum",
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-32-            "options": [
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-33-                "",
+--
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-41-            ],
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-42-            "default": ""
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-43-        },
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:44:        "tipoServicoPontual": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-45-            "type": "enum",
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-46-            "options": [
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-47-                "",
+--
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-1-{
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-2-    "fields": {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:3:        "fabricante": {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-4-            "visible": {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-5-                "conditionGroup": [
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-6-                    {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-7-                        "type": "equals",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:8:                        "attribute": "tipoOportunidade",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-9-                        "value": "Revenda"
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-10-                    }
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-11-                ]
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-12-            }
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-13-        },
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:14:        "tipoServicoGerenciado": {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-15-            "visible": {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-16-                "conditionGroup": [
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-17-                    {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-18-                        "type": "equals",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:19:                        "attribute": "tipoOportunidade",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-20-                        "value": "ServicoGerenciado"
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-21-                    }
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-22-                ]
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-23-            }
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-24-        },
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:25:        "tipoServicoPontual": {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-26-            "visible": {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-27-                "conditionGroup": [
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-28-                    {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-29-                        "type": "equals",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:30:                        "attribute": "tipoOportunidade",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-31-                        "value": "ServicoPontual"
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-32-                    }
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-33-                ]
+--
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-1-{
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-2-    "fields": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:3:        "tipoOportunidade": "Tipo de Oportunidade",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:4:        "fabricante": "Fabricante",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:5:        "tipoServicoGerenciado": "Tipo de Serviço Gerenciado",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:6:        "tipoServicoPontual": "Tipo de Serviço Pontual"
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-7-    },
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-8-    "options": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:9:        "tipoOportunidade": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-10-            "": "",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-11-            "Revenda": "Revenda",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-12-            "ServicoGerenciado": "Serviço Gerenciado",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-13-            "ServicoPontual": "Serviço Pontual",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-14-            "ProjetoEspecial": "Projeto Especial"
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-15-        },
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:16:        "fabricante": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-17-            "": "",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-18-            "Cisco": "Cisco",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-19-            "Fortinet": "Fortinet",
+--
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-25-            "Aruba": "Aruba",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-26-            "Outro": "Outro"
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-27-        },
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:28:        "tipoServicoGerenciado": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-29-            "": "",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-30-            "NOC": "NOC",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-31-            "SOC": "SOC",
+--
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-35-            "Monitoramento": "Monitoramento",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-36-            "Outro": "Outro"
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-37-        },
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:38:        "tipoServicoPontual": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-39-            "": "",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-40-            "Consultoria": "Consultoria",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-41-            "ServicoDeCabeamento": "Serviço de Cabeamento",
+=== 2. Backup completo da customização atual ===
+Backup salvo em: /opt/atria/backups/oportunidade_modelo_detalhe_20260518_040604
+=== 3. Substituindo modelo antigo pelo novo modelo limpo ===
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json
+Atualizado: /opt/atria/www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json
+Modelo antigo removido e novo modelo aplicado com sucesso.
+=== 4. Conferindo resultado dos arquivos ===
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-1-{
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-2-    "fields": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:3:        "tipoOportunidade": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-4-            "type": "enum",
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-5-            "options": [
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-6-                "",
+--
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-11-            ],
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-12-            "default": ""
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-13-        },
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json:14:        "detalheOportunidade": {
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-15-            "type": "enum",
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-16-            "options": [
+custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json-17-                "",
+--
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-1-{
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-2-    "fields": {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:3:        "detalheOportunidade": {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-4-            "visible": {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-5-                "conditionGroup": [
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-6-                    {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-7-                        "type": "notEquals",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:8:                        "attribute": "tipoOportunidade",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-9-                        "value": ""
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-10-                    },
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-11-                    {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-12-                        "type": "notEquals",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:13:                        "attribute": "tipoOportunidade",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-14-                        "value": "ProjetoEspecial"
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-15-                    }
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-16-                ]
+--
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-18-        }
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-19-    },
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-20-    "options": {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:21:        "detalheOportunidade": [
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-22-            {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-23-                "optionList": [
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-24-                    "",
+--
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-35-                "conditionGroup": [
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-36-                    {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-37-                        "type": "equals",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:38:                        "attribute": "tipoOportunidade",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-39-                        "value": "Revenda"
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-40-                    }
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-41-                ]
+--
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-54-                "conditionGroup": [
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-55-                    {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-56-                        "type": "equals",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:57:                        "attribute": "tipoOportunidade",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-58-                        "value": "ServicoGerenciado"
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-59-                    }
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-60-                ]
+--
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-73-                "conditionGroup": [
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-74-                    {
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-75-                        "type": "equals",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json:76:                        "attribute": "tipoOportunidade",
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-77-                        "value": "ServicoPontual"
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-78-                    }
+custom/Espo/Custom/Resources/metadata/logicDefs/Opportunity.json-79-                ]
+--
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-1-{
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-2-    "fields": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:3:        "tipoOportunidade": "Tipo de Oportunidade",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:4:        "detalheOportunidade": "Detalhe da Oportunidade"
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-5-    },
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-6-    "options": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:7:        "tipoOportunidade": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-8-            "": "",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-9-            "Revenda": "Revenda",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-10-            "ServicoGerenciado": "Serviço Gerenciado",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-11-            "ServicoPontual": "Serviço Pontual",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-12-            "ProjetoEspecial": "Projeto Especial"
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-13-        },
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json:14:        "detalheOportunidade": {
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-15-            "": "",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-16-            "Cisco": "Cisco",
+custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json-17-            "Fortinet": "Fortinet",
+=== 5. Rebuild do EspoCRM ===
+=== 6. Limpando cache ===
+=== 7. Ajustando permissões ===
+=== Finalizado ===
+[?2004husvds6043x7:/opt/atria/www# cd ..
+[?2004l[?2004husvds6043x7:/opt/atria# cd ..echo "=== Finalizado ==="chown -R www-data:www-data custom data[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pecho "=== Finalizado ==="cd ..[K[Kls
+[?2004l[0m[01;32matualiza_projeto_git.sh[0m     DEPLOY_kanban_total.md      list.js           typescript
+[01;34mbackups[0m                     entityDefs_Account_v2.json  Opportunity.json  verificacao_pos_deploy.md
+clientDefs_Account_v2.json  kanban.js                   [01;34mschema_banco[0m      [01;34mwww[0m
+[?2004husvds6043x7:/opt/atria# .;[K/atualiza_projeto_git.sh 
+[?2004l======================================
+Atualizando schema do banco atria_crm
+======================================
+Schema atualizado em:
+/opt/atria/schema_banco/atria_crm_schema.sql
+
+======================================
+Verificando alterações no projeto
+======================================
+Refresh index:  47% (8466/17938)Refresh index:  48% (8611/17938)Refresh index:  49% (8790/17938)Refresh index:  50% (8969/17
