@@ -20,6 +20,10 @@
             "labelText": "Tipo de Conta",
             "default": ""
         },
+        "porQueAlvo": {
+            "type": "text",
+            "labelText": "Por que e Alvo"
+        },
         "industry": {
             "type": "enum",
             "options": [

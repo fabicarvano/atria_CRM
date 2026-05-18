@@ -4843,4 +4843,935 @@ Cache has been cleared.
 [?2004husvds6043x7:/opt/atria/www# CD ..
 [?2004lbash: CD: command not found
 [?2004husvds6043x7:/opt/atria/www# KCD ..[K[K[K[K[K[KCD ..
-[?2004lbash: CD: command not foun
+[?2004lbash: CD: command not found
+[?2004husvds6043x7:/opt/atria/www# LS[K[KCD ..[K[K[K[K[Kcd ..
+[?2004l[?2004husvds6043x7:/opt/atria# ls
+[?2004l[0m[01;32matualiza_projeto_git.sh[0m  clientDefs_Account_v2.json  entityDefs_Account_v2.json  typescript                 [01;34mwww[0m
+[01;34mbackups[0m                  [01;32mdeploy_alvo_foco.sh[0m         [01;34mschema_banco[0m                verificacao_pos_deploy.md
+[?2004husvds6043x7:/opt/atria# ;/[K[K>[K:[K,[K./aui[K[Ktualiza_projeto_git.sh 
+[?2004l======================================
+Atualizando schema do banco atria_crm
+======================================
+Schema atualizado em:
+/opt/atria/schema_banco/atria_crm_schema.sql
+
+======================================
+Verificando alterações no projeto
+======================================
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   schema_banco/atria_crm_schema.sql[m
+	[31mmodified:   www/client/custom/src/views/account/detail.js[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/layouts/Account/detail.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/metadata/clientDefs/Account.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json[m
+	[31mmodified:   www/data/config.php[m
+	[31mmodified:   www/data/state.php[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mclientDefs_Account_v2.json[m
+	[31mentityDefs_Account_v2.json[m
+	[31mtypescript[m
+	[31mwww/client/custom/img/[m
+	[31mwww/client/custom/res/[m
+	[31mwww/client/custom/src/views/account/detail-v2.js[m
+	[31mwww/client/custom/src/views/account/detail-v3.js[m
+	[31mwww/client/custom/src/views/account/detail-v3.js.bkp-botao-quebrado[m
+	[31mwww/client/custom/src/views/account/detail-v3.js.bkp-hide-label-logo-url[m
+	[31mwww/client/custom/src/views/account/detail-v3.js.bkp-logo-ok-sem-foco[m
+	[31mwww/client/custom/src/views/account/detail-v3.js.bkp-quebrado-logo-foco[m
+	[31mwww/client/custom/src/views/account/detail-v3.js.bkp-sem-botao-dom[m
+	[31mwww/client/custom/src/views/account/detail.js.bak[m
+	[31mwww/client/custom/src/views/account/detail.js.bkp-hide-label-logo-url-final[m
+	[31mwww/client/custom/src/views/fields/[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak.20260517_234353[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bkp-detail-v2[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bak.20260517_234353[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2[m
+	[31mwww/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+======================================
+Adicionando todos os arquivos alterados
+======================================
+
+======================================
+Criando commit
+======================================
+[main c0f721fe] Atualiza projeto e schema do banco - 2026-05-18 02:20:49
+ 33 files changed, 7028 insertions(+), 70 deletions(-)
+ create mode 100644 clientDefs_Account_v2.json
+ create mode 100644 entityDefs_Account_v2.json
+ create mode 100644 typescript
+ create mode 100644 www/client/custom/img/default-account-logo.svg
+ create mode 100644 www/client/custom/res/templates/fields/logo-image.tpl
+ create mode 100644 www/client/custom/res/templates/templates/fields/logo-image.tpl
+ create mode 100644 www/client/custom/src/views/account/detail-v2.js
+ create mode 100644 www/client/custom/src/views/account/detail-v3.js
+ create mode 100644 www/client/custom/src/views/account/detail-v3.js.bkp-botao-quebrado
+ create mode 100644 www/client/custom/src/views/account/detail-v3.js.bkp-hide-label-logo-url
+ create mode 100644 www/client/custom/src/views/account/detail-v3.js.bkp-logo-ok-sem-foco
+ create mode 100644 www/client/custom/src/views/account/detail-v3.js.bkp-quebrado-logo-foco
+ create mode 100644 www/client/custom/src/views/account/detail-v3.js.bkp-sem-botao-dom
+ create mode 100644 www/client/custom/src/views/account/detail.js.bak
+ create mode 100644 www/client/custom/src/views/account/detail.js.bkp-hide-label-logo-url-final
+ create mode 100644 www/client/custom/src/views/fields/logo-image-v2.js
+ create mode 100644 www/client/custom/src/views/fields/logo-image.js
+ create mode 100644 www/client/custom/src/views/fields/logo-image.js.bkp-afterrender-direto
+ create mode 100644 www/client/custom/src/views/fields/logo-image.js.bkp-class-version
+ create mode 100644 www/client/custom/src/views/fields/logo-image.js.bkp-sem-template
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak.20260517_234353
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bkp-detail-v2
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bak.20260517_234353
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2
+ create mode 100644 www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl
+
+======================================
+Enviando para o GitHub
+======================================
+Enumerating objects: 84, done.
+Counting objects:   1% (1/84)Counting objects:   2% (2/84)Counting objects:   3% (3/84)Counting objects:   4% (4/84)Counting objects:   5% (5/84)Counting objects:   7% (6/84)Counting objects:   8% (7/84)Counting objects:   9% (8/84)Counting objects:  10% (9/84)Counting objects:  11% (10/84)Counting objects:  13% (11/84)Counting objects:  14% (12/84)Counting objects:  15% (13/84)Counting objects:  16% (14/84)Counting objects:  17% (15/84)Counting objects:  19% (16/84)Counting objects:  20% (17/84)Counting objects:  21% (18/84)Counting objects:  22% (19/84)Counting objects:  23% (20/84)Counting objects:  25% (21/84)Counting objects:  26% (22/84)Counting objects:  27% (23/84)Counting objects:  28% (24/84)Counting objects:  29% (25/84)Counting objects:  30% (26/84)Counting objects:  32% (27/84)Counting objects:  33% (28/84)Counting objects:  34% (29/84)Counting objects:  35% (30/84)Counting objects:  36% (31/84)Counting objects:  38% (32/84)Counting objects:  39% (33/84)Counting objects:  40% (34/84)Counting objects:  41% (35/84)Counting objects:  42% (36/84)Counting objects:  44% (37/84)Counting objects:  45% (38/84)Counting objects:  46% (39/84)Counting objects:  47% (40/84)Counting objects:  48% (41/84)Counting objects:  50% (42/84)Counting objects:  51% (43/84)Counting objects:  52% (44/84)Counting objects:  53% (45/84)Counting objects:  54% (46/84)Counting objects:  55% (47/84)Counting objects:  57% (48/84)Counting objects:  58% (49/84)Counting objects:  59% (50/84)Counting objects:  60% (51/84)Counting objects:  61% (52/84)Counting objects:  63% (53/84)Counting objects:  64% (54/84)Counting objects:  65% (55/84)Counting objects:  66% (56/84)Counting objects:  67% (57/84)Counting objects:  69% (58/84)Counting objects:  70% (59/84)Counting objects:  71% (60/84)Counting objects:  72% (61/84)Counting objects:  73% (62/84)Counting objects:  75% (63/84)Counting objects:  76% (64/84)Counting objects:  77% (65/84)Counting objects:  78% (66/84)Counting objects:  79% (67/84)Counting objects:  80% (68/84)Counting objects:  82% (69/84)Counting objects:  83% (70/84)Counting objects:  84% (71/84)Counting objects:  85% (72/84)Counting objects:  86% (73/84)Counting objects:  88% (74/84)Counting objects:  89% (75/84)Counting objects:  90% (76/84)Counting objects:  91% (77/84)Counting objects:  92% (78/84)Counting objects:  94% (79/84)Counting objects:  95% (80/84)Counting objects:  96% (81/84)Counting objects:  97% (82/84)Counting objects:  98% (83/84)Counting objects: 100% (84/84)Counting objects: 100% (84/84), done.
+Delta compression using up to 4 threads
+Compressing objects:   2% (1/46)Compressing objects:   4% (2/46)Compressing objects:   6% (3/46)Compressing objects:   8% (4/46)Compressing objects:  10% (5/46)Compressing objects:  13% (6/46)Compressing objects:  15% (7/46)Compressing objects:  17% (8/46)Compressing objects:  19% (9/46)Compressing objects:  21% (10/46)Compressing objects:  23% (11/46)Compressing objects:  26% (12/46)Compressing objects:  28% (13/46)Compressing objects:  30% (14/46)Compressing objects:  32% (15/46)Compressing objects:  34% (16/46)Compressing objects:  36% (17/46)Compressing objects:  39% (18/46)Compressing objects:  41% (19/46)Compressing objects:  43% (20/46)Compressing objects:  45% (21/46)Compressing objects:  47% (22/46)Compressing objects:  50% (23/46)Compressing objects:  52% (24/46)Compressing objects:  54% (25/46)Compressing objects:  56% (26/46)Compressing objects:  58% (27/46)Compressing objects:  60% (28/46)Compressing objects:  63% (29/46)Compressing objects:  65% (30/46)Compressing objects:  67% (31/46)Compressing objects:  69% (32/46)Compressing objects:  71% (33/46)Compressing objects:  73% (34/46)Compressing objects:  76% (35/46)Compressing objects:  78% (36/46)Compressing objects:  80% (37/46)Compressing objects:  82% (38/46)Compressing objects:  84% (39/46)Compressing objects:  86% (40/46)Compressing objects:  89% (41/46)Compressing objects:  91% (42/46)Compressing objects:  93% (43/46)Compressing objects:  95% (44/46)Compressing objects:  97% (45/46)Compressing objects: 100% (46/46)Compressing objects: 100% (46/46), done.
+Writing objects:   1% (1/57)Writing objects:   3% (2/57)Writing objects:   5% (3/57)Writing objects:   8% (5/57)Writing objects:  10% (6/57)Writing objects:  12% (7/57)Writing objects:  14% (8/57)Writing objects:  15% (9/57)Writing objects:  17% (10/57)Writing objects:  19% (11/57)Writing objects:  21% (12/57)Writing objects:  22% (13/57)Writing objects:  24% (14/57)Writing objects:  26% (15/57)Writing objects:  28% (16/57)Writing objects:  29% (17/57)Writing objects:  31% (18/57)Writing objects:  33% (19/57)Writing objects:  35% (20/57)Writing objects:  36% (21/57)Writing objects:  38% (22/57)Writing objects:  40% (23/57)Writing objects:  42% (24/57)Writing objects:  45% (26/57)Writing objects:  49% (28/57)Writing objects:  50% (29/57)Writing objects:  52% (30/57)Writing objects:  54% (31/57)Writing objects:  56% (32/57)Writing objects:  57% (33/57)Writing objects:  63% (36/57)Writing objects:  64% (37/57)Writing objects:  66% (38/57)Writing objects:  68% (39/57)Writing objects:  70% (40/57)Writing objects:  71% (41/57)Writing objects:  73% (42/57)Writing objects:  75% (43/57)Writing objects:  77% (44/57)Writing objects:  78% (45/57)Writing objects:  80% (46/57)Writing objects:  82% (47/57)Writing objects:  84% (48/57)Writing objects:  85% (49/57)Writing objects:  87% (50/57)Writing objects:  89% (51/57)Writing objects:  91% (52/57)Writing objects:  92% (53/57)Writing objects:  94% (54/57)Writing objects:  96% (55/57)Writing objects:  98% (56/57)Writing objects: 100% (57/57)Writing objects: 100% (57/57), 48.51 KiB | 2.11 MiB/s, done.
+Total 57 (delta 19), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/19)[Kremote: Resolving deltas:   5% (1/19)[Kremote: Resolving deltas:  10% (2/19)[Kremote: Resolving deltas:  15% (3/19)[Kremote: Resolving deltas:  21% (4/19)[Kremote: Resolving deltas:  26% (5/19)[Kremote: Resolving deltas:  31% (6/19)[Kremote: Resolving deltas:  36% (7/19)[Kremote: Resolving deltas:  42% (8/19)[Kremote: Resolving deltas:  47% (9/19)[Kremote: Resolving deltas:  52% (10/19)[Kremote: Resolving deltas:  57% (11/19)[Kremote: Resolving deltas:  63% (12/19)[Kremote: Resolving deltas:  68% (13/19)[Kremote: Resolving deltas:  73% (14/19)[Kremote: Resolving deltas:  78% (15/19)[Kremote: Resolving deltas:  84% (16/19)[Kremote: Resolving deltas:  89% (17/19)[Kremote: Resolving deltas:  94% (18/19)[Kremote: Resolving deltas: 100% (19/19)[Kremote: Resolving deltas: 100% (19/19), completed with 9 local objects.[K
+To github.com:fabicarvano/atria_CRM.git
+   77c2a9b7..c0f721fe  main -> main
+
+======================================
+Atualização concluída com sucesso
+======================================
+[?2004husvds6043x7:/opt/atria# ls
+[?2004l[0m[01;32matualiza_projeto_git.sh[0m  clientDefs_Account_v2.json  entityDefs_Account_v2.json  typescript                 [01;34mwww[0m
+[01;34mbackups[0m                  [01;32mdeploy_alvo_foco.sh[0m         [01;34mschema_banco[0m                verificacao_pos_deploy.md
+[?2004husvds6043x7:/opt/atria# rm deploy_alvo_foco.sh 
+[?2004l[?2004husvds6043x7:/opt/atria# [7mgrep -n -A 8 -B 5 "after:render" /opt/atria/www/client/custom/src/views/account/detail.js[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep -n -A 8 -B 5 "after:render" /opt/atria/www/client/custom/src/views/account/detail.js
+[?2004l36-            this.listenTo(this.model, 'change:statusProspeccao', () => {
+37-                this._controlFocoButtons();
+38-                this._applyFieldCss();
+39-            });
+40-
+41:            this.listenTo(this, 'after:render', () => {
+42-                this._applyFieldCss();
+43-            });
+44-        }
+45-
+46-        _waitAndInjectLogo() {
+47-            // Oculta apenas o rótulo visual "logoUrl".
+48-            // O campo técnico continua existindo como account.logo_url no banco
+49-            // e logoUrl na API do EspoCRM.
+[?2004husvds6043x7:/opt/atria# [7mcp -r /opt/atria/www/custom/Espo/Custom/Resources/layouts/Account \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo[27m
+
+[7mcp /opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo[27m
+
+[7mcp /opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo[27m
+
+[7mcp /opt/atria/www/client/custom/src/views/account/detail.js \[27m
+[7m/opt/atria/www/client/custom/src/views/account/detail.js.bkp-remove-porQueAlvo[27m[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccp -r /opt/atria/www/custom/Espo/Custom/Resources/layouts/Account \
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo
+
+cp /opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json \
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo
+
+cp /opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json \
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo
+
+cp /opt/atria/www/client/custom/src/views/account/detail.js \
+/opt/atria/www/client/custom/src/views/account/detail.js.bkp-remove-porQueAlvo
+[?2004l[?2004husvds6043x7:/opt/atria# [7mgrep -R -n -C 5 "porQueAlvo" \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json \[27m
+[7m/opt/atria/www/client/custom/src/views/account/detail.js[27m[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep -R -n -C 5 "porQueAlvo" \
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account \
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json \
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json \
+/opt/atria/www/client/custom/src/views/account/detail.js
+[?2004l/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json-17-    },
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json-18-    {
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json-19-        "label": "Classificação",
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json-20-        "rows": [
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json-21-            [{"name": "tipoEscalao"}, {"name": "porQueFoco"}],
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json:22:            [{"name": "porQueAlvo"}, false]
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json-23-        ]
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json-24-    }
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json-25-]
+--
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-18-                "C"
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-19-            ],
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-20-            "labelText": "Tipo de Conta",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-21-            "default": ""
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-22-        },
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json:23:        "porQueAlvo": {
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-24-            "type": "text",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-25-            "labelText": "Por que e Alvo"
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-26-        },
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-27-        "industry": {
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-28-            "type": "enum",
+--
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json-1-{
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json-2-    "fields": {
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json-3-        "tipoEscalao": "Tipo de Conta",
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json-4-        "porQueFoco": "Por que e Foco",
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json:5:        "porQueAlvo": "Por que e Alvo",
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json-6-        "statusProspeccao": "Foco",
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json-7-        "industry": "Setor",
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json-8-        "website": "LinkedIn da empresa"
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json-9-    },
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json-10-    "options": {
+--
+/opt/atria/www/client/custom/src/views/account/detail.js-152-                styleEl = document.createElement('style');
+/opt/atria/www/client/custom/src/views/account/detail.js-153-                styleEl.id = 'foco-field-style';
+/opt/atria/www/client/custom/src/views/account/detail.js-154-                document.head.appendChild(styleEl);
+/opt/atria/www/client/custom/src/views/account/detail.js-155-            }
+/opt/atria/www/client/custom/src/views/account/detail.js-156-            if (isFoco) {
+/opt/atria/www/client/custom/src/views/account/detail.js:157:                styleEl.textContent = `.cell[data-name="porQueAlvo"] { display: none !important; } .cell[data-name="porQueFoco"] { display: block !important; }`;
+/opt/atria/www/client/custom/src/views/account/detail.js-158-            } else {
+/opt/atria/www/client/custom/src/views/account/detail.js:159:                styleEl.textContent = `.cell[data-name="porQueFoco"] { display: none !important; } .cell[data-name="porQueAlvo"] { display: block !important; }`;
+/opt/atria/www/client/custom/src/views/account/detail.js-160-            }
+/opt/atria/www/client/custom/src/views/account/detail.js-161-            const cellFoco = document.querySelector('.cell[data-name="porQueFoco"]');
+/opt/atria/www/client/custom/src/views/account/detail.js:162:            const cellAlvo = document.querySelector('.cell[data-name="porQueAlvo"]');
+/opt/atria/www/client/custom/src/views/account/detail.js-163-            if (cellFoco) cellFoco.style.setProperty('display', isFoco ? 'block' : 'none', 'important');
+/opt/atria/www/client/custom/src/views/account/detail.js-164-            if (cellAlvo) cellAlvo.style.setProperty('display', isFoco ? 'none' : 'block', 'important');
+/opt/atria/www/client/custom/src/views/account/detail.js-165-        }
+/opt/atria/www/client/custom/src/views/account/detail.js-166-
+/opt/atria/www/client/custom/src/views/account/detail.js-167-        async _actionMarcarFoco() {
+[?2004husvds6043x7:/opt/atria# [7mpython3 - << 'PY'[27m
+[7mimport json[27m
+[7mfrom pathlib import Path[27m
+
+[7mfile = Path("/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json")[27m
+[7mdata = json.loads(file.read_text())[27m
+
+[7mfor panel in data:[27m
+[7m    if panel.get("label") == "Classificação":[27m
+[7m        rows = panel.get("rows", [])[27m
+[7m        panel["rows"] = [[27m
+[7m            row for row in rows[27m
+[7m            if not any(isinstance(cell, dict) and cell.get("name") == "porQueAlvo" for cell in row)[27m
+[7m        ][27m
+
+[7mfile.write_text(json.dumps(data, ensure_ascii=False, indent=4))[27m
+[7mprint("porQueAlvo removido do layout detail.json.")[27m
+[7mPY[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 - << 'PY'
+import json
+from pathlib import Path
+
+file = Path("/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json")
+data = json.loads(file.read_text())
+
+for panel in data:
+    if panel.get("label") == "Classificação":
+        rows = panel.get("rows", [])
+        panel["rows"] = [
+            row for row in rows
+            if not any(isinstance(cell, dict) and cell.get("name") == "porQueAlvo" for cell in row)
+        ]
+
+file.write_text(json.dumps(data, ensure_ascii=False, indent=4))
+print("porQueAlvo removido do layout detail.json.")
+PY
+[?2004lporQueAlvo removido do layout detail.json.
+[?2004husvds6043x7:/opt/atria# [7mpython3 - << 'PY'[27m
+[7mimport json[27m
+[7mfrom pathlib import Path[27m
+
+[7mfile = Path("/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json")[27m
+[7mdata = json.loads(file.read_text())[27m
+
+[7mif "fields" in data and "porQueAlvo" in data["fields"]:[27m
+[7m    del data["fields"]["porQueAlvo"][27m
+[7m    file.write_text(json.dumps(data, ensure_ascii=False, indent=4))[27m
+[7m    print("porQueAlvo removido do i18n pt_BR.")[27m
+[7melse:[27m
+[7m    print("porQueAlvo não encontrado no i18n.")[27m
+[7mPY[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 - << 'PY'
+import json
+from pathlib import Path
+
+file = Path("/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json")
+data = json.loads(file.read_text())
+
+if "fields" in data and "porQueAlvo" in data["fields"]:
+    del data["fields"]["porQueAlvo"]
+    file.write_text(json.dumps(data, ensure_ascii=False, indent=4))
+    print("porQueAlvo removido do i18n pt_BR.")
+else:
+    print("porQueAlvo não encontrado no i18n.")
+PY
+[?2004lporQueAlvo removido do i18n pt_BR.
+[?2004husvds6043x7:/opt/atria# [7mcd /opt/atria[27m
+[7mset -a[27m
+[7msource .env[27m
+[7mset +a[27m[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /opt/atria
+set -a
+source .env
+set +a
+[?2004l[?2004husvds6043x7:/opt/atria# [7mmysql -u"$DB_USER" -p"$DB_PASS" "$DB_NAME" -e "[27m
+[7mSHOW COLUMNS FROM account LIKE '%alvo%';[27m
+[7mSHOW COLUMNS FROM account LIKE '%foco%';[27m
+[7m"[27m[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmysql -u"$DB_USER" -p"$DB_PASS" "$DB_NAME" -e "
+SHOW COLUMNS FROM account LIKE '%alvo%';
+SHOW COLUMNS FROM account LIKE '%foco%';
+"
+[?2004l+--------------+------------+------+-----+---------+-------+
+| Field        | Type       | Null | Key | Default | Extra |
++--------------+------------+------+-----+---------+-------+
+| por_que_alvo | mediumtext | YES  |     | NULL    |       |
++--------------+------------+------+-----+---------+-------+
++--------------+------------+------+-----+---------+-------+
+| Field        | Type       | Null | Key | Default | Extra |
++--------------+------------+------+-----+---------+-------+
+| por_que_foco | mediumtext | YES  |     | NULL    |       |
++--------------+------------+------+-----+---------+-------+
+[?2004husvds6043x7:/opt/atria# [7mcd /opt/atria[27m
+[7mset -a[27m
+[7msource .env[27m
+[7mset +a[27m
+
+[7mmysql -u"$DB_USER" -p"$DB_PASS" "$DB_NAME" << 'SQL'[27m
+[7mSET @col_exists := ([27m
+[7m    SELECT COUNT(*)[27m
+[7m    FROM information_schema.COLUMNS[27m
+[7m    WHERE TABLE_SCHEMA = DATABASE()[27m
+[7m      AND TABLE_NAME = 'account'[27m
+[7m      AND COLUMN_NAME = 'por_que_alvo'[27m
+[7m);[27m
+
+[7mSET @sql := IF([27m
+[7m    @col_exists > 0,[27m
+[7m    'ALTER TABLE account DROP COLUMN por_que_alvo',[27m
+[7m    'SELECT "Coluna por_que_alvo não existe. Nada alterado." AS info'[27m
+[7m);[27m
+
+[7mPREPARE stmt FROM @sql;[27m
+[7mEXECUTE stmt;[27m
+[7mDEALLOCATE PREPARE stmt;[27m
+[7mSQL[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /opt/atria
+set -a
+source .env
+set +a
+
+mysql -u"$DB_USER" -p"$DB_PASS" "$DB_NAME" << 'SQL'
+SET @col_exists := (
+    SELECT COUNT(*)
+    FROM information_schema.COLUMNS
+    WHERE TABLE_SCHEMA = DATABASE()
+      AND TABLE_NAME = 'account'
+      AND COLUMN_NAME = 'por_que_alvo'
+);
+
+SET @sql := IF(
+    @col_exists > 0,
+    'ALTER TABLE account DROP COLUMN por_que_alvo',
+    'SELECT "Coluna por_que_alvo não existe. Nada alterado." AS info'
+);
+
+PREPARE stmt FROM @sql;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+SQL
+[?2004l[?2004husvds6043x7:/opt/atria# [7mpython3 - << 'PY'[27m
+[7mfrom pathlib import Path[27m
+[7mimport re[27m
+
+[7mfile = Path("/opt/atria/www/client/custom/src/views/account/detail.js")[27m
+[7mtext = file.read_text()[27m
+
+[7mpattern = r"""        _applyFieldCss\(\) \{[27m
+[7m            const isFoco = !!this\.model\.get\('statusProspeccao'\);[27m
+[7m.*?        \}[27m
+[7m"""[27m
+
+[7mreplacement = """        _applyFieldCss() {[27m
+[7m            const isFoco = !!this.model.get('statusProspeccao');[27m
+
+[7m            let styleEl = document.getElementById('foco-field-style');[27m
+
+[7m            if (!styleEl) {[27m
+[7m                styleEl = document.createElement('style');[27m
+[7m                styleEl.id = 'foco-field-style';[27m
+[7m                document.head.appendChild(styleEl);[27m
+[7m            }[27m
+
+[7m            // porQueAlvo foi removido. Mantemos apenas porQueFoco.[27m
+[7m            // porQueFoco aparece somente quando a conta está marcada como Foco.[27m
+[7m            styleEl.textContent = isFoco[27m
+[7m                ? `.cell[data-name="porQueFoco"] { display: block !important; }`[27m
+[7m                : `.cell[data-name="porQueFoco"] { display: none !important; }`;[27m
+
+[7m            const cellFoco = document.querySelector('.cell[data-name="porQueFoco"]');[27m
+
+[7m            if (cellFoco) {[27m
+[7m                cellFoco.style.setProperty('display', isFoco ? 'block' : 'none', 'important');[27m
+[7m            }[27m
+[7m        }[27m
+[7m"""[27m
+
+[7mnew_text, count = re.subn(pattern, replacement, text, count=1, flags=re.DOTALL)[27m
+
+[7mif count == 0:[27m
+[7m    raise SystemExit("Não consegui substituir _applyFieldCss. Nenhuma alteração feita.")[27m
+
+[7mfile.write_text(new_text)[27m
+[7mprint("_applyFieldCss ajustado para usar somente porQueFoco.")[27m
+[7mPY[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 - << 'PY'
+from pathlib import Path
+import re
+
+file = Path("/opt/atria/www/client/custom/src/views/account/detail.js")
+text = file.read_text()
+
+pattern = r"""        _applyFieldCss\(\) \{
+            const isFoco = !!this\.model\.get\('statusProspeccao'\);
+.*?        \}
+"""
+
+replacement = """        _applyFieldCss() {
+            const isFoco = !!this.model.get('statusProspeccao');
+
+            let styleEl = document.getElementById('foco-field-style');
+
+            if (!styleEl) {
+                styleEl = document.createElement('style');
+                styleEl.id = 'foco-field-style';
+                document.head.appendChild(styleEl);
+            }
+
+            // porQueAlvo foi removido. Mantemos apenas porQueFoco.
+            // porQueFoco aparece somente quando a conta está marcada como Foco.
+            styleEl.textContent = isFoco
+                ? `.cell[data-name="porQueFoco"] { display: block !important; }`
+                : `.cell[data-name="porQueFoco"] { display: none !important; }`;
+
+            const cellFoco = document.querySelector('.cell[data-name="porQueFoco"]');
+
+            if (cellFoco) {
+                cellFoco.style.setProperty('display', isFoco ? 'block' : 'none', 'important');
+            }
+        }
+"""
+
+new_text, count = re.subn(pattern, replacement, text, count=1, flags=re.DOTALL)
+
+if count == 0:
+    raise SystemExit("Não consegui substituir _applyFieldCss. Nenhuma alteração feita.")
+
+file.write_text(new_text)
+print("_applyFieldCss ajustado para usar somente porQueFoco.")
+PY
+[?2004l_applyFieldCss ajustado para usar somente porQueFoco.
+[?2004husvds6043x7:/opt/atria# [7mgrep -R -n -C 3 "porQueAlvo" \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources \[27m
+[7m/opt/atria/www/client/custom/src/views/account/detail.js \[27m
+[7m/opt/atria/www/data/cache 2>/dev/null[27m[A[A[Agrep -R -n -C 3 "porQueAlvo" \
+/opt/atria/www/custom/Espo/Custom/Resources \
+/opt/atria/www/client/custom/src/views/account/detail.js \
+/opt/atria/www/data/cache 2>/dev/null
+[?2004l/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-20-            "labelText": "Tipo de Conta",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-21-            "default": ""
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-22-        },
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2:23:        "porQueAlvo": {
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-24-            "type": "text",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-25-            "labelText": "Por que e Alvo"
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2-26-        },
+--
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bak.20260517_234353-15-            "labelText": "Tipo de Conta",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bak.20260517_234353-16-            "default": ""
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bak.20260517_234353-17-        },
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bak.20260517_234353:18:        "porQueAlvo": {
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bak.20260517_234353-19-            "type": "text",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bak.20260517_234353-20-            "labelText": "Por que e Alvo"
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bak.20260517_234353-21-        },
+--
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-20-            "labelText": "Tipo de Conta",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-21-            "default": ""
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-22-        },
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json:23:        "porQueAlvo": {
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-24-            "type": "text",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-25-            "labelText": "Por que e Alvo"
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json-26-        },
+--
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-20-            "labelText": "Tipo de Conta",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-21-            "default": ""
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-22-        },
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo:23:        "porQueAlvo": {
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-24-            "type": "text",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-25-            "labelText": "Por que e Alvo"
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo-26-        },
+--
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl-20-            "labelText": "Tipo de Conta",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl-21-            "default": ""
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl-22-        },
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl:23:        "porQueAlvo": {
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl-24-            "type": "text",
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl-25-            "labelText": "Por que e Alvo"
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl-26-        },
+--
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo-2-    "fields": {
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo-3-        "tipoEscalao": "Tipo de Conta",
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo-4-        "porQueFoco": "Por que e Foco",
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo:5:        "porQueAlvo": "Por que e Alvo",
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo-6-        "statusProspeccao": "Foco",
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo-7-        "industry": "Setor",
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo-8-        "website": "LinkedIn da empresa"
+--
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-19-        "label": "Classificação",
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-20-        "rows": [
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-21-            [{"name": "tipoEscalao"}, {"name": "porQueFoco"}],
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json:22:            [{"name": "porQueAlvo"}, false]
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-23-        ]
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-24-    }
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account.bkp-remove-porQueAlvo/detail.json-25-]
+--
+/opt/atria/www/client/custom/src/views/account/detail.js-156-                document.head.appendChild(styleEl);
+/opt/atria/www/client/custom/src/views/account/detail.js-157-            }
+/opt/atria/www/client/custom/src/views/account/detail.js-158-
+/opt/atria/www/client/custom/src/views/account/detail.js:159:            // porQueAlvo foi removido. Mantemos apenas porQueFoco.
+/opt/atria/www/client/custom/src/views/account/detail.js-160-            // porQueFoco aparece somente quando a conta está marcada como Foco.
+/opt/atria/www/client/custom/src/views/account/detail.js-161-            styleEl.textContent = isFoco
+/opt/atria/www/client/custom/src/views/account/detail.js-162-                ? `.cell[data-name="porQueFoco"] { display: block !important; }`
+--
+/opt/atria/www/client/custom/src/views/account/detail.js-169-            }
+/opt/atria/www/client/custom/src/views/account/detail.js-170-        }
+/opt/atria/www/client/custom/src/views/account/detail.js-171-            if (isFoco) {
+/opt/atria/www/client/custom/src/views/account/detail.js:172:                styleEl.textContent = `.cell[data-name="porQueAlvo"] { display: none !important; } .cell[data-name="porQueFoco"] { display: block !important; }`;
+/opt/atria/www/client/custom/src/views/account/detail.js-173-            } else {
+/opt/atria/www/client/custom/src/views/account/detail.js:174:                styleEl.textContent = `.cell[data-name="porQueFoco"] { display: none !important; } .cell[data-name="porQueAlvo"] { display: block !important; }`;
+/opt/atria/www/client/custom/src/views/account/detail.js-175-            }
+/opt/atria/www/client/custom/src/views/account/detail.js-176-            const cellFoco = document.querySelector('.cell[data-name="porQueFoco"]');
+/opt/atria/www/client/custom/src/views/account/detail.js:177:            const cellAlvo = document.querySelector('.cell[data-name="porQueAlvo"]');
+/opt/atria/www/client/custom/src/views/account/detail.js-178-            if (cellFoco) cellFoco.style.setProperty('display', isFoco ? 'block' : 'none', 'important');
+/opt/atria/www/client/custom/src/views/account/detail.js-179-            if (cellAlvo) cellAlvo.style.setProperty('display', isFoco ? 'none' : 'block', 'important');
+/opt/atria/www/client/custom/src/views/account/detail.js-180-        }
+--
+/opt/atria/www/data/cache/application/languages/pt_BR.php-4547-      'originalLead' => 'Lead Original',
+/opt/atria/www/data/cache/application/languages/pt_BR.php-4548-      'tipoEscalao' => 'Tipo de Conta',
+/opt/atria/www/data/cache/application/languages/pt_BR.php-4549-      'porQueFoco' => 'Por que e Foco',
+/opt/atria/www/data/cache/application/languages/pt_BR.php:4550:      'porQueAlvo' => 'Por que e Alvo',
+/opt/atria/www/data/cache/application/languages/pt_BR.php-4551-      'statusProspeccao' => 'Foco'
+/opt/atria/www/data/cache/application/languages/pt_BR.php-4552-    ],
+/opt/atria/www/data/cache/application/languages/pt_BR.php-4553-    'links' => [
+--
+/opt/atria/www/data/cache/application/objMetadata.php-20086-          'labelText' => 'Tipo de Conta',
+/opt/atria/www/data/cache/application/objMetadata.php-20087-          'default' => ''
+/opt/atria/www/data/cache/application/objMetadata.php-20088-        ],
+/opt/atria/www/data/cache/application/objMetadata.php:20089:        'porQueAlvo' => (object) [
+/opt/atria/www/data/cache/application/objMetadata.php-20090-          'type' => 'text',
+/opt/atria/www/data/cache/application/objMetadata.php-20091-          'labelText' => 'Por que e Alvo'
+/opt/atria/www/data/cache/application/objMetadata.php-20092-        ],
+--
+/opt/atria/www/data/cache/application/metadata.php-20086-          'labelText' => 'Tipo de Conta',
+/opt/atria/www/data/cache/application/metadata.php-20087-          'default' => ''
+/opt/atria/www/data/cache/application/metadata.php-20088-        ],
+/opt/atria/www/data/cache/application/metadata.php:20089:        'porQueAlvo' => [
+/opt/atria/www/data/cache/application/metadata.php-20090-          'type' => 'text',
+/opt/atria/www/data/cache/application/metadata.php-20091-          'labelText' => 'Por que e Alvo'
+/opt/atria/www/data/cache/application/metadata.php-20092-        ],
+--
+/opt/atria/www/data/cache/application/ormMetadata.php-16659-        'fieldType' => 'varchar',
+/opt/atria/www/data/cache/application/ormMetadata.php-16660-        'len' => 255
+/opt/atria/www/data/cache/application/ormMetadata.php-16661-      ],
+/opt/atria/www/data/cache/application/ormMetadata.php:16662:      'porQueAlvo' => [
+/opt/atria/www/data/cache/application/ormMetadata.php-16663-        'type' => 'text',
+/opt/atria/www/data/cache/application/ormMetadata.php-16664-        'fieldType' => 'text'
+/opt/atria/www/data/cache/application/ormMetadata.php-16665-      ],
+[?2004husvds6043x7:/opt/atria# [7mtail -80 /opt/atria/www/data/logs/espo-*.log[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctail -80 /opt/atria/www/data/logs/espo-*.log
+[?2004ltail: option used in invalid context -- 8
+[?2004husvds6043x7:/opt/atria# [7mtail -80 /opt/atria/www/data/logs/espo-*.log[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctail -80 /opt/atria/www/data/logs/espo-*.log
+[?2004ltail: option used in invalid context -- 8
+[?2004husvds6043x7:/opt/atria# tail -80 /opt/atria/www/data/logs/espo-*.log
+[?2004ltail: option used in invalid context -- 8
+[?2004husvds6043x7:/opt/atria# [7mls -lah /opt/atria/www/data/logs/[27m
+[7mtail -80 /opt/atria/www/data/logs/*.log[27m[Als -lah /opt/atria/www/data/logs/
+tail -80 /opt/atria/www/data/logs/*.log
+[?2004ltotal 20K
+drwxr-xr-x 2 www-data www-data 4.0K May 18 00:47 [0m[01;34m.[0m
+drwxrwxr-x 6 www-data www-data 4.0K May 18 02:19 [01;34m..[0m
+-rw-r--r-- 1 root     root     2.1K May 16 02:56 deploy_alvo_foco_20260516_025601.log
+-rw-r--r-- 1 www-data www-data 1.8K May 16 02:32 espo-2026-05-16.log
+-rw-r--r-- 1 www-data www-data  541 May 18 02:29 espo-2026-05-18.log
+tail: option used in invalid context -- 8
+[?2004husvds6043x7:/opt/atria# [7mpython3 - << 'PY'[27m
+[7mimport json[27m
+[7mfrom pathlib import Path[27m
+
+[7mfile = Path("/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json")[27m
+[7mdata = json.loads(file.read_text())[27m
+
+[7mif "fields" in data and "porQueAlvo" in data["fields"]:[27m
+[7m    del data["fields"]["porQueAlvo"][27m
+[7m    file.write_text(json.dumps(data, ensure_ascii=False, indent=4))[27m
+[7m    print("porQueAlvo removido do entityDefs ativo.")[27m
+[7melse:[27m
+[7m    print("porQueAlvo não existe mais no entityDefs ativo.")[27m
+[7mPY[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 - << 'PY'
+import json
+from pathlib import Path
+
+file = Path("/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json")
+data = json.loads(file.read_text())
+
+if "fields" in data and "porQueAlvo" in data["fields"]:
+    del data["fields"]["porQueAlvo"]
+    file.write_text(json.dumps(data, ensure_ascii=False, indent=4))
+    print("porQueAlvo removido do entityDefs ativo.")
+else:
+    print("porQueAlvo não existe mais no entityDefs ativo.")
+PY
+[?2004lporQueAlvo removido do entityDefs ativo.
+[?2004husvds6043x7:/opt/atria# [7mgrep -n -C 3 "porQueAlvo" /opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Acco[27m[7mu[27m[7mnt.json[27m[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep -n -C 3 "porQueAlvo" /opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json
+[?2004l[?2004husvds6043x7:/opt/atria# [7mpython3 - << 'PY'[27m
+[7mimport json[27m
+[7mfrom pathlib import Path[27m
+
+[7mfile = Path("/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json")[27m
+[7mdata = json.loads(file.read_text())[27m
+
+[7mfor panel in data:[27m
+[7m    if panel.get("label") == "Classificação":[27m
+[7m        panel["rows"] = [[27m
+[7m            row for row in panel.get("rows", [])[27m
+[7m            if not any(isinstance(cell, dict) and cell.get("name") == "porQueAlvo" for cell in row)[27m
+[7m        ][27m
+
+[7mfile.write_text(json.dumps(data, ensure_ascii=False, indent=4))[27m
+[7mprint("porQueAlvo removido do layout ativo.")[27m
+[7mPY[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 - << 'PY'
+import json
+from pathlib import Path
+
+file = Path("/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json")
+data = json.loads(file.read_text())
+
+for panel in data:
+    if panel.get("label") == "Classificação":
+        panel["rows"] = [
+            row for row in panel.get("rows", [])
+            if not any(isinstance(cell, dict) and cell.get("name") == "porQueAlvo" for cell in row)
+        ]
+
+file.write_text(json.dumps(data, ensure_ascii=False, indent=4))
+print("porQueAlvo removido do layout ativo.")
+PY
+[?2004lporQueAlvo removido do layout ativo.
+[?2004husvds6043x7:/opt/atria# [7mpython3 - << 'PY'[27m
+[7mimport json[27m
+[7mfrom pathlib import Path[27m
+
+[7mfile = Path("/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json")[27m
+[7mdata = json.loads(file.read_text())[27m
+
+[7mif "fields" in data and "porQueAlvo" in data["fields"]:[27m
+[7m    del data["fields"]["porQueAlvo"][27m
+[7m    file.write_text(json.dumps(data, ensure_ascii=False, indent=4))[27m
+[7m    print("porQueAlvo removido do entityDefs ativo.")[27m
+[7melse:[27m
+[7m    print("porQueAlvo não existe mais no entityDefs ativo.")[27m
+[7mPY[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 - << 'PY'
+import json
+from pathlib import Path
+
+file = Path("/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json")
+data = json.loads(file.read_text())
+
+if "fields" in data and "porQueAlvo" in data["fields"]:
+    del data["fields"]["porQueAlvo"]
+    file.write_text(json.dumps(data, ensure_ascii=False, indent=4))
+    print("porQueAlvo removido do entityDefs ativo.")
+else:
+    print("porQueAlvo não existe mais no entityDefs ativo.")
+PY
+[?2004lporQueAlvo não existe mais no entityDefs ativo.
+[?2004husvds6043x7:/opt/atria# [7mpython3 - << 'PY'[27m
+[7mimport json[27m
+[7mfrom pathlib import Path[27m
+
+[7mfile = Path("/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json")[27m
+[7mdata = json.loads(file.read_text())[27m
+
+[7mfor panel in data:[27m
+[7m    if panel.get("label") == "Classificação":[27m
+[7m        panel["rows"] = [[27m
+[7m            row for row in panel.get("rows", [])[27m
+[7m            if not any(isinstance(cell, dict) and cell.get("name") == "porQueAlvo" for cell in row)[27m
+[7m        ][27m
+
+[7mfile.write_text(json.dumps(data, ensure_ascii=False, indent=4))[27m
+[7mprint("porQueAlvo removido do layout ativo.")[27m
+[7mPY[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 - << 'PY'
+import json
+from pathlib import Path
+
+file = Path("/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json")
+data = json.loads(file.read_text())
+
+for panel in data:
+    if panel.get("label") == "Classificação":
+        panel["rows"] = [
+            row for row in panel.get("rows", [])
+            if not any(isinstance(cell, dict) and cell.get("name") == "porQueAlvo" for cell in row)
+        ]
+
+file.write_text(json.dumps(data, ensure_ascii=False, indent=4))
+print("porQueAlvo removido do layout ativo.")
+PY
+[?2004lporQueAlvo removido do layout ativo.
+[?2004husvds6043x7:/opt/atria# [7mpython3 - << 'PY'[27m
+[7mimport json[27m
+[7mfrom pathlib import Path[27m
+
+[7mfile = Path("/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json")[27m
+[7mdata = json.loads(file.read_text())[27m
+
+[7mif "fields" in data and "porQueAlvo" in data["fields"]:[27m
+[7m    del data["fields"]["porQueAlvo"][27m
+
+[7mfile.write_text(json.dumps(data, ensure_ascii=False, indent=4))[27m
+[7mprint("porQueAlvo removido do i18n ativo.")[27m
+[7mPY[27m[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 - << 'PY'
+import json
+from pathlib import Path
+
+file = Path("/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json")
+data = json.loads(file.read_text())
+
+if "fields" in data and "porQueAlvo" in data["fields"]:
+    del data["fields"]["porQueAlvo"]
+
+file.write_text(json.dumps(data, ensure_ascii=False, indent=4))
+print("porQueAlvo removido do i18n ativo.")
+PY
+[?2004lporQueAlvo removido do i18n ativo.
+[?2004husvds6043x7:/opt/atria# [7mpython3 - << 'PY'[27m
+[7mfrom pathlib import Path[27m
+[7mimport re[27m
+
+[7mfile = Path("/opt/atria/www/client/custom/src/views/account/detail.js")[27m
+[7mtext = file.read_text()[27m
+
+[7mpattern = r"""        _applyFieldCss\(\) \{[27m
+[7m.*?[27m
+[7m        async _actionMarcarFoco\(\) \{"""[27m
+
+[7mreplacement = """        _applyFieldCss() {[27m
+[7m            const isFoco = !!this.model.get('statusProspeccao');[27m
+
+[7m            let styleEl = document.getElementById('foco-field-style');[27m
+
+[7m            if (!styleEl) {[27m
+[7m                styleEl = document.createElement('style');[27m
+[7m                styleEl.id = 'foco-field-style';[27m
+[7m                document.head.appendChild(styleEl);[27m
+[7m            }[27m
+
+[7m            // porQueAlvo foi removido do layout, metadata e banco.[27m
+[7m            // Mantemos apenas porQueFoco, visível somente quando a conta está como Foco.[27m
+[7m            styleEl.textContent = isFoco[27m
+[7m                ? `.cell[data-name="porQueFoco"] { display: block !important; }`[27m
+[7m                : `.cell[data-name="porQueFoco"] { display: none !important; }`;[27m
+
+[7m            const cellFoco = document.querySelector('.cell[data-name="porQueFoco"]');[27m
+
+[7m            if (cellFoco) {[27m
+[7m                cellFoco.style.setProperty('display', isFoco ? 'block' : 'none', 'important');[27m
+[7m            }[27m
+[7m        }[27m
+
+[7m        async _actionMarcarFoco() {"""[27m
+
+[7mnew_text, count = re.subn(pattern, replacement, text, count=1, flags=re.DOTALL)[27m
+
+[7mif count == 0:[27m
+[7m    raise SystemExit("Não consegui substituir _applyFieldCss. Envie o grep da função.")[27m
+
+[7mfile.write_text(new_text)[27m
+[7mprint("detail.js corrigido: removidas referências ativas a porQueAlvo.")[27m
+[7mPY[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 - << 'PY'
+from pathlib import Path
+import re
+
+file = Path("/opt/atria/www/client/custom/src/views/account/detail.js")
+text = file.read_text()
+
+pattern = r"""        _applyFieldCss\(\) \{
+.*?
+        async _actionMarcarFoco\(\) \{"""
+
+replacement = """        _applyFieldCss() {
+            const isFoco = !!this.model.get('statusProspeccao');
+
+            let styleEl = document.getElementById('foco-field-style');
+
+            if (!styleEl) {
+                styleEl = document.createElement('style');
+                styleEl.id = 'foco-field-style';
+                document.head.appendChild(styleEl);
+            }
+
+            // porQueAlvo foi removido do layout, metadata e banco.
+            // Mantemos apenas porQueFoco, visível somente quando a conta está como Foco.
+            styleEl.textContent = isFoco
+                ? `.cell[data-name="porQueFoco"] { display: block !important; }`
+                : `.cell[data-name="porQueFoco"] { display: none !important; }`;
+
+            const cellFoco = document.querySelector('.cell[data-name="porQueFoco"]');
+
+            if (cellFoco) {
+                cellFoco.style.setProperty('display', isFoco ? 'block' : 'none', 'important');
+            }
+        }
+
+        async _actionMarcarFoco() {"""
+
+new_text, count = re.subn(pattern, replacement, text, count=1, flags=re.DOTALL)
+
+if count == 0:
+    raise SystemExit("Não consegui substituir _applyFieldCss. Envie o grep da função.")
+
+file.write_text(new_text)
+print("detail.js corrigido: removidas referências ativas a porQueAlvo.")
+PY
+[?2004ldetail.js corrigido: removidas referências ativas a porQueAlvo.
+[?2004husvds6043x7:/opt/atria# [7mcd /opt/atria/www[27m
+
+[7mphp command.php rebuild[27m
+[7mphp command.php clear-cache[27m
+
+[7mrm -rf data/cache/*[27m
+
+[7mphp command.php rebuild[27m
+[7mphp command.php clear-cache[27m[A[A[A[A[A[A[A[Acd /opt/atria/www
+
+php command.php rebuild
+php command.php clear-cache
+
+rm -rf data/cache/*
+
+php command.php rebuild
+php command.php clear-cache
+[?2004lRebuild has been done.
+Cache has been cleared.
+Rebuild has been done.
+Cache has been cleared.
+[?2004husvds6043x7:/opt/atria/www# [7mcurl -I http://127.0.0.1/api/v1/Account/6a07eb5a24072161f[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl -I http://127.0.0.1/api/v1/Account/6a07eb5a24072161f
+[?2004lHTTP/1.1 401 Unauthorized
+[1mServer[0m: nginx/1.22.1
+[1mDate[0m: Mon, 18 May 2026 02:33:13 GMT
+[1mContent-Type[0m: text/html; charset=UTF-8
+[1mConnection[0m: keep-alive
+[1mWWW-Authenticate[0m: Basic realm=""
+
+[?2004husvds6043x7:/opt/atria/www# [7mtail -n 80 /opt/atria/www/data/logs/espo-2026-05-18.log[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctail -n 80 /opt/atria/www/data/logs/espo-2026-05-18.log
+[?2004l[2026-05-18 00:47:31] WARNING: E_WARNING: mkdir(): File exists
+[2026-05-18 02:29:08] CRITICAL: (42S22) SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account.por_que_alvo' in 'SELECT' :: GET /Account/6a07eb5a24072161f :: /opt/atria/www/application/Espo/ORM/Executor/DefaultSqlExecutor.php(77)
+[2026-05-18 02:29:27] CRITICAL: (42S22) SQLSTATE[42S22]: Column not found: 1054 Unknown column 'account.por_que_alvo' in 'SELECT' :: GET /Account/6a07eb5a24072161f :: /opt/atria/www/application/Espo/ORM/Executor/DefaultSqlExecutor.php(77)
+[?2004husvds6043x7:/opt/atria/www# [7mgrep -R -n -C 3 "porQueAlvo" \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json \[27m
+[7m/opt/atria/www/client/custom/src/views/account/detail.js[27m[A[A[A[Agrep -R -n -C 3 "porQueAlvo" \
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json \
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json \
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json \
+/opt/atria/www/client/custom/src/views/account/detail.js
+[?2004l/opt/atria/www/client/custom/src/views/account/detail.js-156-                document.head.appendChild(styleEl);
+/opt/atria/www/client/custom/src/views/account/detail.js-157-            }
+/opt/atria/www/client/custom/src/views/account/detail.js-158-
+/opt/atria/www/client/custom/src/views/account/detail.js:159:            // porQueAlvo foi removido do layout, metadata e banco.
+/opt/atria/www/client/custom/src/views/account/detail.js-160-            // Mantemos apenas porQueFoco, visível somente quando a conta está como Foco.
+/opt/atria/www/client/custom/src/views/account/detail.js-161-            styleEl.textContent = isFoco
+/opt/atria/www/client/custom/src/views/account/detail.js-162-                ? `.cell[data-name="porQueFoco"] { display: block !important; }`
+[?2004husvds6043x7:/opt/atria/www# [7mpython3 - << 'PY'[27m
+[7mfrom pathlib import Path[27m
+
+[7mfile = Path("/opt/atria/www/client/custom/src/views/account/detail.js")[27m
+[7mtext = file.read_text()[27m
+
+[7mtext = text.replace([27m
+[7m    "// porQueAlvo foi removido do layout, metadata e banco.\n            // Mantemos apenas porQueFoco, visível somen[27m[7mt[27m[7me quando a conta está como Foco.", [27m
+[7m    "// Campo de motivo para Alvo foi removido do layout, metadata e banco.\n            // Mantemos apenas porQueFoco[27m[7m,[27m[7m visível somente quando a conta está como Foco." [27m
+[7m)[27m
+
+[7mfile.write_text(text)[27m
+[7mprint("Comentário ajustado sem referência a porQueAlvo.")[27m
+[7mPY[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 - << 'PY'
+from pathlib import Path
+
+file = Path("/opt/atria/www/client/custom/src/views/account/detail.js")
+text = file.read_text()
+
+text = text.replace(
+    "// porQueAlvo foi removido do layout, metadata e banco.\n            // Mantemos apenas porQueFoco, visível somente quando a conta está como Foco.",
+    "// Campo de motivo para Alvo foi removido do layout, metadata e banco.\n            // Mantemos apenas porQueFoco, visível somente quando a conta está como Foco."
+)
+
+file.write_text(text)
+print("Comentário ajustado sem referência a porQueAlvo.")
+PY
+[?2004lComentário ajustado sem referência a porQueAlvo.
+[?2004husvds6043x7:/opt/atria/www# [7mgrep -R -n -C 3 "porQueAlvo" \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json \[27m
+[7m/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json \[27m
+[7m/opt/atria/www/client/custom/src/views/account/detail.js[27m[A[A[A[Agrep -R -n -C 3 "porQueAlvo" \
+/opt/atria/www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json \
+/opt/atria/www/custom/Espo/Custom/Resources/layouts/Account/detail.json \
+/opt/atria/www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json \
+/opt/atria/www/client/custom/src/views/account/detail.js
+[?2004l[?2004husvds6043x7:/opt/atria/www# [7mcd /opt/atria/www[27m
+
+[7mphp command.php rebuild[27m
+[7mphp command.php clear-cache[27m
+
+[7mrm -rf data/cache/*[27m
+
+[7mphp command.php rebuild[27m
+[7mphp command.php clear-cache[27m[A[A[A[A[A[A[A[A[Ccd /opt/atria/www
+
+php command.php rebuild
+php command.php clear-cache
+
+rm -rf data/cache/*
+
+php command.php rebuild
+php command.php clear-cache
+[?2004lRebuild has been done.
+Cache has been cleared.
+Rebuild has been done.
+Cache has been cleared.
+[?2004husvds6043x7:/opt/atria/www# php command.php clear-cache[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd ..
+[?2004l[?2004husvds6043x7:/opt/atria# cd [K[K[K./atualiza_projeto_git.sh 
+[?2004l======================================
+Atualizando schema do banco atria_crm
+======================================
+Schema atualizado em:
+/opt/atria/schema_banco/atria_crm_schema.sql
+
+======================================
+Verificando alterações no projeto
+======================================
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mdeleted:    deploy_alvo_foco.sh[m
+	[31mmodified:   schema_banco/atria_crm_schema.sql[m
+	[31mmodified:   typescript[m
+	[31mmodified:   www/client/custom/src/views/account/detail.js[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/layouts/Account/detail.json[m
+	[31mmodified:   www/custom/Espo/Custom/Resources/metadata/entityDefs/

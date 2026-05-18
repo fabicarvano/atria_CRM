@@ -147,26 +147,21 @@ const isFoco = !!this.model.get('statusProspeccao');
 
         _applyFieldCss() {
             const isFoco = !!this.model.get('statusProspeccao');
-
             let styleEl = document.getElementById('foco-field-style');
-
             if (!styleEl) {
                 styleEl = document.createElement('style');
                 styleEl.id = 'foco-field-style';
                 document.head.appendChild(styleEl);
             }
-
-            // Campo de motivo para Alvo foi removido do layout, metadata e banco.
-            // Mantemos apenas porQueFoco, visível somente quando a conta está como Foco.
-            styleEl.textContent = isFoco
-                ? `.cell[data-name="porQueFoco"] { display: block !important; }`
-                : `.cell[data-name="porQueFoco"] { display: none !important; }`;
-
-            const cellFoco = document.querySelector('.cell[data-name="porQueFoco"]');
-
-            if (cellFoco) {
-                cellFoco.style.setProperty('display', isFoco ? 'block' : 'none', 'important');
+            if (isFoco) {
+                styleEl.textContent = `.cell[data-name="porQueAlvo"] { display: none !important; } .cell[data-name="porQueFoco"] { display: block !important; }`;
+            } else {
+                styleEl.textContent = `.cell[data-name="porQueFoco"] { display: none !important; } .cell[data-name="porQueAlvo"] { display: block !important; }`;
             }
+            const cellFoco = document.querySelector('.cell[data-name="porQueFoco"]');
+            const cellAlvo = document.querySelector('.cell[data-name="porQueAlvo"]');
+            if (cellFoco) cellFoco.style.setProperty('display', isFoco ? 'block' : 'none', 'important');
+            if (cellAlvo) cellAlvo.style.setProperty('display', isFoco ? 'none' : 'block', 'important');
         }
 
         async _actionMarcarFoco() {

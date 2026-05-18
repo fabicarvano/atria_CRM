@@ -2,6 +2,7 @@
     "fields": {
         "tipoEscalao": "Tipo de Conta",
         "porQueFoco": "Por que e Foco",
+        "porQueAlvo": "Por que e Alvo",
         "statusProspeccao": "Foco",
         "industry": "Setor",
         "website": "LinkedIn da empresa"
