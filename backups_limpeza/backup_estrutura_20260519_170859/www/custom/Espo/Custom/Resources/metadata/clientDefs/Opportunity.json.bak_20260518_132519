@@ -1,0 +1,31 @@
+{
+    "recordViews": {
+        "kanban": "custom:views/opportunity/record/kanban"
+    },
+    "defaultSidePanelFieldLists": {
+        "detail": [
+            "numeroOportunidade",
+            "assignedUser",
+            "teams",
+            "complexCreated",
+            "complexModified",
+            "followers"
+        ],
+        "detailSmall": [
+            "numeroOportunidade",
+            "assignedUser",
+            "teams",
+            "complexCreated",
+            "complexModified",
+            "followers"
+        ],
+        "edit": [
+            "assignedUser",
+            "teams"
+        ],
+        "editSmall": [
+            "assignedUser",
+            "teams"
+        ]
+    }
+}

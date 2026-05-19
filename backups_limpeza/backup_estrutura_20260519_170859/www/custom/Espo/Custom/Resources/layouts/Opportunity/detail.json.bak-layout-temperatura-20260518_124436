@@ -1,0 +1,83 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "account"
+        }
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        {
+          "name": "stage"
+        },
+        {
+          "name": "amount"
+        }
+      ],
+      [
+        {
+          "name": "probability"
+        },
+        {
+          "name": "closeDate"
+        }
+      ],
+      [
+        {
+          "name": "temperaturaOportunidade"
+        },
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        {
+          "name": "tipoOportunidade"
+        },
+        {
+          "name": "detalheOportunidade"
+        }
+      ],
+      [
+        {
+          "name": "contacts"
+        },
+        {
+          "name": "leadSource"
+        }
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

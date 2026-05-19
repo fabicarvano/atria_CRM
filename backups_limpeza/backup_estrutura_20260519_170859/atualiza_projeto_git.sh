@@ -2,8 +2,7 @@
 
 set -e
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-APP_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+APP_DIR="/opt/atria"
 SCHEMA_DIR="$APP_DIR/schema_banco"
 SCHEMA_FILE="$SCHEMA_DIR/atria_crm_schema.sql"
 
@@ -36,7 +35,7 @@ MYSQL_PWD="$DB_PASS" mysqldump \
 echo "Schema atualizado em:"
 echo "$SCHEMA_FILE"
 
-echo
+echo ""
 echo "======================================"
 echo "Verificando alterações no projeto"
 echo "======================================"
@@ -48,14 +47,14 @@ if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; the
   exit 0
 fi
 
-echo
+echo ""
 echo "======================================"
 echo "Adicionando todos os arquivos alterados"
 echo "======================================"
 
 git add .
 
-echo
+echo ""
 echo "======================================"
 echo "Criando commit"
 echo "======================================"
@@ -64,16 +63,14 @@ DATA_ATUAL=$(date '+%Y-%m-%d %H:%M:%S')
 
 git commit -m "Atualiza projeto e schema do banco - $DATA_ATUAL"
 
-echo
+echo ""
 echo "======================================"
 echo "Enviando para o GitHub"
 echo "======================================"
 
 git push
 
-echo
+echo ""
 echo "======================================"
 echo "Atualização concluída com sucesso"
 echo "======================================"
-echo "Script executado a partir de: $SCRIPT_DIR"
-echo "Projeto atualizado em: $APP_DIR"

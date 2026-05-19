@@ -1,0 +1,24 @@
+{
+    "views": {
+        "detail": "custom:views/account/detail"
+    },
+    "searchFilters": {
+        "statusProspeccao": {}
+    },
+    "bottomPanels": {
+        "detail": [
+            {
+                "name": "heatMapConta",
+                "label": "Heat Map",
+                "view": "custom:views/account/record/panels/heat-map"
+            }
+        ],
+        "detailSmall": [
+            {
+                "name": "heatMapConta",
+                "label": "Heat Map",
+                "view": "custom:views/account/record/panels/heat-map"
+            }
+        ]
+    }
+}

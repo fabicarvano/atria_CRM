@@ -1,0 +1,17 @@
+{
+  "Account": {
+    "fields": {
+      "logoUrl": {
+        "type": "varchar",
+        "maxLength": 2048,
+        "readOnly": true,
+        "layoutDetailDisabled": true,
+        "layoutEditDisabled": true,
+        "layoutListDisabled": true,
+        "importDisabled": true,
+        "exportDisabled": false,
+        "tooltip": false
+      }
+    }
+  }
+}

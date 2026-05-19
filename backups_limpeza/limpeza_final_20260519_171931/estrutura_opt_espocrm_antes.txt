@@ -1,0 +1,3 @@
+/opt/espocrm
+/opt/espocrm/www
+/opt/espocrm/www/client

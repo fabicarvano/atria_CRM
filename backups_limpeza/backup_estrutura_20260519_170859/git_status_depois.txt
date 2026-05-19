@@ -1,0 +1,55 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    Opportunity.json
+	deleted:    clientDefs_Account_v2.json
+	renamed:    DEPLOY_kanban_total.md -> docs/DEPLOY_kanban_total.md
+	renamed:    verificacao_pos_deploy.md -> docs/verificacao_pos_deploy.md
+	deleted:    entityDefs_Account_v2.json
+	deleted:    kanban.js
+	deleted:    list.js
+	renamed:    atualiza_projeto_git.sh -> scripts/atualiza_projeto_git.sh
+	renamed:    diagnostico_profundo_funil_oportunidades.sh -> scripts/diagnostico_profundo_funil_oportunidades.sh
+	deleted:    www/custom/Espo/Custom/Hooks/Opportunity/GerarNumeroOportunidade.php.bak_20260518_170919
+	deleted:    www/custom/Espo/Custom/Hooks/Opportunity/ValidarPipelineOportunidade.php.bak_20260519_011424
+	deleted:    www/custom/Espo/Custom/Hooks/Opportunity/ValidateQualificationBeforeStageAdvance.php.bak_20260518_133123
+	deleted:    www/custom/Espo/Custom/Hooks/Opportunity/ValidateQualificationBeforeStageAdvance.php.bak_20260518_152627
+	deleted:    www/custom/Espo/Custom/Resources/i18n/pt_BR/Account.json.bkp-remove-porQueAlvo
+	deleted:    www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json.bak
+	deleted:    www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json.bak-temperatura-20260518_124304
+	deleted:    www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json.bak_20260518_132123
+	deleted:    www/custom/Espo/Custom/Resources/i18n/pt_BR/Opportunity.json.bak_20260518_133326
+	deleted:    www/custom/Espo/Custom/Resources/layouts/Account/bottomPanelsDetail.json.bak_vinculo_aba_heatmap_20260518_191456
+	deleted:    www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak
+	deleted:    www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak-layout-temperatura-20260518_124436
+	deleted:    www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak-qualificacao-20260518_125215
+	deleted:    www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak-temperatura-20260518_124304
+	deleted:    www/custom/Espo/Custom/Resources/layouts/Opportunity/detail.json.bak_20260518_132123
+	deleted:    www/custom/Espo/Custom/Resources/layouts/Opportunity/detailSmall.json.bak
+	deleted:    www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json.bak
+	deleted:    www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json.bak-layout-temperatura-20260518_124436
+	deleted:    www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json.bak-qualificacao-20260518_125215
+	deleted:    www/custom/Espo/Custom/Resources/layouts/Opportunity/edit.json.bak-temperatura-20260518_124304
+	deleted:    www/custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak_aba_heatmap_20260518_191251
+	deleted:    www/custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak_heatmap_20260518_184437
+	deleted:    www/custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak_heatmap_layout_20260518_185232
+	deleted:    www/custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bak_vinculo_aba_heatmap_20260518_191456
+	deleted:    www/custom/Espo/Custom/Resources/metadata/clientDefs/Account.json.bkp-detail-v2
+	deleted:    www/custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132312
+	deleted:    www/custom/Espo/Custom/Resources/metadata/clientDefs/Opportunity.json.bak_20260518_132519
+	deleted:    www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logo-v2
+	deleted:    www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-logoUrl
+	deleted:    www/custom/Espo/Custom/Resources/metadata/entityDefs/Account.json.bkp-remove-porQueAlvo
+	deleted:    www/custom/Espo/Custom/Resources/metadata/entityDefs/CatalogoOferta.json.bak_name_20260518_183900
+	deleted:    www/custom/Espo/Custom/Resources/metadata/entityDefs/MapeamentoConta.json.bak_order_createdAt_20260518_185031
+	deleted:    www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json.bak
+	deleted:    www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json.bak-temperatura-20260518_124304
+	deleted:    www/custom/Espo/Custom/Resources/metadata/entityDefs/Opportunity.json.bak_20260518_132123
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	backups_limpeza/
+	organiza_estrutura_atria.sh
+

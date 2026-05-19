@@ -1,0 +1,15 @@
+{
+    "fields": {
+        "tipoOportunidade": {
+            "type": "enum",
+            "options": [
+                "",
+                "Revenda",
+                "ServicoGerenciado",
+                "Consultoria",
+                "ProjetoEspecial"
+            ],
+            "default": ""
+        }
+    }
+}

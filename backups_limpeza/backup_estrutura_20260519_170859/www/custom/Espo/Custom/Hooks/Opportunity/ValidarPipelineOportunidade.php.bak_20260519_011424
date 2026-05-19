@@ -1,0 +1,88 @@
+<?php
+
+namespace Espo\Custom\Hooks\Opportunity;
+
+use Espo\ORM\Entity;
+use Espo\Core\Exceptions\BadRequest;
+
+class ValidarPipelineOportunidade
+{
+    public static int $order = 9;
+
+    private const STAGE_INICIAL = 'Prospectando';
+
+    private const STAGE_PERDIDA = 'Perdida';
+
+    private const MENSAGEM_TRANSICAO_INVALIDA =
+        'Transição não permitida. Para manter a consistência do processo comercial, a oportunidade deve avançar sempre para a próxima fase do funil.';
+
+    private const TRANSICOES_PERMITIDAS = [
+        'Prospectando' => [
+            'Qualificação',
+        ],
+        'Qualificação' => [
+            'Desenvolvendo Solução',
+        ],
+        'Desenvolvendo Solução' => [
+            'Proposta',
+        ],
+        'Proposta' => [
+            'Negociação',
+        ],
+        'Negociação' => [
+            'Ganha',
+        ],
+    ];
+
+    public function beforeSave(Entity $entity, array $options = []): void
+    {
+        /*
+         * Toda nova oportunidade deve nascer obrigatoriamente em Prospectando.
+         */
+        if ($entity->isNew()) {
+            $entity->set('stage', self::STAGE_INICIAL);
+            return;
+        }
+
+        /*
+         * Se o estágio não foi alterado, não há nada para validar.
+         */
+        if (!$entity->isAttributeChanged('stage')) {
+            return;
+        }
+
+        $stageAnterior = (string) ($entity->getFetched('stage') ?? '');
+        $stageNovo = (string) ($entity->get('stage') ?? '');
+
+        if ($stageAnterior === '' || $stageNovo === '') {
+            return;
+        }
+
+        /*
+         * Permite permanecer na mesma etapa.
+         */
+        if ($stageAnterior === $stageNovo) {
+            return;
+        }
+
+        /*
+         * Exceção processual:
+         * A oportunidade pode ser marcada como Perdida a partir de qualquer fase.
+         */
+        if ($stageNovo === self::STAGE_PERDIDA) {
+            return;
+        }
+
+        /*
+         * Valida avanço normal do pipeline:
+         * só permite avançar para a próxima fase do funil.
+         */
+        $proximasEtapasPermitidas = self::TRANSICOES_PERMITIDAS[$stageAnterior] ?? [];
+
+        if (in_array($stageNovo, $proximasEtapasPermitidas, true)) {
+            return;
+        }
+
+        throw new BadRequest(self::MENSAGEM_TRANSICAO_INVALIDA);
+    }
+}
