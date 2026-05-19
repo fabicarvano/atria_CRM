@@ -1,88 +1,149 @@
 [
-  {
-    "label": "Overview",
-    "rows": [
-      [
-        {
-          "name": "name"
-        },
-        {
-          "name": "account"
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "account"
+                }
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                {
+                    "name": "stage"
+                },
+                {
+                    "name": "amount"
+                }
+            ],
+            [
+                {
+                    "name": "probability"
+                },
+                {
+                    "name": "closeDate"
+                }
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                {
+                    "name": "tipoOportunidade"
+                },
+                {
+                    "name": "detalheOportunidade"
+                }
+            ],
+            [
+                {
+                    "name": "leadSource"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                {
+                    "name": "temperaturaOportunidade"
+                }
+            ]
+        ]
+    },
+    {
+        "label": "Qualificação",
+        "rows": [
+            [
+                {
+                    "name": "contacts"
+                },
+                false
+            ]
+        ]
+    },
+    {
+        "label": "Desenvolvimento da Solução",
+        "rows": [
+            [
+                {
+                    "name": "situacaoAtualSolucao"
+                },
+                {
+                    "name": "contextoSituacaoAtualSolucao"
+                }
+            ],
+            [
+                {
+                    "name": "dorIdentificadaSolucao"
+                },
+                {
+                    "name": "contextoDorSolucao"
+                }
+            ],
+            [
+                {
+                    "name": "impactoNegocioSolucao"
+                },
+                {
+                    "name": "contextoImpactoSolucao"
+                }
+            ],
+            [
+                {
+                    "name": "urgenciaSolucao"
+                },
+                {
+                    "name": "fatoresUrgenciaSolucao"
+                }
+            ],
+            [
+                {
+                    "name": "criteriosDecisaoSolucao"
+                },
+                {
+                    "name": "contextoCriteriosDecisaoSolucao"
+                }
+            ]
+        ],
+        "dynamicLogic": {
+            "visible": {
+                "conditionGroup": [
+                    {
+                        "type": "notEquals",
+                        "attribute": "stage",
+                        "value": "Prospecting"
+                    },
+                    {
+                        "type": "notEquals",
+                        "attribute": "stage",
+                        "value": "Qualification"
+                    }
+                ]
+            }
         }
-      ],
-      [
-        false,
-        false
-      ],
-      [
-        {
-          "name": "stage"
-        },
-        {
-          "name": "amount"
-        }
-      ],
-      [
-        {
-          "name": "probability"
-        },
-        {
-          "name": "closeDate"
-        }
-      ],
-      [
-        false,
-        false
-      ],
-      [
-        false,
-        false
-      ],
-      [
-        false,
-        false
-      ],
-      [
-        false,
-        false
-      ],
-      [
-        false,
-        false
-      ],
-      [
-        {
-          "name": "tipoOportunidade"
-        },
-        {
-          "name": "detalheOportunidade"
-        }
-      ],
-      [
-        {
-          "name": "leadSource"
-        },
-        false
-      ],
-      [
-        {
-          "name": "description"
-        },
-        {
-          "name": "temperaturaOportunidade"
-        }
-      ]
-    ]
-  },
-  {
-    "label": "Qualificação",
-    "rows": [
-      [
-        {
-          "name": "contacts"
-        },
-        false
-      ]
-    ]
-  }
+    }
 ]

@@ -9,7 +9,17 @@
         "orcamentoIdentificado": "Orçamento identificado",
         "criterioDecisao": "Critério de decisão",
         "processoDecisao": "Processo de decisão",
-        "prazoDecisao": "Prazo de decisão"
+        "prazoDecisao": "Prazo de decisão",
+        "situacaoAtualSolucao": "Situação atual",
+        "contextoSituacaoAtualSolucao": "Contexto da situação atual",
+        "dorIdentificadaSolucao": "Dor identificada",
+        "contextoDorSolucao": "Contexto da dor",
+        "impactoNegocioSolucao": "Impacto no negócio",
+        "contextoImpactoSolucao": "Contexto do impacto",
+        "urgenciaSolucao": "Urgência",
+        "fatoresUrgenciaSolucao": "Fatores de urgência",
+        "criteriosDecisaoSolucao": "Critérios de decisão",
+        "contextoCriteriosDecisaoSolucao": "Contexto dos critérios de decisão"
     },
     "options": {
         "tipoOportunidade": {
@@ -104,5 +114,8 @@
             "ProximoAnoFiscal": "Próximo ano fiscal",
             "SemPrazoDefinido": "Sem prazo definido"
         }
+    },
+    "labels": {
+        "Desenvolvimento da Solução": "Desenvolvimento da Solução"
     }
 }

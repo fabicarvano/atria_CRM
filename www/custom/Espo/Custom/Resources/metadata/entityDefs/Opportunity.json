@@ -335,6 +335,292 @@
                 }
             },
             "audited": true
+        },
+        "situacaoAtualSolucao": {
+            "type": "text",
+            "audited": true,
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        },
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                }
+            }
+        },
+        "dorIdentificadaSolucao": {
+            "type": "text",
+            "audited": true,
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        },
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                }
+            }
+        },
+        "impactoNegocioSolucao": {
+            "type": "text",
+            "audited": true,
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        },
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                }
+            }
+        },
+        "urgenciaSolucao": {
+            "type": "text",
+            "audited": true,
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        },
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                }
+            }
+        },
+        "criteriosDecisaoSolucao": {
+            "type": "text",
+            "audited": true,
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        },
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                }
+            }
+        },
+        "contextoSituacaoAtualSolucao": {
+            "type": "multiEnum",
+            "options": [
+                "Processo manual",
+                "Uso de planilhas",
+                "Ferramentas desconectadas",
+                "Baixa visibilidade",
+                "Alto volume de alertas/dados",
+                "Dependência de pessoas específicas",
+                "Ambiente legado",
+                "Solução atual insuficiente",
+                "Ausência de processo formal",
+                "Ambiente distribuído",
+                "Operação terceirizada",
+                "Ferramentas em avaliação",
+                "Contrato atual próximo do vencimento",
+                "Cliente sem solução implementada"
+            ],
+            "audited": true,
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        },
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                }
+            }
+        },
+        "contextoDorSolucao": {
+            "type": "multiEnum",
+            "options": [
+                "Custo elevado",
+                "Falta de visibilidade",
+                "Excesso de alertas",
+                "Baixa automação",
+                "Risco de segurança",
+                "Falta de governança",
+                "Dificuldade operacional",
+                "Lentidão na resposta",
+                "Falta de integração",
+                "Baixa maturidade",
+                "Problema de compliance",
+                "Falta de equipe especializada",
+                "Solução atual não atende",
+                "Necessidade de serviço gerenciado",
+                "Pressão por modernização"
+            ],
+            "audited": true,
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        },
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                }
+            }
+        },
+        "contextoImpactoSolucao": {
+            "type": "multiEnum",
+            "options": [
+                "Aumento de custo",
+                "Risco operacional",
+                "Risco de segurança",
+                "Perda de produtividade",
+                "Atraso em projetos",
+                "Dificuldade de auditoria",
+                "Exposição a incidentes",
+                "Retrabalho operacional",
+                "Baixa eficiência da equipe",
+                "Indisponibilidade de serviços",
+                "Perda de controle",
+                "Decisões sem dados confiáveis",
+                "Dificuldade de escalar operação",
+                "Dependência excessiva de fornecedor",
+                "Impacto em SLA"
+            ],
+            "audited": true,
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        },
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                }
+            }
+        },
+        "fatoresUrgenciaSolucao": {
+            "type": "multiEnum",
+            "options": [
+                "Incidente recente",
+                "Auditoria ou exigência regulatória",
+                "Vencimento de contrato",
+                "Orçamento já reservado",
+                "Projeto estratégico em andamento",
+                "Pressão da diretoria",
+                "Falha recorrente na operação",
+                "Risco de multa ou não conformidade",
+                "Janela de renovação",
+                "Crescimento do ambiente",
+                "Mudança organizacional",
+                "Necessidade de resposta rápida",
+                "Comparação com concorrentes",
+                "Redução de custos no curto prazo",
+                "Não há urgência clara"
+            ],
+            "audited": true,
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        },
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                }
+            }
+        },
+        "contextoCriteriosDecisaoSolucao": {
+            "type": "multiEnum",
+            "options": [
+                "Preço",
+                "Prazo de implantação",
+                "Facilidade de uso",
+                "Integração com ambiente atual",
+                "Aderência técnica",
+                "Suporte local",
+                "Fabricante homologado",
+                "Referências de mercado",
+                "Modelo de licenciamento",
+                "Capacidade de serviço gerenciado",
+                "Segurança da solução",
+                "Escalabilidade",
+                "Baixo impacto na operação",
+                "Prova de conceito",
+                "Relação com fornecedor atual",
+                "Compliance",
+                "ROI esperado"
+            ],
+            "audited": true,
+            "dynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Prospecting"
+                        },
+                        {
+                            "type": "notEquals",
+                            "attribute": "stage",
+                            "value": "Qualification"
+                        }
+                    ]
+                }
+            }
         }
     },
     "indexes": {

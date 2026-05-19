@@ -108,5 +108,66 @@
                 }
             ]
         ]
+    },
+    {
+        "label": "Desenvolvimento da Solução",
+        "rows": [
+            [
+                {
+                    "name": "situacaoAtualSolucao"
+                },
+                {
+                    "name": "contextoSituacaoAtualSolucao"
+                }
+            ],
+            [
+                {
+                    "name": "dorIdentificadaSolucao"
+                },
+                {
+                    "name": "contextoDorSolucao"
+                }
+            ],
+            [
+                {
+                    "name": "impactoNegocioSolucao"
+                },
+                {
+                    "name": "contextoImpactoSolucao"
+                }
+            ],
+            [
+                {
+                    "name": "urgenciaSolucao"
+                },
+                {
+                    "name": "fatoresUrgenciaSolucao"
+                }
+            ],
+            [
+                {
+                    "name": "criteriosDecisaoSolucao"
+                },
+                {
+                    "name": "contextoCriteriosDecisaoSolucao"
+                }
+            ]
+        ],
+        "dynamicLogic": {
+            "visible": {
+                "conditionGroup": [
+                    {
+                        "type": "notEquals",
+                        "attribute": "stage",
+                        "value": "Prospecting"
+                    },
+                    {
+                        "type": "notEquals",
+                        "attribute": "stage",
+                        "value": "Qualification"
+                    }
+                ]
+            }
+        }
     }
 ]

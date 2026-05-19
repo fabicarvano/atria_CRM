@@ -7,6 +7,56 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
 
             this.injectAtriaOpportunityTimelineStyle();
             this.renderAtriaOpportunityTimeline();
+            this.toggleAtriaDevelopmentSolutionPanel();
+        },
+
+        toggleAtriaDevelopmentSolutionPanel: function () {
+            const stage = this.model ? this.model.get('stage') : null;
+
+            const shouldShow = [
+                'Desenvolvendo Solução',
+                'Proposal',
+                'Negotiation',
+                'Closed Won',
+                'Closed Lost'
+            ].includes(stage);
+
+            const labels = Array.from(document.querySelectorAll('.panel-heading, .panel-title, h4, h3, label, div, span'))
+                .filter(function (el) {
+                    return (el.textContent || '').trim() === 'Desenvolvimento da Solução';
+                });
+
+            labels.forEach(function (label) {
+                let panel = label.closest('.panel');
+
+                if (!panel) {
+                    panel = label.closest('[data-name="Desenvolvimento da Solução"]');
+                }
+
+                if (!panel) {
+                    panel = label.parentElement;
+                    while (panel && panel.parentElement && panel.parentElement !== document.body) {
+                        const text = (panel.textContent || '').trim();
+
+                        if (
+                            text.includes('Situação atual') &&
+                            text.includes('Dor identificada') &&
+                            text.includes('Impacto no negócio') &&
+                            text.includes('Critérios de decisão')
+                        ) {
+                            break;
+                        }
+
+                        panel = panel.parentElement;
+                    }
+                }
+
+                if (!panel) {
+                    return;
+                }
+
+                panel.style.display = shouldShow ? '' : 'none';
+            });
         },
 
         injectAtriaOpportunityTimelineStyle: function () {
