@@ -5,7 +5,13 @@
         "statusProspeccao": "Foco",
         "industry": "Setor",
         "website": "LinkedIn da empresa",
-        "siglaConta": "Sigla da Conta"
+        "siglaConta": "Sigla da Conta",
+        "industriaLinkedin": "Indústria LinkedIn",
+        "employeeCountLinkedin": "Funcionários LinkedIn",
+        "enriquecidaLinkedin": "Conta enriquecida",
+        "dataEnriquecimentoLinkedin": "Data do enriquecimento",
+        "enriquecidoPorId": "Enriquecido por",
+        "fonteEnriquecimento": "Fonte do enriquecimento"
     },
     "options": {
         "industry": {

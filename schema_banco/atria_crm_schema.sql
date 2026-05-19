@@ -55,6 +55,12 @@ CREATE TABLE `account` (
   `tipo_escalao` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `logo_url` varchar(2048) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sigla_conta` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `industria_linkedin` varchar(255) DEFAULT NULL,
+  `employee_count_linkedin` int(11) DEFAULT NULL,
+  `enriquecida_linkedin` tinyint(1) NOT NULL DEFAULT 0,
+  `data_enriquecimento_linkedin` datetime DEFAULT NULL,
+  `enriquecido_por_id` varchar(17) DEFAULT NULL,
+  `fonte_enriquecimento` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_CREATED_AT_ID` (`created_at`,`id`),
   UNIQUE KEY `UNIQ_SIGLA_CONTA_UNIQUE` (`sigla_conta`),
@@ -154,6 +160,32 @@ CREATE TABLE `account_document` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `account_enrichment_usage`
+--
+
+DROP TABLE IF EXISTS `account_enrichment_usage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `account_enrichment_usage` (
+  `id` varchar(17) NOT NULL,
+  `account_id` varchar(17) NOT NULL,
+  `requested_by_user_id` varchar(17) DEFAULT NULL,
+  `executed_by_user_id` varchar(17) DEFAULT NULL,
+  `source` varchar(100) DEFAULT NULL,
+  `redis_key` varchar(255) DEFAULT NULL,
+  `status` varchar(30) NOT NULL DEFAULT 'success',
+  `items_count` int(11) DEFAULT 0,
+  `similar_organizations_count` int(11) DEFAULT 0,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_account_enrichment_usage_account_id` (`account_id`),
+  KEY `idx_account_enrichment_usage_requested_by_user_id` (`requested_by_user_id`),
+  KEY `idx_account_enrichment_usage_created_at` (`created_at`),
+  KEY `idx_account_enrichment_usage_status` (`status`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `account_portal_user`
 --
 
@@ -218,7 +250,7 @@ CREATE TABLE `action_history_record` (
   KEY `IDX_USER_ID` (`user_id`),
   KEY `IDX_AUTH_TOKEN_ID` (`auth_token_id`),
   KEY `IDX_AUTH_LOG_RECORD_ID` (`auth_log_record_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=640 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=685 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3789,4 +3821,4 @@ CREATE TABLE `working_time_range` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-19 17:22:55
+-- Dump completed on 2026-05-19 19:27:36

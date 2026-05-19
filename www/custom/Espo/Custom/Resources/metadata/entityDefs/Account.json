@@ -58,6 +58,34 @@
             "dynamicLogicDisabled": true,
             "audited": true,
             "index": true
+        },
+        "industriaLinkedin": {
+            "type": "varchar",
+            "maxLength": 255,
+            "readOnly": true
+        },
+        "employeeCountLinkedin": {
+            "type": "int",
+            "readOnly": true
+        },
+        "enriquecidaLinkedin": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true
+        },
+        "dataEnriquecimentoLinkedin": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "enriquecidoPorId": {
+            "type": "varchar",
+            "maxLength": 17,
+            "readOnly": true
+        },
+        "fonteEnriquecimento": {
+            "type": "varchar",
+            "maxLength": 100,
+            "readOnly": true
         }
     },
     "indexes": {

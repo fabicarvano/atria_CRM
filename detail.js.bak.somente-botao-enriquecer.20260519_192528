@@ -217,52 +217,8 @@ this.listenTo(this.model, 'change:statusProspeccao', () => {
                 return;
             }
 
-            const confirmed = await new Promise(resolve => {
-                Espo.Ui.confirm(
-                    'Deseja enriquecer esta conta usando o LinkedIn cadastrado?',
-                    {confirmText: 'Enriquecer', cancelText: 'Cancelar'},
-                    () => resolve(true),
-                    () => resolve(false)
-                );
-            });
-
-            if (!confirmed) {
-                return;
-            }
-
-            this.disableMenuItem('enriquecerLinkedin');
-
-            try {
-                Espo.Ui.notify('Enriquecendo conta...', 'warning');
-
-                const result = await Espo.Ajax.postRequest('Account/action/enriquecerLinkedin', {
-                    id: this.model.id
-                });
-
-                const record = result.record || {};
-
-                this.model.set('logoUrl', record.logoUrl || null);
-                this.model.set('industriaLinkedin', record.industriaLinkedin || null);
-                this.model.set('employeeCountLinkedin', record.employeeCountLinkedin || null);
-                this.model.set('enriquecidaLinkedin', !!record.enriquecidaLinkedin);
-                this.model.set('dataEnriquecimentoLinkedin', record.dataEnriquecimentoLinkedin || null);
-                this.model.set('enriquecidoPorId', record.enriquecidoPorId || null);
-                this.model.set('fonteEnriquecimento', record.fonteEnriquecimento || null);
-
-                if (this._controlEnriquecimentoButtons) {
-                    this._controlEnriquecimentoButtons();
-                }
-
-                Espo.Ui.success(result.message || 'Conta enriquecida com sucesso.');
-
-                this.reRender();
-
-            } catch (e) {
-                Espo.Ui.error('Não foi possível enriquecer a conta.');
-                this.enableMenuItem('enriquecerLinkedin');
-            }
+            Espo.Ui.success('Validação OK. Próxima fase: conectar com Apify.');
         }
-
 
 async _actionMarcarFoco() {
             const porQue = await this._askPorQueFoco();
