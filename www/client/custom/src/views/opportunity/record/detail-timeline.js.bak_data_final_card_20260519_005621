@@ -234,18 +234,6 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
                     background: #d64545;
                 }
 
-                .atria-opportunity-final-date {
-                    margin-top: 8px;
-                    font-size: 11px;
-                    line-height: 1.2;
-                    font-weight: 600;
-                    color: #2f9e44;
-                }
-
-                .atria-opportunity-stage.is-final.is-lost .atria-opportunity-final-date {
-                    color: #d64545;
-                }
-
                 .atria-opportunity-stage[data-stage="Prospecting"] .atria-opportunity-stage-dot,
                 .atria-opportunity-stage[data-stage="Prospecting"] .atria-opportunity-stage-color {
                     background: #6b7280;
@@ -563,7 +551,6 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
             return {
                 stages: stages,
                 result: result,
-                closedAt: closedAt,
                 openedAt: openedAt,
                 totalDays: openedAt ? this.calculateAtriaRoundedDays(openedAt, totalEnd) : null
             };
@@ -707,10 +694,6 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
                 `;
             }).join('');
 
-            const finalDateHtml = timeline.closedAt
-                ? `<div class="atria-opportunity-final-date">${this.escapeAtriaHtml(this.formatAtriaShortDate(timeline.closedAt))}</div>`
-                : '';
-
             const finalHtml = timeline.result
                 ? `
                     <div class="atria-opportunity-stage is-final ${timeline.result === 'Ganha' ? 'is-won' : 'is-lost'}" style="grid-column: 6;">
@@ -721,8 +704,8 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
                                     <span class="atria-opportunity-stage-color"></span>
                                     <span class="atria-opportunity-stage-name-text">${this.escapeAtriaHtml(timeline.result)}</span>
                                 </h4>
-                                ${finalDateHtml}
                             </div>
+
                         </div>
                     </div>
                 `

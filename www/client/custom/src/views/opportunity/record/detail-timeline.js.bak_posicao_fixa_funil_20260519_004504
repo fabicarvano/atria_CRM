@@ -105,7 +105,7 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
                 .atria-opportunity-timeline {
                     position: relative;
                     display: grid;
-                    grid-template-columns: repeat(6, minmax(0, 1fr));
+                    grid-template-columns: repeat(var(--atria-timeline-columns, 6), minmax(0, 1fr));
                     gap: 14px;
                     width: 100%;
                     min-width: 980px;
@@ -234,18 +234,6 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
                     background: #d64545;
                 }
 
-                .atria-opportunity-final-date {
-                    margin-top: 8px;
-                    font-size: 11px;
-                    line-height: 1.2;
-                    font-weight: 600;
-                    color: #2f9e44;
-                }
-
-                .atria-opportunity-stage.is-final.is-lost .atria-opportunity-final-date {
-                    color: #d64545;
-                }
-
                 .atria-opportunity-stage[data-stage="Prospecting"] .atria-opportunity-stage-dot,
                 .atria-opportunity-stage[data-stage="Prospecting"] .atria-opportunity-stage-color {
                     background: #6b7280;
@@ -362,7 +350,7 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
                     <div class="atria-opportunity-timeline-header">
                         <div>
                             <h3 class="atria-opportunity-timeline-title">Timeline da Oportunidade</h3>
-                            
+                            <div class="atria-opportunity-timeline-subtitle">Tempo arredondado em dias por estágio.</div>
                         </div>
                         <div class="atria-opportunity-timeline-badges">
                             <span class="atria-opportunity-timeline-badge is-open">Carregando</span>
@@ -563,7 +551,6 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
             return {
                 stages: stages,
                 result: result,
-                closedAt: closedAt,
                 openedAt: openedAt,
                 totalDays: openedAt ? this.calculateAtriaRoundedDays(openedAt, totalEnd) : null
             };
@@ -682,10 +669,8 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
 
                 const currentClass = item.isCurrent ? 'is-current' : '';
 
-                const column = this.getAtriaStageColumn(item.stage);
-
                 return `
-                    <div class="atria-opportunity-stage ${currentClass}" data-stage="${this.escapeAtriaHtml(item.stage)}" style="grid-column: ${column};">
+                    <div class="atria-opportunity-stage ${currentClass}" data-stage="${this.escapeAtriaHtml(item.stage)}">
                         <span class="atria-opportunity-stage-dot"></span>
                         <div class="atria-opportunity-stage-card">
                             ${returnIcon}
@@ -707,13 +692,9 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
                 `;
             }).join('');
 
-            const finalDateHtml = timeline.closedAt
-                ? `<div class="atria-opportunity-final-date">${this.escapeAtriaHtml(this.formatAtriaShortDate(timeline.closedAt))}</div>`
-                : '';
-
             const finalHtml = timeline.result
                 ? `
-                    <div class="atria-opportunity-stage is-final ${timeline.result === 'Ganha' ? 'is-won' : 'is-lost'}" style="grid-column: 6;">
+                    <div class="atria-opportunity-stage is-final ${timeline.result === 'Ganha' ? 'is-won' : 'is-lost'}">
                         <span class="atria-opportunity-stage-dot"></span>
                         <div class="atria-opportunity-stage-card">
                             <div class="atria-opportunity-stage-top">
@@ -721,16 +702,24 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
                                     <span class="atria-opportunity-stage-color"></span>
                                     <span class="atria-opportunity-stage-name-text">${this.escapeAtriaHtml(timeline.result)}</span>
                                 </h4>
-                                ${finalDateHtml}
+                            </div>
+                            <div class="atria-opportunity-stage-days">
+                                <strong>Status final</strong>
                             </div>
                         </div>
                     </div>
                 `
                 : '';
 
+            const totalVisualStages = timeline.result
+                ? timeline.stages.length + 1
+                : timeline.stages.length;
+
+            const columnCount = Math.min(Math.max(totalVisualStages, 6), 7);
+
             $card.find('.atria-opportunity-timeline-empty').replaceWith(`
                 <div class="atria-opportunity-timeline-scroll">
-                    <div class="atria-opportunity-timeline">
+                    <div class="atria-opportunity-timeline" style="--atria-timeline-columns: ${columnCount};">
                         ${stagesHtml}
                         ${finalHtml}
                     </div>
@@ -752,18 +741,6 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
             $card.find('.atria-opportunity-timeline-empty').html(
                 'Não foi possível carregar o histórico de estágios desta oportunidade.'
             );
-        },
-
-        getAtriaStageColumn: function (stage) {
-            const map = {
-                'Prospecting': 1,
-                'Qualification': 2,
-                'Desenvolvendo Solução': 3,
-                'Proposal': 4,
-                'Negotiation': 5
-            };
-
-            return map[stage] || 1;
         },
 
         translateAtriaStage: function (stage) {
