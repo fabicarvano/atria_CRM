@@ -8,6 +8,16 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
             this.injectAtriaOpportunityTimelineStyle();
             this.renderAtriaOpportunityTimeline();
 
+            this.controlarVisibilidadeDesenvolvimentoSolucao();
+
+            var self = this;
+            setTimeout(function () {
+                self.controlarVisibilidadeDesenvolvimentoSolucao();
+            }, 150);
+
+            setTimeout(function () {
+                self.controlarVisibilidadeDesenvolvimentoSolucao();
+            }, 600);
         },
 
         injectAtriaOpportunityTimelineStyle: function () {
@@ -796,6 +806,102 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
             };
 
             return map[stage] || stage;
+        },
+
+        controlarVisibilidadeDesenvolvimentoSolucao: function () {
+            var stage = this.model ? this.model.get('stage') : null;
+
+            var stagesVisiveis = [
+                'Desenvolvendo Solução',
+                'Proposal',
+                'Negotiation',
+                'Closed Won',
+                'Closed Lost'
+            ];
+
+            var deveMostrar = stagesVisiveis.indexOf(stage) !== -1;
+
+            var campos = [
+                'situacaoAtualSolucao',
+                'contextoSituacaoAtualSolucao',
+                'dorIdentificadaSolucao',
+                'contextoDorSolucao',
+                'impactoNegocioSolucao',
+                'contextoImpactoSolucao',
+                'urgenciaSolucao',
+                'fatoresUrgenciaSolucao',
+                'criteriosDecisaoSolucao',
+                'contextoCriteriosDecisaoSolucao'
+            ];
+
+            var $root = this.$el || $(document);
+
+            campos.forEach(function (campo) {
+                var $nodes = $root.find(
+                    '[data-name="' + campo + '"], ' +
+                    '[data-field-name="' + campo + '"], ' +
+                    '.field[data-name="' + campo + '"]'
+                );
+
+                $nodes.each(function () {
+                    var $node = $(this);
+                    var $container = $node.closest('.cell');
+
+                    if (!$container.length) {
+                        $container = $node.closest('.form-group');
+                    }
+
+                    if (!$container.length) {
+                        $container = $node.closest('[class*="col-"]');
+                    }
+
+                    if (!$container.length) {
+                        $container = $node;
+                    }
+
+                    if (deveMostrar) {
+                        $container.show();
+                    } else {
+                        $container.hide();
+                    }
+                });
+            });
+
+            var titulos = [
+                'Desenvolvimento da Solução',
+                'Desenvolvimento da Solucao'
+            ];
+
+            $root.find('*').each(function () {
+                var $el = $(this);
+                var texto = ($el.clone().children().remove().end().text() || '').trim();
+
+                if (titulos.indexOf(texto) === -1) {
+                    return;
+                }
+
+                var $container = $el.closest('.panel-heading');
+
+                if (!$container.length) {
+                    $container = $el.closest('.row');
+                }
+
+                if (!$container.length) {
+                    $container = $el.closest('.cell, .form-group, .col-sm-12, .col-md-12');
+                }
+
+                if (!$container.length) {
+                    $container = $el.parent();
+                }
+
+                if (deveMostrar) {
+                    $container.show();
+                    $el.show();
+                } else {
+                    $container.hide();
+                    $el.hide();
+                }
+            });
         },
 
         escapeAtriaHtml: function (value) {

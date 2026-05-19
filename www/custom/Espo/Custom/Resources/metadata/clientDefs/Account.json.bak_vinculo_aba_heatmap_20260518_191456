@@ -1,8 +1,0 @@
-{
-    "views": {
-        "detail": "custom:views/account/detail"
-    },
-    "searchFilters": {
-        "statusProspeccao": {}
-    }
-}
