@@ -91,6 +91,7 @@ define('custom:opportunity-qualification-dynamic-handler', ['dynamic-handler'], 
                 this.recordView.setFieldNotReadOnly(field);
             });
         }
+
         toggleDevelopmentSolutionPanelTitle(stage, developmentStages) {
             const shouldShow = developmentStages.includes(stage);
 
@@ -138,6 +139,5 @@ define('custom:opportunity-qualification-dynamic-handler', ['dynamic-handler'], 
                 }
             });
         }
-
     };
 });

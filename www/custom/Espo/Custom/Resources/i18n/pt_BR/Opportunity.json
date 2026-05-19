@@ -117,5 +117,12 @@
     },
     "labels": {
         "Desenvolvimento da Solução": "Desenvolvimento da Solução"
+    },
+    "tooltips": {
+        "situacaoAtualSolucao": "Descreva como o cliente resolve essa necessidade hoje, quais ferramentas usa, quais processos existem e quais limitações foram percebidas.",
+        "dorIdentificadaSolucao": "Registre a principal dor ou problema que o cliente está tentando resolver.",
+        "impactoNegocioSolucao": "Explique o efeito dessa dor na operação, custo, risco, produtividade, segurança ou experiência do cliente.",
+        "urgenciaSolucao": "Informe por que essa necessidade precisa ser tratada agora: prazo, incidente, auditoria, orçamento, renovação ou pressão interna.",
+        "criteriosDecisaoSolucao": "Descreva os fatores que o cliente usará para escolher a solução: preço, prazo, aderência técnica, integração, suporte, fabricante ou modelo comercial."
     }
 }
