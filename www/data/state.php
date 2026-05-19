@@ -4,7 +4,7 @@ return [
   'currencyRates' => [
     'BRL' => 1.0
   ],
-  'cacheTimestamp' => 1779155004,
-  'microtimeState' => 1779155004.547666,
+  'cacheTimestamp' => 1779157115,
+  'microtimeState' => 1779157115.152254,
   'appTimestamp' => 1778891098
 ];

@@ -82,6 +82,30 @@
                     "name": "contacts"
                 },
                 false
+            ],
+            [
+                {
+                    "name": "dorPrincipal"
+                },
+                {
+                    "name": "impactoEstimado"
+                }
+            ],
+            [
+                {
+                    "name": "orcamentoIdentificado"
+                },
+                {
+                    "name": "prazoDecisao"
+                }
+            ],
+            [
+                {
+                    "name": "criterioDecisao"
+                },
+                {
+                    "name": "processoDecisao"
+                }
             ]
         ]
     },
@@ -128,22 +152,6 @@
                     "name": "contextoCriteriosDecisaoSolucao"
                 }
             ]
-        ],
-        "dynamicLogic": {
-            "visible": {
-                "conditionGroup": [
-                    {
-                        "type": "notEquals",
-                        "attribute": "stage",
-                        "value": "Prospecting"
-                    },
-                    {
-                        "type": "notEquals",
-                        "attribute": "stage",
-                        "value": "Qualification"
-                    }
-                ]
-            }
-        }
+        ]
     }
 ]

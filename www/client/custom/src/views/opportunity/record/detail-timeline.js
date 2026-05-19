@@ -7,56 +7,11 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
 
             this.injectAtriaOpportunityTimelineStyle();
             this.renderAtriaOpportunityTimeline();
-            this.toggleAtriaDevelopmentSolutionPanel();
-        },
 
-        toggleAtriaDevelopmentSolutionPanel: function () {
-            const stage = this.model ? this.model.get('stage') : null;
-
-            const shouldShow = [
-                'Desenvolvendo Solução',
-                'Proposal',
-                'Negotiation',
-                'Closed Won',
-                'Closed Lost'
-            ].includes(stage);
-
-            const labels = Array.from(document.querySelectorAll('.panel-heading, .panel-title, h4, h3, label, div, span'))
-                .filter(function (el) {
-                    return (el.textContent || '').trim() === 'Desenvolvimento da Solução';
-                });
-
-            labels.forEach(function (label) {
-                let panel = label.closest('.panel');
-
-                if (!panel) {
-                    panel = label.closest('[data-name="Desenvolvimento da Solução"]');
-                }
-
-                if (!panel) {
-                    panel = label.parentElement;
-                    while (panel && panel.parentElement && panel.parentElement !== document.body) {
-                        const text = (panel.textContent || '').trim();
-
-                        if (
-                            text.includes('Situação atual') &&
-                            text.includes('Dor identificada') &&
-                            text.includes('Impacto no negócio') &&
-                            text.includes('Critérios de decisão')
-                        ) {
-                            break;
-                        }
-
-                        panel = panel.parentElement;
-                    }
-                }
-
-                if (!panel) {
-                    return;
-                }
-
-                panel.style.display = shouldShow ? '' : 'none';
-            });
+            setTimeout(() => {
+                this.renderAtriaDevelopmentSolutionCard();
+                this.bindAtriaDevelopmentSolutionEditButton();
+            }, 300);
         },
 
         injectAtriaOpportunityTimelineStyle: function () {
@@ -378,6 +333,214 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
                     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.08);
                 }
 
+
+                /* ATRIA_DEV_SOL_STYLE_V2_START */
+                .atria-development-solution-card {
+                    margin: 0 0 14px 0;
+                    background: #ffffff;
+                    border: 1px solid #dfe6ef;
+                    border-radius: 8px;
+                    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+                    overflow: hidden;
+                }
+
+                .atria-development-solution-card .panel-heading {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    min-height: 42px;
+                    padding: 12px 16px;
+                    background: #ffffff;
+                    border-bottom: 1px solid #edf1f7;
+                }
+
+                .atria-development-solution-card .panel-title {
+                    margin: 0;
+                    font-size: 14px;
+                    line-height: 1.2;
+                    font-weight: 600;
+                    color: #2f3b4c;
+                }
+
+                .atria-devsol-edit-btn {
+                    padding: 3px 9px;
+                    border-radius: 6px;
+                    font-size: 11px;
+                    line-height: 1.3;
+                }
+
+                .atria-development-solution-card .panel-heading:after {
+                    content: "SPICED";
+                    display: inline-flex;
+                    align-items: center;
+                    height: 20px;
+                    padding: 0 8px;
+                    border-radius: 999px;
+                    background: #eef5ff;
+                    color: #3b82f6;
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.02em;
+                }
+
+                .atria-development-solution-card .panel-body {
+                    padding: 14px 16px 4px;
+                    background: #ffffff;
+                }
+
+                .atria-devsol-row {
+                    display: grid;
+                    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                    gap: 22px;
+                    padding: 0 0 12px;
+                    margin: 0 0 12px;
+                    border-bottom: 1px solid #edf1f7;
+                }
+
+                .atria-devsol-row:last-child {
+                    border-bottom: 0;
+                    margin-bottom: 0;
+                }
+
+                .atria-devsol-field {
+                    min-width: 0;
+                }
+
+                .atria-devsol-label {
+                    margin: 0 0 4px;
+                    color: #8a94a6;
+                    font-size: 11px;
+                    line-height: 1.25;
+                    font-weight: 600;
+                }
+
+                .atria-devsol-value {
+                    min-height: 18px;
+                    color: #273244;
+                    font-size: 12px;
+                    line-height: 1.4;
+                    font-weight: 500;
+                    white-space: pre-wrap;
+                    word-break: break-word;
+                }
+
+                .atria-devsol-value.is-empty {
+                    color: #9aa4b2;
+                    font-weight: 400;
+                    font-style: italic;
+                }
+
+
+                /* ATRIA_DEV_SOL_DYNAMIC_STYLE_START */
+                .atria-development-solution-card {
+                    margin: 0 0 14px 0;
+                    background: #ffffff;
+                    border: 1px solid #dfe6ef;
+                    border-radius: 8px;
+                    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+                    overflow: hidden;
+                }
+
+                .atria-development-solution-card .panel-heading {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    min-height: 42px;
+                    padding: 12px 16px;
+                    background: #ffffff;
+                    border-bottom: 1px solid #edf1f7;
+                }
+
+                .atria-development-solution-card .panel-title {
+                    margin: 0;
+                    font-size: 14px;
+                    line-height: 1.2;
+                    font-weight: 600;
+                    color: #2f3b4c;
+                }
+
+                .atria-development-solution-card .panel-heading:after {
+                    content: "SPICED";
+                    display: inline-flex;
+                    align-items: center;
+                    height: 20px;
+                    padding: 0 8px;
+                    margin-left: auto;
+                    margin-right: 8px;
+                    border-radius: 999px;
+                    background: #eef5ff;
+                    color: #3b82f6;
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.02em;
+                }
+
+                .atria-devsol-edit-btn {
+                    padding: 3px 9px;
+                    border-radius: 6px;
+                    font-size: 11px;
+                    line-height: 1.3;
+                }
+
+                .atria-development-solution-card .panel-body {
+                    padding: 14px 16px 4px;
+                    background: #ffffff;
+                }
+
+                .atria-devsol-row {
+                    display: grid;
+                    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                    gap: 22px;
+                    padding: 0 0 12px;
+                    margin: 0 0 12px;
+                    border-bottom: 1px solid #edf1f7;
+                }
+
+                .atria-devsol-row:last-child {
+                    border-bottom: 0;
+                    margin-bottom: 0;
+                }
+
+                .atria-devsol-label {
+                    margin: 0 0 4px;
+                    color: #8a94a6;
+                    font-size: 11px;
+                    line-height: 1.25;
+                    font-weight: 600;
+                }
+
+                .atria-devsol-value {
+                    min-height: 18px;
+                    color: #273244;
+                    font-size: 12px;
+                    line-height: 1.4;
+                    font-weight: 500;
+                    white-space: pre-wrap;
+                    word-break: break-word;
+                }
+
+                .atria-devsol-empty {
+                    color: #9aa4b2;
+                    font-weight: 400;
+                    font-style: italic;
+                }
+
+                @media (max-width: 768px) {
+                    .atria-devsol-row {
+                        grid-template-columns: 1fr;
+                        gap: 10px;
+                    }
+                }
+                /* ATRIA_DEV_SOL_DYNAMIC_STYLE_END */
+
+                @media (max-width: 768px) {
+                    .atria-devsol-row {
+                        grid-template-columns: 1fr;
+                        gap: 10px;
+                    }
+                }
+                /* ATRIA_DEV_SOL_STYLE_V2_END */
+
                 @media (max-width: 768px) {
                     .atria-opportunity-timeline-header {
                         flex-direction: column;
@@ -390,6 +553,128 @@ Espo.define('custom:views/opportunity/record/detail-timeline', 'views/record/det
             `;
 
             document.head.appendChild(style);
+        },
+
+        renderAtriaDevelopmentSolutionCard: function () {
+            const stage = this.model ? this.model.get('stage') : null;
+
+            const allowedStages = [
+                'Desenvolvendo Solução',
+                'Proposal',
+                'Negotiation',
+                'Closed Won',
+                'Closed Lost'
+            ];
+
+            const $root = this.$el;
+
+            $root.find('.atria-development-solution-card').remove();
+
+            if (!allowedStages.includes(stage)) {
+                return;
+            }
+
+            const getValue = (field) => {
+                const value = this.model ? this.model.get(field) : null;
+
+                if (value === null || value === undefined || value === '') {
+                    return '<span class="atria-devsol-empty">Nenhum</span>';
+                }
+
+                if (Array.isArray(value)) {
+                    if (!value.length) {
+                        return '<span class="atria-devsol-empty">Nenhum</span>';
+                    }
+
+                    return this.escapeAtriaHtml(value.map(item => String(item)).join(', '));
+                }
+
+                return this.escapeAtriaHtml(String(value));
+            };
+
+            const rows = [
+                ['Situação atual', 'situacaoAtualSolucao', 'Contexto da situação atual', 'contextoSituacaoAtualSolucao'],
+                ['Dor identificada', 'dorIdentificadaSolucao', 'Contexto da dor', 'contextoDorSolucao'],
+                ['Impacto no negócio', 'impactoNegocioSolucao', 'Contexto do impacto', 'contextoImpactoSolucao'],
+                ['Urgência', 'urgenciaSolucao', 'Fatores de urgência', 'fatoresUrgenciaSolucao'],
+                ['Critérios de decisão', 'criteriosDecisaoSolucao', 'Contexto dos critérios de decisão', 'contextoCriteriosDecisaoSolucao']
+            ].map((row) => {
+                return `
+                    <div class="atria-devsol-row">
+                        <div class="atria-devsol-field">
+                            <div class="atria-devsol-label">${this.escapeAtriaHtml(row[0])}</div>
+                            <div class="atria-devsol-value">${getValue(row[1])}</div>
+                        </div>
+                        <div class="atria-devsol-field">
+                            <div class="atria-devsol-label">${this.escapeAtriaHtml(row[2])}</div>
+                            <div class="atria-devsol-value">${getValue(row[3])}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const html = `
+                <!-- ATRIA_DEV_SOL_CARD_RENDERED -->
+                <div class="panel panel-default atria-development-solution-card">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Desenvolvimento da Solução</h4>
+                        <button type="button" class="btn btn-primary btn-xs atria-devsol-edit-btn">
+                            Editar campos
+                        </button>
+                    </div>
+                    <div class="panel-body">
+                        ${rows}
+                    </div>
+                </div>
+            `;
+
+            let $insertAfter = $root.find('*').filter(function () {
+                const text = ($(this).text() || '').trim();
+
+                return text.indexOf('Qualificação') !== -1 &&
+                    text.indexOf('Dor principal') !== -1 &&
+                    text.indexOf('Processo de decisão') !== -1;
+            }).last();
+
+            if (!$insertAfter.length) {
+                $insertAfter = $root.find('.panel').filter(function () {
+                    const text = ($(this).text() || '');
+                    return text.indexOf('Qualificação') !== -1;
+                }).last();
+            }
+
+            if (!$insertAfter.length) {
+                $insertAfter = $root.find('.panel').first();
+            }
+
+            if ($insertAfter.length) {
+                $insertAfter.after(html);
+                return;
+            }
+
+            const $target = this.getAtriaTimelineTarget();
+
+            if ($target && $target.length) {
+                $target.append(html);
+            }
+        },
+
+        bindAtriaDevelopmentSolutionEditButton: function () {
+            const self = this;
+
+            this.$el.off('click', '.atria-devsol-edit-btn');
+            this.$el.on('click', '.atria-devsol-edit-btn', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const id = self.model ? self.model.id : null;
+
+                if (!id) {
+                    return;
+                }
+
+                window.location.hash = '#Opportunity/edit/' + id;
+            });
         },
 
         renderAtriaOpportunityTimeline: function () {

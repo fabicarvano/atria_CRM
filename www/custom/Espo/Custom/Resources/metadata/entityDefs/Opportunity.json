@@ -102,15 +102,6 @@
                         }
                     ]
                 },
-                "readOnly": {
-                    "conditionGroup": [
-                        {
-                            "type": "notEquals",
-                            "attribute": "stage",
-                            "value": "Qualification"
-                        }
-                    ]
-                },
                 "required": {
                     "conditionGroup": [
                         {
@@ -144,15 +135,6 @@
                         }
                     ]
                 },
-                "readOnly": {
-                    "conditionGroup": [
-                        {
-                            "type": "notEquals",
-                            "attribute": "stage",
-                            "value": "Qualification"
-                        }
-                    ]
-                },
                 "required": {
                     "conditionGroup": [
                         {
@@ -182,15 +164,6 @@
                             "type": "notEquals",
                             "attribute": "stage",
                             "value": "Prospecting"
-                        }
-                    ]
-                },
-                "readOnly": {
-                    "conditionGroup": [
-                        {
-                            "type": "notEquals",
-                            "attribute": "stage",
-                            "value": "Qualification"
                         }
                     ]
                 },
@@ -230,15 +203,6 @@
                         }
                     ]
                 },
-                "readOnly": {
-                    "conditionGroup": [
-                        {
-                            "type": "notEquals",
-                            "attribute": "stage",
-                            "value": "Qualification"
-                        }
-                    ]
-                },
                 "required": {
                     "conditionGroup": [
                         {
@@ -270,15 +234,6 @@
                             "type": "notEquals",
                             "attribute": "stage",
                             "value": "Prospecting"
-                        }
-                    ]
-                },
-                "readOnly": {
-                    "conditionGroup": [
-                        {
-                            "type": "notEquals",
-                            "attribute": "stage",
-                            "value": "Qualification"
                         }
                     ]
                 },
@@ -315,15 +270,6 @@
                         }
                     ]
                 },
-                "readOnly": {
-                    "conditionGroup": [
-                        {
-                            "type": "notEquals",
-                            "attribute": "stage",
-                            "value": "Qualification"
-                        }
-                    ]
-                },
                 "required": {
                     "conditionGroup": [
                         {
@@ -343,14 +289,29 @@
                 "visible": {
                     "conditionGroup": [
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Prospecting"
+                            "value": "Desenvolvendo Solução"
                         },
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Qualification"
+                            "value": "Proposal"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Negotiation"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Won"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Lost"
                         }
                     ]
                 }
@@ -363,14 +324,29 @@
                 "visible": {
                     "conditionGroup": [
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Prospecting"
+                            "value": "Desenvolvendo Solução"
                         },
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Qualification"
+                            "value": "Proposal"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Negotiation"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Won"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Lost"
                         }
                     ]
                 }
@@ -383,14 +359,29 @@
                 "visible": {
                     "conditionGroup": [
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Prospecting"
+                            "value": "Desenvolvendo Solução"
                         },
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Qualification"
+                            "value": "Proposal"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Negotiation"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Won"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Lost"
                         }
                     ]
                 }
@@ -403,14 +394,29 @@
                 "visible": {
                     "conditionGroup": [
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Prospecting"
+                            "value": "Desenvolvendo Solução"
                         },
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Qualification"
+                            "value": "Proposal"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Negotiation"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Won"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Lost"
                         }
                     ]
                 }
@@ -423,14 +429,29 @@
                 "visible": {
                     "conditionGroup": [
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Prospecting"
+                            "value": "Desenvolvendo Solução"
                         },
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Qualification"
+                            "value": "Proposal"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Negotiation"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Won"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Lost"
                         }
                     ]
                 }
@@ -459,14 +480,29 @@
                 "visible": {
                     "conditionGroup": [
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Prospecting"
+                            "value": "Desenvolvendo Solução"
                         },
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Qualification"
+                            "value": "Proposal"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Negotiation"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Won"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Lost"
                         }
                     ]
                 }
@@ -496,14 +532,29 @@
                 "visible": {
                     "conditionGroup": [
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Prospecting"
+                            "value": "Desenvolvendo Solução"
                         },
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Qualification"
+                            "value": "Proposal"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Negotiation"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Won"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Lost"
                         }
                     ]
                 }
@@ -533,14 +584,29 @@
                 "visible": {
                     "conditionGroup": [
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Prospecting"
+                            "value": "Desenvolvendo Solução"
                         },
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Qualification"
+                            "value": "Proposal"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Negotiation"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Won"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Lost"
                         }
                     ]
                 }
@@ -570,14 +636,29 @@
                 "visible": {
                     "conditionGroup": [
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Prospecting"
+                            "value": "Desenvolvendo Solução"
                         },
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Qualification"
+                            "value": "Proposal"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Negotiation"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Won"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Lost"
                         }
                     ]
                 }
@@ -609,14 +690,29 @@
                 "visible": {
                     "conditionGroup": [
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Prospecting"
+                            "value": "Desenvolvendo Solução"
                         },
                         {
-                            "type": "notEquals",
+                            "type": "equals",
                             "attribute": "stage",
-                            "value": "Qualification"
+                            "value": "Proposal"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Negotiation"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Won"
+                        },
+                        {
+                            "type": "equals",
+                            "attribute": "stage",
+                            "value": "Closed Lost"
                         }
                     ]
                 }
