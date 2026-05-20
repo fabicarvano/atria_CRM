@@ -1,0 +1,8 @@
+{
+    "panels": {
+        "contasSimilares": {
+            "name": "Contas Similares",
+            "visible": true
+        }
+    }
+}
