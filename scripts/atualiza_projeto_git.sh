@@ -2,8 +2,7 @@
 
 set -e
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-APP_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+APP_DIR="/opt/atria"
 SCHEMA_DIR="$APP_DIR/schema_banco"
 SCHEMA_FILE="$SCHEMA_DIR/atria_crm_schema.sql"
 

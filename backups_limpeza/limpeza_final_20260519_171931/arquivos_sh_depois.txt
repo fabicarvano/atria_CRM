@@ -1,3 +1,0 @@
-/opt/atria/limpeza_final_estrutura_atria.sh
-/opt/atria/scripts/atualiza_projeto_git.sh
-/opt/atria/scripts/diagnostico_profundo_funil_oportunidades.sh

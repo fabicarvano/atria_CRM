@@ -694,6 +694,8 @@ class Account extends Record
                 employee_count,
                 description,
                 logo_url,
+                JSON_UNQUOTE(JSON_EXTRACT(raw_json, '$.employeeCountRange.start')) AS range_start,
+                JSON_UNQUOTE(JSON_EXTRACT(raw_json, '$.employeeCountRange.end')) AS range_end,
                 exists_in_crm,
                 matched_account_id,
                 match_reason,
@@ -726,6 +728,8 @@ class Account extends Record
                 'websiteUrl' => $row['website_url'],
                 'industry' => $row['industry'],
                 'employeeCount' => $row['employee_count'] !== null ? (int) $row['employee_count'] : null,
+                'employeeCountRangeStart' => $row['range_start'] !== null ? (int) $row['range_start'] : null,
+                'employeeCountRangeEnd' => $row['range_end'] !== null ? (int) $row['range_end'] : null,
                 'description' => $row['description'],
                 'logoUrl' => $row['logo_url'],
                 'existsInCrm' => (bool) $row['exists_in_crm'],
@@ -1019,7 +1023,19 @@ class Account extends Record
         $industry = $similar->industry
             ?? '';
 
-        $employeeCount = isset($similar->employeeCount) ? (int) $similar->employeeCount : null;
+        $employeeCount = null;
+        if (isset($similar->employeeCount)) {
+            $employeeCount = (int) $similar->employeeCount;
+        } elseif (isset($similar->employeeCountRange)) {
+            $range = $similar->employeeCountRange;
+            $start = isset($range->start) ? (int) $range->start : 0;
+            $end   = isset($range->end)   ? (int) $range->end   : 0;
+            if ($start > 0 && $end > 0) {
+                $employeeCount = (int) round(($start + $end) / 2);
+            } elseif ($start > 0) {
+                $employeeCount = $start;
+            }
+        }
 
         $description = $similar->description
             ?? $similar->tagline

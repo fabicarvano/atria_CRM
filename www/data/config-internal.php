@@ -1,16 +1,19 @@
 <?php
-return [
-  'database' => [
+return array (
+  'database' => 
+  array (
     'host' => 'localhost',
     'port' => '',
-    'charset' => NULL,
+    'charset' => 'utf8mb4',
     'dbname' => 'atria_crm',
     'user' => 'atria',
     'password' => 'XP3U2DHo55ETz6DllQjfqlza',
-    'platform' => 'Mysql'
-  ],
-  'smtpPassword' => NULL,
-  'logger' => [
+  ),
+  'smtpPassword' => '',
+  'adminPassword' => 'ET4Hryxu3W9yANbB',
+  'installed' => true,
+  'logger' => 
+  array (
     'path' => 'data/logs/espo.log',
     'level' => 'WARNING',
     'rotation' => true,
@@ -18,28 +21,19 @@ return [
     'printTrace' => false,
     'databaseHandler' => false,
     'sql' => false,
-    'sqlFailed' => false
-  ],
+    'sqlFailed' => false,
+  ),
   'restrictedMode' => false,
   'cleanupAppLog' => true,
   'cleanupAppLogPeriod' => '30 days',
   'webSocketMessager' => 'ZeroMQ',
   'clientSecurityHeadersDisabled' => false,
   'clientCspDisabled' => false,
-  'clientCspScriptSourceList' => [
-    0 => 'https://maps.googleapis.com'
-  ],
+  'clientCspScriptSourceList' => 
+  array (
+    0 => 'https://maps.googleapis.com',
+  ),
   'adminUpgradeDisabled' => false,
   'isInstalled' => true,
-  'microtimeInternal' => 1779223558.158393,
-  'cryptKey' => '6a078fb3eed313333e9c4abbc60d77cb',
-  'hashSecretKey' => 'd8289b5e9c203f6b84fe1af9a61459b5',
-  'defaultPermissions' => [
-    'user' => 33,
-    'group' => 33
-  ],
-  'actualDatabaseType' => 'mariadb',
-  'actualDatabaseVersion' => '10.11.14',
-  'instanceId' => '4dc8ffd0-0c1e-4c06-8b93-7634c6fb19f0',
-  'apiSecretKeys' => (object) []
-];
+  'microtimeInternal' => 1779249674.235308,
+);

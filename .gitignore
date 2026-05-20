@@ -1,25 +1,35 @@
-# Arquivos sensíveis
+# =============================================================================
+# .gitignore — Atria CRM
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Credenciais e configuração sensível
+# ---------------------------------------------------------------------------
 .env
-*.env
 .env.*
 !.env.example
 
-# Backups
-backups/
-*.sql
-*.dump
-*.gz
-*.zip
-*.tar
-*.tar.gz
+# ---------------------------------------------------------------------------
+# Backups manuais gerados durante o desenvolvimento
+# Padrões: *.bak.*, *.bkp*, *.bak
+# ---------------------------------------------------------------------------
+*.bak
+*.bak.*
+*.bkp
+*.bkp.*
+*.bkp-*
 
-# Logs
+# ---------------------------------------------------------------------------
+# Logs e diagnósticos temporários
+# ---------------------------------------------------------------------------
 *.log
 logs/
-var/logs/
-www/data/logs/
+diag_*.txt
+typescript
 
-# Cache / temporários
+# ---------------------------------------------------------------------------
+# Cache e arquivos temporários
+# ---------------------------------------------------------------------------
 cache/
 tmp/
 temp/
@@ -28,19 +38,60 @@ www/data/tmp/
 www/client/custom/cache/
 www/public/client/custom/cache/
 
-# Uploads e anexos do CRM
+# ---------------------------------------------------------------------------
+# Runtime do EspoCRM (gerado automaticamente, não versionar)
+# ---------------------------------------------------------------------------
+www/data/config.php
+www/data/config-internal.php
+www/data/state.php
+www/data/.data
+
+# ---------------------------------------------------------------------------
+# Uploads de usuários e anexos do CRM
+# ---------------------------------------------------------------------------
 www/data/upload/
 www/public/upload/
 
-# Dependências e pacotes temporários
-node_modules/
+# ---------------------------------------------------------------------------
+# Dependências do Composer (reinstalar com: composer install)
+# ---------------------------------------------------------------------------
+www/vendor/
 vendor/bin/.phpunit/
 composer.phar
 
-# Sistema
-.DS_Store
-Thumbs.db
+# ---------------------------------------------------------------------------
+# Pasta de backups manuais e snapshots
+# ---------------------------------------------------------------------------
+backups/
+backups_limpeza/
+*.sql.gz
+*.dump
+*.tar
+*.tar.gz
+*.zip
 
-# Permitir versionar o schema do banco
+# Exceção: manter o schema versionado
 !schema_banco/
 !schema_banco/*.sql
+
+# ---------------------------------------------------------------------------
+# Node / front-end
+# ---------------------------------------------------------------------------
+node_modules/
+
+# ---------------------------------------------------------------------------
+# Sistema operacional
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbbs.db
+Thumbbs.db:encryptable
+desktop.ini
+
+# ---------------------------------------------------------------------------
+# IDEs e editores
+# ---------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

@@ -78,6 +78,14 @@
                 {
                     "name": "porQueFoco"
                 }
+            ],
+            [
+                {
+                    "name": "enriquecidaLinkedin"
+                },
+                {
+                    "name": "dataEnriquecimentoLinkedin"
+                }
             ]
         ]
     }

@@ -3,10 +3,16 @@ return [
   'useCache' => true,
   'jobMaxPortion' => 15,
   'jobRunInParallel' => false,
-  'jobPoolConcurrencyNumber' => 8,
-  'daemonMaxProcessNumber' => 5,
+  'jobPoolConcurrencyNumber' => 4,
+  'cronMinInterval' => 2,
   'daemonInterval' => 10,
   'daemonProcessTimeout' => 36000,
+  'siteUrl' => 'http://148.72.177.131',
+  'defaultPermissions' => [
+    'user' => 'www-data',
+    'group' => 'www-data'
+  ],
+  'daemonMaxProcessNumber' => 5,
   'jobForceUtc' => false,
   'recordsPerPage' => 20,
   'recordsPerPageSmall' => 5,
@@ -16,15 +22,15 @@ return [
   'timeZone' => 'UTC',
   'dateFormat' => 'DD.MM.YYYY',
   'timeFormat' => 'HH:mm',
-  'weekStart' => 1,
-  'thousandSeparator' => '.',
-  'decimalMark' => ',',
+  'weekStart' => 0,
+  'thousandSeparator' => ',',
+  'decimalMark' => '.',
   'exportDelimiter' => ',',
   'currencyList' => [
-    0 => 'BRL'
+    0 => 'USD'
   ],
-  'defaultCurrency' => 'BRL',
-  'baseCurrency' => 'BRL',
+  'defaultCurrency' => 'USD',
+  'baseCurrency' => 'USD',
   'currencyNoJoinMode' => false,
   'outboundEmailIsShared' => false,
   'outboundEmailFromName' => 'EspoCRM',
@@ -34,7 +40,7 @@ return [
   'smtpAuth' => true,
   'smtpSecurity' => 'TLS',
   'smtpUsername' => NULL,
-  'language' => 'pt_BR',
+  'language' => 'en_US',
   'authenticationMethod' => 'Espo',
   'tabQuickSearch' => true,
   'globalSearchEntityList' => [
@@ -326,7 +332,5 @@ return [
     0 => 'youtube.com',
     1 => 'google.com'
   ],
-  'microtime' => 1779240058.720819,
-  'siteUrl' => 'http://148.72.177.131',
-  'fullTextSearchMinLength' => 4
+  'microtime' => 1779249674.236545
 ];
