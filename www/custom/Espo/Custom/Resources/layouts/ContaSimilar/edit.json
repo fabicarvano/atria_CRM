@@ -1,0 +1,86 @@
+[
+    {
+        "label": "Conta Similar",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "account"
+                }
+            ],
+            [
+                {
+                    "name": "linkedinUrl"
+                },
+                {
+                    "name": "websiteUrl"
+                }
+            ],
+            [
+                {
+                    "name": "industry"
+                },
+                {
+                    "name": "employeeCount"
+                }
+            ],
+            [
+                {
+                    "name": "logoUrl"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                false
+            ]
+        ]
+    },
+    {
+        "label": "Controle",
+        "rows": [
+            [
+                {
+                    "name": "existsInCrm"
+                },
+                {
+                    "name": "matchedAccount"
+                }
+            ],
+            [
+                {
+                    "name": "matchReason"
+                },
+                {
+                    "name": "isCreated"
+                }
+            ],
+            [
+                {
+                    "name": "createdAccount"
+                },
+                {
+                    "name": "createdByUser"
+                }
+            ],
+            [
+                {
+                    "name": "createdByBotUser"
+                },
+                {
+                    "name": "createdFrom"
+                }
+            ],
+            [
+                {
+                    "name": "source"
+                },
+                false
+            ]
+        ]
+    }
+]

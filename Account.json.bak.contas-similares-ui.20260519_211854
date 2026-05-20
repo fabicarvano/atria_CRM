@@ -11,11 +11,6 @@
                 "name": "heatMapConta",
                 "label": "Heat Map",
                 "view": "custom:views/account/record/panels/heat-map"
-            },
-            {
-                "name": "contasSimilares",
-                "label": "Contas Similares",
-                "view": "custom:views/account/record/panels/contas-similares"
             }
         ],
         "detailSmall": [
@@ -23,11 +18,6 @@
                 "name": "heatMapConta",
                 "label": "Heat Map",
                 "view": "custom:views/account/record/panels/heat-map"
-            },
-            {
-                "name": "contasSimilares",
-                "label": "Contas Similares",
-                "view": "custom:views/account/record/panels/contas-similares"
             }
         ]
     }

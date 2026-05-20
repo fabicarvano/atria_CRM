@@ -1,0 +1,30 @@
+[
+    {
+        "name": "name",
+        "width": 25
+    },
+    {
+        "name": "account",
+        "width": 20
+    },
+    {
+        "name": "industry",
+        "width": 15
+    },
+    {
+        "name": "employeeCount",
+        "width": 10
+    },
+    {
+        "name": "existsInCrm",
+        "width": 10
+    },
+    {
+        "name": "isCreated",
+        "width": 10
+    },
+    {
+        "name": "createdAt",
+        "width": 15
+    }
+]

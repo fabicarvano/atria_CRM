@@ -1,0 +1,12 @@
+{
+    "entity": true,
+    "object": true,
+    "tab": false,
+    "acl": true,
+    "aclPortal": false,
+    "stream": false,
+    "importable": false,
+    "disabled": false,
+    "customizable": true,
+    "module": "Custom"
+}

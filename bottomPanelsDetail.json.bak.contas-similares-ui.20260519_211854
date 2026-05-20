@@ -37,13 +37,5 @@
     },
     "cases": {
         "index": 9
-    },
-    "_tabBreak_contas_similares": {
-        "index": 10,
-        "tabBreak": true,
-        "tabLabel": "Contas Similares"
-    },
-    "contasSimilares": {
-        "index": 11
     }
 }

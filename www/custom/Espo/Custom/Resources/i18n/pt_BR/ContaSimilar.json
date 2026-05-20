@@ -1,0 +1,46 @@
+{
+    "scopeNames": {
+        "ContaSimilar": "Conta Similar",
+        "ContaSimilarPlural": "Contas Similares"
+    },
+    "fields": {
+        "name": "Nome",
+        "account": "Conta origem",
+        "linkedinUrl": "LinkedIn",
+        "websiteUrl": "Website",
+        "industry": "Indústria",
+        "employeeCount": "Funcionários",
+        "description": "Descrição",
+        "logoUrl": "Logo",
+        "source": "Fonte",
+        "rawJson": "JSON bruto",
+        "existsInCrm": "Já existe no CRM",
+        "matchedAccount": "Conta encontrada",
+        "matchReason": "Motivo do vínculo",
+        "isCreated": "Conta criada",
+        "createdAccount": "Conta criada",
+        "createdByUser": "Criada por",
+        "createdByBotUser": "Bot Nova Conta",
+        "createdFrom": "Origem da criação"
+    },
+    "links": {
+        "account": "Conta origem",
+        "matchedAccount": "Conta encontrada",
+        "createdAccount": "Conta criada",
+        "createdByUser": "Criada por",
+        "createdByBotUser": "Bot Nova Conta"
+    },
+    "labels": {
+        "Create ContaSimilar": "Criar Conta Similar"
+    },
+    "options": {
+        "matchReason": {
+            "linkedin_match": "LinkedIn igual",
+            "name_similarity": "Nome parecido",
+            "created_from_similar": "Criada a partir de similar"
+        },
+        "createdFrom": {
+            "similar_organization": "Conta Similar"
+        }
+    }
+}

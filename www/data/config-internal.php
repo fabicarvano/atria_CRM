@@ -31,7 +31,7 @@ return [
   ],
   'adminUpgradeDisabled' => false,
   'isInstalled' => true,
-  'microtimeInternal' => 1779217061.848686,
+  'microtimeInternal' => 1779223558.158393,
   'cryptKey' => '6a078fb3eed313333e9c4abbc60d77cb',
   'hashSecretKey' => 'd8289b5e9c203f6b84fe1af9a61459b5',
   'defaultPermissions' => [

@@ -250,7 +250,7 @@ CREATE TABLE `action_history_record` (
   KEY `IDX_USER_ID` (`user_id`),
   KEY `IDX_AUTH_TOKEN_ID` (`auth_token_id`),
   KEY `IDX_AUTH_LOG_RECORD_ID` (`auth_log_record_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=685 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=713 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -825,6 +825,48 @@ CREATE TABLE `catalogo_oferta` (
   `ordem` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `conta_similar`
+--
+
+DROP TABLE IF EXISTS `conta_similar`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `conta_similar` (
+  `id` varchar(17) NOT NULL,
+  `name` varchar(249) DEFAULT NULL,
+  `deleted` tinyint(1) DEFAULT 0,
+  `account_id` varchar(17) DEFAULT NULL,
+  `linkedin_url` varchar(512) DEFAULT NULL,
+  `website_url` varchar(512) DEFAULT NULL,
+  `industry` varchar(255) DEFAULT NULL,
+  `employee_count` int(11) DEFAULT NULL,
+  `description` mediumtext DEFAULT NULL,
+  `logo_url` varchar(2048) DEFAULT NULL,
+  `source` varchar(100) DEFAULT NULL,
+  `raw_json` mediumtext DEFAULT NULL,
+  `exists_in_crm` tinyint(1) NOT NULL DEFAULT 0,
+  `matched_account_id` varchar(17) DEFAULT NULL,
+  `match_reason` varchar(100) DEFAULT NULL,
+  `is_created` tinyint(1) NOT NULL DEFAULT 0,
+  `created_account_id` varchar(17) DEFAULT NULL,
+  `created_by_user_id` varchar(17) DEFAULT NULL,
+  `created_by_bot_user_id` varchar(17) DEFAULT NULL,
+  `created_from` varchar(100) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `modified_at` datetime DEFAULT NULL,
+  `created_by_id` varchar(17) DEFAULT NULL,
+  `modified_by_id` varchar(17) DEFAULT NULL,
+  `assigned_user_id` varchar(17) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_conta_similar_account_id` (`account_id`),
+  KEY `idx_conta_similar_matched_account_id` (`matched_account_id`),
+  KEY `idx_conta_similar_created_account_id` (`created_account_id`),
+  KEY `IDX_CREATED_BY_USER_ID` (`created_by_user_id`),
+  KEY `IDX_CREATED_BY_BOT_USER_ID` (`created_by_bot_user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2525,7 +2567,7 @@ CREATE TABLE `note` (
   KEY `IDX_MODIFIED_BY_ID` (`modified_by_id`),
   KEY `IDX_SUPER_PARENT` (`super_parent_id`,`super_parent_type`),
   FULLTEXT KEY `IDX_SYSTEM_FULL_TEXT_SEARCH` (`post`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3821,4 +3863,4 @@ CREATE TABLE `working_time_range` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-19 19:27:36
+-- Dump completed on 2026-05-20  1:26:37

@@ -1,0 +1,98 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 249,
+            "required": true,
+            "audited": true
+        },
+        "account": {
+            "type": "link",
+            "required": true
+        },
+        "linkedinUrl": {
+            "type": "varchar",
+            "maxLength": 512,
+            "audited": true
+        },
+        "websiteUrl": {
+            "type": "varchar",
+            "maxLength": 512
+        },
+        "industry": {
+            "type": "varchar",
+            "maxLength": 255
+        },
+        "employeeCount": {
+            "type": "int"
+        },
+        "description": {
+            "type": "text"
+        },
+        "logoUrl": {
+            "type": "varchar",
+            "maxLength": 2048
+        },
+        "source": {
+            "type": "varchar",
+            "maxLength": 100
+        },
+        "rawJson": {
+            "type": "text"
+        },
+        "existsInCrm": {
+            "type": "bool",
+            "default": false
+        },
+        "matchedAccount": {
+            "type": "link"
+        },
+        "matchReason": {
+            "type": "varchar",
+            "maxLength": 100
+        },
+        "isCreated": {
+            "type": "bool",
+            "default": false
+        },
+        "createdAccount": {
+            "type": "link"
+        },
+        "createdByUser": {
+            "type": "link"
+        },
+        "createdByBotUser": {
+            "type": "link"
+        },
+        "createdFrom": {
+            "type": "varchar",
+            "maxLength": 100
+        }
+    },
+    "links": {
+        "account": {
+            "type": "belongsTo",
+            "entity": "Account"
+        },
+        "matchedAccount": {
+            "type": "belongsTo",
+            "entity": "Account"
+        },
+        "createdAccount": {
+            "type": "belongsTo",
+            "entity": "Account"
+        },
+        "createdByUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "createdByBotUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    }
+}

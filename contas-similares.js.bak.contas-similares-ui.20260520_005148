@@ -1,0 +1,355 @@
+define('custom:views/account/record/panels/contas-similares', ['views/record/panels/bottom'], function (Dep) {
+
+    return Dep.extend({
+
+        templateContent: `
+            <div class="contas-similares-wrapper">
+                <div class="contas-similares-header">
+                    <div>
+                        <div class="contas-similares-title">Contas Similares</div>
+                        <div class="contas-similares-subtitle">
+                            Empresas sugeridas a partir do enriquecimento LinkedIn/Apify.
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default btn-sm contas-similares-refresh">
+                        Atualizar
+                    </button>
+                </div>
+
+                <div class="contas-similares-summary">
+                    <div class="contas-similares-card">
+                        <div class="contas-similares-card-label">Disponíveis</div>
+                        <div class="contas-similares-card-value contas-similares-disponiveis">0</div>
+                    </div>
+                    <div class="contas-similares-card">
+                        <div class="contas-similares-card-label">Já existem no CRM</div>
+                        <div class="contas-similares-card-value contas-similares-existentes">0</div>
+                    </div>
+                    <div class="contas-similares-card">
+                        <div class="contas-similares-card-label">Já criadas</div>
+                        <div class="contas-similares-card-value contas-similares-criadas">0</div>
+                    </div>
+                </div>
+
+                <div class="contas-similares-msg text-muted">Carregando Contas Similares...</div>
+
+                <div class="contas-similares-table-wrap hidden">
+                    <table class="table contas-similares-table">
+                        <thead>
+                            <tr>
+                                <th style="width:52px">Logo</th>
+                                <th>Empresa</th>
+                                <th>Indústria</th>
+                                <th style="width:120px">Funcionários</th>
+                                <th>LinkedIn</th>
+                                <th style="width:130px">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody class="contas-similares-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        `,
+
+        setup: function () {
+            Dep.prototype.setup.call(this);
+
+            this.items = [];
+            this.summary = null;
+        },
+
+        afterRender: function () {
+            Dep.prototype.afterRender.call(this);
+
+            this.injectStyle();
+            this.bindEvents();
+            this.carregarContasSimilares();
+        },
+
+        bindEvents: function () {
+            var self = this;
+
+            this.$el.off('click.contasSimilaresRefresh', '.contas-similares-refresh');
+            this.$el.on('click.contasSimilaresRefresh', '.contas-similares-refresh', function () {
+                self.carregarContasSimilares();
+            });
+
+            this.$el.off('click.contasSimilaresCriar', '.conta-similar-criar');
+            this.$el.on('click.contasSimilaresCriar', '.conta-similar-criar', function () {
+                var id = $(this).attr('data-id');
+                self.confirmarCriarConta(id);
+            });
+        },
+
+        carregarContasSimilares: function () {
+            var self = this;
+
+            this.setMsg('Carregando Contas Similares...');
+            this.$el.find('.contas-similares-table-wrap').addClass('hidden');
+
+            Espo.Ajax.postRequest('Account/action/listarContasSimilares', {
+                id: this.model.id,
+                limit: 100
+            }).then(function (result) {
+                self.items = result.list || [];
+                self.summary = result.summary || {};
+
+                self.renderResumo();
+                self.renderTabela();
+            }).catch(function () {
+                self.setMsg('Não foi possível carregar as Contas Similares.');
+                Espo.Ui.error('Não foi possível carregar as Contas Similares.');
+            });
+        },
+
+        renderResumo: function () {
+            var summary = this.summary || {};
+
+            this.$el.find('.contas-similares-disponiveis').text(summary.disponiveis || 0);
+            this.$el.find('.contas-similares-existentes').text(summary.jaExistemCrm || 0);
+            this.$el.find('.contas-similares-criadas').text(summary.jaCriadas || 0);
+        },
+
+        renderTabela: function () {
+            var $tbody = this.$el.find('.contas-similares-body');
+            var items = this.items || [];
+
+            $tbody.empty();
+
+            if (!items.length) {
+                this.$el.find('.contas-similares-table-wrap').addClass('hidden');
+                this.setMsg('Nenhuma Conta Similar disponível para criação.');
+                return;
+            }
+
+            this.setMsg('');
+            this.$el.find('.contas-similares-table-wrap').removeClass('hidden');
+
+            items.forEach(function (item) {
+                var logo = item.logoUrl
+                    ? '<img class="conta-similar-logo" src="' + this.escapeHtml(item.logoUrl) + '" />'
+                    : '<div class="conta-similar-logo-placeholder">' + this.escapeHtml((item.name || '?').charAt(0)) + '</div>';
+
+                var linkedin = item.linkedinUrl
+                    ? '<a href="' + this.escapeHtml(item.linkedinUrl) + '" target="_blank" rel="noopener noreferrer">Abrir LinkedIn</a>'
+                    : '<span class="text-muted">-</span>';
+
+                var funcionarios = item.employeeCount ? item.employeeCount : '-';
+
+                var row = `
+                    <tr data-id="${this.escapeHtml(item.id)}">
+                        <td>${logo}</td>
+                        <td>
+                            <div class="conta-similar-name">${this.escapeHtml(item.name || '-')}</div>
+                            ${item.websiteUrl ? '<div class="conta-similar-site">' + this.escapeHtml(item.websiteUrl) + '</div>' : ''}
+                        </td>
+                        <td>${this.escapeHtml(item.industry || '-')}</td>
+                        <td>${this.escapeHtml(String(funcionarios))}</td>
+                        <td>${linkedin}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-xs conta-similar-criar" data-id="${this.escapeHtml(item.id)}">
+                                Criar Conta
+                            </button>
+                        </td>
+                    </tr>
+                `;
+
+                $tbody.append(row);
+            }, this);
+        },
+
+        confirmarCriarConta: function (id) {
+            var item = (this.items || []).find(function (row) {
+                return row.id === id;
+            });
+
+            if (!item) {
+                Espo.Ui.error('Conta Similar não encontrada na lista.');
+                return;
+            }
+
+            var self = this;
+
+            Espo.Ui.confirm(
+                'Deseja criar a conta "' + item.name + '" a partir desta Conta Similar?',
+                {
+                    confirmText: 'Criar Conta',
+                    cancelText: 'Cancelar'
+                },
+                function () {
+                    self.criarContaSimilar(id);
+                }
+            );
+        },
+
+        criarContaSimilar: function (id) {
+            var self = this;
+            var $button = this.$el.find('.conta-similar-criar[data-id="' + id + '"]');
+
+            $button.prop('disabled', true).text('Criando...');
+
+            Espo.Ajax.postRequest('Account/action/criarContaSimilar', {
+                similarId: id
+            }).then(function (result) {
+                if (result && result.created) {
+                    Espo.Ui.success(result.message || 'Conta criada.');
+                    self.carregarContasSimilares();
+                    return;
+                }
+
+                Espo.Ui.warning((result && result.message) || 'A Conta Similar não pôde ser criada.');
+                self.carregarContasSimilares();
+            }).catch(function () {
+                Espo.Ui.error('Não foi possível criar a Conta.');
+                $button.prop('disabled', false).text('Criar Conta');
+            });
+        },
+
+        setMsg: function (msg) {
+            this.$el.find('.contas-similares-msg').text(msg || '');
+        },
+
+        escapeHtml: function (value) {
+            return String(value || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        },
+
+        injectStyle: function () {
+            if (document.getElementById('contas-similares-style')) {
+                return;
+            }
+
+            var style = document.createElement('style');
+            style.id = 'contas-similares-style';
+            style.textContent = `
+                .contas-similares-wrapper {
+                    padding: 4px 0 10px;
+                }
+
+                .contas-similares-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 14px;
+                    gap: 12px;
+                }
+
+                .contas-similares-title {
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #0f172a;
+                }
+
+                .contas-similares-subtitle {
+                    font-size: 12px;
+                    color: #64748b;
+                    margin-top: 2px;
+                }
+
+                .contas-similares-summary {
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 10px;
+                    margin-bottom: 14px;
+                }
+
+                .contas-similares-card {
+                    border: 1px solid #e5e7eb;
+                    border-radius: 12px;
+                    background: #fff;
+                    padding: 12px 14px;
+                    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+                }
+
+                .contas-similares-card-label {
+                    font-size: 12px;
+                    color: #64748b;
+                    margin-bottom: 4px;
+                }
+
+                .contas-similares-card-value {
+                    font-size: 22px;
+                    line-height: 1;
+                    font-weight: 700;
+                    color: #0f172a;
+                }
+
+                .contas-similares-table-wrap {
+                    border: 1px solid #e5e7eb;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    background: #fff;
+                }
+
+                .contas-similares-table {
+                    margin-bottom: 0;
+                }
+
+                .contas-similares-table thead th {
+                    background: #f8fafc;
+                    color: #475569;
+                    font-size: 12px;
+                    font-weight: 700;
+                    border-bottom: 1px solid #e5e7eb;
+                }
+
+                .contas-similares-table td {
+                    vertical-align: middle !important;
+                }
+
+                .conta-similar-logo {
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 8px;
+                    object-fit: cover;
+                    border: 1px solid #e5e7eb;
+                    background: #fff;
+                }
+
+                .conta-similar-logo-placeholder {
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 8px;
+                    background: #f1f5f9;
+                    color: #475569;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid #e5e7eb;
+                }
+
+                .conta-similar-name {
+                    font-weight: 600;
+                    color: #0f172a;
+                }
+
+                .conta-similar-site {
+                    font-size: 11px;
+                    color: #64748b;
+                    margin-top: 2px;
+                    max-width: 360px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                .contas-similares-msg {
+                    padding: 10px 0;
+                }
+
+                @media (max-width: 1100px) {
+                    .contas-similares-summary {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            `;
+
+            document.head.appendChild(style);
+        }
+    });
+});
