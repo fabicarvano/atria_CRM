@@ -1,4 +1,50 @@
 {
+  "fields": {
+    "accountRole": "Cargo",
+    "title": "Cargo (Conta Principal)",
+    "accounts": "Contas",
+    "name": "Nome",
+    "emailAddress": "E-mail",
+    "phoneNumber": "Telefone",
+    "account": "Conta",
+    "accountType": "Tipo de Conta",
+    "doNotCall": "Não Ligar",
+    "address": "Endereço",
+    "opportunityRole": "Papel na Oportunidade",
+    "description": "Descrição",
+    "campaign": "Campanha",
+    "targetLists": "Listas de Alvo",
+    "targetList": "Lista de Alvo",
+    "portalUser": "Usuário do Portal",
+    "hasPortalUser": "Tem Usuário do Portal",
+    "originalLead": "Lead Original",
+    "acceptanceStatus": "Status de Aceite",
+    "accountIsInactive": "Conta Inativa",
+    "acceptanceStatusMeetings": "Status de Aceite (Reuniões)",
+    "acceptanceStatusCalls": "Status de Aceite (Ligações)",
+    "linkedinUrl": "LinkedIn URL",
+    "linkedinPhotoUrl": "Foto LinkedIn",
+    "linkedinLastSync": "Última Sincronização",
+    "nivelHierarquico": "Nível Hierárquico"
+  },
+  "links": {
+    "opportunities": "Oportunidades",
+    "cases": "Atendimentos",
+    "targetLists": "Listas de Alvo",
+    "campaignLogRecords": "Log de Campanhas",
+    "campaign": "Campanha",
+    "account": "Conta (Principal)",
+    "accounts": "Contas",
+    "casesPrimary": "Atendimentos (Principal)",
+    "tasksPrimary": "Tarefas (expandido)",
+    "opportunitiesPrimary": "Oportunidades (Principal)",
+    "portalUser": "Usuário do Portal",
+    "originalLead": "Lead Original",
+    "documents": "Documentos"
+  },
+  "labels": {
+    "Create Contact": "Criar Contato"
+  },
   "options": {
     "opportunityRole": {
       "": "",
@@ -11,6 +57,19 @@
       "Key User": "Usuário-chave",
       "Procurement": "Compras",
       "Legal": "Jurídico"
+    },
+    "nivelHierarquico": {
+      "": "",
+      "C-Level": "C-Level",
+      "VP / Diretor": "VP / Diretor",
+      "Gerente / Coordenador": "Gerente / Coordenador",
+      "Analista / Especialista": "Analista / Especialista",
+      "Outro": "Outro"
     }
+  },
+  "presetFilters": {
+    "portalUsers": "Usuários do Portal",
+    "notPortalUsers": "Não Usuários do Portal",
+    "accountActive": "Ativo"
   }
 }

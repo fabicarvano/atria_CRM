@@ -1,0 +1,28 @@
+{
+    "scopeNames": {
+        "ContatoExecutivo": "Executive Contact",
+        "ContatoExecutivoPlural": "Executive Contacts"
+    },
+    "fields": {
+        "name": "Name", "account": "Account",
+        "firstName": "First Name", "lastName": "Last Name",
+        "linkedinUrl": "LinkedIn", "publicIdentifier": "LinkedIn Identifier",
+        "headline": "Headline", "cargo": "Job Title",
+        "summary": "Summary", "pictureUrl": "Picture",
+        "location": "Location", "connectionsCount": "Connections",
+        "followerCount": "Followers", "openToWork": "Open to Work",
+        "premium": "Premium", "email": "Email",
+        "source": "Source", "rawJson": "Raw JSON",
+        "apifyRunId": "Apify Run ID", "existsInCrm": "Exists in CRM",
+        "matchedContact": "Matched Contact", "matchReason": "Match Reason",
+        "isCreated": "Contact Created", "createdContact": "Created Contact",
+        "createdByUser": "Created By", "createdByBotUser": "Bot Search Contact",
+        "createdFrom": "Created From"
+    },
+    "links": {
+        "account": "Account", "matchedContact": "Matched Contact",
+        "createdContact": "Created Contact", "createdByUser": "Created By",
+        "createdByBotUser": "Bot Search Contact"
+    },
+    "labels": {"Create ContatoExecutivo": "Create Executive Contact"}
+}

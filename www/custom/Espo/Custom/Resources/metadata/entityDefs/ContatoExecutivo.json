@@ -1,0 +1,46 @@
+{
+    "fields": {
+        "name": {"type": "varchar", "maxLength": 249, "required": true, "audited": true},
+        "account": {"type": "link", "required": true},
+        "firstName": {"type": "varchar", "maxLength": 100},
+        "lastName": {"type": "varchar", "maxLength": 100},
+        "linkedinUrl": {"type": "varchar", "maxLength": 512, "audited": true},
+        "publicIdentifier": {"type": "varchar", "maxLength": 255},
+        "headline": {"type": "varchar", "maxLength": 512},
+        "cargo": {"type": "varchar", "maxLength": 255},
+        "summary": {"type": "text"},
+        "pictureUrl": {"type": "varchar", "maxLength": 2048},
+        "location": {"type": "varchar", "maxLength": 255},
+        "connectionsCount": {"type": "int"},
+        "followerCount": {"type": "int"},
+        "openToWork": {"type": "bool", "default": false},
+        "premium": {"type": "bool", "default": false},
+        "email": {"type": "varchar", "maxLength": 255},
+        "source": {"type": "varchar", "maxLength": 100},
+        "rawJson": {"type": "text"},
+        "apifyRunId": {"type": "varchar", "maxLength": 100},
+        "existsInCrm": {"type": "bool", "default": false},
+        "matchedContact": {"type": "link"},
+        "matchReason": {"type": "varchar", "maxLength": 100},
+        "isCreated": {"type": "bool", "default": false},
+        "createdContact": {"type": "link"},
+        "createdByUser": {"type": "link"},
+        "createdByBotUser": {"type": "link"},
+        "createdFrom": {"type": "varchar", "maxLength": 100}
+    },
+    "links": {
+        "account": {"type": "belongsTo", "entity": "Account"},
+        "matchedContact": {"type": "belongsTo", "entity": "Contact"},
+        "createdContact": {"type": "belongsTo", "entity": "Contact"},
+        "createdByUser": {"type": "belongsTo", "entity": "User"},
+        "createdByBotUser": {"type": "belongsTo", "entity": "User"}
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc",
+        "textFilterFields": ["name", "cargo", "headline"],
+        "fullTextSearch": false,
+        "countDisabled": false
+    },
+    "optimisticConcurrencyControl": false
+}

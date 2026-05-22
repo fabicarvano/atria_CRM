@@ -95,3 +95,6 @@ desktop.ini
 *.swp
 *.swo
 *~
+*.bak*
+*.bak*
+www/data/logs/

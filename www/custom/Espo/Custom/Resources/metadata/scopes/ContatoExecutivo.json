@@ -1,0 +1,18 @@
+{
+    "entity": true,
+    "object": true,
+    "tab": false,
+    "acl": true,
+    "aclPortal": false,
+    "stream": false,
+    "importable": false,
+    "disabled": false,
+    "customizable": true,
+    "module": "Custom",
+    "label": "Contato Executivo",
+    "labelPlural": "Contatos Executivos",
+    "statusField": null,
+    "kanbanStatusIgnoreList": null,
+    "stars": false,
+    "preserveAuditLog": false
+}

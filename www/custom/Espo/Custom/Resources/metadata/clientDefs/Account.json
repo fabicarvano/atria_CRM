@@ -16,6 +16,11 @@
                 "name": "contasSimilares",
                 "label": "Contas Similares",
                 "view": "custom:views/account/record/panels/contas-similares"
+            },
+            {
+                "name": "contatosExecutivos",
+                "label": "Contatos Executivos",
+                "view": "custom:views/account/record/panels/contatos-executivos"
             }
         ],
         "detailSmall": [
@@ -28,6 +33,11 @@
                 "name": "contasSimilares",
                 "label": "Contas Similares",
                 "view": "custom:views/account/record/panels/contas-similares"
+            },
+            {
+                "name": "contatosExecutivos",
+                "label": "Contatos Executivos",
+                "view": "custom:views/account/record/panels/contatos-executivos"
             }
         ]
     }

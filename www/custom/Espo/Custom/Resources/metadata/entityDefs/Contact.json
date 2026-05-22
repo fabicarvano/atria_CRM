@@ -21,6 +21,45 @@
       "layoutDetailDisabled": true,
       "customizationRequiredDisabled": true,
       "customizationIsSortedDisabled": true
+    },
+    "linkedinUrl": {
+      "type": "varchar",
+      "maxLength": 512,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true
+    },
+    "linkedinPhotoUrl": {
+      "type": "varchar",
+      "maxLength": 2048,
+      "readOnly": true,
+      "layoutEditDisabled": true,
+      "layoutListDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true,
+      "view": "custom:views/fields/contact-photo"
+    },
+    "linkedinLastSync": {
+      "type": "datetime",
+      "readOnly": true,
+      "layoutDetailDisabled": true,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true
+    },
+    "nivelHierarquico": {
+      "type": "enum",
+      "options": [
+        "",
+        "C-Level",
+        "VP / Diretor",
+        "Gerente / Coordenador",
+        "Analista / Especialista",
+        "Outro"
+      ],
+      "readOnly": true,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true
     }
   }
 }

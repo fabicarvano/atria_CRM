@@ -1,1 +1,0 @@
-/opt/atria/scripts/compactar_atria.sh

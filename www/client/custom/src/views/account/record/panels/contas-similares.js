@@ -34,7 +34,15 @@ define('custom:views/account/record/panels/contas-similares', ['views/record/pan
             Dep.prototype.afterRender.call(this);
             this.injectStyle();
             this.bindEvents();
-            this.carregarContasSimilares();
+            // Garante que enriquecidaLinkedin está carregado no model
+            var self = this;
+            if (this.model.get('enriquecidaLinkedin') === undefined) {
+                this.model.fetch().then(function () {
+                    self.carregarContasSimilares();
+                });
+            } else {
+                this.carregarContasSimilares();
+            }
         },
 
         bindEvents: function () {

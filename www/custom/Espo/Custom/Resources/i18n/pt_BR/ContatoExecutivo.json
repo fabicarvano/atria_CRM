@@ -1,0 +1,55 @@
+{
+    "scopeNames": {
+        "ContatoExecutivo": "Contato Executivo",
+        "ContatoExecutivoPlural": "Contatos Executivos"
+    },
+    "fields": {
+        "name": "Nome",
+        "account": "Conta",
+        "firstName": "Primeiro Nome",
+        "lastName": "Sobrenome",
+        "linkedinUrl": "LinkedIn",
+        "publicIdentifier": "Identificador LinkedIn",
+        "headline": "Headline",
+        "cargo": "Cargo",
+        "summary": "Resumo",
+        "pictureUrl": "Foto",
+        "location": "Localização",
+        "connectionsCount": "Conexões",
+        "followerCount": "Seguidores",
+        "openToWork": "Aberto a oportunidades",
+        "premium": "Premium",
+        "email": "E-mail",
+        "source": "Fonte",
+        "rawJson": "JSON bruto",
+        "apifyRunId": "Apify Run ID",
+        "existsInCrm": "Já existe no CRM",
+        "matchedContact": "Contato encontrado",
+        "matchReason": "Motivo do vínculo",
+        "isCreated": "Contato criado",
+        "createdContact": "Contato criado",
+        "createdByUser": "Criado por",
+        "createdByBotUser": "Bot Busca Contato",
+        "createdFrom": "Origem da criação"
+    },
+    "links": {
+        "account": "Conta",
+        "matchedContact": "Contato encontrado",
+        "createdContact": "Contato criado",
+        "createdByUser": "Criado por",
+        "createdByBotUser": "Bot Busca Contato"
+    },
+    "labels": {
+        "Create ContatoExecutivo": "Criar Contato Executivo"
+    },
+    "options": {
+        "matchReason": {
+            "linkedin_match": "LinkedIn igual",
+            "name_similarity": "Nome parecido",
+            "created_from_executive": "Criado a partir de executivo"
+        },
+        "createdFrom": {
+            "linkedin_employee": "LinkedIn Funcionário"
+        }
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "views": {
+    "detail": "custom:views/contact/detail"
+  }
+}

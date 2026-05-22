@@ -1,0 +1,13 @@
+[
+    {
+        "label": "Contato Executivo",
+        "rows": [
+            [{"name": "name"}, {"name": "account"}],
+            [{"name": "firstName"}, {"name": "lastName"}],
+            [{"name": "cargo"}, {"name": "headline"}],
+            [{"name": "linkedinUrl"}, {"name": "location"}],
+            [{"name": "email"}, false],
+            [{"name": "summary"}, false]
+        ]
+    }
+]

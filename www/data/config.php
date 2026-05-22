@@ -40,7 +40,7 @@ return [
   'smtpAuth' => true,
   'smtpSecurity' => 'TLS',
   'smtpUsername' => NULL,
-  'language' => 'en_US',
+  'language' => 'pt_BR',
   'authenticationMethod' => 'Espo',
   'tabQuickSearch' => true,
   'globalSearchEntityList' => [
@@ -332,5 +332,16 @@ return [
     0 => 'youtube.com',
     1 => 'google.com'
   ],
-  'microtime' => 1779249674.236545
+  'microtime' => 1779476722.37313,
+  'fullTextSearchMinLength' => 4,
+  'maintenanceMode' => false,
+  'cronDisabled' => false,
+  'fiscalYearShift' => 0,
+  'addressCityList' => [],
+  'addressStateList' => [],
+  'emailAddressIsOptedOutByDefault' => false,
+  'workingTimeCalendarName' => NULL,
+  'workingTimeCalendarId' => NULL,
+  'baselineRoleName' => NULL,
+  'baselineRoleId' => NULL
 ];

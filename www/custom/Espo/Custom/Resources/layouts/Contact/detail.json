@@ -1,0 +1,47 @@
+[
+  {
+    "label": "",
+    "rows": [
+      [
+        {
+          "name": "linkedinPhotoUrl",
+          "fullWidth": true
+        }
+      ],
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "accounts"
+        }
+      ],
+      [
+        {
+          "name": "emailAddress"
+        },
+        {
+          "name": "phoneNumber"
+        }
+      ],
+      [
+        {
+          "name": "nivelHierarquico"
+        },
+        false
+      ],
+      [
+        {
+          "name": "address"
+        },
+        false
+      ],
+      [
+        {
+          "name": "description",
+          "fullWidth": true
+        }
+      ]
+    ]
+  }
+]

@@ -13,14 +13,40 @@ class Account extends Record
 {
     private const LINKEDIN_COMPANY_ACTOR_ID = 'AjfNXEI9qTA2IdaAX';
 
+    // Actor harvestapi para busca de funcionários/decisores
+    // O actor é hardcoded pois é estável — apenas o token muda
+    private const EMPLOYEES_ACTOR_ID = 'harvestapi~linkedin-company-employees';
+
+    // ============================================================
+    // TODO (QUANDO COMPRAR API PAGA):
+    // 1. Adicionar em /opt/atria/.env:
+    // 2. Adicionar em /etc/php/8.3/fpm/pool.d/atria.conf:
+    // 3. Substituir a linha abaixo por:
+    //    $token = $this->getEnvValue('APIFY_TOKEN_EMPLOYEES');
+    // ============================================================
+
     public function postActionEnriquecerLinkedin(Request $request): stdClass
     {
+        // ── Etapa 1: busca empresa no LinkedIn (dev_fusion) ──────────────────
         $redisResult = $this->postActionGravarEnriquecimentoLinkedinRedis($request);
         $processResult = $this->postActionProcessarEnriquecimentoLinkedinRedis($request);
 
         $this->registrarUsoEnriquecimento($request, $redisResult, $processResult);
 
         $similaresResult = $this->salvarContasSimilaresDoRedisInterno($request);
+
+        // ── Etapa 2: busca contatos executivos (harvestapi) em paralelo ──────
+        // Executa de forma não-bloqueante: salva no Redis e processa assíncrono
+        $contatosResult = null;
+        try {
+            $contatosResult = $this->buscarESalvarContatosExecutivos($request);
+        } catch (\Throwable $e) {
+            // Não falha o enriquecimento principal se a busca de contatos falhar
+            $contatosResult = (object) [
+                'success' => false,
+                'message' => 'Busca de contatos executivos falhou: ' . $e->getMessage(),
+            ];
+        }
 
         return (object) [
             'success' => true,
@@ -33,6 +59,7 @@ class Account extends Record
             'record' => $processResult->record ?? null,
             'sourceSummary' => $processResult->sourceSummary ?? null,
             'similares' => $similaresResult,
+            'contatosExecutivos' => $contatosResult,
         ];
     }
 
@@ -1362,4 +1389,853 @@ class Account extends Record
 
         return null;
     }
+    // =========================================================================
+    // CONTATOS EXECUTIVOS — Decisores de TI/Segurança via LinkedIn Apify
+    // =========================================================================
+
+    /**
+     * Busca contatos executivos via harvestapi e salva no Redis + tabela.
+     * Chamado pelo postActionEnriquecerLinkedin em paralelo com o enriquecimento da empresa.
+     */
+    private function buscarESalvarContatosExecutivos(Request $request): stdClass
+    {
+        $data     = $request->getParsedBody();
+        $accountId = $data->id ?? null;
+
+        if (!$accountId) {
+            throw new BadRequest('ID da conta não informado.');
+        }
+
+        $account = $this->entityManager->getEntityById('Account', (string) $accountId);
+        if (!$account) {
+            throw new NotFound('Conta não encontrada.');
+        }
+
+        $linkedinUrl = trim((string) ($account->get('website') ?? ''));
+        if ($linkedinUrl === '') {
+            return (object) [
+                'success' => false,
+                'message' => 'Conta sem LinkedIn cadastrado no campo Website.',
+            ];
+        }
+
+        $linkedinUrl = $this->normalizeLinkedinUrl($linkedinUrl);
+
+        // Lê cargos buscados da tabela de config (editável pela console do EspoCRM)
+        $jobTitles = $this->lerCargosBuscados();
+
+        if (empty($jobTitles)) {
+            return (object) [
+                'success' => false,
+                'message' => 'Nenhum cargo configurado em contato_executivo_config.',
+            ];
+        }
+
+        // TODO: quando APIFY_TOKEN_EMPLOYEES estiver no .env, substituir a linha abaixo:
+        // $token = $this->getEnvValue('APIFY_TOKEN_EMPLOYEES');
+        // Por enquanto usa o token hardcoded da constante:
+
+        if (!$token) {
+            throw new BadRequest('Token Apify employees não configurado.');
+        }
+
+        // Monta input para harvestapi
+        $input = (object) [
+            'companies'          => [$linkedinUrl],
+            'companyBatchMode'   => 'all_at_once',
+            'jobTitles'          => $jobTitles,
+            'maxItems'           => 50,
+            'profileScraperMode' => 'Short ($4 per 1k)',
+            'recentlyChangedJobs'=> false,
+            'searchQuery'        => 'security OR cybersecurity OR "information security" OR "segurança da informação" OR cibersegurança OR IT OR tecnologia OR technology OR TI',
+        ];
+
+        // Chama Apify — harvestapi employees
+        $items = $this->callApifyActorAsync(self::EMPLOYEES_ACTOR_ID, $token, $input);
+
+        // Salva raw no Redis (TTL 24h)
+        $redisKey = 'account:linkedin-employees:' . $account->getId();
+        $payload  = (object) [
+            'status'     => 'raw_received',
+            'accountId'  => $account->getId(),
+            'linkedinUrl'=> $linkedinUrl,
+            'source'     => 'harvestapi_employees',
+            'actorId'    => self::EMPLOYEES_ACTOR_ID,
+            'createdAt'  => date('Y-m-d H:i:s'),
+            'itemsCount' => count($items),
+            'items'      => $items,
+        ];
+        $this->saveRedisJson($redisKey, $payload, 86400);
+
+        // Processa e salva na tabela contato_executivo
+        $result = $this->processarESalvarContatosDoRedis($account->getId(), $redisKey);
+
+        return (object) [
+            'success'    => true,
+            'message'    => 'Contatos executivos buscados e salvos.',
+            'redisKey'   => $redisKey,
+            'itemsCount' => count($items),
+            'salvos'     => $result->totalSalvos ?? 0,
+            'existentes' => $result->totalExistentes ?? 0,
+        ];
+    }
+
+    /**
+     * Lê os cargos buscados da tabela contato_executivo_config.
+     * Editável pela console do EspoCRM sem necessidade de CLI.
+     * Retorna array com máximo de 20 itens (limite da API harvestapi).
+     */
+    private function lerCargosBuscados(): array
+    {
+        $pdo = $this->getCustomPdo();
+
+        $stmt = $pdo->prepare("
+            SELECT valor FROM contato_executivo_config
+            WHERE chave = 'cargos_buscados'
+            LIMIT 1
+        ");
+        $stmt->execute();
+        $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        if (!$row || empty($row['valor'])) {
+            return [];
+        }
+
+        $cargos = array_map('trim', explode(',', $row['valor']));
+        $cargos = array_filter($cargos, fn($c) => $c !== '');
+        $cargos = array_values($cargos);
+
+        // Garante máximo de 20 itens (limite harvestapi)
+        return array_slice($cargos, 0, 20);
+    }
+
+    /**
+     * Processa itens do Redis e salva na tabela contato_executivo.
+     * Valida duplicidade por LinkedIn URL e similaridade de nome.
+     */
+    private function processarESalvarContatosDoRedis(string $accountId, string $redisKey): stdClass
+    {
+        $payload = $this->loadRedisJson($redisKey);
+
+        if (!$payload || !is_array($payload->items ?? null)) {
+            return (object) ['totalSalvos' => 0, 'totalExistentes' => 0];
+        }
+
+        $pdo          = $this->getCustomPdo();
+        $totalSalvos  = 0;
+        $totalAtualizados = 0;
+        $totalExistentes  = 0;
+
+        foreach ($payload->items as $item) {
+            if (!is_object($item)) {
+                continue;
+            }
+
+            $dados = $this->extrairDadosContatoExecutivo($item);
+
+            if (empty($dados['firstName']) && empty($dados['lastName'])) {
+                continue;
+            }
+
+            // Valida duplicidade no CRM (Contact)
+            $match = $this->buscarContatoExistenteNoCrm(
+                $pdo,
+                $accountId,
+                $dados['firstName'] . ' ' . $dados['lastName'],
+                $dados['linkedinUrl']
+            );
+
+            $existsInCrm     = $match['existsInCrm'];
+            $matchedContactId = $match['matchedContactId'];
+            $matchReason      = $match['matchReason'];
+
+            if ($existsInCrm) {
+                $totalExistentes++;
+            }
+
+            $rawJson = json_encode($item, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+            $name    = trim($dados['firstName'] . ' ' . $dados['lastName']);
+
+            // Verifica se já existe na tabela contato_executivo
+            $existente = $this->buscarContatoExecutivoExistente($pdo, $accountId, $dados['linkedinUrl'], $name);
+
+            if ($existente) {
+                // Atualiza
+                $stmt = $pdo->prepare("
+                    UPDATE contato_executivo SET
+                        name = :name, first_name = :firstName, last_name = :lastName,
+                        headline = :headline, cargo = :cargo, summary = :summary,
+                        picture_url = :pictureUrl, location = :location,
+                        connections_count = :connectionsCount, follower_count = :followerCount,
+                        premium = :premium, open_to_work = :openToWork,
+                        source = :source, raw_json = :rawJson,
+                        exists_in_crm = :existsInCrm, matched_contact_id = :matchedContactId,
+                        match_reason = :matchReason, modified_at = :modifiedAt,
+                        modified_by_id = :modifiedById
+                    WHERE id = :id
+                ");
+                $stmt->execute([
+                    ':id'               => $existente['id'],
+                    ':name'             => $name,
+                    ':firstName'        => $dados['firstName'],
+                    ':lastName'         => $dados['lastName'],
+                    ':headline'         => $dados['headline'],
+                    ':cargo'            => $dados['cargo'],
+                    ':summary'          => $dados['summary'],
+                    ':pictureUrl'       => $dados['pictureUrl'],
+                    ':location'         => $dados['location'],
+                    ':connectionsCount' => $dados['connectionsCount'],
+                    ':followerCount'    => $dados['followerCount'],
+                    ':premium'          => $dados['premium'] ? 1 : 0,
+                    ':openToWork'       => $dados['openToWork'] ? 1 : 0,
+                    ':source'           => 'harvestapi_employees',
+                    ':rawJson'          => $rawJson,
+                    ':existsInCrm'      => $existsInCrm ? 1 : 0,
+                    ':matchedContactId' => $matchedContactId,
+                    ':matchReason'      => $matchReason,
+                    ':modifiedAt'       => date('Y-m-d H:i:s'),
+                    ':modifiedById'     => $this->getCurrentUserId(),
+                ]);
+                $totalAtualizados++;
+                continue;
+            }
+
+            // Insere novo
+            $stmt = $pdo->prepare("
+                INSERT INTO contato_executivo (
+                    id, name, deleted, account_id,
+                    first_name, last_name, linkedin_url, public_identifier,
+                    headline, cargo, summary, picture_url, location,
+                    connections_count, follower_count, premium, open_to_work,
+                    source, raw_json,
+                    exists_in_crm, matched_contact_id, match_reason,
+                    is_created, created_from,
+                    created_at, modified_at, created_by_id, modified_by_id
+                ) VALUES (
+                    :id, :name, 0, :accountId,
+                    :firstName, :lastName, :linkedinUrl, :publicIdentifier,
+                    :headline, :cargo, :summary, :pictureUrl, :location,
+                    :connectionsCount, :followerCount, :premium, :openToWork,
+                    :source, :rawJson,
+                    :existsInCrm, :matchedContactId, :matchReason,
+                    0, :createdFrom,
+                    :createdAt, :modifiedAt, :createdById, :modifiedById
+                )
+            ");
+            $stmt->execute([
+                ':id'               => $this->generateCustomId(),
+                ':name'             => $name,
+                ':accountId'        => $accountId,
+                ':firstName'        => $dados['firstName'],
+                ':lastName'         => $dados['lastName'],
+                ':linkedinUrl'      => $dados['linkedinUrl'],
+                ':publicIdentifier' => $dados['publicIdentifier'],
+                ':headline'         => $dados['headline'],
+                ':cargo'            => $dados['cargo'],
+                ':summary'          => $dados['summary'],
+                ':pictureUrl'       => $dados['pictureUrl'],
+                ':location'         => $dados['location'],
+                ':connectionsCount' => $dados['connectionsCount'],
+                ':followerCount'    => $dados['followerCount'],
+                ':premium'          => $dados['premium'] ? 1 : 0,
+                ':openToWork'       => $dados['openToWork'] ? 1 : 0,
+                ':source'           => 'harvestapi_employees',
+                ':rawJson'          => $rawJson,
+                ':existsInCrm'      => $existsInCrm ? 1 : 0,
+                ':matchedContactId' => $matchedContactId,
+                ':matchReason'      => $matchReason,
+                ':createdFrom'      => 'linkedin_employee',
+                ':createdAt'        => date('Y-m-d H:i:s'),
+                ':modifiedAt'       => date('Y-m-d H:i:s'),
+                ':createdById'      => $this->getCurrentUserId(),
+                ':modifiedById'     => $this->getCurrentUserId(),
+            ]);
+            $totalSalvos++;
+        }
+
+        return (object) [
+            'totalSalvos'     => $totalSalvos,
+            'totalAtualizados'=> $totalAtualizados,
+            'totalExistentes' => $totalExistentes,
+        ];
+    }
+
+    /**
+     * Extrai e normaliza dados de um item retornado pelo harvestapi.
+     */
+    private function extrairDadosContatoExecutivo(stdClass $item): array
+    {
+        $firstName = trim((string) ($item->firstName ?? ''));
+        $lastName  = trim((string) ($item->lastName ?? ''));
+
+        // Cargo vem em currentPositions[0].title (modo Short)
+        $cargo = '';
+        if (!empty($item->currentPositions) && is_array($item->currentPositions)) {
+            $cargo = trim((string) ($item->currentPositions[0]->title ?? ''));
+        }
+
+        // Headline vem direto no modo Full, ou monta do cargo
+        $headline = trim((string) ($item->headline ?? $cargo));
+
+        $linkedinUrl      = trim((string) ($item->linkedinUrl ?? ''));
+        $publicIdentifier = trim((string) ($item->publicIdentifier ?? ''));
+        $summary          = trim((string) ($item->summary ?? $item->about ?? ''));
+        $pictureUrl       = trim((string) ($item->pictureUrl ?? $item->photo ?? ''));
+        $location         = trim((string) ($item->location->linkedinText ?? $item->location ?? ''));
+        $connectionsCount = isset($item->connectionsCount) ? (int) $item->connectionsCount : null;
+        $followerCount    = isset($item->followerCount) ? (int) $item->followerCount : null;
+        $premium          = (bool) ($item->premium ?? false);
+        $openToWork       = (bool) ($item->openToWork ?? false);
+
+        if ($linkedinUrl !== '') {
+            $linkedinUrl = $this->normalizeLinkedinUrl($linkedinUrl);
+        }
+
+        return [
+            'firstName'        => $firstName,
+            'lastName'         => $lastName,
+            'cargo'            => $cargo,
+            'headline'         => $headline,
+            'linkedinUrl'      => $linkedinUrl,
+            'publicIdentifier' => $publicIdentifier,
+            'summary'          => $summary,
+            'pictureUrl'       => $pictureUrl,
+            'location'         => $location,
+            'connectionsCount' => $connectionsCount,
+            'followerCount'    => $followerCount,
+            'premium'          => $premium,
+            'openToWork'       => $openToWork,
+        ];
+    }
+
+    /**
+     * Verifica se já existe um registro na tabela contato_executivo
+     * para essa account + linkedin_url ou nome.
+     */
+    private function buscarContatoExecutivoExistente(\PDO $pdo, string $accountId, string $linkedinUrl, string $name): ?array
+    {
+        if ($linkedinUrl !== '') {
+            $stmt = $pdo->prepare("
+                SELECT id FROM contato_executivo
+                WHERE deleted = 0 AND account_id = :accountId AND linkedin_url = :linkedinUrl
+                LIMIT 1
+            ");
+            $stmt->execute([':accountId' => $accountId, ':linkedinUrl' => $linkedinUrl]);
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            if ($row) return $row;
+        }
+
+        if ($name !== '') {
+            $stmt = $pdo->prepare("
+                SELECT id FROM contato_executivo
+                WHERE deleted = 0 AND account_id = :accountId AND name = :name
+                LIMIT 1
+            ");
+            $stmt->execute([':accountId' => $accountId, ':name' => $name]);
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            if ($row) return $row;
+        }
+
+        return null;
+    }
+
+    /**
+     * Verifica se já existe um Contact no EspoCRM para esse executivo.
+     * Valida por LinkedIn URL (normalizado) ou similaridade de nome (≥85%).
+     * O Contact deve estar vinculado à mesma Account.
+     */
+    private function buscarContatoExistenteNoCrm(\PDO $pdo, string $accountId, string $name, string $linkedinUrl): array
+    {
+        $normalizedLinkedin = $this->normalizeComparableUrl($linkedinUrl);
+
+        // Valida por LinkedIn URL
+        if ($normalizedLinkedin !== '') {
+            $stmt = $pdo->prepare("
+                SELECT id, first_name, last_name, linkedin_url
+                FROM contact
+                WHERE deleted = 0
+                  AND account_id = :accountId
+                  AND linkedin_url IS NOT NULL AND linkedin_url <> ''
+            ");
+            $stmt->execute([':accountId' => $accountId]);
+
+            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                $contactLinkedin = $this->normalizeComparableUrl((string) ($row['linkedin_url'] ?? ''));
+                if ($contactLinkedin !== '' && $contactLinkedin === $normalizedLinkedin) {
+                    return [
+                        'existsInCrm'      => true,
+                        'matchedContactId' => $row['id'],
+                        'matchReason'      => 'linkedin_match',
+                    ];
+                }
+            }
+        }
+
+        // Valida por similaridade de nome (≥85%)
+        $normalizedName = $this->normalizePersonName($name);
+        if ($normalizedName !== '') {
+            $stmt = $pdo->prepare("
+                SELECT id, first_name, last_name
+                FROM contact
+                WHERE deleted = 0 AND account_id = :accountId
+            ");
+            $stmt->execute([':accountId' => $accountId]);
+
+            $bestId      = null;
+            $bestPercent = 0.0;
+
+            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                $contactName = $this->normalizePersonName(
+                    trim($row['first_name'] . ' ' . $row['last_name'])
+                );
+                if ($contactName === '') continue;
+
+                similar_text($normalizedName, $contactName, $percent);
+                if ($percent > $bestPercent) {
+                    $bestPercent = $percent;
+                    $bestId = $row['id'];
+                }
+            }
+
+            if ($bestId && $bestPercent >= 85.0) {
+                return [
+                    'existsInCrm'      => true,
+                    'matchedContactId' => $bestId,
+                    'matchReason'      => 'name_similarity',
+                ];
+            }
+        }
+
+        return ['existsInCrm' => false, 'matchedContactId' => null, 'matchReason' => null];
+    }
+
+    /**
+     * Normaliza nome de pessoa para comparação (lowercase, sem acentos, sem títulos).
+     */
+    private function normalizePersonName(string $name): string
+    {
+        $name = mb_strtolower(trim($name));
+        if ($name === '') return '';
+
+        $map = [
+            'á'=>'a','à'=>'a','ã'=>'a','â'=>'a','é'=>'e','ê'=>'e',
+            'í'=>'i','ó'=>'o','ô'=>'o','õ'=>'o','ú'=>'u','ç'=>'c',
+        ];
+        $name = strtr($name, $map);
+        $name = preg_replace('/[^a-z0-9 ]+/', ' ', $name);
+        $name = preg_replace('/\s+/', ' ', $name);
+
+        return trim($name);
+    }
+
+    /**
+     * Lista contatos executivos de uma conta para o painel frontend.
+     * Retorna apenas os que ainda não existem no CRM e não foram criados.
+     * Também retorna os já existentes com flag exists_in_crm=1 para exibir tag.
+     */
+    public function postActionListarContatosExecutivos(Request $request): stdClass
+    {
+        $data      = $request->getParsedBody();
+        $accountId = $data->id ?? null;
+        $limit     = isset($data->limit) ? (int) $data->limit : 50;
+
+        if (!$accountId) {
+            throw new BadRequest('ID da conta não informado.');
+        }
+
+        $account = $this->entityManager->getEntityById('Account', (string) $accountId);
+        if (!$account) {
+            throw new NotFound('Conta não encontrada.');
+        }
+
+        $pdo = $this->getCustomPdo();
+
+        // Busca disponíveis (não existem no CRM e não foram criados)
+        $stmt = $pdo->prepare("
+            SELECT
+                id, account_id, first_name, last_name, linkedin_url,
+                headline, cargo, summary, picture_url, location,
+                connections_count, follower_count, premium, open_to_work,
+                exists_in_crm, matched_contact_id, match_reason,
+                is_created, created_contact_id, created_at
+            FROM contato_executivo
+            WHERE deleted = 0
+              AND account_id = :accountId
+            ORDER BY
+                exists_in_crm ASC,
+                is_created ASC,
+                cargo ASC
+            LIMIT " . (int) $limit
+        );
+        $stmt->execute([':accountId' => (string) $accountId]);
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        $items = [];
+        foreach ($rows as $row) {
+            $items[] = (object) [
+                'id'               => $row['id'],
+                'accountId'        => $row['account_id'],
+                'firstName'        => $row['first_name'],
+                'lastName'         => $row['last_name'],
+                'name'             => trim($row['first_name'] . ' ' . $row['last_name']),
+                'linkedinUrl'      => $row['linkedin_url'],
+                'headline'         => $row['headline'],
+                'cargo'            => $row['cargo'],
+                'summary'          => $row['summary'],
+                'pictureUrl'       => $row['picture_url'],
+                'location'         => $row['location'],
+                'connectionsCount' => $row['connections_count'] !== null ? (int) $row['connections_count'] : null,
+                'followerCount'    => $row['follower_count'] !== null ? (int) $row['follower_count'] : null,
+                'premium'          => (bool) $row['premium'],
+                'openToWork'       => (bool) $row['open_to_work'],
+                'existsInCrm'      => (bool) $row['exists_in_crm'],
+                'matchedContactId' => $row['matched_contact_id'],
+                'matchReason'      => $row['match_reason'],
+                'isCreated'        => (bool) $row['is_created'],
+                'createdContactId' => $row['created_contact_id'],
+                'createdAt'        => $row['created_at'],
+            ];
+        }
+
+        // Summary counts
+        $countStmt = $pdo->prepare("
+            SELECT
+                COUNT(*) AS total,
+                SUM(CASE WHEN exists_in_crm = 1 THEN 1 ELSE 0 END) AS ja_existem,
+                SUM(CASE WHEN is_created = 1 THEN 1 ELSE 0 END) AS ja_criados,
+                SUM(CASE WHEN exists_in_crm = 0 AND is_created = 0 THEN 1 ELSE 0 END) AS disponiveis
+            FROM contato_executivo
+            WHERE deleted = 0 AND account_id = :accountId
+        ");
+        $countStmt->execute([':accountId' => (string) $accountId]);
+        $summary = $countStmt->fetch(\PDO::FETCH_ASSOC) ?: [];
+
+        return (object) [
+            'success' => true,
+            'account' => (object) [
+                'id'   => $account->getId(),
+                'name' => $account->get('name'),
+            ],
+            'total'   => count($items),
+            'summary' => (object) [
+                'total'       => (int) ($summary['total'] ?? 0),
+                'jaExistem'   => (int) ($summary['ja_existem'] ?? 0),
+                'jaCriados'   => (int) ($summary['ja_criados'] ?? 0),
+                'disponiveis' => (int) ($summary['disponiveis'] ?? 0),
+            ],
+            'list' => $items,
+        ];
+    }
+
+    /**
+     * Cria um Contact no EspoCRM a partir de um ContatoExecutivo.
+     * O Contact é criado pelo bot BOT_BUSCA_CONTATO e vinculado à Account.
+     */
+    public function postActionCriarContatoExecutivo(Request $request): stdClass
+    {
+        $data      = $request->getParsedBody();
+        $executivoId = $data->executivoId ?? null;
+
+        if (!$executivoId) {
+            throw new BadRequest('ID do contato executivo não informado.');
+        }
+
+        $pdo = $this->getCustomPdo();
+
+        $stmt = $pdo->prepare("
+            SELECT * FROM contato_executivo
+            WHERE id = :id AND deleted = 0
+            LIMIT 1
+        ");
+        $stmt->execute([':id' => (string) $executivoId]);
+        $exec = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        if (!$exec) {
+            throw new NotFound('Contato executivo não encontrado.');
+        }
+
+        if ((int) $exec['is_created'] === 1) {
+            throw new BadRequest('Este contato executivo já foi criado no CRM.');
+        }
+
+        // Verifica novamente se já existe no CRM antes de criar
+        $name        = trim($exec['first_name'] . ' ' . $exec['last_name']);
+        $linkedinUrl = trim($exec['linkedin_url'] ?? '');
+
+        $match = $this->buscarContatoExistenteNoCrm(
+            $pdo,
+            (string) $exec['account_id'],
+            $name,
+            $linkedinUrl
+        );
+
+        if ($match['existsInCrm']) {
+            // Marca como existente e retorna
+            $pdo->prepare("
+                UPDATE contato_executivo SET
+                    exists_in_crm = 1,
+                    matched_contact_id = :matchedContactId,
+                    match_reason = :matchReason,
+                    modified_at = :modifiedAt,
+                    modified_by_id = :modifiedById
+                WHERE id = :id
+            ")->execute([
+                ':id'               => $executivoId,
+                ':matchedContactId' => $match['matchedContactId'],
+                ':matchReason'      => $match['matchReason'],
+                ':modifiedAt'       => date('Y-m-d H:i:s'),
+                ':modifiedById'     => $this->getCurrentUserId(),
+            ]);
+
+            return (object) [
+                'success'          => false,
+                'created'          => false,
+                'message'          => 'Contato já existe no CRM. Registro marcado como existente.',
+                'matchedContactId' => $match['matchedContactId'],
+                'matchReason'      => $match['matchReason'],
+            ];
+        }
+
+        // Cria o Contact no EspoCRM
+        $contact = $this->entityManager->getNewEntity('Contact');
+        $contact->set('firstName', $exec['first_name'] ?? '');
+        $contact->set('lastName', $exec['last_name'] ?? '');
+        $contact->set('accountId', $exec['account_id']);
+        $contact->set('title', $exec['cargo'] ?? '');
+        $contact->set('description', $exec['summary'] ?? '');
+        // Salva LinkedIn URL e cargo nos campos customizados do Contact
+        if (!empty($exec['linkedin_url'])) {
+            $contact->set('linkedinUrl', $exec['linkedin_url']);
+        }
+        if (!empty($exec['cargo'])) {
+            $contact->set('cargo', $exec['cargo']);
+        }
+        if (!empty($exec['picture_url'])) {
+            $contact->set('pictureUrl', $exec['picture_url']);
+        }
+
+        $this->entityManager->saveEntity($contact);
+        $createdContactId = $contact->getId();
+
+        // Atribui ao bot BOT_BUSCA_CONTATO se configurado
+        // TODO: adicionar ESPO_BOT_BUSCA_CONTATO_USER_ID em /opt/atria/.env quando o bot for criado
+        $botUserId = $this->getBotBuscaContatoUserId();
+        if ($botUserId) {
+            $pdo->prepare("
+                UPDATE contact SET created_by_id = :botUserId, modified_by_id = :botUserId
+                WHERE id = :contactId
+            ")->execute([
+                ':botUserId'  => $botUserId,
+                ':contactId'  => $createdContactId,
+            ]);
+        }
+
+        // Atualiza registro contato_executivo
+        $pdo->prepare("
+            UPDATE contato_executivo SET
+                is_created = 1,
+                created_contact_id = :createdContactId,
+                created_by_user_id = :createdByUserId,
+                created_by_bot_user_id = :createdByBotUserId,
+                created_from = 'linkedin_employee',
+                exists_in_crm = 1,
+                matched_contact_id = :createdContactId,
+                match_reason = 'created_from_executive',
+                modified_at = :modifiedAt,
+                modified_by_id = :modifiedById
+            WHERE id = :id
+        ")->execute([
+            ':id'                 => $executivoId,
+            ':createdContactId'   => $createdContactId,
+            ':createdByUserId'    => $this->getCurrentUserId(),
+            ':createdByBotUserId' => $botUserId,
+            ':modifiedAt'         => date('Y-m-d H:i:s'),
+            ':modifiedById'       => $this->getCurrentUserId(),
+        ]);
+
+        return (object) [
+            'success' => true,
+            'created' => true,
+            'message' => 'Contato criado com sucesso.',
+            'record'  => (object) [
+                'id'        => $createdContactId,
+                'firstName' => $contact->get('firstName'),
+                'lastName'  => $contact->get('lastName'),
+                'title'     => $contact->get('title'),
+                'accountId' => $contact->get('accountId'),
+                'website'   => $contact->get('website'),
+            ],
+        ];
+    }
+
+    /**
+     * Retorna o ID do bot BOT_BUSCA_CONTATO para criação de contatos.
+     * TODO: criar o usuário bot no EspoCRM e adicionar ao .env:
+     * ESPO_BOT_BUSCA_CONTATO_USER_ID=xxxxx
+     */
+    private function getBotBuscaContatoUserId(): ?string
+    {
+        return $this->getEnvValue('ESPO_BOT_BUSCA_CONTATO_USER_ID');
+    }
+
+
+    /**
+     * Endpoint público para buscar e salvar contatos executivos de uma conta já enriquecida.
+     * Usado pelo script de carga em lote para contas que já foram enriquecidas antes
+     * da funcionalidade de Contatos Executivos existir.
+     */
+    public function postActionBuscarContatosExecutivos(Request $request): stdClass
+    {
+        $data      = $request->getParsedBody();
+        $accountId = $data->id ?? null;
+
+        if (!$accountId) {
+            throw new BadRequest('ID da conta não informado.');
+        }
+
+        $account = $this->entityManager->getEntityById('Account', (string) $accountId);
+        if (!$account) {
+            throw new NotFound('Conta não encontrada.');
+        }
+
+        if (!(bool) $account->get('enriquecidaLinkedin')) {
+            return (object) [
+                'success' => false,
+                'message' => 'Esta conta ainda não foi enriquecida.',
+                'accountId' => $accountId,
+            ];
+        }
+
+        $result = $this->buscarESalvarContatosExecutivos($request);
+
+        return (object) [
+            'success'    => $result->success ?? false,
+            'message'    => $result->message ?? '',
+            'accountId'  => $accountId,
+            'accountName'=> $account->get('name'),
+            'itemsCount' => $result->itemsCount ?? 0,
+            'salvos'     => $result->salvos ?? 0,
+            'existentes' => $result->existentes ?? 0,
+        ];
+    }
+
+
+    /**
+     * Chama um Actor Apify no modo ASSÍNCRONO com polling.
+     *
+     * Fluxo confirmado pelos testes:
+     *   1. POST /acts/{actorId}/runs
+     *      → resposta: { data: { id: "runId", defaultDatasetId: "datasetId", status: "RUNNING" } }
+     *   2. GET  /acts/{actorId}/runs/{runId}
+     *      → polling até status = SUCCEEDED (runs levam ~9-20s)
+     *   3. GET  /datasets/{datasetId}/items
+     *      → retorna array de itens
+     */
+    private function callApifyActorAsync(string $actorId, string $token, stdClass $input): array
+    {
+        // ── Passo 1: dispara o run ─────────────────────────────────────────────
+        // Não usar rawurlencode no actorId pois o ~ é codificado para %7E e a Apify rejeita
+        $runUrl = 'https://api.apify.com/v2/acts/' . $actorId .
+            '/runs?token=' . rawurlencode($token);
+
+        $payload = json_encode($input, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        if ($payload === false) {
+            throw new BadRequest('Não foi possível montar o payload para o Apify.');
+        }
+
+        $ch = curl_init($runUrl);
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+            CURLOPT_POSTFIELDS     => $payload,
+            CURLOPT_CONNECTTIMEOUT => 20,
+            CURLOPT_TIMEOUT        => 30,
+        ]);
+
+        $response = curl_exec($ch);
+        $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($response === false || $httpCode < 200 || $httpCode >= 300) {
+            throw new BadRequest('Apify /runs falhou HTTP ' . $httpCode . ': ' . $response);
+        }
+
+        // Formato real: { data: { id: "runId", defaultDatasetId: "xxx", status: "RUNNING" } }
+        $runData  = json_decode($response);
+        $runId    = $runData->data->id ?? null;
+        $datasetId = $runData->data->defaultDatasetId ?? null;
+
+        if (!$runId || !$datasetId) {
+            throw new BadRequest('Apify não retornou runId/datasetId. Resposta: ' . $response);
+        }
+
+        // ── Passo 2: polling até SUCCEEDED ────────────────────────────────────
+        // Testes mostraram runs levando 9-20s — máx 120s de espera com polling a cada 5s
+        $statusUrl = 'https://api.apify.com/v2/acts/' . rawurlencode($actorId) .
+            '/runs/' . rawurlencode($runId) . '?token=' . rawurlencode($token);
+
+        $maxWait     = 120;
+        $interval    = 5;
+        $elapsed     = 0;
+        $finalStatus = 'RUNNING';
+
+        while ($elapsed < $maxWait) {
+            sleep($interval);
+            $elapsed += $interval;
+
+            $ch = curl_init($statusUrl);
+            curl_setopt_array($ch, [
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_CONNECTTIMEOUT => 10,
+                CURLOPT_TIMEOUT        => 15,
+            ]);
+            $statusResp = curl_exec($ch);
+            curl_close($ch);
+
+            $statusData  = json_decode($statusResp);
+            $finalStatus = $statusData->data->status ?? 'UNKNOWN';
+
+            if ($finalStatus === 'SUCCEEDED') {
+                break;
+            }
+
+            if (in_array($finalStatus, ['FAILED', 'ABORTED', 'TIMED-OUT'])) {
+                throw new BadRequest('Apify run ' . $runId . ' terminou com: ' . $finalStatus);
+            }
+        }
+
+        if ($finalStatus !== 'SUCCEEDED') {
+            throw new BadRequest('Apify run ' . $runId . ' não concluiu em ' . $maxWait . 's. Status: ' . $finalStatus);
+        }
+
+        // ── Passo 3: busca o dataset ───────────────────────────────────────────
+        // Formato: GET /datasets/{datasetId}/items → array direto de itens
+        $datasetUrl = 'https://api.apify.com/v2/datasets/' . rawurlencode($datasetId) .
+            '/items?token=' . rawurlencode($token) . '&format=json';
+
+        $ch = curl_init($datasetUrl);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CONNECTTIMEOUT => 20,
+            CURLOPT_TIMEOUT        => 60,
+        ]);
+        $datasetResp = curl_exec($ch);
+        $httpCode    = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($datasetResp === false || $httpCode < 200 || $httpCode >= 300) {
+            throw new BadRequest('Apify dataset falhou HTTP ' . $httpCode . ' para datasetId: ' . $datasetId);
+        }
+
+        $items = json_decode($datasetResp);
+
+        if (!is_array($items)) {
+            throw new BadRequest('Dataset não retornou array. datasetId: ' . $datasetId . ' resposta: ' . substr($datasetResp, 0, 200));
+        }
+
+        return $items;
+    }
+
+
 }

@@ -1,0 +1,25 @@
+[
+    {
+        "label": "Contato Executivo",
+        "rows": [
+            [{"name": "name"}, {"name": "account"}],
+            [{"name": "firstName"}, {"name": "lastName"}],
+            [{"name": "cargo"}, {"name": "headline"}],
+            [{"name": "linkedinUrl"}, {"name": "location"}],
+            [{"name": "email"}, {"name": "pictureUrl"}],
+            [{"name": "connectionsCount"}, {"name": "followerCount"}],
+            [{"name": "openToWork"}, {"name": "premium"}],
+            [{"name": "summary"}, false]
+        ]
+    },
+    {
+        "label": "Controle",
+        "rows": [
+            [{"name": "existsInCrm"}, {"name": "matchedContact"}],
+            [{"name": "matchReason"}, {"name": "isCreated"}],
+            [{"name": "createdContact"}, {"name": "createdByUser"}],
+            [{"name": "createdByBotUser"}, {"name": "createdFrom"}],
+            [{"name": "source"}, {"name": "apifyRunId"}]
+        ]
+    }
+]

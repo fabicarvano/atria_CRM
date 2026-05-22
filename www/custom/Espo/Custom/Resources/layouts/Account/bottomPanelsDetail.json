@@ -45,5 +45,13 @@
     },
     "contasSimilares": {
         "index": 11
+    },
+    "_tabBreak_contatos_executivos": {
+        "index": 12,
+        "tabBreak": true,
+        "tabLabel": "Contatos Executivos"
+    },
+    "contatosExecutivos": {
+        "index": 13
     }
 }
