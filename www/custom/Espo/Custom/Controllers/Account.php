@@ -95,6 +95,7 @@ class Account extends Record
 
         $token = $this->getEnvValue('APIFY_API_TOKEN');
 
+        $token = $this->getEnvValue('APIFY_API_TOKEN');
         if (!$token) {
             throw new BadRequest('APIFY_API_TOKEN não configurado em /opt/atria/.env.');
         }
@@ -150,6 +151,7 @@ class Account extends Record
 
         $token = $this->getEnvValue('APIFY_API_TOKEN');
 
+        $token = $this->getEnvValue('APIFY_API_TOKEN');
         if (!$token) {
             throw new BadRequest('APIFY_API_TOKEN não configurado em /opt/atria/.env.');
         }
@@ -1431,10 +1433,11 @@ class Account extends Record
             ];
         }
 
-        // TODO: quando APIFY_TOKEN_EMPLOYEES estiver no .env, substituir a linha abaixo:
-        // $token = $this->getEnvValue('APIFY_TOKEN_EMPLOYEES');
-        // Por enquanto usa o token hardcoded da constante:
+        // Token para busca de employees — usa o mesmo APIFY_API_TOKEN da empresa
 
+
+
+        $token = $this->getEnvValue('APIFY_API_TOKEN');
         if (!$token) {
             throw new BadRequest('Token Apify employees não configurado.');
         }
@@ -2011,7 +2014,7 @@ class Account extends Record
             $contact->set('cargo', $exec['cargo']);
         }
         if (!empty($exec['picture_url'])) {
-            $contact->set('pictureUrl', $exec['picture_url']);
+            $contact->set('linkedinPhotoUrl', $exec['picture_url']);
         }
 
         $this->entityManager->saveEntity($contact);
