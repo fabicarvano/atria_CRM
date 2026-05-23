@@ -250,7 +250,7 @@ CREATE TABLE `action_history_record` (
   KEY `IDX_USER_ID` (`user_id`),
   KEY `IDX_AUTH_TOKEN_ID` (`auth_token_id`),
   KEY `IDX_AUTH_LOG_RECORD_ID` (`auth_log_record_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=951 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=972 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3294,7 +3294,7 @@ CREATE TABLE `star_subscription` (
   KEY `IDX_USER_ENTITY_TYPE` (`user_id`,`entity_type`),
   KEY `IDX_ENTITY` (`entity_id`,`entity_type`),
   KEY `IDX_USER` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3314,7 +3314,7 @@ CREATE TABLE `stream_subscription` (
   KEY `IDX_USER_ENTITY` (`user_id`,`entity_id`,`entity_type`),
   KEY `IDX_ENTITY` (`entity_id`,`entity_type`),
   KEY `IDX_USER` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3939,4 +3939,4 @@ CREATE TABLE `working_time_range` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-23  0:57:54
+-- Dump completed on 2026-05-23  1:19:00

@@ -1,5 +1,10 @@
 {
     "scopeNamesPlural": {
         "KnowledgeBaseArticle": "Base de Conhecimento"
+    },
+    "labels": {
+        "Star": "Favoritar",
+        "Starred": "Favorito",
+        "Unstar": "Desfavoritar"
     }
 }
