@@ -59,6 +59,69 @@
       "layoutEditDisabled": true,
       "layoutMassUpdateDisabled": true,
       "importDisabled": true
+    },
+    "headline": {
+      "type": "varchar",
+      "maxLength": 512,
+      "readOnly": true,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true
+    },
+    "locationLinkedin": {
+      "type": "varchar",
+      "maxLength": 255,
+      "readOnly": true,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true
+    },
+    "isPremium": {
+      "type": "bool",
+      "default": false,
+      "readOnly": true,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true
+    },
+    "isCreator": {
+      "type": "bool",
+      "default": false,
+      "readOnly": true,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true
+    },
+    "isInfluencer": {
+      "type": "bool",
+      "default": false,
+      "readOnly": true,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true
+    },
+    "enriquecidaLinkedin": {
+      "type": "bool",
+      "default": false,
+      "readOnly": true,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true
+    },
+    "dataEnriquecimentoLinkedin": {
+      "type": "datetime",
+      "readOnly": true,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true
+    },
+    "fonteEnriquecimento": {
+      "type": "varchar",
+      "maxLength": 100,
+      "readOnly": true,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true
     }
   }
 }

@@ -43,5 +43,51 @@
         }
       ]
     ]
+  },
+  {
+    "label": "LinkedIn",
+    "name": "linkedin",
+    "rows": [
+      [
+        {
+          "name": "headline"
+        },
+        {
+          "name": "locationLinkedin"
+        }
+      ],
+      [
+        {
+          "name": "cargo"
+        },
+        {
+          "name": "nivelHierarquico"
+        }
+      ],
+      [
+        {
+          "name": "isPremium"
+        },
+        {
+          "name": "isCreator"
+        }
+      ],
+      [
+        {
+          "name": "enriquecidaLinkedin"
+        },
+        {
+          "name": "dataEnriquecimentoLinkedin"
+        }
+      ],
+      [
+        {
+          "name": "fonteEnriquecimento"
+        },
+        {
+          "name": "linkedinLastSync"
+        }
+      ]
+    ]
   }
 ]
