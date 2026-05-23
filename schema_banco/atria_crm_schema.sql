@@ -250,7 +250,7 @@ CREATE TABLE `action_history_record` (
   KEY `IDX_USER_ID` (`user_id`),
   KEY `IDX_AUTH_TOKEN_ID` (`auth_token_id`),
   KEY `IDX_AUTH_LOG_RECORD_ID` (`auth_log_record_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=972 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=973 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -904,6 +904,14 @@ CREATE TABLE `contact` (
   `linkedin_photo_url` varchar(2048) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `linkedin_last_sync` datetime DEFAULT NULL,
   `nivel_hierarquico` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `enriquecida_linkedin` tinyint(1) NOT NULL DEFAULT 0,
+  `data_enriquecimento_linkedin` datetime DEFAULT NULL,
+  `fonte_enriquecimento` varchar(100) DEFAULT NULL,
+  `headline` varchar(512) DEFAULT NULL,
+  `is_premium` tinyint(1) NOT NULL DEFAULT 0,
+  `is_creator` tinyint(1) NOT NULL DEFAULT 0,
+  `is_influencer` tinyint(1) NOT NULL DEFAULT 0,
+  `location_linkedin` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_CREATED_AT_ID` (`created_at`,`id`),
   KEY `IDX_CREATED_AT` (`created_at`,`deleted`),
@@ -935,6 +943,28 @@ CREATE TABLE `contact_document` (
   KEY `IDX_CONTACT_ID` (`contact_id`),
   KEY `IDX_DOCUMENT_ID` (`document_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `contact_enrichment_usage`
+--
+
+DROP TABLE IF EXISTS `contact_enrichment_usage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `contact_enrichment_usage` (
+  `id` varchar(17) NOT NULL,
+  `contact_id` varchar(17) DEFAULT NULL,
+  `requested_by_user_id` varchar(17) DEFAULT NULL,
+  `source` varchar(100) DEFAULT NULL,
+  `redis_key` varchar(255) DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `items_count` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_CONTACT_ID` (`contact_id`),
+  KEY `IDX_CREATED_AT` (`created_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3921,14 +3951,6 @@ CREATE TABLE `working_time_range` (
   KEY `IDX_MODIFIED_BY_ID` (`modified_by_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping events for database 'atria_crm'
---
-
---
--- Dumping routines for database 'atria_crm'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -3939,4 +3961,4 @@ CREATE TABLE `working_time_range` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-23  1:19:00
+-- Dump completed on 2026-05-23  2:05:54
