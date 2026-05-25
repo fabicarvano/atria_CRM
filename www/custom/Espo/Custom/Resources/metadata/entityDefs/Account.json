@@ -94,6 +94,12 @@
       "layoutEditDisabled": true,
       "layoutMassUpdateDisabled": true,
       "importDisabled": true
+    },
+    "website": {
+      "type": "url",
+      "maxLength": 255,
+      "required": true,
+      "tooltip": true
     }
   },
   "indexes": {

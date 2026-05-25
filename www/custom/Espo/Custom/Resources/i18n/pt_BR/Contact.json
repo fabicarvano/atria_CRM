@@ -25,7 +25,24 @@
     "linkedinUrl": "LinkedIn URL",
     "linkedinPhotoUrl": "Foto LinkedIn",
     "linkedinLastSync": "Última Sincronização",
-    "nivelHierarquico": "Nível Hierárquico"
+    "nivelHierarquico": "Nível Hierárquico",
+    "headline": "Título LinkedIn",
+    "cargo": "Cargo LinkedIn",
+    "companyNameAtual": "Empresa Identificada",
+    "companyLinkedin": "LinkedIn da Empresa Identificada",
+    "companyWebsite": "Website Identificado",
+    "emailCorporativo": "E-mail Inferido",
+    "statusValidacaoEmpresa": "Status da Validação",
+    "locationLinkedin": "Localização LinkedIn",
+    "enriquecidaLinkedin": "Contato Enriquecido",
+    "dataEnriquecimentoLinkedin": "Data do Enriquecimento",
+    "fonteEnriquecimento": "Fonte do Enriquecimento",
+    "fonteEmail": "Fonte do E-mail",
+    "dataEnriquecimentoEmail": "Data do Enriquecimento do E-mail",
+    "accountIdAnterior": "Conta Anterior",
+    "isPremium": "Premium",
+    "isCreator": "Creator",
+    "isInfluencer": "Influencer"
   },
   "links": {
     "opportunities": "Oportunidades",
@@ -65,6 +82,12 @@
       "Gerente / Coordenador": "Gerente / Coordenador",
       "Analista / Especialista": "Analista / Especialista",
       "Outro": "Outro"
+    },
+    "statusValidacaoEmpresa": {
+      "empresa_validada": "Empresa validada",
+      "empresa_divergente_corrigida": "Empresa divergente corrigida",
+      "empresa_nao_identificada": "Empresa não identificada",
+      "pendente_validacao": "Pendente de validação"
     }
   },
   "presetFilters": {

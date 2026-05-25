@@ -28,7 +28,9 @@
         {
           "name": "nivelHierarquico"
         },
-        false
+        {
+          "name": "linkedinUrl"
+        }
       ],
       [
         {
@@ -45,72 +47,12 @@
     ]
   },
   {
-    "label": "LinkedIn",
+    "label": "LinkedIn e Enriquecimento",
     "name": "linkedin",
     "rows": [
       [
         {
-          "name": "linkedinUrl",
-          "fullWidth": true
-        }
-      ],
-      [
-        {
           "name": "headline"
-        },
-        {
-          "name": "locationLinkedin"
-        }
-      ],
-      [
-        {
-          "name": "cargo"
-        },
-        {
-          "name": "nivelHierarquico"
-        }
-      ],
-      [
-        {
-          "name": "isPremium"
-        },
-        {
-          "name": "isCreator"
-        }
-      ],
-      [
-        {
-          "name": "enriquecidaLinkedin"
-        },
-        {
-          "name": "dataEnriquecimentoLinkedin"
-        }
-      ],
-      [
-        {
-          "name": "fonteEnriquecimento"
-        },
-        {
-          "name": "linkedinLastSync"
-        }
-      ],
-      [
-        {
-          "name": "isInfluencer"
-        },
-        false
-      ],
-      [
-        {
-          "name": "companyNameAtual"
-        },
-        {
-          "name": "companyLinkedin"
-        }
-      ],
-      [
-        {
-          "name": "companyWebsite"
         },
         {
           "name": "emailCorporativo"
@@ -118,19 +60,17 @@
       ],
       [
         {
-          "name": "statusValidacaoEmpresa"
+          "name": "companyWebsite"
         },
         {
-          "name": "accountIdAnterior"
+          "name": "statusValidacaoEmpresa"
         }
       ],
       [
         {
-          "name": "fonteEmail"
+          "name": "linkedinLastSync"
         },
-        {
-          "name": "dataEnriquecimentoEmail"
-        }
+        false
       ]
     ]
   }

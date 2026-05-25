@@ -298,6 +298,10 @@ class Account extends Record
             $account->set('employeeCountLinkedin', $employeeCount);
         }
 
+        if ($websiteUrl !== '') {
+            $account->set('companyWebsite', $websiteUrl);
+        }
+
         if ($description !== '' && trim((string) ($account->get('description') ?? '')) === '') {
             $account->set('description', $description);
         }

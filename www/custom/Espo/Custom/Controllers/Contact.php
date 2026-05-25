@@ -83,6 +83,14 @@ class Contact extends Record
         $isInfluencer= (bool)($item->isInfluencer ?? false);
         $firstName   = trim((string)($item->firstName  ?? ''));
         $lastName    = trim((string)($item->lastName   ?? ''));
+        $email       = trim((string)($item->email      ?? ''));
+        $companyName = trim((string)($item->companyName ?? ''));
+        $companyLinkedin = trim((string)($item->companyLinkedin ?? ''));
+        $companyWebsite  = trim((string)($item->companyWebsite  ?? ''));
+
+        if ($companyLinkedin !== '') {
+            $companyLinkedin = $this->normalizeLinkedinUrl($companyLinkedin);
+        }
 
         $nivel = $this->inferirNivel($cargo ?: $headline);
 
@@ -99,6 +107,16 @@ class Contact extends Record
         $contact->set('isInfluencer', $isInfluencer);
         if ($nivel !== '')    $contact->set('nivelHierarquico', $nivel);
 
+        if ($companyName !== '')     $contact->set('companyNameAtual', $companyName);
+        if ($companyLinkedin !== '') $contact->set('companyLinkedin', $companyLinkedin);
+        if ($companyWebsite !== '')  $contact->set('companyWebsite', $companyWebsite);
+
+        if ($email !== '') {
+            $contact->set('emailCorporativo', $email);
+            $contact->set('fonteEmail', 'apify_linkedin_profile');
+            $contact->set('dataEnriquecimentoEmail', date('Y-m-d H:i:s'));
+        }
+
         // Nome e descrição: só se vazios no CRM
         if ($firstName !== '' && trim((string)($contact->get('firstName') ?? '')) === '') {
             $contact->set('firstName', $firstName);
@@ -109,6 +127,8 @@ class Contact extends Record
         if ($about !== '' && trim((string)($contact->get('description') ?? '')) === '') {
             $contact->set('description', $about);
         }
+
+        $validacao = $this->validarEMoverEmpresaDoContato($contact, $item, $companyName, $companyLinkedin, $companyWebsite, $cargo, $email);
 
         // Flags de controle
         $contact->set('enriquecidaLinkedin',        true);
@@ -122,9 +142,11 @@ class Contact extends Record
         $this->logUso($contact->getId(), $redisKey, count($items));
 
         // 6. Retorna record atualizado para o front atualizar o model
+        $message = $this->montarMensagemEnriquecimento($email, $validacao);
+
         return (object)[
             'success' => true,
-            'message' => 'Contato enriquecido com sucesso.',
+            'message' => $message,
             'record'  => (object)[
                 'id'                         => $contact->getId(),
                 'headline'                   => $contact->get('headline'),
@@ -138,6 +160,15 @@ class Contact extends Record
                 'enriquecidaLinkedin'        => $contact->get('enriquecidaLinkedin'),
                 'dataEnriquecimentoLinkedin' => $contact->get('dataEnriquecimentoLinkedin'),
                 'fonteEnriquecimento'        => $contact->get('fonteEnriquecimento'),
+                'companyNameAtual'            => $contact->get('companyNameAtual'),
+                'companyLinkedin'             => $contact->get('companyLinkedin'),
+                'companyWebsite'              => $contact->get('companyWebsite'),
+                'emailCorporativo'            => $contact->get('emailCorporativo'),
+                'fonteEmail'                  => $contact->get('fonteEmail'),
+                'dataEnriquecimentoEmail'     => $contact->get('dataEnriquecimentoEmail'),
+                'accountIdAnterior'           => $contact->get('accountIdAnterior'),
+                'statusValidacaoEmpresa'      => $contact->get('statusValidacaoEmpresa'),
+                'accountId'                   => $contact->get('accountId'),
             ],
         ];
     }
@@ -158,6 +189,345 @@ class Contact extends Record
             if (str_contains($l, $k)) return 'Analista / Especialista';
         }
         return $cargo !== '' ? 'Outro' : '';
+    }
+
+
+    private function validarEMoverEmpresaDoContato($contact, object $item, string $companyName, string $companyLinkedin, string $companyWebsite, string $cargo, string $email): array
+    {
+        $resultado = [
+            'status' => 'pendente_validacao',
+            'acao' => 'nenhuma',
+            'accountAnteriorId' => null,
+            'accountNovoId' => null,
+            'accountCriada' => false,
+        ];
+
+        $accountIdAtual = (string)($contact->get('accountId') ?? '');
+
+        if ($accountIdAtual === '' || $companyLinkedin === '') {
+            $contact->set('statusValidacaoEmpresa', 'empresa_nao_identificada');
+
+            $this->registrarHistoricoEmpresa($contact, null, null, $companyName, $companyLinkedin, $companyWebsite, $cargo, $email, 'empresa_nao_identificada', 'apify_linkedin_profile', $item);
+
+            $resultado['status'] = 'empresa_nao_identificada';
+            return $resultado;
+        }
+
+        $accountAtual = $this->entityManager->getEntityById('Account', $accountIdAtual);
+        $linkedinContaAtual = $accountAtual ? (string)($accountAtual->get('website') ?? '') : '';
+
+        $normAtual = $this->normalizeComparableLinkedin($linkedinContaAtual);
+        $normNova = $this->normalizeComparableLinkedin($companyLinkedin);
+
+        if ($normAtual !== '' && $normNova !== '' && $normAtual === $normNova) {
+            $contact->set('statusValidacaoEmpresa', 'empresa_validada');
+
+            if ($accountAtual && $companyWebsite !== '' && trim((string)($accountAtual->get('companyWebsite') ?? '')) === '') {
+                $accountAtual->set('companyWebsite', $companyWebsite);
+                $this->entityManager->saveEntity($accountAtual);
+            }
+
+            $this->registrarHistoricoEmpresa($contact, $accountAtual, $accountAtual, $companyName, $companyLinkedin, $companyWebsite, $cargo, $email, 'empresa_validada', 'apify_linkedin_profile', $item);
+
+            $resultado['status'] = 'empresa_validada';
+            $resultado['accountAnteriorId'] = $accountIdAtual;
+            $resultado['accountNovoId'] = $accountIdAtual;
+
+            return $resultado;
+        }
+
+        $novaConta = $this->buscarContaPorLinkedin($companyLinkedin);
+
+        if (!$novaConta) {
+            $novaConta = $this->criarContaPorEmpresaLinkedin($companyName, $companyLinkedin, $companyWebsite);
+            $resultado['accountCriada'] = true;
+        }
+
+        if ($novaConta) {
+            $contact->set('accountIdAnterior', $accountIdAtual);
+            $contact->set('accountId', $novaConta->getId());
+            $contact->set('statusValidacaoEmpresa', 'empresa_divergente_corrigida');
+
+            $this->garantirUnicaContaAtivaDoContato($contact->getId(), $novaConta->getId(), $cargo);
+
+            $this->registrarHistoricoEmpresa($contact, $accountAtual, $novaConta, $companyName, $companyLinkedin, $companyWebsite, $cargo, $email, $resultado['accountCriada'] ? 'conta_criada_automaticamente' : 'empresa_divergente_corrigida', 'apify_linkedin_profile', $item);
+
+            $resultado['status'] = 'empresa_divergente_corrigida';
+            $resultado['acao'] = $resultado['accountCriada'] ? 'conta_criada' : 'contato_movido';
+            $resultado['accountAnteriorId'] = $accountIdAtual;
+            $resultado['accountNovoId'] = $novaConta->getId();
+
+            return $resultado;
+        }
+
+        $contact->set('statusValidacaoEmpresa', 'pendente_validacao');
+
+        return $resultado;
+    }
+
+    private function buscarContaPorLinkedin(string $companyLinkedin)
+    {
+        $target = $this->normalizeComparableLinkedin($companyLinkedin);
+
+        if ($target === '') {
+            return null;
+        }
+
+        $pdo = $this->getPdo();
+
+        $stmt = $pdo->prepare("
+            SELECT id, website
+            FROM account
+            WHERE deleted = 0
+              AND website IS NOT NULL
+              AND website <> ''
+        ");
+        $stmt->execute();
+
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            if ($this->normalizeComparableLinkedin((string)$row['website']) === $target) {
+                return $this->entityManager->getEntityById('Account', (string)$row['id']);
+            }
+        }
+
+        return null;
+    }
+
+    private function criarContaPorEmpresaLinkedin(string $companyName, string $companyLinkedin, string $companyWebsite)
+    {
+        $name = trim($companyName) !== '' ? trim($companyName) : $this->nomeContaPorLinkedin($companyLinkedin);
+
+        if ($name === '') {
+            return null;
+        }
+
+        $account = $this->entityManager->getNewEntity('Account');
+        $account->set('name', $name);
+        $account->set('website', $this->normalizeLinkedinUrl($companyLinkedin));
+
+        if ($companyWebsite !== '') {
+            $account->set('companyWebsite', $companyWebsite);
+        }
+
+        $account->set('fonteEnriquecimento', 'apify_linkedin_profile_contact');
+        $account->set('enriquecidaLinkedin', false);
+
+        $this->entityManager->saveEntity($account);
+
+        return $account;
+    }
+
+
+    private function garantirUnicaContaAtivaDoContato(string $contactId, string $accountIdPrincipal, string $role = ''): void
+    {
+        try {
+            $pdo = $this->getPdo();
+
+            // Desativa todos os vínculos ativos do contato.
+            $stmt = $pdo->prepare("
+                UPDATE account_contact
+                SET is_inactive = 1,
+                    deleted = 1
+                WHERE contact_id = :contactId
+            ");
+            $stmt->execute([
+                ':contactId' => $contactId,
+            ]);
+
+            // Verifica se já existe vínculo com a conta principal.
+            $stmt = $pdo->prepare("
+                SELECT id
+                FROM account_contact
+                WHERE contact_id = :contactId
+                  AND account_id = :accountId
+                  AND deleted = 0
+                LIMIT 1
+            ");
+            $stmt->execute([
+                ':contactId' => $contactId,
+                ':accountId' => $accountIdPrincipal,
+            ]);
+
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+            if ($row) {
+                $stmt = $pdo->prepare("
+                    UPDATE account_contact
+                    SET is_inactive = 0,
+                        deleted = 0,
+                        role = COALESCE(NULLIF(:role, ''), role)
+                    WHERE id = :id
+                ");
+                $stmt->execute([
+                    ':id' => $row['id'],
+                    ':role' => $role,
+                ]);
+
+                return;
+            }
+
+            $stmt = $pdo->prepare("
+                INSERT INTO account_contact (
+                    account_id,
+                    contact_id,
+                    role,
+                    is_inactive,
+                    deleted
+                ) VALUES (
+                    :accountId,
+                    :contactId,
+                    :role,
+                    0,
+                    0
+                )
+            ");
+            $stmt->execute([
+                ':accountId' => $accountIdPrincipal,
+                ':contactId' => $contactId,
+                ':role' => $role !== '' ? $role : null,
+            ]);
+        } catch (\Throwable $e) {
+        }
+    }
+
+    private function registrarHistoricoEmpresa($contact, $accountAnterior, $accountNovo, string $companyName, string $companyLinkedin, string $companyWebsite, string $cargo, string $email, string $motivo, string $fonte, object $raw): void
+    {
+        try {
+            $pdo = $this->getPdo();
+
+            $rawJson = json_encode($raw, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+            $stmt = $pdo->prepare("
+                INSERT INTO contact_company_history (
+                    id,
+                    contact_id,
+                    account_id_anterior,
+                    account_id_novo,
+                    empresa_anterior,
+                    empresa_atual,
+                    linkedin_empresa_anterior,
+                    linkedin_empresa_atual,
+                    company_website,
+                    cargo,
+                    email,
+                    motivo,
+                    fonte,
+                    raw_json,
+                    created_at,
+                    created_by_id
+                ) VALUES (
+                    :id,
+                    :contactId,
+                    :accountAnteriorId,
+                    :accountNovoId,
+                    :empresaAnterior,
+                    :empresaAtual,
+                    :linkedinAnterior,
+                    :linkedinAtual,
+                    :companyWebsite,
+                    :cargo,
+                    :email,
+                    :motivo,
+                    :fonte,
+                    :rawJson,
+                    :createdAt,
+                    :createdById
+                )
+            ");
+
+            $stmt->execute([
+                ':id' => substr(bin2hex(random_bytes(9)), 0, 17),
+                ':contactId' => $contact->getId(),
+                ':accountAnteriorId' => $accountAnterior ? $accountAnterior->getId() : null,
+                ':accountNovoId' => $accountNovo ? $accountNovo->getId() : null,
+                ':empresaAnterior' => $accountAnterior ? (string)$accountAnterior->get('name') : null,
+                ':empresaAtual' => $companyName !== '' ? $companyName : null,
+                ':linkedinAnterior' => $accountAnterior ? (string)$accountAnterior->get('website') : null,
+                ':linkedinAtual' => $companyLinkedin !== '' ? $companyLinkedin : null,
+                ':companyWebsite' => $companyWebsite !== '' ? $companyWebsite : null,
+                ':cargo' => $cargo !== '' ? $cargo : null,
+                ':email' => $email !== '' ? $email : null,
+                ':motivo' => $motivo,
+                ':fonte' => $fonte,
+                ':rawJson' => $rawJson ?: null,
+                ':createdAt' => date('Y-m-d H:i:s'),
+                ':createdById' => $this->getUserId(),
+            ]);
+        } catch (\Throwable $e) {
+        }
+    }
+
+    private function montarMensagemEnriquecimento(string $email, array $validacao): string
+    {
+        $partes = [];
+
+        if (($validacao['acao'] ?? '') === 'conta_criada') {
+            $partes[] = 'Nova conta criada automaticamente e contato vinculado.';
+        } elseif (($validacao['acao'] ?? '') === 'contato_movido') {
+            $partes[] = 'Contato movido automaticamente para a empresa correta.';
+        } else {
+            $partes[] = 'Contato enriquecido com sucesso.';
+        }
+
+        if ($email !== '') {
+            $partes[] = 'E-mail encontrado.';
+        } else {
+            $partes[] = 'Contato enriquecido sem e-mail encontrado.';
+        }
+
+        return implode(' ', $partes);
+    }
+
+    private function normalizeLinkedinUrl(string $url): string
+    {
+        $url = trim($url);
+
+        if ($url === '') {
+            return '';
+        }
+
+        if (!str_starts_with($url, 'http://') && !str_starts_with($url, 'https://')) {
+            $url = 'https://' . $url;
+        }
+
+        return rtrim($url, '/');
+    }
+
+    private function normalizeComparableLinkedin(string $url): string
+    {
+        $url = mb_strtolower(trim($url));
+
+        if ($url === '') {
+            return '';
+        }
+
+        $url = preg_replace('#^https?://#', '', $url);
+        $url = preg_replace('#^www\.#', '', $url);
+        $url = rtrim($url, '/');
+
+        return $url;
+    }
+
+    private function nomeContaPorLinkedin(string $url): string
+    {
+        $normalized = $this->normalizeComparableLinkedin($url);
+        $parts = explode('/company/', $normalized);
+
+        if (count($parts) > 1) {
+            return ucwords(str_replace(['-', '_'], ' ', trim($parts[1], '/')));
+        }
+
+        return '';
+    }
+
+    private function getPdo(): \PDO
+    {
+        return new \PDO(
+            'mysql:host=' . ($this->getEnv('DB_HOST') ?: 'localhost') . ';dbname=' . $this->getEnv('DB_NAME') . ';charset=utf8mb4',
+            $this->getEnv('DB_USER'),
+            $this->getEnv('DB_PASS') ?: '',
+            [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION]
+        );
     }
 
     private function normalizeUrl(string $url): string

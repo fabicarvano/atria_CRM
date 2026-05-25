@@ -138,7 +138,7 @@ CREATE TABLE `account_contact` (
   UNIQUE KEY `UNIQ_ACCOUNT_ID_CONTACT_ID` (`account_id`,`contact_id`),
   KEY `IDX_ACCOUNT_ID` (`account_id`),
   KEY `IDX_CONTACT_ID` (`contact_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -251,7 +251,7 @@ CREATE TABLE `action_history_record` (
   KEY `IDX_USER_ID` (`user_id`),
   KEY `IDX_AUTH_TOKEN_ID` (`auth_token_id`),
   KEY `IDX_AUTH_LOG_RECORD_ID` (`auth_log_record_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=996 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1075 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2717,7 +2717,7 @@ CREATE TABLE `note` (
   KEY `IDX_MODIFIED_BY_ID` (`modified_by_id`),
   KEY `IDX_SUPER_PARENT` (`super_parent_id`,`super_parent_type`),
   FULLTEXT KEY `IDX_SYSTEM_FULL_TEXT_SEARCH` (`post`)
-) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4013,4 +4013,4 @@ CREATE TABLE `working_time_range` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-25 18:08:58
+-- Dump completed on 2026-05-25 22:43:13

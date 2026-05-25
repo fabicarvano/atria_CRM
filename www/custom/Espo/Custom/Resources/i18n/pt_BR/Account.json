@@ -4,16 +4,17 @@
     "porQueFoco": "Por que e Foco",
     "statusProspeccao": "Foco",
     "industry": "Setor",
-    "website": "LinkedIn da empresa",
+    "website": "LinkedIn da Empresa",
     "siglaConta": "Sigla da Conta",
     "industriaLinkedin": "Indústria LinkedIn",
     "employeeCountLinkedin": "Funcionários LinkedIn",
-    "enriquecidaLinkedin": "Conta enriquecida",
-    "dataEnriquecimentoLinkedin": "Data do enriquecimento",
+    "enriquecidaLinkedin": "Conta Enriquecida",
+    "dataEnriquecimentoLinkedin": "Data do Enriquecimento",
     "enriquecidoPorId": "Enriquecido por",
-    "fonteEnriquecimento": "Fonte do enriquecimento",
+    "fonteEnriquecimento": "Fonte do Enriquecimento",
     "contactRole": "Cargo",
-    "contactIsInactive": "Inativo"
+    "contactIsInactive": "Inativo",
+    "companyWebsite": "Website Oficial"
   },
   "options": {
     "industry": {
