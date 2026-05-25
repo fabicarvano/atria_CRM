@@ -1,92 +1,98 @@
 [
-    {
-        "label": "Visão Geral",
-        "rows": [
-            [
-                {
-                    "name": "logoUrl",
-                    "view": "custom:views/fields/logo-image"
-                },
-                false
-            ],
-            [
-                {
-                    "name": "name"
-                },
-                {
-                    "name": "website"
-                }
-            ],
-            [
-                {
-                    "name": "siglaConta"
-                },
-                false
-            ],
-            [
-                {
-                    "name": "emailAddress"
-                },
-                {
-                    "name": "phoneNumber"
-                }
-            ],
-            [
-                {
-                    "name": "billingAddress"
-                },
-                {
-                    "name": "shippingAddress"
-                }
-            ],
-            [
-                {
-                    "name": "industriaLinkedin"
-                },
-                {
-                    "name": "employeeCountLinkedin"
-                }
-            ]
-        ]
-    },
-    {
-        "label": "Detalhes",
-        "rows": [
-            [
-                {
-                    "name": "type"
-                },
-                {
-                    "name": "industry"
-                }
-            ],
-            [
-                {
-                    "name": "description"
-                },
-                false
-            ]
-        ]
-    },
-    {
-        "label": "Classificação",
-        "rows": [
-            [
-                {
-                    "name": "tipoEscalao"
-                },
-                {
-                    "name": "porQueFoco"
-                }
-            ],
-            [
-                {
-                    "name": "enriquecidaLinkedin"
-                },
-                {
-                    "name": "dataEnriquecimentoLinkedin"
-                }
-            ]
-        ]
-    }
+  {
+    "label": "Visão Geral",
+    "rows": [
+      [
+        {
+          "name": "logoUrl",
+          "view": "custom:views/fields/logo-image"
+        },
+        false
+      ],
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "website"
+        }
+      ],
+      [
+        {
+          "name": "companyWebsite"
+        },
+        false
+      ],
+      [
+        {
+          "name": "siglaConta"
+        },
+        false
+      ],
+      [
+        {
+          "name": "emailAddress"
+        },
+        {
+          "name": "phoneNumber"
+        }
+      ],
+      [
+        {
+          "name": "billingAddress"
+        },
+        {
+          "name": "shippingAddress"
+        }
+      ],
+      [
+        {
+          "name": "industriaLinkedin"
+        },
+        {
+          "name": "employeeCountLinkedin"
+        }
+      ]
+    ]
+  },
+  {
+    "label": "Detalhes",
+    "rows": [
+      [
+        {
+          "name": "type"
+        },
+        {
+          "name": "industry"
+        }
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  },
+  {
+    "label": "Classificação",
+    "rows": [
+      [
+        {
+          "name": "tipoEscalao"
+        },
+        {
+          "name": "porQueFoco"
+        }
+      ],
+      [
+        {
+          "name": "enriquecidaLinkedin"
+        },
+        {
+          "name": "dataEnriquecimentoLinkedin"
+        }
+      ]
+    ]
+  }
 ]

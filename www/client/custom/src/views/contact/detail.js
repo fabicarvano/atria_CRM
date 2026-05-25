@@ -3,6 +3,7 @@ define(['views/detail'], (Dep) => {
 
         setup() {
             super.setup();
+
             // ── Botão Enriquecer LinkedIn ──────────────────────────
             const _isEnriq = !!this.model.get('enriquecidaLinkedin');
             this.addMenuItem('buttons', {
@@ -20,7 +21,8 @@ define(['views/detail'], (Dep) => {
                 disabled: true
             }, true);
             this.listenTo(this.model, 'change:enriquecidaLinkedin', () => {
-                this._controlEnriqButtons();
+                this._controlEnriquecimentoButtons();
+                this._applyLinkedinEditRule();
             });
 
 
@@ -37,6 +39,7 @@ define(['views/detail'], (Dep) => {
 
             this.listenTo(this, 'after:render', () => {
                 this._waitAndInjectAvatar();
+                this._applyLinkedinEditRule();
             });
         }
 
@@ -50,17 +53,64 @@ define(['views/detail'], (Dep) => {
             observer.observe(document.body, { childList: true, subtree: true });
             setTimeout(() => observer.disconnect(), 5000);
         }
-
         _injectAvatar() {
-            // O EspoCRM já carregou linkedinPhotoUrl porque está no layout
-            // Apenas força re-render do campo que usa a view custom
-            const fieldView = this.getFieldView('linkedinPhotoUrl');
-            if (fieldView) {
-                fieldView.reRender();
+            try {
+                const photoUrl = this.model.get('linkedinPhotoUrl');
+
+                if (!photoUrl) {
+                    return;
+                }
+
+                const img = document.querySelector('.record[data-scope="Contact"] img.avatar');
+
+                if (!img) {
+                    return;
+                }
+
+                if (img.dataset.linkedinInjected === '1') {
+                    return;
+                }
+
+                img.src = photoUrl;
+                img.dataset.linkedinInjected = '1';
+
+            } catch (e) {
+                console.error('Erro _injectAvatar', e);
             }
         }
 
-        _controlEnriqButtons() {
+
+        _applyLinkedinEditRule() {
+            try {
+                const isEnriq = !!this.model.get('enriquecidaLinkedin');
+
+                const field =
+                    document.querySelector('.cell[data-name="linkedinUrl"] input') ||
+                    document.querySelector('[data-name="linkedinUrl"] input');
+
+                if (!field) {
+                    return;
+                }
+
+                if (isEnriq) {
+                    field.setAttribute('readonly', 'readonly');
+                    field.setAttribute('disabled', 'disabled');
+                    field.style.backgroundColor = '#f5f5f5';
+                    field.style.cursor = 'not-allowed';
+                } else {
+                    field.removeAttribute('readonly');
+                    field.removeAttribute('disabled');
+                    field.style.backgroundColor = '';
+                    field.style.cursor = '';
+                }
+
+            } catch (e) {
+                console.error('Erro _applyLinkedinEditRule', e);
+            }
+        }
+
+
+        _controlEnriquecimentoButtons() {
             const isEnriq = !!this.model.get('enriquecidaLinkedin');
             if (isEnriq) {
                 this.hideHeaderActionItem('enriquecerLinkedin');
@@ -108,7 +158,7 @@ define(['views/detail'], (Dep) => {
                 this.model.set('nivelHierarquico',           rec.nivelHierarquico           || null);
                 this.model.set('dataEnriquecimentoLinkedin', rec.dataEnriquecimentoLinkedin || null);
                 this.model.set('fonteEnriquecimento',        rec.fonteEnriquecimento        || null);
-                this._controlEnriqButtons();
+                this._controlEnriquecimentoButtons();
                 Espo.Ui.success(result.message || 'Contato enriquecido com sucesso.');
                 this.reRender();
             } catch (e) {

@@ -28,6 +28,7 @@ CREATE TABLE `account` (
   `name` varchar(249) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `deleted` tinyint(1) DEFAULT 0,
   `website` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `company_website` varchar(255) DEFAULT NULL,
   `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `industry` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sic_code` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -250,7 +251,7 @@ CREATE TABLE `action_history_record` (
   KEY `IDX_USER_ID` (`user_id`),
   KEY `IDX_AUTH_TOKEN_ID` (`auth_token_id`),
   KEY `IDX_AUTH_LOG_RECORD_ID` (`auth_log_record_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=973 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=996 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -894,11 +895,19 @@ CREATE TABLE `contact` (
   `middle_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `stream_updated_at` datetime DEFAULT NULL,
   `account_id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `account_id_anterior` varchar(17) DEFAULT NULL,
+  `status_validacao_empresa` varchar(255) DEFAULT NULL,
   `campaign_id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_by_id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `modified_by_id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `assigned_user_id` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `linkedin_url` varchar(512) DEFAULT NULL,
+  `company_linkedin` varchar(512) DEFAULT NULL,
+  `company_website` varchar(255) DEFAULT NULL,
+  `company_name_atual` varchar(255) DEFAULT NULL,
+  `email_corporativo` varchar(255) DEFAULT NULL,
+  `fonte_email` varchar(100) DEFAULT NULL,
+  `data_enriquecimento_email` datetime DEFAULT NULL,
   `cargo` varchar(255) DEFAULT NULL,
   `picture_url` varchar(2048) DEFAULT NULL,
   `linkedin_photo_url` varchar(2048) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -924,6 +933,38 @@ CREATE TABLE `contact` (
   KEY `IDX_MODIFIED_BY_ID` (`modified_by_id`),
   KEY `IDX_ASSIGNED_USER_ID` (`assigned_user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `contact_company_history`
+--
+
+DROP TABLE IF EXISTS `contact_company_history`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `contact_company_history` (
+  `id` varchar(17) NOT NULL,
+  `contact_id` varchar(17) DEFAULT NULL,
+  `account_id_anterior` varchar(17) DEFAULT NULL,
+  `account_id_novo` varchar(17) DEFAULT NULL,
+  `empresa_anterior` varchar(255) DEFAULT NULL,
+  `empresa_atual` varchar(255) DEFAULT NULL,
+  `linkedin_empresa_anterior` varchar(512) DEFAULT NULL,
+  `linkedin_empresa_atual` varchar(512) DEFAULT NULL,
+  `company_website` varchar(255) DEFAULT NULL,
+  `cargo` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `motivo` varchar(100) DEFAULT NULL,
+  `fonte` varchar(100) DEFAULT NULL,
+  `raw_json` mediumtext DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `created_by_id` varchar(17) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_CONTACT_COMPANY_HISTORY_CONTACT` (`contact_id`),
+  KEY `IDX_CONTACT_COMPANY_HISTORY_ACCOUNT_ANTERIOR` (`account_id_anterior`),
+  KEY `IDX_CONTACT_COMPANY_HISTORY_ACCOUNT_NOVO` (`account_id_novo`),
+  KEY `IDX_CONTACT_COMPANY_HISTORY_CREATED_AT` (`created_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1053,6 +1094,9 @@ CREATE TABLE `contato_executivo` (
   `open_to_work` tinyint(1) NOT NULL DEFAULT 0,
   `premium` tinyint(1) NOT NULL DEFAULT 0,
   `email` varchar(255) DEFAULT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `company_linkedin` varchar(512) DEFAULT NULL,
+  `company_website` varchar(255) DEFAULT NULL,
   `source` varchar(100) DEFAULT NULL,
   `raw_json` mediumtext DEFAULT NULL,
   `apify_run_id` varchar(100) DEFAULT NULL,
@@ -3951,6 +3995,14 @@ CREATE TABLE `working_time_range` (
   KEY `IDX_MODIFIED_BY_ID` (`modified_by_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping events for database 'atria_crm'
+--
+
+--
+-- Dumping routines for database 'atria_crm'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -3961,4 +4013,4 @@ CREATE TABLE `working_time_range` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-23  2:05:54
+-- Dump completed on 2026-05-25 17:59:18

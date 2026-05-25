@@ -50,6 +50,12 @@
     "rows": [
       [
         {
+          "name": "linkedinUrl",
+          "fullWidth": true
+        }
+      ],
+      [
+        {
           "name": "headline"
         },
         {
@@ -86,6 +92,44 @@
         },
         {
           "name": "linkedinLastSync"
+        }
+      ],
+      [
+        {
+          "name": "isInfluencer"
+        },
+        false
+      ],
+      [
+        {
+          "name": "companyNameAtual"
+        },
+        {
+          "name": "companyLinkedin"
+        }
+      ],
+      [
+        {
+          "name": "companyWebsite"
+        },
+        {
+          "name": "emailCorporativo"
+        }
+      ],
+      [
+        {
+          "name": "statusValidacaoEmpresa"
+        },
+        {
+          "name": "accountIdAnterior"
+        }
+      ],
+      [
+        {
+          "name": "fonteEmail"
+        },
+        {
+          "name": "dataEnriquecimentoEmail"
         }
       ]
     ]

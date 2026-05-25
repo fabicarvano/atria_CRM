@@ -10,13 +10,13 @@ use stdClass;
 
 class Contact extends Record
 {
-    // Campos reais do actor dev_fusion/linkedin-profile-scraper (diagnóstico 2026-05-23):
+    // Campos reais do actor dev_fusion~linkedin-profile-scraper (diagnóstico 2026-05-23):
     // profilePicHighQuality → linkedin_photo_url | jobTitle → cargo
     // headline | isPremium → is_premium | isCreator → is_creator
     // isInfluencer → is_influencer | addressWithoutCountry → location_linkedin
     // about → description (só se vazio) | firstName/lastName (só se vazios)
     // NÃO existem na API: connectionsCount, followerCount, openToWork
-    private const ACTOR_ID = 'dev_fusion/linkedin-profile-scraper';
+    private const ACTOR_ID = 'dev_fusion~linkedin-profile-scraper';
 
     public function postActionEnriquecerLinkedin(Request $request): stdClass
     {

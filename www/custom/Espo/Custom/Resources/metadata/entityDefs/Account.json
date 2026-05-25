@@ -1,99 +1,107 @@
 {
-    "fields": {
-        "statusProspeccao": {
-            "type": "bool",
-            "default": false,
-            "labelText": "Foco"
-        },
-        "porQueFoco": {
-            "type": "text",
-            "labelText": "Por que e Foco"
-        },
-        "tipoEscalao": {
-            "type": "enum",
-            "options": [
-                "",
-                "A",
-                "B",
-                "C"
-            ],
-            "labelText": "Tipo de Conta",
-            "default": ""
-        },
-        "industry": {
-            "type": "enum",
-            "options": [
-                "",
-                "Financeiro",
-                "Telecom",
-                "Energia Eletrica",
-                "Oleo e Gas",
-                "Data Centers",
-                "Governo",
-                "Origem de Energia",
-                "Saneamento",
-                "Industria e Logistica",
-                "Saude",
-                "Varejo e E-commerce",
-                "Logistica e Mobilidade"
-            ]
-        },
-        "logoUrl": {
-            "type": "varchar",
-            "maxLength": 2048,
-            "readOnly": true,
-            "layoutDetailDisabled": true,
-            "layoutEditDisabled": true,
-            "layoutListDisabled": true,
-            "importDisabled": true,
-            "exportDisabled": false,
-            "tooltip": false,
-            "view": "custom:views/fields/logo-image-v2"
-        },
-        "siglaConta": {
-            "type": "varchar",
-            "maxLength": 5,
-            "readOnly": true,
-            "customizationDisabled": true,
-            "dynamicLogicDisabled": true,
-            "audited": true,
-            "index": true
-        },
-        "industriaLinkedin": {
-            "type": "varchar",
-            "maxLength": 255,
-            "readOnly": true
-        },
-        "employeeCountLinkedin": {
-            "type": "int",
-            "readOnly": true
-        },
-        "enriquecidaLinkedin": {
-            "type": "bool",
-            "default": false,
-            "readOnly": true
-        },
-        "dataEnriquecimentoLinkedin": {
-            "type": "datetime",
-            "readOnly": true
-        },
-        "enriquecidoPorId": {
-            "type": "varchar",
-            "maxLength": 17,
-            "readOnly": true
-        },
-        "fonteEnriquecimento": {
-            "type": "varchar",
-            "maxLength": 100,
-            "readOnly": true
-        }
+  "fields": {
+    "statusProspeccao": {
+      "type": "bool",
+      "default": false,
+      "labelText": "Foco"
     },
-    "indexes": {
-        "siglaContaUnique": {
-            "columns": [
-                "siglaConta"
-            ],
-            "unique": true
-        }
+    "porQueFoco": {
+      "type": "text",
+      "labelText": "Por que e Foco"
+    },
+    "tipoEscalao": {
+      "type": "enum",
+      "options": [
+        "",
+        "A",
+        "B",
+        "C"
+      ],
+      "labelText": "Tipo de Conta",
+      "default": ""
+    },
+    "industry": {
+      "type": "enum",
+      "options": [
+        "",
+        "Financeiro",
+        "Telecom",
+        "Energia Eletrica",
+        "Oleo e Gas",
+        "Data Centers",
+        "Governo",
+        "Origem de Energia",
+        "Saneamento",
+        "Industria e Logistica",
+        "Saude",
+        "Varejo e E-commerce",
+        "Logistica e Mobilidade"
+      ]
+    },
+    "logoUrl": {
+      "type": "varchar",
+      "maxLength": 2048,
+      "readOnly": true,
+      "layoutDetailDisabled": true,
+      "layoutEditDisabled": true,
+      "layoutListDisabled": true,
+      "importDisabled": true,
+      "exportDisabled": false,
+      "tooltip": false,
+      "view": "custom:views/fields/logo-image-v2"
+    },
+    "siglaConta": {
+      "type": "varchar",
+      "maxLength": 5,
+      "readOnly": true,
+      "customizationDisabled": true,
+      "dynamicLogicDisabled": true,
+      "audited": true,
+      "index": true
+    },
+    "industriaLinkedin": {
+      "type": "varchar",
+      "maxLength": 255,
+      "readOnly": true
+    },
+    "employeeCountLinkedin": {
+      "type": "int",
+      "readOnly": true
+    },
+    "enriquecidaLinkedin": {
+      "type": "bool",
+      "default": false,
+      "readOnly": true
+    },
+    "dataEnriquecimentoLinkedin": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "enriquecidoPorId": {
+      "type": "varchar",
+      "maxLength": 17,
+      "readOnly": true
+    },
+    "fonteEnriquecimento": {
+      "type": "varchar",
+      "maxLength": 100,
+      "readOnly": true
+    },
+    "companyWebsite": {
+      "type": "varchar",
+      "maxLength": 255,
+      "readOnly": true,
+      "layoutEditDisabled": true,
+      "layoutMassUpdateDisabled": true,
+      "importDisabled": true
     }
+  },
+  "indexes": {
+    "siglaContaUnique": {
+      "columns": [
+        "siglaConta"
+      ],
+      "unique": true
+    }
+  }
 }
